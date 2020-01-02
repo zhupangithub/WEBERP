@@ -14,7 +14,7 @@ namespace ERP.Web.Controllers
         public ActionResult Index()
         {
             var loginer = FormsAuth.GetUserData<LoginerBase>();
-            ViewBag.Title = "建设工程材料管理系统";
+            ViewBag.Title = "企业信息管理系统";
             ViewBag.UserName = loginer.UserName;
             ViewBag.Settings = new sys_userService().GetCurrentUserSettings();
 

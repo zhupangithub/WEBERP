@@ -5,3 +5,10 @@ D:\Project\Code\GuZong\WebErp\Zephyr.Net\Zephyr.Core\obj\Debug\Zephyr.Core.cspro
 D:\Project\Code\GuZong\WebErp\Zephyr.Net\Zephyr.Core\obj\Debug\Zephyr.Core.csproj.CopyComplete
 D:\Project\Code\GuZong\WebErp\Zephyr.Net\Zephyr.Core\obj\Debug\Zephyr.Core.dll
 D:\Project\Code\GuZong\WebErp\Zephyr.Net\Zephyr.Core\obj\Debug\Zephyr.Core.pdb
+E:\code\Github\Project\WEBERP\Code\Zephyr.Net\Zephyr.Bin\Zephyr.Core.dll
+E:\code\Github\Project\WEBERP\Code\Zephyr.Net\Zephyr.Bin\Zephyr.Core.pdb
+E:\code\Github\Project\WEBERP\Code\Zephyr.Net\Zephyr.Core\obj\Debug\Zephyr.Core.csprojAssemblyReference.cache
+E:\code\Github\Project\WEBERP\Code\Zephyr.Net\Zephyr.Core\obj\Debug\Zephyr.Core.csproj.CoreCompileInputs.cache
+E:\code\Github\Project\WEBERP\Code\Zephyr.Net\Zephyr.Core\obj\Debug\Zephyr.Core.csproj.CopyComplete
+E:\code\Github\Project\WEBERP\Code\Zephyr.Net\Zephyr.Core\obj\Debug\Zephyr.Core.dll
+E:\code\Github\Project\WEBERP\Code\Zephyr.Net\Zephyr.Core\obj\Debug\Zephyr.Core.pdb

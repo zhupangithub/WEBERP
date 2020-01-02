@@ -3,3 +3,9 @@ D:\Project\Code\GuZong\WebErp\Zephyr.Net\Zephyr.Data\bin\Debug\Zephyr.Data.pdb
 D:\Project\Code\GuZong\WebErp\Zephyr.Net\Zephyr.Data\obj\Debug\Zephyr.Data.csproj.CoreCompileInputs.cache
 D:\Project\Code\GuZong\WebErp\Zephyr.Net\Zephyr.Data\obj\Debug\Zephyr.Data.dll
 D:\Project\Code\GuZong\WebErp\Zephyr.Net\Zephyr.Data\obj\Debug\Zephyr.Data.pdb
+E:\code\Github\Project\WEBERP\Code\Zephyr.Net\Zephyr.Data\bin\Debug\Zephyr.Data.dll
+E:\code\Github\Project\WEBERP\Code\Zephyr.Net\Zephyr.Data\bin\Debug\Zephyr.Data.pdb
+E:\code\Github\Project\WEBERP\Code\Zephyr.Net\Zephyr.Data\obj\Debug\Zephyr.Data.csprojAssemblyReference.cache
+E:\code\Github\Project\WEBERP\Code\Zephyr.Net\Zephyr.Data\obj\Debug\Zephyr.Data.csproj.CoreCompileInputs.cache
+E:\code\Github\Project\WEBERP\Code\Zephyr.Net\Zephyr.Data\obj\Debug\Zephyr.Data.dll
+E:\code\Github\Project\WEBERP\Code\Zephyr.Net\Zephyr.Data\obj\Debug\Zephyr.Data.pdb

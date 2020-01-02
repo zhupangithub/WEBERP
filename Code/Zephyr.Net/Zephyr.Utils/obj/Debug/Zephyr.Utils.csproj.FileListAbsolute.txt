@@ -6,3 +6,11 @@ D:\Project\Code\GuZong\WebErp\Zephyr.Net\Zephyr.Utils\obj\Debug\Zephyr.Utils.csp
 D:\Project\Code\GuZong\WebErp\Zephyr.Net\Zephyr.Utils\obj\Debug\Zephyr.Utils.csproj.CoreCompileInputs.cache
 D:\Project\Code\GuZong\WebErp\Zephyr.Net\Zephyr.Utils\obj\Debug\Zephyr.Utils.dll
 D:\Project\Code\GuZong\WebErp\Zephyr.Net\Zephyr.Utils\obj\Debug\Zephyr.Utils.pdb
+E:\code\Github\Project\WEBERP\Code\Zephyr.Net\Zephyr.Bin\Zephyr.Utils.dll
+E:\code\Github\Project\WEBERP\Code\Zephyr.Net\Zephyr.Bin\Zephyr.Utils.pdb
+E:\code\Github\Project\WEBERP\Code\Zephyr.Net\Zephyr.Utils\obj\Debug\Zephyr.Utils.csprojAssemblyReference.cache
+E:\code\Github\Project\WEBERP\Code\Zephyr.Net\Zephyr.Utils\obj\Debug\Zephyr.Utils.Document.Excel.NPOI.Resource1.resources
+E:\code\Github\Project\WEBERP\Code\Zephyr.Net\Zephyr.Utils\obj\Debug\Zephyr.Utils.csproj.GenerateResource.cache
+E:\code\Github\Project\WEBERP\Code\Zephyr.Net\Zephyr.Utils\obj\Debug\Zephyr.Utils.csproj.CoreCompileInputs.cache
+E:\code\Github\Project\WEBERP\Code\Zephyr.Net\Zephyr.Utils\obj\Debug\Zephyr.Utils.dll
+E:\code\Github\Project\WEBERP\Code\Zephyr.Net\Zephyr.Utils\obj\Debug\Zephyr.Utils.pdb

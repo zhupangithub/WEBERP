@@ -24,7 +24,7 @@ namespace ERP.Web.Controllers
 
         public ActionResult Mms()
         {
-            ViewBag.CnName = "建筑材料管理系统";
+            ViewBag.CnName = "企业信息管理系统";
             ViewBag.EnName = "Engineering Material Mangange System";
             return View("Index");
         }

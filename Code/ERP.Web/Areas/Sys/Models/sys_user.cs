@@ -11,7 +11,7 @@ namespace ERP.Web.Models
 {
     public class sys_userService : ServiceBase<sys_user>
     {
-        public object Login(JObject request) 
+        public object Login(JObject request)
         {
             var UserCode = request.Value<string>("usercode");
             var Password = request.Value<string>("password");
@@ -33,7 +33,7 @@ namespace ERP.Web.Models
             var loginer = new LoginerBase { UserCode = result.UserCode, UserName = result.UserName };
 
             var effectiveHours = ZConfig.GetConfigInt("LoginEffectiveHours");
-            FormsAuth.SignIn(loginer.UserCode, loginer, 60 * effectiveHours);       
+            FormsAuth.SignIn(loginer.UserCode, loginer, 60 * effectiveHours);
 
             //登陆后处理
             this.UpdateUserLoginCountAndDate(UserCode); //更新用户登陆次数及时间
@@ -86,7 +86,7 @@ from sys_roleMenuMap A
 left join sys_userRoleMap B on B.RoleCode = A.RoleCode
 left join sys_menu C on C.MenuCode = A.MenuCode
 where B.UserCode = '{1}'
-and C.URL in ('{0}')",string.Join("','",urls),UserCode)).QueryMany<int>();
+and C.URL in ('{0}')", string.Join("','", urls), UserCode)).QueryMany<int>();
 
             return result.Count > 0;
         }
@@ -103,7 +103,7 @@ and C.URL in ('{0}')",string.Join("','",urls),UserCode)).QueryMany<int>();
 
         public Dictionary<string, object> GetCurrentUserSettings()
         {
-            var result = new Dictionary<string,object>();
+            var result = new Dictionary<string, object>();
             var UserCode = FormsAuth.GetUserData<LoginerBase>().UserCode;
             //var config = db.Sql("select ConfigJSON from sys_user where UserCode=@0", UserCode).QuerySingle<string>();
             var settings = db.Sql("select * from sys_userSetting where UserCode=@0", UserCode).QueryMany<sys_userSetting>();
@@ -114,7 +114,7 @@ and C.URL in ('{0}')",string.Join("','",urls),UserCode)).QueryMany<int>();
             var defaults = GetDefaultUserSetttins();
 
             foreach (var item in defaults)
-                if (!result.ContainsKey(item.Key)) result.Add(item.Key,item.Value);
+                if (!result.ContainsKey(item.Key)) result.Add(item.Key, item.Value);
 
             return result;
         }
@@ -122,7 +122,7 @@ and C.URL in ('{0}')",string.Join("','",urls),UserCode)).QueryMany<int>();
         public void SaveCurrentUserSettings(JObject settings)
         {
             var UserCode = FormsAuth.GetUserData<LoginerBase>().UserCode;
-            foreach(JProperty item in settings.Children())
+            foreach (JProperty item in settings.Children())
             {
                 var result = db.Update("sys_userSetting")
                     .Column("SettingValue", item.Value.ToString())
@@ -136,11 +136,11 @@ and C.URL in ('{0}')",string.Join("','",urls),UserCode)).QueryMany<int>();
                     model.UserCode = UserCode;
                     model.SettingCode = item.Name;
                     model.SettingValue = item.Value.ToString();
-                    db.Insert<sys_userSetting>("sys_userSetting", model).AutoMap(x=>x.ID).Execute();
+                    db.Insert<sys_userSetting>("sys_userSetting", model).AutoMap(x => x.ID).Execute();
                 }
             }
         }
- 
+
         public List<dynamic> GetRoleMembers(string role)
         {
             var result = db.Sql(String.Format(@"
@@ -223,7 +223,7 @@ left join sys_userRoleMap B on B.RoleCode = A.RoleCode and B.UserCode = '{0}'", 
             base.OnAfterEditDetail(arg);
         }
     }
-    
+
     public class sys_user : ModelBase
     {
 
