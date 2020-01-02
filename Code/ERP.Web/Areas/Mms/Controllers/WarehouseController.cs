@@ -25,11 +25,11 @@ namespace ERP.Web.Areas.Mms.Controllers
         public dynamic Get(RequestWrapper request)
         {
             request.LoadSettingXmlString(@"
-<settings defaultOrderBy='WarehouseCode'>
-   <where>
-        <field name='ProjectCode' cp='equal' ignoreEmpty='true'></field>
-    </where>
-</settings>");
+            <settings defaultOrderBy='WarehouseCode'>
+               <where>
+                    <field name='ProjectCode' cp='equal' ignoreEmpty='true'></field>
+                </where>
+            </settings>");
             var service = new mms_warehouseService();
             var result = service.GetModelListWithPaging(request.ToParamQuery());
             return result;

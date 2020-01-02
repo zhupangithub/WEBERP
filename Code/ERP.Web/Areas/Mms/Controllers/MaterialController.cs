@@ -25,13 +25,13 @@ namespace ERP.Web.Areas.Mms.Controllers
         public dynamic GetTypes(RequestWrapper request)
         {
             request.LoadSettingXmlString(@"
-<settings defaultOrderBy='MaterialType'>
-   <where defaultIgnoreEmpty='true'>
-        <field name='MaterialType'      cp='equal'></field>
-        <field name='MaterialsTypeName'  cp='like' ></field>
-    </where>
-</settings>
-");
+            <settings defaultOrderBy='MaterialType'>
+               <where defaultIgnoreEmpty='true'>
+                    <field name='MaterialType'      cp='equal'></field>
+                    <field name='MaterialsTypeName'  cp='like' ></field>
+                </where>
+            </settings>
+            ");
             var result = new mms_materialTypeService().GetDynamicList(request.ToParamQuery());
             return result;
         }
@@ -39,11 +39,11 @@ namespace ERP.Web.Areas.Mms.Controllers
         public dynamic Get(RequestWrapper request)
         {
             request.LoadSettingXmlString(@"
-<settings defaultOrderBy='MaterialCode'>
-   <where>
-        <field name='MaterialType' cp='equal' ignoreEmpty='true'></field>
-    </where>
-</settings>");
+            <settings defaultOrderBy='MaterialCode'>
+               <where>
+                    <field name='MaterialType' cp='equal' ignoreEmpty='true'></field>
+                </where>
+            </settings>");
             var service = new mms_materialService();
             var result = service.GetModelListWithPaging(request.ToParamQuery());
             return result;
@@ -60,12 +60,12 @@ namespace ERP.Web.Areas.Mms.Controllers
         public void Edit(dynamic data)
         {
             var listWrapper = RequestWrapper.Instance().LoadSettingXmlString(@"
-<settings>
-    <table>mms_material</table>
-    <where>
-        <field name='MaterialCode' cp='equal'></field>
-    </where>
-</settings>");
+            <settings>
+                <table>mms_material</table>
+                <where>
+                    <field name='MaterialCode' cp='equal'></field>
+                </where>
+            </settings>");
             var service = new mms_materialService();
             var result = service.Edit(null, listWrapper, data);
         }
@@ -74,12 +74,12 @@ namespace ERP.Web.Areas.Mms.Controllers
         public void EditType(dynamic data)
         {
             var listWrapper = RequestWrapper.Instance().LoadSettingXmlString(@"
-<settings>
-    <table>mms_materialType</table>
-    <where>
-        <field name='MaterialType' cp='equal'></field>
-    </where>
-</settings>");
+            <settings>
+                <table>mms_materialType</table>
+                <where>
+                    <field name='MaterialType' cp='equal'></field>
+                </where>
+            </settings>");
             var service = new mms_materialService();
             var result = service.Edit(null, listWrapper, data);
         }

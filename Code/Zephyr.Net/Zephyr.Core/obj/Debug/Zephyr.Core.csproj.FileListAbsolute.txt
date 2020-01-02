@@ -12,3 +12,10 @@ E:\code\Github\Project\WEBERP\Code\Zephyr.Net\Zephyr.Core\obj\Debug\Zephyr.Core.
 E:\code\Github\Project\WEBERP\Code\Zephyr.Net\Zephyr.Core\obj\Debug\Zephyr.Core.csproj.CopyComplete
 E:\code\Github\Project\WEBERP\Code\Zephyr.Net\Zephyr.Core\obj\Debug\Zephyr.Core.dll
 E:\code\Github\Project\WEBERP\Code\Zephyr.Net\Zephyr.Core\obj\Debug\Zephyr.Core.pdb
+D:\Project\Code\WEBERP\Code\Zephyr.Net\Zephyr.Bin\Zephyr.Core.dll
+D:\Project\Code\WEBERP\Code\Zephyr.Net\Zephyr.Bin\Zephyr.Core.pdb
+D:\Project\Code\WEBERP\Code\Zephyr.Net\Zephyr.Core\obj\Debug\Zephyr.Core.csprojAssemblyReference.cache
+D:\Project\Code\WEBERP\Code\Zephyr.Net\Zephyr.Core\obj\Debug\Zephyr.Core.csproj.CoreCompileInputs.cache
+D:\Project\Code\WEBERP\Code\Zephyr.Net\Zephyr.Core\obj\Debug\Zephyr.Core.csproj.CopyComplete
+D:\Project\Code\WEBERP\Code\Zephyr.Net\Zephyr.Core\obj\Debug\Zephyr.Core.dll
+D:\Project\Code\WEBERP\Code\Zephyr.Net\Zephyr.Core\obj\Debug\Zephyr.Core.pdb

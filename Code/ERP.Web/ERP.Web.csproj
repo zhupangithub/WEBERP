@@ -159,6 +159,9 @@
     <Compile Include="App_Start\webstack\WebApiDisposeFilter.cs" />
     <Compile Include="App_Start\webstack\MvcDisposeFilter.cs" />
     <Compile Include="App_Start\webstack\MvcMenuFilter.cs" />
+    <Compile Include="Areas\Erp\Controllers\MaterialController.cs" />
+    <Compile Include="Areas\Erp\ErpAreaRegistration.cs" />
+    <Compile Include="Areas\Erp\Models\erp_materialService.cs" />
     <Compile Include="Areas\Mms\Common\MmsHelper.cs" />
     <Compile Include="Areas\Mms\Common\MmsService.cs" />
     <Compile Include="Areas\Mms\Common\MmsBaseApi.cs" />
@@ -294,6 +297,7 @@
     <Compile Include="Areas\Sys\Models\sys_organizeRoleMap.cs" />
     <Compile Include="Areas\Sys\Models\sys_userSetting.cs" />
     <Compile Include="Areas\Sys\SysAreaRegistration.cs" />
+    <Content Include="Areas\Erp\ViewModels\erp.material.js" />
     <Content Include="Areas\Sys\Template\edit\Model.cshtml" />
     <Content Include="Areas\Sys\Template\edit\View.cshtml" />
     <Content Include="Areas\Sys\Template\edit\Controller.cshtml" />
@@ -301,6 +305,8 @@
     <Content Include="Areas\Mms\Views\Liy\Index.cshtml" />
     <Content Include="Areas\Mms\Views\Staff\Index.cshtml" />
     <Content Include="Areas\Mms\Views\Staff\Edit.cshtml" />
+    <Content Include="Areas\Erp\Views\Web.config" />
+    <Content Include="Areas\Erp\Views\Material\Index.cshtml" />
     <None Include="Areas\Sys\Template\searchEdit\Model.cshtml" />
     <None Include="Areas\Sys\Template\searchEdit\Controller.cshtml" />
     <None Include="Areas\Sys\Template\search\Controller.cshtml" />
@@ -3576,6 +3582,8 @@
     <Content Include="Views\Home\Error.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Areas\Erp\Common\" />
+    <Folder Include="Areas\Erp\Reports\" />
     <Folder Include="Areas\Sys\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
