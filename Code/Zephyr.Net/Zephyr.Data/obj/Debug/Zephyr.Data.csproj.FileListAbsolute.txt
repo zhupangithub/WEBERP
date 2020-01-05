@@ -9,3 +9,9 @@ E:\code\Github\Project\WEBERP\Code\Zephyr.Net\Zephyr.Data\obj\Debug\Zephyr.Data.
 E:\code\Github\Project\WEBERP\Code\Zephyr.Net\Zephyr.Data\obj\Debug\Zephyr.Data.csproj.CoreCompileInputs.cache
 E:\code\Github\Project\WEBERP\Code\Zephyr.Net\Zephyr.Data\obj\Debug\Zephyr.Data.dll
 E:\code\Github\Project\WEBERP\Code\Zephyr.Net\Zephyr.Data\obj\Debug\Zephyr.Data.pdb
+D:\Project\Code\WEBERP\Code\Zephyr.Net\Zephyr.Data\bin\Debug\Zephyr.Data.dll
+D:\Project\Code\WEBERP\Code\Zephyr.Net\Zephyr.Data\bin\Debug\Zephyr.Data.pdb
+D:\Project\Code\WEBERP\Code\Zephyr.Net\Zephyr.Data\obj\Debug\Zephyr.Data.csprojAssemblyReference.cache
+D:\Project\Code\WEBERP\Code\Zephyr.Net\Zephyr.Data\obj\Debug\Zephyr.Data.csproj.CoreCompileInputs.cache
+D:\Project\Code\WEBERP\Code\Zephyr.Net\Zephyr.Data\obj\Debug\Zephyr.Data.dll
+D:\Project\Code\WEBERP\Code\Zephyr.Net\Zephyr.Data\obj\Debug\Zephyr.Data.pdb

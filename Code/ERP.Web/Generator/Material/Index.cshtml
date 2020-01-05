@@ -38,30 +38,30 @@
 </div>  
 
 <div id="master" class="container_12" data-bind="inputwidth:0.9">
-    <div class="grid_1 lbl">id</div>
-    <div class="grid_3 val"><input type="text" data-bind="value:pageData.form.id ,readOnly:readonly" class="z-txt " /></div>
-    <div class="grid_1 lbl">name</div>
+    <div class="grid_1 lbl">编号</div>
+    <div class="grid_3 val"><input type="text" data-bind="value:pageData.form.id ,readOnly : true" class="z-txt " /></div>
+    <div class="grid_1 lbl">物料名称</div>
     <div class="grid_3 val"><input type="text" data-bind="value:pageData.form.name ,readOnly:readonly" class="z-txt " /></div>
-    <div class="grid_1 lbl">no</div>
-    <div class="grid_3 val"><input type="text" data-bind="value:pageData.form.no ,readOnly:readonly" class="z-txt " /></div>
-    
-    <div class="clear"></div>
-    
-    <div class="grid_1 lbl">type</div>
-    <div class="grid_3 val"><input type="text" data-bind="value:pageData.form.type ,readOnly:readonly" class="z-txt " /></div>
-    <div class="grid_1 lbl">price</div>
+    <div class="grid_1 lbl">单价</div>
     <div class="grid_3 val"><input type="text" data-bind="value:pageData.form.price ,readOnly:readonly" class="z-txt " /></div>
-    <div class="grid_1 lbl">isenable</div>
-    <div class="grid_3 val"><input type="text" data-bind="value:pageData.form.isenable ,readOnly:readonly" class="z-txt " /></div>
     
     <div class="clear"></div>
     
-    <div class="grid_1 lbl">remark</div>
+    <div class="grid_1 lbl">物料类型</div>
+    <div class="grid_3 val"><input type="text" data-bind="value:pageData.form.type ,readOnly:readonly" class="z-txt " /></div>
+    <div class="grid_1 lbl">规格</div>
+    <div class="grid_3 val"><input type="text" data-bind="value:pageData.form.guige ,readOnly:readonly" class="z-txt " /></div>
+    <div class="grid_1 lbl">是否启用</div>
+    <div class="grid_3 val"><input type="text" data-bind="comboboxValue:pageData.form.isenable ,comboboxReadOnly : readonly" class="z-txt easyui-combobox" /></div>
+    
+    <div class="clear"></div>
+    
+    <div class="grid_1 lbl">备注</div>
     <div class="grid_3 val"><input type="text" data-bind="value:pageData.form.remark ,readOnly:readonly" class="z-txt " /></div>
-    <div class="grid_1 lbl">create_time</div>
-    <div class="grid_3 val"><input type="text" data-bind="value:pageData.form.create_time ,readOnly:readonly" class="z-txt " /></div>
-    <div class="grid_1 lbl">create_username</div>
-    <div class="grid_3 val"><input type="text" data-bind="value:pageData.form.create_username ,readOnly:readonly" class="z-txt " /></div>
+    <div class="grid_1 lbl">创建日期</div>
+    <div class="grid_3 val"><input type="text" data-bind="value:pageData.form.create_time ,readOnly : true" class="z-txt " /></div>
+    <div class="grid_1 lbl">创建人</div>
+    <div class="grid_3 val"><input type="text" data-bind="value:pageData.form.create_username ,readOnly : true" class="z-txt " /></div>
 
     <div class="clear"></div>
 </div>
@@ -71,14 +71,15 @@
         <table data-bind="datagrid:grid0">
             <thead>
                 <tr> 
-                    <th field="no"		sortable="true"	align="center"	width="80" editor="text" >物料编号</th>
-                    <th field="name"		sortable="true"	align="center"	width="180" editor="text" >物料名称</th>
-                    <th field="type"		sortable="true"	align="center"	width="80" editor="{type:'combobox',options:{}}" >物料类型</th>
-                    <th field="price"		sortable="true"	align="center"	width="80" editor="text" formatter="com.formatMoney">采购单价</th>
-                    <th field="isenable"	sortable="true"	align="center"	width="80" editor="text" formatter="com.formatCheckbox">是否启用</th>
-                    <th field="remark"		sortable="true"	align="center"	width="80" editor="text" >备注</th>
-                    <th field="create_time"	sortable="true"	align="center"	width="110" editor="text" formatter="com.formatTime">create_time</th>
-                    <th field="create_username"	sortable="true"	align="center"	width="80" editor="text" >create_username</th>
+                    <th field="id"	hidden="true"	sortable="true"	align="center"	width="80" editor="text" >id</th>
+                    <th field="name"		sortable="true"	align="center"	width="150" editor="text" >name</th>
+                    <th field="type"		sortable="true"	align="center"	width="100" editor="text" >type</th>
+                    <th field="price"		sortable="true"	align="center"	width="80" editor="{type: 'numberbox',options:{min: 0, precision: 2}}" >price</th>
+                    <th field="guige"		sortable="true"	align="center"	width="120" editor="text" >guige</th>
+                    <th field="isenable"		sortable="true"	align="center"	width="80" editor="text" >isenable</th>
+                    <th field="remark"		sortable="true"	align="center"	width="140" editor="text" >remark</th>
+                    <th field="create_time"		sortable="true"	align="center"	width="100" editor="datebox" >create_time</th>
+                    <th field="create_username"		sortable="true"	align="center"	width="100" editor="text" >create_username</th>
                 </tr>
             </thead>
         </table>

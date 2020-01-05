@@ -31,6 +31,8 @@ namespace Zephyr.Core
         public static string FIELD_UPDATE_DATE = "UpdateDate";
         public static string FIELD_CREATE_PERSON = "CreatePerson";
         public static string FIELD_CREATE_DATE = "CreateDate";
+        public static string FIELD_CREATE_User = "create_username";
+        public static string FIELD_CREATE_Time = "create_time";
 
         //BLL的一些设置
         public static string SERVICE_BLL_NAMESPACE = "Zephyr.Models"; //指定bll层的命名空间

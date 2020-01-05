@@ -1,0 +1,54 @@
+﻿@{
+    ViewBag.Title = "基础参数";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section scripts{
+    <script src="~/Areas/Erp/ViewModels/base.com.js"></script>
+    <script src="~/Areas/Erp/ViewModels/base.viewModel.js"></script>
+    <script type="text/javascript">
+        using('validatebox');
+        using('numberbox');
+        var data = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model));
+        ko.bindingViewModel(new base.viewModel.searchEdit(data));
+    </script>
+}
+
+<div id="container">
+    <div id="wrapper">
+        <div id="content">
+            <div class="z-toolbar">
+                <a id="a_refresh" href="#" plain="true" class="easyui-linkbutton" icon="icon-arrow_refresh" title="刷新" data-bind="click:refreshClick">刷新</a>
+                <a href="#" plain="true" class="easyui-linkbutton" icon="icon-add" title="新增" data-bind="click:addClick">新增</a>
+                <a id="a_edit" href="#" plain="true" class="easyui-linkbutton" icon="icon-edit" data-bind="click:editClick" title="编辑">编辑</a>
+                <a id="a_save" href="#" plain="true" class="easyui-linkbutton" icon="icon-save" data-bind="click:saveClick" title="保存">保存</a>
+            </div>
+            <div id="condition" class="container_12" style="position:relative;">
+                <div class="grid_1 lbl">名称</div>
+                <div class="grid_2 val"><input type="text" data-bind="value:form.name" class="z-txt" /></div>
+                <div class="clear"></div>
+                <div class="grid_1 lbl">类型</div>
+                <div class="grid_2 val"><input type="text" data-bind="datasource:dataSource.TypeItems ,comboboxValue:form.type" class="z-txt easyui-combobox" data-options="showblank:true" /></div>
+                <div class="clear"></div>
+                <div class="prefix_9" style="position:absolute;top:5px;height:0;">
+                    <a id="a_search" href="#" class="buttonHuge button-blue" data-bind="click:searchClick" style="margin:0 15px;">查询</a>
+                    <a id="a_reset" href="#" class="buttonHuge button-blue" data-bind="click:clearClick">清空</a>
+                </div>
+            </div>
+
+            <table id="gridlist" data-bind="datagrid:grid">
+                <thead>
+                    <tr>
+                        <th field="name" sortable="true" align="center" width="150" editor="{type:'validatebox',options:{required:true}}">名称</th>
+                        <th field="type" sortable="true" align="center" width="80" editor="{type:'combobox',options:{data:data.dataSource.TypeItems}}">类型</th>
+                        <th field="isenable" sortable="true" align="center" width="80" formatter="com.formatCheckbox" editor="{type:'checkbox',options:{on:true,off:false}}">是否启用</th>
+                        <th field="remark" sortable="true" align="center" width="140" editor="text">备注</th>
+                        <th field="create_time" sortable="true" align="center" width="140" editor="text">创建时间</th>
+                        <th field="create_username" sortable="true" align="center" width="140" editor="text">创建人</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
+
+

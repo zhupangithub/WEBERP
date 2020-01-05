@@ -35,7 +35,7 @@ namespace ERP.Web.Areas.Erp.Controllers
                     //payKinds = codeService.GetValueTextListByType("PayType")
                 },
                 form = new{
-                    defaults = new base_material().Extend(new {  id = "",name = "",no = "",type = "",price = "",isenable = "",remark = "",create_time = "",create_username = ""}),
+                    defaults = new base_material().Extend(new {  id = "",name = "",price = "",type = "",guige = "",isenable = "",remark = "",create_time = "",create_username = ""}),
                     primaryKeys = new string[]{"id"}
                 },
                 tabs = new object[]{
@@ -43,8 +43,8 @@ namespace ERP.Web.Areas.Erp.Controllers
                       type = "grid",
                       rowId = "id",
                       relationId = "id",
-                      postFields = new string[] { "no","name","type","price","isenable","remark","create_time","create_username"},
-                      defaults = new {no = "",name = "",type = "",price = "",isenable = "",remark = "",create_time = "",create_username = ""}
+                      postFields = new string[] { "id","name","type","price","guige","isenable","remark","create_time","create_username"},
+                      defaults = new {id = "",name = "",type = "",price = "",guige = "",isenable = "",remark = "",create_time = "",create_username = ""}
                     }    
                 }
             };

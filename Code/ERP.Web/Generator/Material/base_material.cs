@@ -13,12 +13,13 @@ namespace ERP.Web.Models
 
     public class base_material : ModelBase
     {
+        [Identity]
         [PrimaryKey]   
-        public Guid id { get; set; }
-        public string no { get; set; }
+        public int id { get; set; }
         public string name { get; set; }
-        public Guid type { get; set; }
+        public int type { get; set; }
         public decimal price { get; set; }
+        public string guige { get; set; }
         public bool isenable { get; set; }
         public string remark { get; set; }
         public DateTime create_time { get; set; }

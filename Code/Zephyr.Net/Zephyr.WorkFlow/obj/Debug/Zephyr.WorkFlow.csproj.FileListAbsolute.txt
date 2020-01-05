@@ -1,0 +1,4 @@
+D:\Project\Code\WEBERP\Code\Zephyr.Net\Zephyr.WorkFlow\obj\Debug\Zephyr.WorkFlow.csprojAssemblyReference.cache
+D:\Project\Code\WEBERP\Code\Zephyr.Net\Zephyr.WorkFlow\obj\Debug\Zephyr.WorkFlow.csproj.CoreCompileInputs.cache
+D:\Project\Code\WEBERP\Code\Zephyr.Net\Zephyr.WorkFlow\obj\Debug\Zephyr.WorkFlow.dll
+D:\Project\Code\WEBERP\Code\Zephyr.Net\Zephyr.WorkFlow\obj\Debug\Zephyr.WorkFlow.pdb

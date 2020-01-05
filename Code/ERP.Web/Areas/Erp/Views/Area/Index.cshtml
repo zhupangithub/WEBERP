@@ -1,0 +1,55 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section head{
+        <style type="text/css">
+            div#navigation{background:white}
+            div#wrapper{float:right;width:100%;margin-left:-235px}
+            div#content{margin-left:235px}
+            div#navigation{float:left;width:230px}
+            .datagrid-cell a{color:black;}
+            .datagrid-cell a:hover{color:red;}
+        </style>
+}
+
+@section scripts{
+        <script src="~/Areas/Erp/ViewModels/base.area.js"></script>
+        <script type="text/javascript">
+           using('validatebox');
+           var data = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model));
+            ko.bindingViewModel(new viewModel());
+        </script>
+}
+
+<div id="container">
+    <div id="wrapper">
+        <div id="content">
+            <div class="z-toolbar">
+                <a id="a_refresh" href="#" plain="true" class="easyui-linkbutton" icon="icon-arrow_refresh" title="刷新" data-bind="click:refreshClick">刷新</a>
+                <a id="a_add"    href="#" plain="true" class="easyui-linkbutton" icon="icon-add" title="新增" data-bind="click:addClick">新增</a>
+                <a id="a_edit"   href="#" plain="true" class="easyui-linkbutton" icon="icon-edit" data-bind="click:editClick" title="编辑">编辑</a>
+                <a id="a_save" href="#" plain="true" class="easyui-linkbutton" icon="icon-save" data-bind="click:saveClick" title="保存">保存</a>
+            </div>
+
+            <table id="gridlist" data-bind="datagrid:grid">
+                 <thead>  
+                     <tr>
+                         <th field="name" sortable="true" align="center" width="200" editor="{type:'validatebox',options:{required:true}}">库区名称</th>
+                         <th field="isenable" sortable="true" align="center" width="80" formatter="com.formatCheckbox" editor="{type:'checkbox',options:{on:true,off:false}}">是否启用</th>
+                         <th field="remark" sortable="true" align="center" width="140" editor="text">备注</th>
+                         <th field="create_time" sortable="true" align="center" width="140" editor="text">创建时间</th>
+                         <th field="create_username" sortable="true" align="center" width="140" editor="text">创建人</th>
+                     </tr>                            
+                </thead>      
+            </table> 
+        </div>
+    </div>
+    <div id="navigation">
+        <div title="所属仓库" style="width: 230px;" class="easyui-panel" data-options="title: '所属仓库', iconCls: 'icon-node_tree', height: $(window).height() - 4 ">
+            <ul data-bind="easyuiTree:tree"></ul>
+        </div>
+    </div>
+</div>
+        
+ 

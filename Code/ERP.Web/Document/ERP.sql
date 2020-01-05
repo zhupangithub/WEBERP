@@ -4,13 +4,12 @@
 create table base_customer
 (
 	id int identity(1,1) primary key,
-	no nvarchar(50) not null default(''),--客户编号
 	jc_name nvarchar(200) not null default(''),--客户简称
 	name nvarchar(200) not null default(''),--客户名称
 	contacts nvarchar(100) not null default(''),--客户联系人
 	contacts_phone nvarchar(100) not null default(''),--客户联系人电话
 	email nvarchar(100),--邮箱
-	grade int,--客户等级
+	grade nvarchar(20),--客户等级
 	address nvarchar(200) not null default(''),--客户地址
 	isenable bit not null default(0),--是否禁用
 	remark nvarchar(300),--备注说明
@@ -23,13 +22,12 @@ create table base_customer
 create table base_supplier
 (
 	id int identity(1,1) primary key,
-	no nvarchar(50) not null default(''),--供应商编号
 	jc_name nvarchar(200) not null default(''),--供应商简称
 	name nvarchar(200) not null default(''),--供应商名称
 	contacts nvarchar(100) not null default(''),--供应商联系人
 	contacts_phone nvarchar(100) not null default(''),--供应商联系人电话
 	email nvarchar(100),--邮箱
-	grade int,--供应商等级
+	grade nvarchar(20),--供应商等级
 	address nvarchar(200) not null default(''),--供应商地址
 	isenable bit not null default(0),--是否禁用
 	remark nvarchar(300),--备注说明
@@ -37,13 +35,12 @@ create table base_supplier
 	create_username nvarchar(40) not null,--添加用户
 )
 
-
 --基础数据表
 create table base_data
 (
 	id int identity(1,1) primary key not null,--主键
 	name nvarchar(100) not null default(''),---名称
-	type int not null default(0),--类型
+	type nvarchar(20) not null default(0),--类型
 	remark nvarchar(300),--备注说明
 	isenable bit not null default(0),--是否禁用
 	create_time datetime not null default(getdate()),--创建时间
@@ -54,11 +51,10 @@ create table base_data
 create table base_product
 (
 	id int identity(1,1) primary key,
-	no nvarchar(50) not null default(''),--产品编号
 	name nvarchar(200) not null default(''),--产品名称
-	type int,--产品类型1 成品,2半成品
+	type nvarchar(20),--产品类型1 成品,2半成品
 	guige nvarchar(200),--规格
-	unit int not null,--单位
+	unit nvarchar(20) not null,--单位
 	price decimal(10,4) not null default(0),--商品单价
 	isenable bit not null default(0),--是否禁用
 	remark nvarchar(300),--备注说明
@@ -71,16 +67,15 @@ create table base_product
 create table base_parts
 (
 	id int identity(1,1) primary key not null,--id
-	no nvarchar(50) not null default(''),--部件编号
 	name varchar(50) not null default(''),--部件name
-	type int,--部件类型
-	unit varchar(50) not null default(''),--单位
+	type nvarchar(20),--部件类型
 	guige nvarchar(200),--规格
 	isenable bit not null default(0),--是否禁用
 	remark nvarchar(500),--备注
 	create_time datetime not null default(getdate()),--创建时间
 	create_username nvarchar(40) not null,--添加用户
 )
+
 
 --部件工艺表
 create table base_technology
@@ -99,9 +94,8 @@ create table base_technology
 create table base_process
 (
 	id int identity(1,1) primary key not null,--id
-	no varchar(50) not null default(''),--工序编号
 	name varchar(50) not null default(''),--工序名称
-	type int,--产品类型 1,主工序,2,辅助工序
+	type nvarchar(20),--工序类型 1,主工序,2,辅助工序
 	guige nvarchar(200),--规格
 	unit varchar(50) not null default(''),--单位
 	isenable bit not null default(0),--是否禁用
@@ -115,9 +109,9 @@ create table base_process
 create table base_material
 (
 	id int identity(1,1) primary key,
-	no nvarchar(50) not null default(''),--物料编号
 	name nvarchar(50) not null default(''),--物料名称
-	type int not null,--物料分类
+	type nvarchar(20) not null,--物料分类
+	unit varchar(10) not null default(''),--单位
 	price decimal(10,4) not null default(0),--采购单价
 	guige nvarchar(200),--规格
 	isenable bit not null default(0),--是否禁用
@@ -130,37 +124,39 @@ create table base_material
 create table base_warehouse
 (
 	id int identity(1,1) primary key not null,--主键
-	no nvarchar(200) not null default(''),--条码号 前缀KQ
 	name nvarchar(400) not null default(''),--库区名称
-	warehouse_id int not null,--所属仓库
-	disabled bit not null default(0),--是否禁用
+	isenable bit not null default(0),--是否禁用
 	remark nvarchar(300),--备注说明
 	create_time datetime not null default(getdate()),--创建时间
 	create_username nvarchar(40) not null,--添加用户
 )
+
 
 --库区
 create table base_area
 (
 	id int identity(1,1) primary key not null,--主键
-	no nvarchar(200) not null default(''),--条码号 前缀KQ
 	name nvarchar(400) not null default(''),--库区名称
 	warehouse_id int not null,--所属仓库
-	disabled bit not null default(0),--是否禁用
+	isenable bit not null default(0),--是否禁用
 	remark nvarchar(300),--备注说明
 	create_time datetime not null default(getdate()),--创建时间
 	create_username nvarchar(40) not null,--添加用户
 )
 
+
+
+
 --货架
 create table base_location
 (
 	id int identity(1,1) primary key not null,--主键
-	no nvarchar(200) not null default(''),--
 	name nvarchar(400) not null default(''),--货架名称
 	warehouse_id int not null,--所属仓库
+	wname nvarchar(50),
 	area_id int not null,--所属库区
-	disabled bit not null default(0),--是否禁用
+	aname nvarchar(50),
+	isenable bit not null default(0),--是否禁用
 	remark nvarchar(300),--备注说明
 	create_time datetime not null default(getdate()),--创建时间
 	create_username nvarchar(40) not null,--添加用户
@@ -176,7 +172,7 @@ create table erp_construction
 	product_name nvarchar(100) not null,--产品名称
 	customer_no nvarchar(100) not null,--客户编号
 	customer_name nvarchar(100) not null,--客户名称
-	--type int not null,--施工单类型1,自产,2外发
+	--type nvarchar(20) not null,--施工单类型1,自产,2外发
 	number int not null,--数量
 	practical_number int,--实际生产数量
 	loss_number int,--损耗数量
@@ -245,6 +241,3 @@ create table erp_material
 	create_time datetime not null default(getdate()),--开单时间
 	create_username nvarchar(40) not null,--开单用户
 )
-
-
---外发单

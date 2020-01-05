@@ -25,7 +25,9 @@ namespace Zephyr.Core
                     {APP.FIELD_UPDATE_PERSON, user},
                     {APP.FIELD_UPDATE_DATE, DateTime.Now},
                     {APP.FIELD_CREATE_PERSON, user},
-                    {APP.FIELD_CREATE_DATE, DateTime.Now}
+                    {APP.FIELD_CREATE_DATE, DateTime.Now},
+                    {APP.FIELD_CREATE_User, user},
+                    {APP.FIELD_CREATE_Time, DateTime.Now}
                 };
             return dict;
         }

@@ -138,7 +138,6 @@ D:\Project\Code\WEBERP\Code\ERP.Web\bin\WebGrease.dll
 D:\Project\Code\WEBERP\Code\ERP.Web\bin\Zephyr.Core.dll
 D:\Project\Code\WEBERP\Code\ERP.Web\bin\Zephyr.Data.dll
 D:\Project\Code\WEBERP\Code\ERP.Web\bin\Zephyr.Utils.dll
-D:\Project\Code\WEBERP\Code\ERP.Web\bin\Zephyr.Core.pdb
 D:\Project\Code\WEBERP\Code\ERP.Web\bin\Zephyr.Data.pdb
 D:\Project\Code\WEBERP\Code\ERP.Web\bin\Zephyr.Utils.pdb
 D:\Project\Code\WEBERP\Code\ERP.Web\bin\Newtonsoft.Json.xml
@@ -164,8 +163,9 @@ D:\Project\Code\WEBERP\Code\ERP.Web\bin\zh-Hans\System.Web.Providers.resources.d
 D:\Project\Code\WEBERP\Code\ERP.Web\bin\zh-Hans\System.Web.WebPages.resources.dll
 D:\Project\Code\WEBERP\Code\ERP.Web\bin\zh-Hans\System.Web.WebPages.Deployment.resources.dll
 D:\Project\Code\WEBERP\Code\ERP.Web\bin\zh-Hans\System.Web.WebPages.Razor.resources.dll
-D:\Project\Code\WEBERP\Code\ERP.Web\obj\Debug\ERP.Web.csprojAssemblyReference.cache
 D:\Project\Code\WEBERP\Code\ERP.Web\obj\Debug\ERP.Web.csproj.CoreCompileInputs.cache
 D:\Project\Code\WEBERP\Code\ERP.Web\obj\Debug\ERP.Web.csproj.CopyComplete
 D:\Project\Code\WEBERP\Code\ERP.Web\obj\Debug\ERP.Web.dll
 D:\Project\Code\WEBERP\Code\ERP.Web\obj\Debug\ERP.Web.pdb
+D:\Project\Code\WEBERP\Code\ERP.Web\bin\Zephyr.Core.pdb
+D:\Project\Code\WEBERP\Code\ERP.Web\obj\Debug\ERP.Web.csprojAssemblyReference.cache

@@ -159,9 +159,30 @@
     <Compile Include="App_Start\webstack\WebApiDisposeFilter.cs" />
     <Compile Include="App_Start\webstack\MvcDisposeFilter.cs" />
     <Compile Include="App_Start\webstack\MvcMenuFilter.cs" />
+    <Compile Include="Areas\Erp\Common\EnumHelper.cs" />
+    <Compile Include="Areas\Erp\Common\Public.cs" />
+    <Compile Include="Areas\Erp\Controllers\LocationController.cs" />
+    <Compile Include="Areas\Erp\Controllers\BaseDataController.cs" />
+    <Compile Include="Areas\Erp\Controllers\PartsController.cs" />
+    <Compile Include="Areas\Erp\Controllers\AreaController.cs" />
+    <Compile Include="Areas\Erp\Controllers\ProcessController.cs" />
+    <Compile Include="Areas\Erp\Controllers\WarehouseController.cs" />
+    <Compile Include="Areas\Erp\Controllers\ProductController.cs" />
+    <Compile Include="Areas\Erp\Controllers\SupplierController.cs" />
+    <Compile Include="Areas\Erp\Controllers\CustomerController.cs" />
     <Compile Include="Areas\Erp\Controllers\MaterialController.cs" />
     <Compile Include="Areas\Erp\ErpAreaRegistration.cs" />
-    <Compile Include="Areas\Erp\Models\erp_materialService.cs" />
+    <Compile Include="Areas\Erp\Models\base_areaService.cs" />
+    <Compile Include="Areas\Erp\Models\base_customerService.cs" />
+    <Compile Include="Areas\Erp\Models\base_dataService.cs" />
+    <Compile Include="Areas\Erp\Models\base_locationService.cs" />
+    <Compile Include="Areas\Erp\Models\base_materialService.cs" />
+    <Compile Include="Areas\Erp\Models\base_partsService.cs" />
+    <Compile Include="Areas\Erp\Models\base_processService.cs" />
+    <Compile Include="Areas\Erp\Models\base_productService.cs" />
+    <Compile Include="Areas\Erp\Models\base_supplierService.cs" />
+    <Compile Include="Areas\Erp\Models\base_technologyService.cs" />
+    <Compile Include="Areas\Erp\Models\base_warehouseService.cs" />
     <Compile Include="Areas\Mms\Common\MmsHelper.cs" />
     <Compile Include="Areas\Mms\Common\MmsService.cs" />
     <Compile Include="Areas\Mms\Common\MmsBaseApi.cs" />
@@ -297,7 +318,11 @@
     <Compile Include="Areas\Sys\Models\sys_organizeRoleMap.cs" />
     <Compile Include="Areas\Sys\Models\sys_userSetting.cs" />
     <Compile Include="Areas\Sys\SysAreaRegistration.cs" />
-    <Content Include="Areas\Erp\ViewModels\erp.material.js" />
+    <Content Include="Areas\Erp\ViewModels\base.location.js" />
+    <Content Include="Areas\Erp\ViewModels\base.viewModel.js" />
+    <Content Include="Areas\Erp\ViewModels\base.com.js" />
+    <Content Include="Areas\Erp\ViewModels\base.area.js" />
+    <Content Include="Areas\Erp\ViewModels\base.parts.js" />
     <Content Include="Areas\Sys\Template\edit\Model.cshtml" />
     <Content Include="Areas\Sys\Template\edit\View.cshtml" />
     <Content Include="Areas\Sys\Template\edit\Controller.cshtml" />
@@ -307,6 +332,15 @@
     <Content Include="Areas\Mms\Views\Staff\Edit.cshtml" />
     <Content Include="Areas\Erp\Views\Web.config" />
     <Content Include="Areas\Erp\Views\Material\Index.cshtml" />
+    <Content Include="Areas\Erp\Views\BaseData\Index.cshtml" />
+    <Content Include="Areas\Erp\Views\Product\Index.cshtml" />
+    <Content Include="Areas\Erp\Views\Customer\Index.cshtml" />
+    <Content Include="Areas\Erp\Views\Supplier\Index.cshtml" />
+    <Content Include="Areas\Erp\Views\Warehouse\Index.cshtml" />
+    <Content Include="Areas\Erp\Views\Area\Index.cshtml" />
+    <Content Include="Areas\Erp\Views\Location\Index.cshtml" />
+    <Content Include="Areas\Erp\Views\Process\Index.cshtml" />
+    <Content Include="Areas\Erp\Views\Parts\Index.cshtml" />
     <None Include="Areas\Sys\Template\searchEdit\Model.cshtml" />
     <None Include="Areas\Sys\Template\searchEdit\Controller.cshtml" />
     <None Include="Areas\Sys\Template\search\Controller.cshtml" />
@@ -3582,7 +3616,6 @@
     <Content Include="Views\Home\Error.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Areas\Erp\Common\" />
     <Folder Include="Areas\Erp\Reports\" />
     <Folder Include="Areas\Sys\Views\Shared\" />
   </ItemGroup>
