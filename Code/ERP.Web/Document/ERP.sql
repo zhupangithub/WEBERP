@@ -124,7 +124,7 @@ create table base_material
 create table base_warehouse
 (
 	id int identity(1,1) primary key not null,--主键
-	name nvarchar(400) not null default(''),--库区名称
+	name nvarchar(100) not null default(''),--库区名称
 	isenable bit not null default(0),--是否禁用
 	remark nvarchar(300),--备注说明
 	create_time datetime not null default(getdate()),--创建时间
@@ -136,7 +136,7 @@ create table base_warehouse
 create table base_area
 (
 	id int identity(1,1) primary key not null,--主键
-	name nvarchar(400) not null default(''),--库区名称
+	name nvarchar(100) not null default(''),--库区名称
 	warehouse_id int not null,--所属仓库
 	isenable bit not null default(0),--是否禁用
 	remark nvarchar(300),--备注说明
@@ -145,17 +145,26 @@ create table base_area
 )
 
 
-
-
 --货架
 create table base_location
 (
 	id int identity(1,1) primary key not null,--主键
-	name nvarchar(400) not null default(''),--货架名称
+	name nvarchar(100) not null default(''),--货架名称
 	warehouse_id int not null,--所属仓库
 	wname nvarchar(50),
 	area_id int not null,--所属库区
 	aname nvarchar(50),
+	isenable bit not null default(0),--是否禁用
+	remark nvarchar(300),--备注说明
+	create_time datetime not null default(getdate()),--创建时间
+	create_username nvarchar(40) not null,--添加用户
+)
+
+--车间表
+create table base_workshop
+(
+	id int identity(1,1) primary key not null,--主键
+	name nvarchar(100) not null default(''),--车间名称
 	isenable bit not null default(0),--是否禁用
 	remark nvarchar(300),--备注说明
 	create_time datetime not null default(getdate()),--创建时间
@@ -167,12 +176,11 @@ create table base_location
 create table erp_construction
 (
 	id int identity(1,1) not null,--主键
-	no nvarchar(100) not null default('') primary key,--TO00001
-	product_no nvarchar(100) not null,--产品编号
+	no nvarchar(100) not null primary key,--TO00001
+	product_id int not null,--产品编号
 	product_name nvarchar(100) not null,--产品名称
 	customer_no nvarchar(100) not null,--客户编号
 	customer_name nvarchar(100) not null,--客户名称
-	--type nvarchar(20) not null,--施工单类型1,自产,2外发
 	number int not null,--数量
 	practical_number int,--实际生产数量
 	loss_number int,--损耗数量
@@ -191,53 +199,153 @@ create table erp_construction
 	create_username nvarchar(40) not null,--开单用户
 )
 
+
 --施工单部件表
 create table erp_parts
 (
-	id int identity(1,1) not null,--主键
-	con_no nvarchar(200) not null,--施工单ID
-	parts_no nvarchar(50) not null,--部件编号
-	parts_name nvarchar(200) not null,--部件名称
+	id uniqueidentifier primary key not null,
+	con_no nvarchar(50) not null,--施工单编号
+	parts_id int not null,--部件编号
+	parts_name nvarchar(100) not null,--部件名称
+	parts_guige nvarchar(100) not null,--部件规格
 	number int not null,--生产数量
 	state int not null,--状态 0待确认 --1待生产,2生产中,3已完成
 	remarrk nvarchar(max),--备注
-	create_time datetime not null default(getdate()),--开单时间
-	create_username nvarchar(40) not null,--开单用户
 )
 
 --部件生产工序表
 create table erp_process
 (
-	id int identity(1,1) not null,--主键
+	id uniqueidentifier primary key not null,
 	con_no nvarchar(200) not null,--施工单编号
-	erp_parts_id int not null,--所属部件
-	process_no nvarchar(50) not null,--工序编号
+	erp_parts_id uniqueidentifier not null,--所属部件
+	process_id int not null,--工序编号
 	process_name nvarchar(100) not null,--工序名称 
 	sort int not null,--排序号
 	number int not null,--计划生产数量
-	practical_number int,--已生产数量
-	loss_number int,--损耗数量
 	is_waifa bit not null default(0),--是否外发
 	unit nvarchar(20) not null,--单位
-	knife_no nvarchar(100) not null,--刀版
+	panel nvarchar(100),--板材信息
 	remarrk nvarchar(max),--工序要求
-	state int not null,--状态 0待确认 --1待生产,2生产中,3已完成
-	create_time datetime not null default(getdate()),--开单时间
-	create_username nvarchar(40) not null,--开单用户
 )
 
 --部件材料表
 create table erp_material
 (
 	id int identity(1,1) not null,--主键
-	con_no nvarchar(200) not null,--施工单编号
-	erp_parts_id int not null,--所属部件
+	con_no nvarchar(100) not null,--施工单编号
+	erp_parts_id uniqueidentifier not null,--所属部件
 	material_no nvarchar(50) not null,--物料编号
 	material_name nvarchar(100) not null,--编号名称
 	is_waifadailiao bit not null default(0),--是否是外发带料
 	number int,--需求数量
 	unit nvarchar(20) not null,--单位
 	remarrk nvarchar(max),--备注
+)
+
+create table erp_workorder
+(
+	id int identity(1,1) not null,--主键
+	no nvarchar(50) primary key not null,--工单号MO0001
+	con_no nvarchar(50) not null,--施工单编号
+	product_name nvarchar(50) not null,--产品名称
+	delivery_date date not null,--交货日期
+	erp_parts_id uniqueidentifier not null,--部件单据ID
+	parts_id int not null,--部件ID
+	parts_name nvarchar(50) not null,--部件名称
+	erp_process_id uniqueidentifier not null,--工序单据ID
+	process_id int not null,--工序ID
+	process_name nvarchar(50) not null,--工序名称
+	panel nvarchar(100),--板材信息
+	number int not null,--需求数量
+	practical_number int,--已生产数量
+	loss_number int,--累加损耗数量
+	unit nvarchar(20) not null,--单位
+	workshop_id int,--排产生产车间ID
+	workshop_name nvarchar(50),--车间名称
+	remarrk nvarchar(max),--部件备注+工序备注
+	state int not null,--状态 0待排产,1,待生产,2生产中,3已完成
+	arrange_username nvarchar(40),--安排人
+	arrange_time datetime,--排产时间
+	complete_username nvarchar(40),--完工确认人
+	complete_time datetime,--完工时间
 	create_time datetime not null default(getdate()),--开单时间
 	create_username nvarchar(40) not null,--开单用户
+)
+
+--生产报产表
+create table erp_workorder_produce
+(
+	id int identity(1,1) not null,--主键
+	workorder_no nvarchar(50) not null,
+	product_name nvarchar(50) not null,--产品名称
+	parts_name nvarchar(50) not null,--部件名称
+	process_name nvarchar(50) not null,--工序名称
+	number int not null,--需求数量
+	produce_number int not null,--生产数量
+	warehouse_id int,--仓库
+	warehouse_name nvarchar(50),--仓库
+	area_id int,--库区
+	area_name nvarchar(50),--库区
+	location_id int,--具体位置
+	location_name int,--具体位置
+	create_time datetime not null default(getdate()),--报产时间
+	create_username nvarchar(40) not null,--报产用户
+)
+
+
+--外发单表
+create table erp_outsource
+(
+	id int identity(1,1) not null,--主键
+	no nvarchar(100) not null default('') primary key,--WO00001
+	source_no nvarchar(50),--源数据编号
+	supplier_id int not null,--供应商编号
+	supplier_name int not null,--供应商名称
+	delivery_date date not null,--交货日期
+	parts_id int not null,--部件ID
+	parts_name nvarchar(50) not null,--部件名称
+	process_id int not null,--工序ID
+	process_name nvarchar(50) not null,--工序名称
+	number int not null,--需求数量
+	price decimal(10,4) not null,--采购单价
+	account decimal(10,2) not null,--总金额
+	unit nvarchar(20) not null,--单位
+	remarrk nvarchar(max),--部件备注+工序备注
+	state int not null,--状态 0待确认,1,已确认,2入库;
+	create_time datetime not null default(getdate()),--开单时间
+	create_username nvarchar(40) not null,--开单用户
+)
+
+--采购订单表
+create table erp_purchase
+(
+	id int identity(1,1) not null,--主键
+	no nvarchar(100) not null default('') primary key,--PO00001
+	source_no nvarchar(50),--源数据编号
+	type int not null,--采购类型 1生产采购 2办公采购 3
+	supplier_id int not null,--供应商编号
+	supplier_name int not null,--供应商名称
+	delivery_date date not null,--交货日期
+	parts_id int not null,--部件ID
+	parts_name nvarchar(50) not null,--部件名称
+	process_id int not null,--工序ID
+	process_name nvarchar(50) not null,--工序名称
+	number int not null,--需求数量
+	price decimal(10,4) not null,--采购单价
+	account decimal(10,2) not null,--总金额
+	unit nvarchar(20) not null,--单位
+	remarrk nvarchar(max),--部件备注+工序备注
+	state int not null,--状态 0待确认,1,已确认,2入库;
+	arrange_username nvarchar(40),--安排人
+	create_time datetime not null default(getdate()),--开单时间
+	create_username nvarchar(40) not null,--开单用户
+)
+
+--
+create table erp_purchase_detail
+(
+	id int identity(1,1) not null,--主键
+	erp_purchase_no varchar(50) not null,--主表记录
+
 )
