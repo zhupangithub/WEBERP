@@ -83,12 +83,12 @@ base.viewModel.searchEdit = function (data) {
 };
 
 var userSetting = function (row) {
-    if (row._isnew)
+    if (row.id == undefined)
         return com.message('warning', '请先保存再维护工艺数据！');
     com.dialog({
         title: "维护部件权限",
-        width: 800,
-        height: 600,
+        width: 600,
+        height: 410,
         html: "#permission-template",
         viewModel: function (w) {
             var that = this;
@@ -97,7 +97,7 @@ var userSetting = function (row) {
                 height: 340,
                 pagination: false,
                 pageSize: 10,
-                url: "/api/erp/parts/Getgy/" + row.id,
+                url: "/api/erp/parts/getgy/" + row.id,
                 queryParams: ko.observable()
             };
             this.cancelClick = function () {
@@ -111,6 +111,10 @@ var userSetting = function (row) {
                 { text: '编辑', iconCls: 'icon-edit', handler: that.gridEdit.begin }, '-',
                 { text: '删除', iconCls: 'icon-cross', handler: that.gridEdit.deleterow }
             ];
+            this.grid.OnAfterCreateEditor = function (editors) {
+                com.readOnlyHandler('input')(editors.create_time.target, true);
+                com.readOnlyHandler('input')(editors.create_username.target, true);
+            };
             this.confirmClick = function () {
                 if (!that.gridEdit.isChangedAndValid()) return;
                 var list = that.gridEdit.getChanges(['id', 'parts_id', 'name', 'orderby', 'remark', 'create_time','create_username']);

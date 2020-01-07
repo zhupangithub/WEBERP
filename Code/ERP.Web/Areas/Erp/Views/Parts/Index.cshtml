@@ -11,7 +11,8 @@
         var data = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model));
         ko.bindingViewModel(new base.viewModel.searchEdit(data));
         var formatterPermit = function (value, row) {
-            var html = '<a href="#" onclick=\'userSetting(' + JSON.stringify(row) + ')\'><span class="icon icon-set1">&nbsp;</span>[维护工艺]</a>';
+            var dataStr = JSON.stringify({ id: row.id, name: row.id });
+            var html = '<a href="#" onclick=\'userSetting(' + dataStr + ')\'><span class="icon icon-set1">&nbsp;</span>[维护工艺]</a>';
             return html;
         };
     </script>
@@ -58,7 +59,7 @@
 </div>
 
 
-<script type="text/html" id="manage-template">
+<script type="text/html" id="permission-template">
     <style type="text/css">
         .datagrid-wrap {
             border-width: 0 0 1px 0;
@@ -69,12 +70,6 @@
         }
     </style>
 
-    <div class="z-toolbar">
-        <a id="a_refresh" href="#" plain="true" class="easyui-linkbutton" icon="icon-arrow_refresh" title="刷新" data-bind="click:refreshClick">刷新</a>
-        <a href="#" plain="true" class="easyui-linkbutton" icon="icon-add" title="新增" data-bind="click:addClick">新增</a>
-        <a id="a_edit" href="#" plain="true" class="easyui-linkbutton" icon="icon-edit" data-bind="click:editClick" title="编辑">编辑</a>
-        <a id="a_save" href="#" plain="true" class="easyui-linkbutton" icon="icon-save" data-bind="click:saveClick" title="保存">保存</a>
-    </div>
     <table data-bind="datagrid:grid">
         <thead>
             <tr>
@@ -86,7 +81,6 @@
             </tr>
         </thead>
     </table>
-
     <div style="text-align:center;margin:5px;">
         <a class="easyui-linkbutton" data-options="iconCls:'icon-ok'" data-bind="click:confirmClick" href="javascript:void(0)">确定</a>
         <a class="easyui-linkbutton" data-options="iconCls:'icon-cancel'" data-bind="click:cancelClick" href="javascript:void(0)">取消</a>
