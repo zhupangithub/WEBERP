@@ -18,7 +18,7 @@ namespace Zephyr.Core
 {
     //采番
     public class NewKey
-	{
+    {
         public static string datetime()
         {
             return DateTime.Now.ToString("yyyyMMddHHmmssfffffff");
@@ -28,14 +28,14 @@ namespace Zephyr.Core
         {
             return Guid.NewGuid().ToString().Replace("-", "");
         }
- 
+
         //最大值加一
         public static string maxplus(IDbContext db, string table, string field, ParamQuery pQuery)
         {
             //var where = pQuery.GetData().WhereSql;
             var sqlWhere = " where 1 = 1 ";
             if (pQuery != null)
-                sqlWhere += " and " +  pQuery.GetData().WhereSql;
+                sqlWhere += " and " + pQuery.GetData().WhereSql;
             var dbkey = db.Sql(String.Format("select isnull(max({0}),0) from {1} {2}", field, table, sqlWhere)).QuerySingle<string>();
             var cachedKeys = getCacheKey(table, field);
             var currentKey = maxOfAllKey(cachedKeys, ZConvert.ToString(dbkey));
@@ -45,7 +45,7 @@ namespace Zephyr.Core
         }
 
         //日期时间加上N位数字加一
-        public static string dateplus(IDbContext db, string table, string field,string datestringFormat,int numberLength)
+        public static string dateplus(IDbContext db, string table, string field, string datestringFormat, int numberLength)
         {
             var dbkey = db.Sql(String.Format("select isnull(max({0}),0) from {1}", field, table)).QuerySingle<string>();
             var mykey = DateTime.Now.ToString(datestringFormat) + string.Empty.PadLeft(numberLength, '0');
@@ -55,7 +55,28 @@ namespace Zephyr.Core
             SetCacheKey(table, field, key);
             return key;
         }
- 
+
+
+        /// <summary>
+        /// 施工单
+        /// </summary>
+        /// <param name="db"></param>
+        /// <param name="table"></param>
+        /// <param name="field"></param>
+        /// <param name="datestringFormat"></param>
+        /// <param name="numberLength"></param>
+        /// <returns></returns>
+        public static string erpnoadd(IDbContext db, string table, string field, string datestringFormat, int numberLength, string qz)
+        {
+            var dbkey = db.Sql(String.Format("select isnull(max({0}),0) from {1}", field, table)).QuerySingle<string>();
+            var mykey = qz + DateTime.Now.ToString(datestringFormat) + string.Empty.PadLeft(numberLength, '0');
+            var cachedKeys = getCacheKey(table, field);
+            var currentKey = maxOfAllKey(cachedKeys, ZConvert.ToString(dbkey), mykey);
+            var key = ZConvert.ToString(currentKey + 1);
+            SetCacheKey(table, field, key);
+            return mykey;
+        }
+
         private static string getCacheKey(string table, string field)
         {
             var tableKeys = getTableKeys(table);
@@ -73,23 +94,23 @@ namespace Zephyr.Core
 
         private static string getFieldKeys(Dictionary<string, string> tableKeys, string field)
         {
-            return tableKeys.ContainsKey(field) ? tableKeys[field] : "0";;
+            return tableKeys.ContainsKey(field) ? tableKeys[field] : "0"; ;
         }
 
         private static void SetCacheKey(string table, string field, string key)
         {
             var tableKeys = getTableKeys(table);
             var fieldKeys = getFieldKeys(tableKeys, field);
-            tableKeys[field] = ZConvert.ToString(maxOfAllKey(fieldKeys,key));
+            tableKeys[field] = ZConvert.ToString(maxOfAllKey(fieldKeys, key));
             ZCache.SetCache(String.Format("currentkey_{0}", table), tableKeys);
         }
 
         private static Int64 maxOfAllKey(string cachedKeys, params string[] otherKey)
         {
-            var keys = new List<string> {cachedKeys};
+            var keys = new List<string> { cachedKeys };
             keys.AddRange(otherKey);
             var max = keys.Max<object>(x => Zephyr.Utils.ZConvert.To<Int64>(x));
             return max;
         }
-	}
+    }
 }

@@ -173,7 +173,7 @@ namespace ERP.Web.Areas.Mms.Controllers
             {
                 case "grid0":
                     var service0 = new REMP_ChangeService();
-                    return service0.GetNewKey("CHANID", "maxplus", qty, ParamQuery.Instance().AndWhere("EMPSID", key, Cp.Equal));
+                    return service0.GetNewKey("CHANID", "maxplus", qty,"",ParamQuery.Instance().AndWhere("EMPSID", key, Cp.Equal));
                 default:
                     return "";
             }

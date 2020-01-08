@@ -94,7 +94,7 @@ namespace Zephyr.Core
             return result;
         }
 
-        public string GetNewKey(string field,string rule,int qty = 1,ParamQuery pQuery=null)
+        public string GetNewKey(string field,string rule,int qty = 1,string qz="",ParamQuery pQuery=null)
         {
             var result = string.Empty;
 
@@ -112,6 +112,9 @@ namespace Zephyr.Core
                             break;
                         case "dateplus":
                             newkey = NewKey.dateplus(db, table, field, "yyyyMMdd", 4);
+                            break;
+                        case "erp_no":
+                            newkey = NewKey.erpnoadd(db, table, field, "yyyyMM", 4, qz);
                             break;
                         case "maxplus":
                         default:

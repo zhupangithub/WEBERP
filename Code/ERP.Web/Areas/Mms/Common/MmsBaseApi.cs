@@ -58,7 +58,7 @@ namespace ERP.Web.Areas.Mms.Controllers
         // 取得新的明细表RowId GET api/mms/send/getnewrowid
         public virtual string GetNewRowId(int id,string BillNo)
         {
-            return detailService.GetNewKey("RowId", "maxplus", id, ParamQuery.Instance().AndWhere("BillNo", BillNo));
+            return detailService.GetNewKey("RowId", "maxplus", id, "",ParamQuery.Instance().AndWhere("BillNo", BillNo));
         }
         #endregion
 

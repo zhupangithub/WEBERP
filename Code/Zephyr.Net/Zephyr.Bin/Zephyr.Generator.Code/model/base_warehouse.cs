@@ -17,8 +17,7 @@ namespace Zephyr.Models
         [PrimaryKey]
         public int id{ get; set; }
         public string name{ get; set; }
-        public int warehouse_id{ get; set; }
-        public bool disabled{ get; set; }
+        public bool isenable{ get; set; }
         public string remark{ get; set; }
         public DateTime create_time{ get; set; }
         public string create_username{ get; set; }

@@ -13,15 +13,14 @@ namespace Zephyr.Models
     public class erp_parts : ModelBase
     {
 
-        [Identity]
-        public int id{ get; set; }
+        [PrimaryKey]
+        public Guid id{ get; set; }
         public string con_no{ get; set; }
-        public string parts_no{ get; set; }
+        public int parts_id{ get; set; }
         public string parts_name{ get; set; }
+        public string parts_guige{ get; set; }
         public int number{ get; set; }
         public int state{ get; set; }
         public string remarrk{ get; set; }
-        public DateTime create_time{ get; set; }
-        public string create_username{ get; set; }
     }
 }

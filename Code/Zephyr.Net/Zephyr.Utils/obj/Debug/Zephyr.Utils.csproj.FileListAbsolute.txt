@@ -16,6 +16,7 @@ E:\code\Github\Project\WEBERP\Code\Zephyr.Net\Zephyr.Utils\obj\Debug\Zephyr.Util
 E:\code\Github\Project\WEBERP\Code\Zephyr.Net\Zephyr.Utils\obj\Debug\Zephyr.Utils.pdb
 D:\Project\Code\WEBERP\Code\Zephyr.Net\Zephyr.Bin\Zephyr.Utils.dll
 D:\Project\Code\WEBERP\Code\Zephyr.Net\Zephyr.Bin\Zephyr.Utils.pdb
+D:\Project\Code\WEBERP\Code\Zephyr.Net\Zephyr.Utils\obj\Debug\Zephyr.Utils.csprojAssemblyReference.cache
 D:\Project\Code\WEBERP\Code\Zephyr.Net\Zephyr.Utils\obj\Debug\Zephyr.Utils.Document.Excel.NPOI.Resource1.resources
 D:\Project\Code\WEBERP\Code\Zephyr.Net\Zephyr.Utils\obj\Debug\Zephyr.Utils.csproj.GenerateResource.cache
 D:\Project\Code\WEBERP\Code\Zephyr.Net\Zephyr.Utils\obj\Debug\Zephyr.Utils.csproj.CoreCompileInputs.cache
