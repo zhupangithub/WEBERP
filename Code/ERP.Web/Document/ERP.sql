@@ -342,10 +342,47 @@ create table erp_purchase
 	create_username nvarchar(40) not null,--开单用户
 )
 
---
+--采购附表
 create table erp_purchase_detail
 (
 	id int identity(1,1) not null,--主键
 	erp_purchase_no varchar(50) not null,--主表记录
-
 )
+
+--入库单表
+create table erp_storage
+(
+	id int identity(1,1) not null,--主键
+	no nvarchar(100) not null default('') primary key,--HO00001
+	source_no nvarchar(50) not null,--源数据
+	type int not null,--类型1成品 2外发 3采购
+	in_no int not null,--ID
+	in_name nvarchar(100) not null,--入库名称
+	number int not null,--入库数量
+	unit nvarchar(20) not null,--单位
+	warehouse_id int not null,--仓库id
+	warehouse_name nvarchar(100) not null,--仓库name
+	aera_id int not null,--仓库-区域ID
+	aera_name nvarchar(100) not null,--仓库-区域名称
+	location_id int not null,--对应货架id
+	location_name int not null,--对应货架
+	state int not null,--状态 0待确认,1,已确认,2入库;
+	create_time datetime not null default(getdate()),--操作时间
+	create_username nvarchar(40) not null,--操作用户
+)
+
+--库存表
+create table erp_inventory
+(
+	id int identity(1,1) not null,--主键
+	type int not null,--类型1成品 2物料 3部件
+	in_no int not null,--ID
+	in_name nvarchar(100) not null,--产品名称
+	number int not null,--数量
+	create_time datetime not null default(getdate()),--时间
+	create_username nvarchar(40) not null,--操作用户
+)
+
+
+
+
