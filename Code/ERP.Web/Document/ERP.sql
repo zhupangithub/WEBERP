@@ -358,7 +358,7 @@ create table erp_storage
 	type int not null,--类型1成品 2外发 3采购
 	in_no int not null,--ID
 	in_name nvarchar(100) not null,--入库名称
-	number int not null,--入库数量
+	number decimal(10,4) not null,--入库数量
 	unit nvarchar(20) not null,--单位
 	warehouse_id int not null,--仓库id
 	warehouse_name nvarchar(100) not null,--仓库name
@@ -378,11 +378,29 @@ create table erp_inventory
 	type int not null,--类型1成品 2物料 3部件
 	in_no int not null,--ID
 	in_name nvarchar(100) not null,--产品名称
-	number int not null,--数量
+	number decimal(10,4) not null,--数量
+	unit nvarchar(20) not null,--单位
+	warehouse_id int not null,--仓库id
+	warehouse_name nvarchar(100) not null,--仓库name
+	aera_id int not null,--仓库-区域ID
+	aera_name nvarchar(100) not null,--仓库-区域名称
+	location_id int not null,--对应货架id
+	location_name int not null,--对应货架
 	create_time datetime not null default(getdate()),--时间
 	create_username nvarchar(40) not null,--操作用户
 )
 
-
-
+--物料出库表
+create table erp_material_delivery
+(
+	id int identity(1,1) not null,--主键
+	inventory_id int not null,--库存ID
+	number decimal(10,4) not null,--领用数量
+	present_number decimal(10,4) not null,--当前库存
+	workshop_id int not null,--车间ID
+	workshop_name nvarchar(100) not null,--车间
+	state int not null,--状态 0待确认,1,已确认;
+	create_time datetime not null default(getdate()),--时间
+	create_username nvarchar(40) not null,--操作用户
+)
 
