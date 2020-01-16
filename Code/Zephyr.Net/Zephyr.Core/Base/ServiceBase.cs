@@ -114,7 +114,7 @@ namespace Zephyr.Core
                             newkey = NewKey.dateplus(db, table, field, "yyyyMMdd", 4);
                             break;
                         case "erp_no":
-                            newkey = NewKey.erpnoadd(db, table, field, "yyyyMM", 4, qz);
+                            newkey = NewKey.erpnoadd(db, table, field, "yyyyMM", 2, qz);
                             break;
                         case "maxplus":
                         default:

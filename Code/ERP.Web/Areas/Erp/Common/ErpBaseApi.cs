@@ -52,7 +52,7 @@ namespace ERP.Web.Areas.Erp.Controllers
         // 取得新的主表Bill GET api/erp/send/getnewbillno
         public virtual string GetNewBillNo()
         {
-            return masterService.GetNewKey("no", "erp_no",1,"TO");
+            return masterService.GetNewKey("id", "erp_no",1,"TO");
         }
 
         // 取得新的明细表RowId GET api/erp/send/getnewrowid
@@ -68,13 +68,13 @@ namespace ERP.Web.Areas.Erp.Controllers
         {
             if (!query.IsLoadedSettings)
                 query.LoadSettingXmlString(@"
-<settings defaultOrderBy='no'>
-    <select>*</select>
-    <from>{0}</from>
-    <where defaultForAll='true' defaultCp='equal' defaultIgnoreEmpty='true' >
-        <field name='no' cp='equal'></field>
-    </where>
-</settings>", typeof(TMasterModel).Name);
+            <settings defaultOrderBy='no'>
+                <select>*</select>
+                <from> {0}</from>
+                <where defaultForAll='true' defaultCp='equal' defaultIgnoreEmpty='true' >
+                    <field name='no' cp='equal'></field>
+                </where>
+            </settings>", typeof(TMasterModel).Name);
             var pQuery = query.ToParamQuery();
             var result = masterService.GetDynamicListWithPaging(pQuery);
             return result;
@@ -97,16 +97,15 @@ namespace ERP.Web.Areas.Erp.Controllers
                 .InstanceFromRequest()
                 .SetRequestData("no", id)
                 .LoadSettingXmlString(@"
-                <settings defaultOrderBy='MaterialCode'>
+                <settings defaultOrderBy='id'>
                     <select>
-                        A.*, B.MaterialName,B.Model,B.Material
+                        *
                     </select>
                     <from>
-                        {0} A
-                        left join erp_material B on B.MaterialCode = A.MaterialCode
+                        erp_parts
                     </from>
                     <where>
-                        <field name='no' cp='equal'></field>
+                        <field name='con_no' cp='equal'></field>
                     </where>
                 </settings>", typeof(TDetailModel).Name);
 
@@ -143,21 +142,20 @@ namespace ERP.Web.Areas.Erp.Controllers
         public virtual void Edit(dynamic data)
         {
             var formWrapper = RequestWrapper.Instance().LoadSettingXmlString(@"
-        <settings>
-            <table>{0}</table>
-            <where><field name='no' cp='equal'></field></where>
-        </settings>", typeof(TMasterModel).Name);
+            <settings>
+                <table> {0}</table>
+                <where><field name='id' cp='equal'></field></where>
+            </settings>", typeof(TMasterModel).Name);
 
-            var listWrapper = RequestWrapper.Instance().LoadSettingXmlString(@"
-        <settings>
-            <table>{0}</table>
-            <where>
-                <field name='no' cp='equal'></field>
-                <field name='RowId'  cp='equal'></field>
-            </where>
-        </settings>", typeof(TDetailModel).Name);
+            //var listWrapper = RequestWrapper.Instance().LoadSettingXmlString(@"
+            //<settings>
+            //    <table>{0}</table>
+            //    <where>
+            //        <field name='id' cp='equal'></field>
+            //    </where>
+            //</settings>", typeof(TDetailModel).Name);
 
-            var result = masterService.Edit(formWrapper, listWrapper, data);
+            var result = masterService.Edit(formWrapper, null, data);
         }
         #endregion
     }

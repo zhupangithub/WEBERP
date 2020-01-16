@@ -338,6 +338,9 @@
     <Content Include="Areas\Erp\ViewModels\base.area.js" />
     <Content Include="Areas\Erp\ViewModels\base.parts.js" />
     <Content Include="Areas\Erp\ViewModels\erp.viewModel.search.js" />
+    <Content Include="Areas\Erp\ViewModels\erp.viewModel.edit.js" />
+    <Content Include="Areas\Erp\ViewModels\erp.com.js" />
+    <Content Include="Areas\Erp\ViewModels\mms.viewModel.edit.js" />
     <Content Include="Areas\Sys\Template\edit\Model.cshtml" />
     <Content Include="Areas\Sys\Template\edit\View.cshtml" />
     <Content Include="Areas\Sys\Template\edit\Controller.cshtml" />
@@ -3598,6 +3601,8 @@
     <Content Include="Scripts\knockout-2.2.1.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
     <Content Include="Views\Shared\Xml\materialType.xml" />
+    <Content Include="Views\Shared\Xml\customer.xml" />
+    <Content Include="Views\Shared\Xml\product.xml" />
     <Content Include="Views\Shared\Xml\project.xml" />
     <Content Include="Views\Shared\Xml\merchants.xml" />
     <Content Include="Web.config">

@@ -68,12 +68,8 @@ namespace Zephyr.Core
         /// <returns></returns>
         public static string erpnoadd(IDbContext db, string table, string field, string datestringFormat, int numberLength, string qz)
         {
-            var dbkey = db.Sql(String.Format("select isnull(max({0}),0) from {1}", field, table)).QuerySingle<string>();
-            var mykey = qz + DateTime.Now.ToString(datestringFormat) + string.Empty.PadLeft(numberLength, '0');
-            var cachedKeys = getCacheKey(table, field);
-            var currentKey = maxOfAllKey(cachedKeys, ZConvert.ToString(dbkey), mykey);
-            var key = ZConvert.ToString(currentKey + 1);
-            SetCacheKey(table, field, key);
+            var dbkey = db.Sql(String.Format("select top 1 isnull(id,0) from {1} order by id desc", field, table)).QuerySingle<string>();
+            var mykey = qz + DateTime.Now.ToString(datestringFormat) + string.Empty.PadLeft(numberLength, '0')+ dbkey;
             return mykey;
         }
 

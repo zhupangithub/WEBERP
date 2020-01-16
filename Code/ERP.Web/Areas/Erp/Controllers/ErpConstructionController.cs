@@ -36,45 +36,44 @@ namespace ERP.Web.Areas.Erp.Controllers
         public ActionResult Edit(string id)
         {
             var userName = ErpHelper.GetUserName();
-            var currentProject = ErpHelper.GetCurrentProject();
             var data = new ErpConstructionApiController().GetEditMaster(id);
             var codeService = new sys_codeService();
-
             var model = new
             {
                 form = data.form,
                 scrollKeys = data.scrollKeys,
                 urls = ErpHelper.GetEditUrls("ErpConstruction"),
-                resx = ErpHelper.GetEditResx("收料单"),
+                resx = ErpHelper.GetEditResx("施工单"),
                 dataSource = new
                 {
-                    measureUnit = codeService.GetMeasureUnitListByType(),
-                    supplyType = codeService.GetValueTextListByType("SupplyType"),
-                    payKinds = codeService.GetValueTextListByType("PayType"),
-                    warehouseItems = new mms_warehouseService().GetWarehouseItems(currentProject)
+                    measureUnit = codeService.GetMeasureUnitListByType()
+                    //supplyType = codeService.GetValueTextListByType("SupplyType"),
+                    //payKinds = codeService.GetValueTextListByType("PayType")
                 },
                 defaultForm = new erp_construction().Extend(new
                 {
                     no = id,
                     create_time = DateTime.Now,
-                    DoPerson = userName,
-                    ErpConstructionDate = DateTime.Now,
-                    SupplyType = codeService.GetDefaultCode("SupplyType"),
-                    PayKind = codeService.GetDefaultCode("PayType"),
+                    create_username = userName,
+                    product_id = "",
+                    delivery_date =DateTime.Now.AddDays(7)
+                    //ErpConstructionDate = DateTime.Now,
+                    //SupplyType = codeService.GetDefaultCode("SupplyType"),
+                    //PayKind = codeService.GetDefaultCode("PayType"),
                 }),
                 defaultRow = new
                 {
-                    CheckNum = 1,
-                    Num = 1,
-                    UnitPrice = 0,
-                    Money = 0,
-                    PrePay = 0
+                    //CheckNum = 1,
+                    //Num = 1,
+                    //UnitPrice = 0,
+                    //Money = 0,
+                    //PrePay = 0
                 },
                 setting = new
                 {
                     postFormKeys = new string[] { "no" },
-                    postListFields = new string[] { "no","product_id", "product_name", "customer_no", "customer_name", "number",
-                        "practical_number", "loss_number", "guige","zhuangdinfa","baozhuangfa","address","delivery_date","source_no","state",
+                    postListFields = new string[] { "no","product_id","customer_id", "number",
+                        "practical_number", "loss_number", "guige","zhuangdinfa","baozhuangfa","address","delivery_date","source_no","state","remark",
                         "create_time","create_username" }
                 }
             };
@@ -88,21 +87,22 @@ namespace ERP.Web.Areas.Erp.Controllers
         public override dynamic Get(RequestWrapper query)
         {
             query.LoadSettingXmlString(@"
-            <settings defaultOrderBy='id'>
+            <settings defaultOrderBy='create_time'>
                 <select>*
                 </select>
                 <from>
                     Erp_Construction
                 </from>
-                <where defaultForAll='true' defaultCp='equal' defaultIgnoreEmpty='true' >
+                <where defaultForAll='true' defaultCp='equal' defaultIgnoreEmpty='true'>
+                    <field name='id'       cp='equal'      ></field>
                     <field name='no'                cp='equal'      ></field>
-                    <field name='product_name'           cp='like'       ></field>
-                    <field name='customer_name'       cp='like'    variable='customer_name'   ></field>
+                    <field name='product_id'           cp='like'       ></field>
+                    <field name='customer_id'       cp='like'    variable='customer_id'   ></field>
                     <field name='state'       cp='equal'      ></field>
                     <field name='create_time' cp='daterange'  ></field>
                 </where>
             </settings>");
-            var pQuery = query.ToParamQuery().AndWhere("no", ErpHelper.GetCurrentProject());
+            var pQuery = query.ToParamQuery();
             var result = masterService.GetDynamicListWithPaging(pQuery);
             return result;
         }

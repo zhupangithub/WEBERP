@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<settings lookupType="product" defaultOrderBy='id'>
+  <module>Erp</module>
+  <select>
+    id   as   value,name   as   text
+  </select>
+  <from>
+    base_product
+  </from>
+  <where defaultForAll='true' defaultCp='equal' defaultIgnoreEmpty='true' >
+    <field name='id'         cp='startwith'  ></field>
+    <field name='name'         cp='like'       ></field>
+    <field name='isenable'   cp='in'         ></field>
+  </where>
+</settings>

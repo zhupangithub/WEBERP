@@ -15,13 +15,11 @@ namespace ERP.Web.Models
     {
 
         [Identity]
-        public int id{ get; set; }
+        public int id { get; set; }
         [PrimaryKey]
         public string no{ get; set; }
         public int product_id{ get; set; }
-        public string product_name{ get; set; }
-        public string customer_no{ get; set; }
-        public string customer_name{ get; set; }
+        public string customer_id{ get; set; }
         public int number{ get; set; }
         public int? practical_number{ get; set; }
         public int? loss_number{ get; set; }
@@ -31,6 +29,7 @@ namespace ERP.Web.Models
         public string address{ get; set; }
         public DateTime delivery_date{ get; set; }
         public string source_no{ get; set; }
+        public string remark { get; set; }
         public int state{ get; set; }
         public DateTime? affirm_time{ get; set; }
         public string affirm_username{ get; set; }

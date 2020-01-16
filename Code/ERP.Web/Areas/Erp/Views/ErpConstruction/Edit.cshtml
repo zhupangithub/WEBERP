@@ -9,9 +9,9 @@
     <script type="text/javascript">
         var viewModel = function (data) {
             var self = this;
-            mms.viewModel.edit.apply(self, arguments);              //继承mms.viewModel.edit
+            erp.viewModel.edit.apply(self, arguments);              //继承mms.viewModel.edit
             this.grid.OnAfterCreateEditor = function(editors){      //在grid行编辑开始时绑定金额=单价*数量的计算 及 加上数量的验证
-                mms.com.bindCalcTotalMoney(self, "Num", "UnitPrice", "Money", "TotalMoney")(editors);
+                erp.com.bindCalcTotalMoney(self, "Num", "UnitPrice", "Money", "TotalMoney")(editors);
                 $.fn.validatebox.defaults.rules.checkNum = {
                     validator:function(value,param){
                         return parseFloat(value) <= parseFloat(editors['CheckNum'].target.numberbox('getValue'));
@@ -46,49 +46,53 @@
     </div>  
 
     <div id="master" class="container_12" data-bind="inputwidth:0.9">
-        <div class="grid_1 lbl">单据编号</div>
-        <div class="grid_3 val"><input type="text" data-bind="value:form.billno,readOnly:true" class="z-txt readonly"/></div>
-        <div class="grid_1 lbl">单据日期</div>
-        <div class="grid_3 val"><input type="text" data-bind="dateboxValue:form.BillDate,dateboxReadOnly:readonly" class="z-txt easyui-datebox" /></div>
-        <div class="grid_1 lbl">经办人</div>
-        <div class="grid_3 val "><input type="text" data-bind="value:form.DoPerson,readOnly:readonly" class="z-txt easyui-validatebox" /></div>
-        
+        <div class="grid_1 lbl">施工单号</div>
+        <div class="grid_3 val"><input type="text" data-bind="value:form.no,readOnly:true" class="z-txt readonly" /></div>
+        <div class="grid_1 lbl">开单日期</div>
+        <div class="grid_3 val"><input type="text" data-bind="dateboxValue:form.create_time,dateboxReadOnly:true" class="z-txt easyui-datebox" /></div>
+        <div class="grid_1 lbl">开单人</div>
+        <div class="grid_3 val "><input type="text" data-bind="value:form.create_username,readOnly:true" class="z-txt easyui-validatebox" /></div>
+
         <div class="clear"></div>
 
-        <div class="grid_1 lbl required">供应商</div>
-        <div class="grid_3 val"><input type="text" data-bind="lookupValue:form.SupplierCode,lookupReadOnly:readonly" required="true" class="z-txt easyui-lookup" data-options="editable:false,lookupType:'merchants',queryParams:{MerchantsProperty:'\'采购\''}"/></div>
-        <div class="grid_1 lbl required">库房</div>
-        <div class="grid_3 val"><input type="text" data-bind="comboboxValue:form.WarehouseCode,datasource:dataSource.warehouseItems,comboboxReadOnly:readonly" class="z-txt easyui-combobox" required="true" /></div>
-        <div class="grid_1 lbl required">收料日期 </div>
-        <div class="grid_3 val"><input type="text" data-bind="dateboxValue:form.ReceiveDate,dateboxReadOnly:readonly" class="easyui-datebox z-txt"  required="true" /></div>
-        
+        <div class="grid_1">产品</div>
+        <div class="grid_3 val"><input type="text" data-bind="lookupValue:form.product_id,lookupReadOnly:readonly"  required="true" class="z-txt easyui-lookup" data-options="editable:true,lookupType:'product',queryParams:{isenable:'\'1\''}" /></div>
+        @*<div class="grid_2 val"><input type="text" data-bind="value:form.product_id,readOnly:true" /></div>*@
+        <div class="grid_1">客户</div>
+        <div class="grid_3 val"><input type="text" data-bind="lookupValue:form.customer_id,lookupReadOnly:readonly" required="true" class="z-txt easyui-lookup" data-options="editable:false,lookupType:'customer',queryParams:{isenable:'\'1\''}" /></div>
+        <div class="grid_1">生产数量</div>
+        <div class="grid_3 val"><input type="text" data-bind="numberboxValue:form.number,readOnly:false" required="true" class="z-txt easyui-numberbox readonly" data-options="min: 1, precision: 0" /></div>
+
         <div class="clear"></div>
 
-        <div class="grid_1 lbl required">供应类型 </div>
-        <div class="grid_3 val"><input type="text" data-bind="comboboxValue:form.SupplyType,datasource:dataSource.supplyType,comboboxReadOnly:readonly" class="easyui-combobox z-txt"  required="true" /></div>
-        <div class="grid_1 lbl required">付款方式</div>
-        <div class="grid_3 val"><input type="text" data-bind="comboboxValue:form.PayKind,datasource:dataSource.payKinds,comboboxReadOnly:readonly" class="z-txt easyui-combobox" required="true"/></div>
-        <div class="grid_1 lbl">合同名称 </div>
-        <div class="grid_3 val required"><input type="text" data-bind="value:form.ContractCode,readOnly:readonly" class="z-txt"  /></div>
-       
+        <div class="grid_1">产品规格</div>
+        <div class="grid_3 val"><input type="text" data-bind="value:form.guige,readOnly:readonly" required="true" class="z-txt easyui-validatebox readonly" /></div>
+        <div class="grid_1">装订法</div>
+        <div class="grid_3 val"><input type="text" data-bind="value:form.zhuangdinfa,readOnly:readonly" required="true" class="z-txt easyui-validatebox readonly" /></div>
+        <div class="grid_1">包装法</div>
+        <div class="grid_3 val"><input type="text" data-bind="value:form.baozhuangfa,readOnly:readonly" required="true" class="z-txt easyui-validatebox readonly" /></div>
         <div class="clear"></div>
 
-        <div class="grid_1 lbl">原始票号</div>
-        <div class="grid_3 val"><input type="text" data-bind="value:form.OriginalNum,readOnly:readonly" class="z-txt" /></div>
-        <div class="grid_1 lbl">金额</div>
-        <div class="grid_3 val"><input type="text" data-bind="numberboxValue:form.TotalMoney,readOnly:true" class="z-txt easyui-numberbox readonly" data-options="min: 0, precision: 2"/></div>
+        <div class="grid_1">送货地址</div>
+        <div class="grid_3 val"><input type="text" data-bind="value:form.address,readOnly:readonly" required="true" class="z-txt easyui-validatebox readonly" /></div>
+        <div class="grid_1">交货日期 </div>
+        <div class="grid_3 val"><input type="text" data-bind="dateboxValue:form.delivery_date,dateboxReadOnly:readonly" class=" z-txt easyui-datebox readonly" required="true" /></div>
+        <div class="grid_1 lbl">源数据号</div>
+        <div class="grid_3 val"><input type="text" data-bind="value:form.source_no,readOnly:readonly" class="z-txt" /></div>
+
+        <div class="clear"></div>
+
         <div class="grid_1 lbl">备注</div>
-        <div class="grid_3 val"><input type="text" data-bind="value:form.Remark,readOnly:readonly" class="z-txt" /></div>
-
+        <div class="grid_11 val"><textarea type="text" style="width:100%;height:100px;" data-bind="value:form.remark,readOnly:readonly" class="z-txt"></textarea></div>
         <div class="clear"></div>
     </div>
  
     <div id="tt" class="easyui-tabs">  
-        <div title="材料明细">
+        <div title="部件清单">
             <table id="list" data-bind="datagrid:grid">
                 <thead>
-                    <tr>
-                        <th field="no" hidden="true"></th>  
+                    @*<tr>
+                        <th field="nso" hidden="true"></th>  
                         <th field="RowId"  hidden="true"></th> 
                         <th field="MaterialCode"        sortable="true" align="left"    width="80"  >材料编码   </th>  
                         <th field="MaterialName"        sortable="true" align="left"    width="100" >材料名称   </th>  
@@ -99,7 +103,7 @@
                         <th field="UnitPrice"           sortable="true" align="right"   width="70"  editor="{type: 'numberbox',options:{min: 0, precision: 2}}"  formatter="com.formatMoney">入库单价</th>  
                         <th field="Money"               sortable="true" align="right"   width="70"  editor="{type: 'numberbox',options:{min: 0, precision: 2}}" formatter="com.formatMoney">金额</th>  
                         <th field="Remark"              sortable="true" align="left"    width="200" editor="text">备注</th>   
-                    </tr>
+                    </tr>*@
                 </thead>
             </table>   
 
