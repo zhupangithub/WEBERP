@@ -175,12 +175,10 @@ create table base_workshop
 --施工单表
 create table erp_construction
 (
-	id int identity(1,1) not null,--主键
+	id int identity(1,1),--主键
 	no nvarchar(100) not null primary key,--TO00001
 	product_id int not null,--产品编号
-	product_name nvarchar(100) not null,--产品名称
-	customer_no nvarchar(100) not null,--客户编号
-	customer_name nvarchar(100) not null,--客户名称
+	customer_id nvarchar(100) not null,--客户编号
 	number int not null,--数量
 	practical_number int,--实际生产数量
 	loss_number int,--损耗数量
@@ -191,6 +189,7 @@ create table erp_construction
 	delivery_date date not null,--交货日期
 	source_no nvarchar(100),--源数据编号
 	state int not null,--状态 0待确认 --1计划中,2生产中,3已完成
+	remark nvarchar(max) not null,--备注说明
 	affirm_time datetime,--确认时间
 	affirm_username nvarchar(40),--确认用户
 	finish_time datetime,--完成时间
@@ -198,6 +197,9 @@ create table erp_construction
 	create_time datetime not null default(getdate()),--开单时间
 	create_username nvarchar(40) not null,--开单用户
 )
+
+
+
 
 
 --施工单部件表
