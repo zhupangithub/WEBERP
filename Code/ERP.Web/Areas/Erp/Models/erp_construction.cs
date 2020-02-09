@@ -14,8 +14,8 @@ namespace ERP.Web.Models
     public class erp_construction : ModelBase
     {
 
-        [Identity]
-        public int id { get; set; }
+        //[Identity]
+        //public int id { get; set; }
         [PrimaryKey]
         public string no{ get; set; }
         public int product_id{ get; set; }

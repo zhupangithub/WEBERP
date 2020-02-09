@@ -1,0 +1,371 @@
+2020-01-15 21:09:40,403 [9448] DEBUG Sys - select name from dbo.sysobjects where id = object_id(N'[dbo].[fun_getPY]') and xtype in (N'FN', N'IF', N'TF')
+2020-01-15 21:09:40,446 [9448] DEBUG Sys - select name from dbo.sysobjects where id = object_id(N'[dbo].[fun_getPY]') and xtype in (N'FN', N'IF', N'TF')
+2020-01-15 21:09:40,452 [9448] DEBUG Mms - select name from dbo.sysobjects where id = object_id(N'[dbo].[fun_getPY]') and xtype in (N'FN', N'IF', N'TF')
+2020-01-15 21:09:40,459 [9448] DEBUG Mms - select name from dbo.sysobjects where id = object_id(N'[dbo].[fun_getPY]') and xtype in (N'FN', N'IF', N'TF')
+2020-01-15 21:09:40,462 [9448] DEBUG Erp - select name from dbo.sysobjects where id = object_id(N'[dbo].[fun_getPY]') and xtype in (N'FN', N'IF', N'TF')
+2020-01-15 21:09:40,470 [9448] DEBUG Erp - select name from dbo.sysobjects where id = object_id(N'[dbo].[fun_getPY]') and xtype in (N'FN', N'IF', N'TF')
+2020-01-15 21:10:09,979 [9976] DEBUG Servicesys_user - 获取实体对象
+2020-01-15 21:10:09,986 [9976] DEBUG Sys - select sys_user.* from sys_user where  UserCode =  'super'and Password =  '1234'and IsEnable =  'True'
+2020-01-15 21:10:10,050 [9976] DEBUG Sys - 
+update sys_user
+set LoginCount = isnull(LoginCount,0) + 1
+   ,LastLoginDate = getdate()
+where UserCode = 'super' 
+2020-01-15 21:10:10,083 [9976] DEBUG Sys - insert into sys_loginHistory([UserCode],[UserName],[HostName],[HostIP],[LoginCity],[LoginDate]) values('super','超级管理员','4S6DBKLDWJUEQVW','localhost','上海市','2020/1/15 21:10:10')
+2020-01-15 21:10:10,093 [9976] DEBUG Servicemms_project - 获取实体对象
+2020-01-15 21:10:10,093 [9976] DEBUG Mms - select mms_project.* from mms_project where  ProjectCode =  '201306030001'
+2020-01-15 21:10:10,121 [9956] DEBUG Sys - select * from sys_userSetting where UserCode='super'
+2020-01-15 21:10:11,367 [9960] DEBUG Sys - 
+--角色的菜单
+select distinct B.*
+from sys_roleMenuMap A
+inner join sys_menu  B on B.MenuCode = A.MenuCode
+where B.IsEnable='1'
+  and RoleCode in (
+  select RoleCode from sys_userRoleMap where UserCode = 'super' --用户的角色
+union all
+  select RoleCode from sys_organizeRoleMap where OrganizeCode in  --机构的角色
+  (
+	select OrganizeCode from sys_userOrganizeMap where UserCode = 'super'
+  )  
+)
+order by B.MenuSeq,B.MenuCode
+2020-01-15 21:10:51,327 [9964] DEBUG Sys - 
+select 1
+from sys_roleMenuMap A
+left join sys_userRoleMap B on B.RoleCode = A.RoleCode
+left join sys_menu C on C.MenuCode = A.MenuCode
+where B.UserCode = 'super'
+and C.URL in ('/Mms/receive/Index','/Mms/receive')
+2020-01-15 21:10:51,380 [9964] DEBUG Servicemms_warehouse - 获取动态列表
+2020-01-15 21:10:51,383 [9964] DEBUG Mms - select WarehouseCode as value,WarehouseName as text from mms_warehouse where  ProjectCode =  '201306030001'
+2020-01-15 21:10:51,394 [9964] DEBUG Servicesys_code - 获取动态列表
+2020-01-15 21:10:51,395 [9964] DEBUG Sys - select Code as value,Text as text from sys_code where  CodeType =  'SupplyType'
+2020-01-15 21:10:54,257 [9956] DEBUG Servicemms_receive - 获取动态列表
+2020-01-15 21:10:54,257 [9956] DEBUG Mms - select top 20 
+        A.*, B.ProjectName, C.MaterialTypeName, D.WarehouseName as WarehouseName, E.MerchantsName AS SupplierName
+     from 
+        mms_receive A
+        left join mms_project       B on B.ProjectCode      = A.ProjectCode
+        left join mms_materialType  C on C.MaterialType = A.MaterialType
+        left join mms_warehouse         D on D.WarehouseCode       = A.WarehouseCode
+        left join mms_merchants     E on E.MerchantsCode    = A.SupplierCode
+     where  A.ProjectCode =  '201306030001' order by A.BillNo
+2020-01-15 21:10:54,300 [9956] DEBUG Mms - select count(*) from ( select 
+        A.*, B.ProjectName, C.MaterialTypeName, D.WarehouseName as WarehouseName, E.MerchantsName AS SupplierName
+     from 
+        mms_receive A
+        left join mms_project       B on B.ProjectCode      = A.ProjectCode
+        left join mms_materialType  C on C.MaterialType = A.MaterialType
+        left join mms_warehouse         D on D.WarehouseCode       = A.WarehouseCode
+        left join mms_merchants     E on E.MerchantsCode    = A.SupplierCode
+     where  A.ProjectCode =  '201306030001' ) tb_temp
+2020-01-15 21:11:01,567 [9964] DEBUG Sys - 
+select 1
+from sys_roleMenuMap A
+left join sys_userRoleMap B on B.RoleCode = A.RoleCode
+left join sys_menu C on C.MenuCode = A.MenuCode
+where B.UserCode = 'super'
+and C.URL in ('/Erp/ErpConstruction/Index','/Erp/ErpConstruction')
+2020-01-15 21:11:01,621 [9964] DEBUG Servicemms_warehouse - 获取动态列表
+2020-01-15 21:11:01,622 [9964] DEBUG Mms - select WarehouseCode as value,WarehouseName as text from mms_warehouse where  ProjectCode =  '201306030001'
+2020-01-15 21:11:01,646 [9964] DEBUG Servicesys_code - 获取动态列表
+2020-01-15 21:11:01,647 [9964] DEBUG Sys - select Code as value,Text as text from sys_code where  CodeType =  'SupplyType'
+2020-01-15 21:11:03,632 [9968] DEBUG Serviceerp_construction - 获取动态列表
+2020-01-15 21:11:03,632 [9968] DEBUG Erp - select top 20 *
+                 from 
+                    Erp_Construction
+                 where  no =  '201306030001' order by id
+2020-01-15 21:11:03,649 [9968] DEBUG Erp - select count(*) from ( select *
+                 from 
+                    Erp_Construction
+                 where  no =  '201306030001' ) tb_temp
+2020-01-15 21:11:05,256 [9956] DEBUG Serviceerp_construction - 获取新主键
+2020-01-15 21:11:05,272 [9956] DEBUG Erp - select isnull(max(no),0) from erp_construction
+2020-01-15 21:11:05,330 [9980] DEBUG Sys - 
+select 1
+from sys_roleMenuMap A
+left join sys_userRoleMap B on B.RoleCode = A.RoleCode
+left join sys_menu C on C.MenuCode = A.MenuCode
+where B.UserCode = 'super'
+and C.URL in ('/Erp/ErpConstruction/edit')
+2020-01-15 21:11:05,344 [9980] DEBUG Serviceerp_construction - 获取实体对象
+2020-01-15 21:11:05,344 [9980] DEBUG Erp - select erp_construction.* from erp_construction where  no =  'TO2020010000'
+2020-01-15 21:11:05,348 [9980] DEBUG Serviceerp_construction - 获取上一条下一条数据
+2020-01-15 21:11:05,367 [9980] DEBUG Serviceerp_construction - 获取字段
+2020-01-15 21:11:05,368 [9980] DEBUG Erp - select top 1 no from erp_construction order by no
+2020-01-15 21:11:05,371 [9980] DEBUG Serviceerp_construction - 获取字段
+2020-01-15 21:11:05,371 [9980] DEBUG Erp - select top 1 no from erp_construction where  no < 'TO2020010000' order by no desc
+2020-01-15 21:11:05,373 [9980] DEBUG Serviceerp_construction - 获取字段
+2020-01-15 21:11:05,374 [9980] DEBUG Erp - select top 1 no from erp_construction where  no >  'TO2020010000' order by no
+2020-01-15 21:11:05,376 [9980] DEBUG Serviceerp_construction - 获取字段
+2020-01-15 21:11:05,376 [9980] DEBUG Erp - select top 1 no from erp_construction order by no desc
+2020-01-15 21:11:05,398 [9980] DEBUG Servicesys_code - 获取动态列表
+2020-01-15 21:11:05,398 [9980] DEBUG Sys - select Text as value,Text as text from sys_code where  CodeType =  'MeasureUnit'
+2020-01-15 21:11:05,400 [9980] DEBUG Servicesys_code - 获取动态列表
+2020-01-15 21:11:05,400 [9980] DEBUG Sys - select Code as value,Text as text from sys_code where  CodeType =  'SupplyType'
+2020-01-15 21:11:05,400 [9980] DEBUG Servicesys_code - 获取动态列表
+2020-01-15 21:11:05,400 [9980] DEBUG Sys - select Code as value,Text as text from sys_code where  CodeType =  'PayType'
+2020-01-15 21:11:05,401 [9980] DEBUG Servicemms_warehouse - 获取动态列表
+2020-01-15 21:11:05,401 [9980] DEBUG Mms - select WarehouseCode as value,WarehouseName as text from mms_warehouse where  ProjectCode =  '201306030001'
+2020-01-15 21:11:05,402 [9980] DEBUG Servicesys_code - 获取字段
+2020-01-15 21:11:05,402 [9980] DEBUG Sys - select top 1 Code from sys_code where  CodeType =  'SupplyType'and IsEnable =  'True'and IsDefault =  'True'
+2020-01-15 21:11:05,404 [9980] DEBUG Servicesys_code - 获取字段
+2020-01-15 21:11:05,404 [9980] DEBUG Sys - select top 1 Code from sys_code where  CodeType =  'PayType'and IsEnable =  'True'and IsDefault =  'True'
+2020-01-15 21:11:18,634 [9964] DEBUG ServiceModelBase - 获取动态列表
+2020-01-15 21:11:18,636 [9964] DEBUG Mms - select top 20 
+    MerchantsCode   as   value,MerchantsName   as   text
+   from 
+    mms_merchants A
+    left join mms_merchantsType B on B.MerchantsTypeCode = A.MerchantsTypeCode
+   where  B.MerchantsProperty in ('采购') order by MerchantsCode
+2020-01-15 21:11:18,655 [9964] DEBUG Mms - select count(*) from ( select 
+    MerchantsCode   as   value,MerchantsName   as   text
+   from 
+    mms_merchants A
+    left join mms_merchantsType B on B.MerchantsTypeCode = A.MerchantsTypeCode
+   where  B.MerchantsProperty in ('采购') ) tb_temp
+2020-01-15 21:12:09,852 [7508] DEBUG Sys - select name from dbo.sysobjects where id = object_id(N'[dbo].[fun_getPY]') and xtype in (N'FN', N'IF', N'TF')
+2020-01-15 21:12:09,867 [7508] DEBUG Sys - select name from dbo.sysobjects where id = object_id(N'[dbo].[fun_getPY]') and xtype in (N'FN', N'IF', N'TF')
+2020-01-15 21:12:09,871 [7508] DEBUG Mms - select name from dbo.sysobjects where id = object_id(N'[dbo].[fun_getPY]') and xtype in (N'FN', N'IF', N'TF')
+2020-01-15 21:12:09,871 [7508] DEBUG Mms - select name from dbo.sysobjects where id = object_id(N'[dbo].[fun_getPY]') and xtype in (N'FN', N'IF', N'TF')
+2020-01-15 21:12:09,874 [7508] DEBUG Erp - select name from dbo.sysobjects where id = object_id(N'[dbo].[fun_getPY]') and xtype in (N'FN', N'IF', N'TF')
+2020-01-15 21:12:09,874 [7508] DEBUG Erp - select name from dbo.sysobjects where id = object_id(N'[dbo].[fun_getPY]') and xtype in (N'FN', N'IF', N'TF')
+2020-01-15 21:12:37,008 [10868] DEBUG Sys - 
+select 1
+from sys_roleMenuMap A
+left join sys_userRoleMap B on B.RoleCode = A.RoleCode
+left join sys_menu C on C.MenuCode = A.MenuCode
+where B.UserCode = 'super'
+and C.URL in ('/Erp/material/Index','/Erp/material')
+2020-01-15 21:12:37,019 [10868] DEBUG Servicebase_data - 获取动态列表
+2020-01-15 21:12:37,027 [10868] DEBUG Erp - select name as value,name as text from base_data where  type =  '单位'and isenable =  '1'
+2020-01-15 21:12:37,031 [10868] DEBUG Servicebase_data - 获取动态列表
+2020-01-15 21:12:37,031 [10868] DEBUG Erp - select name as value,name as text from base_data where  type =  '物料'and isenable =  '1'
+2020-01-15 21:12:38,947 [10864] DEBUG Servicebase_material - 获取动态列表
+2020-01-15 21:12:38,947 [10864] DEBUG Erp - select top 20 * from base_material order by id
+2020-01-15 21:12:38,952 [10864] DEBUG Erp - select count(*) from ( select * from base_material ) tb_temp
+2020-01-15 21:15:45,563 [11872] DEBUG Sys - 
+select 1
+from sys_roleMenuMap A
+left join sys_userRoleMap B on B.RoleCode = A.RoleCode
+left join sys_menu C on C.MenuCode = A.MenuCode
+where B.UserCode = 'super'
+and C.URL in ('/Erp/ErpConstruction/Index','/Erp/ErpConstruction')
+2020-01-15 21:16:20,962 [11872] DEBUG Servicemms_warehouse - 获取动态列表
+2020-01-15 21:16:20,962 [11872] DEBUG Mms - select WarehouseCode as value,WarehouseName as text from mms_warehouse where  ProjectCode =  '201306030001'
+2020-01-15 21:16:20,968 [11872] DEBUG Servicesys_code - 获取动态列表
+2020-01-15 21:16:20,969 [11872] DEBUG Sys - select Code as value,Text as text from sys_code where  CodeType =  'SupplyType'
+2020-01-15 21:19:01,876 [4044] DEBUG Serviceerp_construction - 获取动态列表
+2020-01-15 21:19:01,879 [4044] DEBUG Erp - select top 20 *
+                 from 
+                    Erp_Construction
+                 where  no =  '201306030001' order by id
+2020-01-15 21:19:01,883 [4044] DEBUG Erp - select count(*) from ( select *
+                 from 
+                    Erp_Construction
+                 where  no =  '201306030001' ) tb_temp
+2020-01-15 21:29:55,427 [11176] DEBUG Servicesys_user - 获取实体对象
+2020-01-15 21:29:55,442 [11176] DEBUG Sys - select sys_user.* from sys_user where  UserCode =  'super'and Password =  '1234'and IsEnable =  'True'
+2020-01-15 21:29:55,480 [11176] DEBUG Sys - 
+update sys_user
+set LoginCount = isnull(LoginCount,0) + 1
+   ,LastLoginDate = getdate()
+where UserCode = 'super' 
+2020-01-15 21:29:55,585 [11176] DEBUG Sys - insert into sys_loginHistory([UserCode],[UserName],[HostName],[HostIP],[LoginCity],[LoginDate]) values('super','超级管理员','4S6DBKLDWJUEQVW','localhost','上海市','2020/1/15 21:29:55')
+2020-01-15 21:29:55,589 [11176] DEBUG Servicemms_project - 获取实体对象
+2020-01-15 21:29:55,596 [11176] DEBUG Mms - select mms_project.* from mms_project where  ProjectCode =  '201306030001'
+2020-01-15 21:29:55,670 [6072] DEBUG Sys - select * from sys_userSetting where UserCode='super'
+2020-01-15 21:29:57,479 [11176] DEBUG Sys - 
+--角色的菜单
+select distinct B.*
+from sys_roleMenuMap A
+inner join sys_menu  B on B.MenuCode = A.MenuCode
+where B.IsEnable='1'
+  and RoleCode in (
+  select RoleCode from sys_userRoleMap where UserCode = 'super' --用户的角色
+union all
+  select RoleCode from sys_organizeRoleMap where OrganizeCode in  --机构的角色
+  (
+	select OrganizeCode from sys_userOrganizeMap where UserCode = 'super'
+  )  
+)
+order by B.MenuSeq,B.MenuCode
+2020-01-15 21:30:15,427 [1284] DEBUG Sys - 
+select 1
+from sys_roleMenuMap A
+left join sys_userRoleMap B on B.RoleCode = A.RoleCode
+left join sys_menu C on C.MenuCode = A.MenuCode
+where B.UserCode = 'super'
+and C.URL in ('/Erp/ErpConstruction/Index','/Erp/ErpConstruction')
+2020-01-15 21:30:15,432 [1284] DEBUG Servicemms_warehouse - 获取动态列表
+2020-01-15 21:30:15,432 [1284] DEBUG Mms - select WarehouseCode as value,WarehouseName as text from mms_warehouse where  ProjectCode =  '201306030001'
+2020-01-15 21:30:15,433 [1284] DEBUG Servicesys_code - 获取动态列表
+2020-01-15 21:30:15,434 [1284] DEBUG Sys - select Code as value,Text as text from sys_code where  CodeType =  'SupplyType'
+2020-01-15 21:30:17,431 [12468] DEBUG Serviceerp_construction - 获取动态列表
+2020-01-15 21:30:17,440 [12468] DEBUG Erp - select top 20 *
+                 from 
+                    Erp_Construction
+                 where  no =  '201306030001' order by id
+2020-01-15 21:30:17,441 [12468] DEBUG Erp - select count(*) from ( select *
+                 from 
+                    Erp_Construction
+                 where  no =  '201306030001' ) tb_temp
+2020-01-15 21:34:14,647 [11028] DEBUG Sys - 
+select 1
+from sys_roleMenuMap A
+left join sys_userRoleMap B on B.RoleCode = A.RoleCode
+left join sys_menu C on C.MenuCode = A.MenuCode
+where B.UserCode = 'super'
+and C.URL in ('/Erp/ErpConstruction/Index','/Erp/ErpConstruction')
+2020-01-15 21:34:14,656 [11028] DEBUG Servicemms_warehouse - 获取动态列表
+2020-01-15 21:34:14,672 [11028] DEBUG Mms - select WarehouseCode as value,WarehouseName as text from mms_warehouse where  ProjectCode =  '201306030001'
+2020-01-15 21:34:14,673 [11028] DEBUG Servicesys_code - 获取动态列表
+2020-01-15 21:34:14,673 [11028] DEBUG Sys - select Code as value,Text as text from sys_code where  CodeType =  'SupplyType'
+2020-01-15 21:34:16,512 [11028] DEBUG Serviceerp_construction - 获取动态列表
+2020-01-15 21:34:16,512 [11028] DEBUG Erp - select top 20 *
+                 from 
+                    Erp_Construction
+                 where  no =  '201306030001' order by id
+2020-01-15 21:34:16,513 [11028] DEBUG Erp - select count(*) from ( select *
+                 from 
+                    Erp_Construction
+                 where  no =  '201306030001' ) tb_temp
+2020-01-15 21:34:25,664 [1284] DEBUG Serviceerp_construction - 获取新主键
+2020-01-15 21:34:27,984 [1284] DEBUG Erp - select isnull(max(no),0) from erp_construction
+2020-01-15 21:34:56,751 [7816] DEBUG Sys - 
+select 1
+from sys_roleMenuMap A
+left join sys_userRoleMap B on B.RoleCode = A.RoleCode
+left join sys_menu C on C.MenuCode = A.MenuCode
+where B.UserCode = 'super'
+and C.URL in ('/Erp/ErpConstruction/edit')
+2020-01-15 21:38:23,751 [7816] DEBUG Serviceerp_construction - 获取实体对象
+2020-01-15 21:38:23,753 [7816] DEBUG Erp - select erp_construction.* from erp_construction where  no =  'TO2020010000'
+2020-01-15 21:38:23,763 [7816] DEBUG Serviceerp_construction - 获取上一条下一条数据
+2020-01-15 21:38:23,797 [7816] DEBUG Serviceerp_construction - 获取字段
+2020-01-15 21:38:23,800 [7816] DEBUG Erp - select top 1 no from erp_construction order by no
+2020-01-15 21:38:23,825 [7816] DEBUG Serviceerp_construction - 获取字段
+2020-01-15 21:38:23,826 [7816] DEBUG Erp - select top 1 no from erp_construction where  no < 'TO2020010000' order by no desc
+2020-01-15 21:38:23,836 [7816] DEBUG Serviceerp_construction - 获取字段
+2020-01-15 21:38:23,838 [7816] DEBUG Erp - select top 1 no from erp_construction where  no >  'TO2020010000' order by no
+2020-01-15 21:38:23,878 [7816] DEBUG Serviceerp_construction - 获取字段
+2020-01-15 21:38:23,879 [7816] DEBUG Erp - select top 1 no from erp_construction order by no desc
+2020-01-15 21:38:27,825 [7000] DEBUG Serviceerp_construction - 获取新主键
+2020-01-15 21:38:28,826 [7000] DEBUG Erp - select isnull(max(no),0) from erp_construction
+2020-01-15 21:38:28,969 [7816] DEBUG Servicesys_code - 获取动态列表
+2020-01-15 21:38:28,975 [7816] DEBUG Sys - select Text as value,Text as text from sys_code where  CodeType =  'MeasureUnit'
+2020-01-15 21:38:28,980 [7816] DEBUG Servicesys_code - 获取动态列表
+2020-01-15 21:38:28,980 [7816] DEBUG Sys - select Code as value,Text as text from sys_code where  CodeType =  'SupplyType'
+2020-01-15 21:38:28,982 [7816] DEBUG Servicesys_code - 获取动态列表
+2020-01-15 21:38:28,983 [7816] DEBUG Sys - select Code as value,Text as text from sys_code where  CodeType =  'PayType'
+2020-01-15 21:38:28,985 [7816] DEBUG Servicemms_warehouse - 获取动态列表
+2020-01-15 21:38:28,987 [7816] DEBUG Mms - select WarehouseCode as value,WarehouseName as text from mms_warehouse where  ProjectCode =  '201306030001'
+2020-01-15 21:38:28,993 [13036] DEBUG Sys - 
+select 1
+from sys_roleMenuMap A
+left join sys_userRoleMap B on B.RoleCode = A.RoleCode
+left join sys_menu C on C.MenuCode = A.MenuCode
+where B.UserCode = 'super'
+and C.URL in ('/Erp/ErpConstruction/edit')
+2020-01-15 21:38:29,002 [7816] DEBUG Servicesys_code - 获取字段
+2020-01-15 21:38:29,003 [7816] DEBUG Sys - select top 1 Code from sys_code where  CodeType =  'SupplyType'and IsEnable =  'True'and IsDefault =  'True'
+2020-01-15 21:38:29,005 [7816] DEBUG Servicesys_code - 获取字段
+2020-01-15 21:38:29,006 [7816] DEBUG Sys - select top 1 Code from sys_code where  CodeType =  'PayType'and IsEnable =  'True'and IsDefault =  'True'
+2020-01-15 21:38:30,528 [13036] DEBUG Serviceerp_construction - 获取实体对象
+2020-01-15 21:38:30,529 [13036] DEBUG Erp - select erp_construction.* from erp_construction where  no =  'TO2020010000'
+2020-01-15 21:38:30,534 [13036] DEBUG Serviceerp_construction - 获取上一条下一条数据
+2020-01-15 21:38:30,535 [13036] DEBUG Serviceerp_construction - 获取字段
+2020-01-15 21:38:30,536 [13036] DEBUG Erp - select top 1 no from erp_construction order by no
+2020-01-15 21:38:30,536 [13036] DEBUG Serviceerp_construction - 获取字段
+2020-01-15 21:38:30,537 [13036] DEBUG Erp - select top 1 no from erp_construction where  no < 'TO2020010000' order by no desc
+2020-01-15 21:38:30,538 [13036] DEBUG Serviceerp_construction - 获取字段
+2020-01-15 21:38:30,539 [13036] DEBUG Erp - select top 1 no from erp_construction where  no >  'TO2020010000' order by no
+2020-01-15 21:38:30,546 [13036] DEBUG Serviceerp_construction - 获取字段
+2020-01-15 21:38:30,547 [13036] DEBUG Erp - select top 1 no from erp_construction order by no desc
+2020-01-15 21:38:30,548 [13036] DEBUG Servicesys_code - 获取动态列表
+2020-01-15 21:38:30,549 [13036] DEBUG Sys - select Text as value,Text as text from sys_code where  CodeType =  'MeasureUnit'
+2020-01-15 21:38:30,551 [13036] DEBUG Servicesys_code - 获取动态列表
+2020-01-15 21:38:30,551 [13036] DEBUG Sys - select Code as value,Text as text from sys_code where  CodeType =  'SupplyType'
+2020-01-15 21:38:30,552 [13036] DEBUG Servicesys_code - 获取动态列表
+2020-01-15 21:38:30,553 [13036] DEBUG Sys - select Code as value,Text as text from sys_code where  CodeType =  'PayType'
+2020-01-15 21:38:30,554 [13036] DEBUG Servicemms_warehouse - 获取动态列表
+2020-01-15 21:38:30,555 [13036] DEBUG Mms - select WarehouseCode as value,WarehouseName as text from mms_warehouse where  ProjectCode =  '201306030001'
+2020-01-15 21:38:30,556 [13036] DEBUG Servicesys_code - 获取字段
+2020-01-15 21:38:30,557 [13036] DEBUG Sys - select top 1 Code from sys_code where  CodeType =  'SupplyType'and IsEnable =  'True'and IsDefault =  'True'
+2020-01-15 21:38:30,558 [13036] DEBUG Servicesys_code - 获取字段
+2020-01-15 21:38:30,559 [13036] DEBUG Sys - select top 1 Code from sys_code where  CodeType =  'PayType'and IsEnable =  'True'and IsDefault =  'True'
+2020-01-15 21:40:08,032 [1948] DEBUG Sys - select name from dbo.sysobjects where id = object_id(N'[dbo].[fun_getPY]') and xtype in (N'FN', N'IF', N'TF')
+2020-01-15 21:40:08,045 [1948] DEBUG Sys - select name from dbo.sysobjects where id = object_id(N'[dbo].[fun_getPY]') and xtype in (N'FN', N'IF', N'TF')
+2020-01-15 21:40:08,048 [1948] DEBUG Mms - select name from dbo.sysobjects where id = object_id(N'[dbo].[fun_getPY]') and xtype in (N'FN', N'IF', N'TF')
+2020-01-15 21:40:08,049 [1948] DEBUG Mms - select name from dbo.sysobjects where id = object_id(N'[dbo].[fun_getPY]') and xtype in (N'FN', N'IF', N'TF')
+2020-01-15 21:40:08,051 [1948] DEBUG Erp - select name from dbo.sysobjects where id = object_id(N'[dbo].[fun_getPY]') and xtype in (N'FN', N'IF', N'TF')
+2020-01-15 21:40:08,052 [1948] DEBUG Erp - select name from dbo.sysobjects where id = object_id(N'[dbo].[fun_getPY]') and xtype in (N'FN', N'IF', N'TF')
+2020-01-15 21:40:08,330 [13036] DEBUG Sys - select * from sys_userSetting where UserCode='super'
+2020-01-15 21:40:10,519 [7000] DEBUG Sys - 
+--角色的菜单
+select distinct B.*
+from sys_roleMenuMap A
+inner join sys_menu  B on B.MenuCode = A.MenuCode
+where B.IsEnable='1'
+  and RoleCode in (
+  select RoleCode from sys_userRoleMap where UserCode = 'super' --用户的角色
+union all
+  select RoleCode from sys_organizeRoleMap where OrganizeCode in  --机构的角色
+  (
+	select OrganizeCode from sys_userOrganizeMap where UserCode = 'super'
+  )  
+)
+order by B.MenuSeq,B.MenuCode
+2020-01-15 21:40:13,108 [7816] DEBUG Sys - 
+select 1
+from sys_roleMenuMap A
+left join sys_userRoleMap B on B.RoleCode = A.RoleCode
+left join sys_menu C on C.MenuCode = A.MenuCode
+where B.UserCode = 'super'
+and C.URL in ('/Erp/ErpConstruction/Index','/Erp/ErpConstruction')
+2020-01-15 21:40:13,120 [7816] DEBUG Servicemms_warehouse - 获取动态列表
+2020-01-15 21:40:13,129 [7816] DEBUG Mms - select WarehouseCode as value,WarehouseName as text from mms_warehouse where  ProjectCode =  '201306030001'
+2020-01-15 21:40:13,130 [7816] DEBUG Servicesys_code - 获取动态列表
+2020-01-15 21:40:13,130 [7816] DEBUG Sys - select Code as value,Text as text from sys_code where  CodeType =  'SupplyType'
+2020-01-15 21:40:14,100 [13036] DEBUG Serviceerp_construction - 获取动态列表
+2020-01-15 21:40:14,101 [13036] DEBUG Erp - select top 20 *
+                 from 
+                    Erp_Construction
+                 where  no =  '201306030001' order by id
+2020-01-15 21:40:14,110 [13036] DEBUG Erp - select count(*) from ( select *
+                 from 
+                    Erp_Construction
+                 where  no =  '201306030001' ) tb_temp
+2020-01-15 21:40:15,537 [12864] DEBUG Serviceerp_construction - 获取新主键
+2020-01-15 21:40:15,539 [12864] DEBUG Erp - select isnull(max(no),0) from erp_construction
+2020-01-15 21:40:15,611 [9556] DEBUG Sys - 
+select 1
+from sys_roleMenuMap A
+left join sys_userRoleMap B on B.RoleCode = A.RoleCode
+left join sys_menu C on C.MenuCode = A.MenuCode
+where B.UserCode = 'super'
+and C.URL in ('/Erp/ErpConstruction/edit')
+2020-01-15 21:40:15,616 [9556] DEBUG Serviceerp_construction - 获取实体对象
+2020-01-15 21:40:15,617 [9556] DEBUG Erp - select erp_construction.* from erp_construction where  no =  'TO2020010000'
+2020-01-15 21:40:15,618 [9556] DEBUG Serviceerp_construction - 获取上一条下一条数据
+2020-01-15 21:40:15,630 [9556] DEBUG Serviceerp_construction - 获取字段
+2020-01-15 21:40:15,630 [9556] DEBUG Erp - select top 1 no from erp_construction order by no
+2020-01-15 21:40:15,632 [9556] DEBUG Serviceerp_construction - 获取字段
+2020-01-15 21:40:15,632 [9556] DEBUG Erp - select top 1 no from erp_construction where  no < 'TO2020010000' order by no desc
+2020-01-15 21:40:15,633 [9556] DEBUG Serviceerp_construction - 获取字段
+2020-01-15 21:40:15,633 [9556] DEBUG Erp - select top 1 no from erp_construction where  no >  'TO2020010000' order by no
+2020-01-15 21:40:15,634 [9556] DEBUG Serviceerp_construction - 获取字段
+2020-01-15 21:40:15,634 [9556] DEBUG Erp - select top 1 no from erp_construction order by no desc
+2020-01-15 21:40:15,648 [9556] DEBUG Servicesys_code - 获取动态列表
+2020-01-15 21:40:15,648 [9556] DEBUG Sys - select Text as value,Text as text from sys_code where  CodeType =  'MeasureUnit'
+2020-01-15 21:40:15,649 [9556] DEBUG Servicesys_code - 获取动态列表
+2020-01-15 21:40:15,649 [9556] DEBUG Sys - select Code as value,Text as text from sys_code where  CodeType =  'SupplyType'
+2020-01-15 21:40:15,649 [9556] DEBUG Servicesys_code - 获取动态列表
+2020-01-15 21:40:15,649 [9556] DEBUG Sys - select Code as value,Text as text from sys_code where  CodeType =  'PayType'
+2020-01-15 21:40:15,649 [9556] DEBUG Servicemms_warehouse - 获取动态列表
+2020-01-15 21:40:15,649 [9556] DEBUG Mms - select WarehouseCode as value,WarehouseName as text from mms_warehouse where  ProjectCode =  '201306030001'
+2020-01-15 21:40:15,650 [9556] DEBUG Servicesys_code - 获取字段
+2020-01-15 21:40:15,650 [9556] DEBUG Sys - select top 1 Code from sys_code where  CodeType =  'SupplyType'and IsEnable =  'True'and IsDefault =  'True'
+2020-01-15 21:40:15,650 [9556] DEBUG Servicesys_code - 获取字段
+2020-01-15 21:40:15,650 [9556] DEBUG Sys - select top 1 Code from sys_code where  CodeType =  'PayType'and IsEnable =  'True'and IsDefault =  'True'

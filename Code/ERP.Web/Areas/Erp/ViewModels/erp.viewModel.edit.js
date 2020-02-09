@@ -1,7 +1,14 @@
-﻿var erp = erp || {};
+﻿/**
+* 模块名：erp viewModel
+* 程序名: erp.viewModel.edit.js
+* Copyright(c) 2013-2015 liuhuisheng [ liuhuisheng.xm@gmail.com ] 
+**/
+var erp = erp || {};
 erp.viewModel = erp.viewModel || {};
+
 erp.viewModel.edit = function (data) {
     var self = this;
+
     this.dataSource = data.dataSource;                          //下拉框的数据源
     this.urls = data.urls;                                      //api服务地址
     this.resx = data.resx;                                      //中文资源
@@ -10,7 +17,7 @@ erp.viewModel.edit = function (data) {
     this.setting = data.setting;
     this.defaultRow = data.defaultRow;                          //默认grid行的值
     this.defaultForm = data.defaultForm;                        //主表的默认值
-    this.readonly = ko.computed(function () { return self.form; });
+    this.readonly = ko.computed(function () { return null; });
 
     this.grid = {
         size: { w: 6, h: 177 },
@@ -111,6 +118,6 @@ erp.viewModel.edit = function (data) {
         //text: ko.computed(function () { return self.form.ApproveState() == "passed" ? "反审" : "审核"; })
     };
     this.printClick = function () {
-        com.openTab('打印报表', '/report?area=mms&rpt=' + self.urls.report + '&BillNo=' + self.form.BillNo(), 'icon-printer_color');
+        com.openTab('打印报表', '/report?area=erp&rpt=' + self.urls.report + '&BillNo=' + self.form.BillNo(), 'icon-printer_color');
     };
 };

@@ -147,14 +147,13 @@ namespace ERP.Web.Areas.Erp.Controllers
                 <where><field name='id' cp='equal'></field></where>
             </settings>", typeof(TMasterModel).Name);
 
-            //var listWrapper = RequestWrapper.Instance().LoadSettingXmlString(@"
-            //<settings>
-            //    <table>{0}</table>
-            //    <where>
-            //        <field name='id' cp='equal'></field>
-            //    </where>
-            //</settings>", typeof(TDetailModel).Name);
-
+            var listWrapper = RequestWrapper.Instance().LoadSettingXmlString(@"
+            <settings>
+                <table>{0}</table>
+                <where>
+                    <field name='id' cp='equal'></field>
+                </where>
+            </settings>", typeof(TDetailModel).Name);
             var result = masterService.Edit(formWrapper, null, data);
         }
         #endregion

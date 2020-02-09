@@ -1,0 +1,251 @@
+2020-01-29 18:51:25,497 [9144] DEBUG Sys - select name from dbo.sysobjects where id = object_id(N'[dbo].[fun_getPY]') and xtype in (N'FN', N'IF', N'TF')
+2020-01-29 18:51:25,587 [9144] DEBUG Sys - select name from dbo.sysobjects where id = object_id(N'[dbo].[fun_getPY]') and xtype in (N'FN', N'IF', N'TF')
+2020-01-29 18:51:25,601 [9144] DEBUG Mms - select name from dbo.sysobjects where id = object_id(N'[dbo].[fun_getPY]') and xtype in (N'FN', N'IF', N'TF')
+2020-01-29 18:51:25,636 [9144] DEBUG Mms - select name from dbo.sysobjects where id = object_id(N'[dbo].[fun_getPY]') and xtype in (N'FN', N'IF', N'TF')
+2020-01-29 18:51:25,659 [9144] DEBUG Erp - select name from dbo.sysobjects where id = object_id(N'[dbo].[fun_getPY]') and xtype in (N'FN', N'IF', N'TF')
+2020-01-29 18:51:25,701 [9144] DEBUG Erp - select name from dbo.sysobjects where id = object_id(N'[dbo].[fun_getPY]') and xtype in (N'FN', N'IF', N'TF')
+2020-01-29 18:51:52,263 [6868] DEBUG Servicesys_user - 获取实体对象
+2020-01-29 18:51:52,297 [6868] DEBUG Sys - select sys_user.* from sys_user where  UserCode =  'super'and Password =  '1234'and IsEnable =  'True'
+2020-01-29 18:51:52,534 [6868] DEBUG Sys - 
+update sys_user
+set LoginCount = isnull(LoginCount,0) + 1
+   ,LastLoginDate = getdate()
+where UserCode = 'super' 
+2020-01-29 18:51:52,784 [6868] DEBUG Sys - insert into sys_loginHistory([UserCode],[UserName],[HostName],[HostIP],[LoginCity],[LoginDate]) values('super','超级管理员','4S6DBKLDWJUEQVW','localhost','上海市','2020/1/29 18:51:52')
+2020-01-29 18:51:52,799 [6868] DEBUG Servicemms_project - 获取实体对象
+2020-01-29 18:51:52,800 [6868] DEBUG Mms - select mms_project.* from mms_project where  ProjectCode =  '201306030001'
+2020-01-29 18:51:52,914 [5596] DEBUG Sys - select * from sys_userSetting where UserCode='super'
+2020-01-29 18:51:56,381 [10324] DEBUG Sys - 
+--角色的菜单
+select distinct B.*
+from sys_roleMenuMap A
+inner join sys_menu  B on B.MenuCode = A.MenuCode
+where B.IsEnable='1'
+  and RoleCode in (
+  select RoleCode from sys_userRoleMap where UserCode = 'super' --用户的角色
+union all
+  select RoleCode from sys_organizeRoleMap where OrganizeCode in  --机构的角色
+  (
+	select OrganizeCode from sys_userOrganizeMap where UserCode = 'super'
+  )  
+)
+order by B.MenuSeq,B.MenuCode
+2020-01-29 18:52:06,673 [6428] DEBUG Sys - 
+select 1
+from sys_roleMenuMap A
+left join sys_userRoleMap B on B.RoleCode = A.RoleCode
+left join sys_menu C on C.MenuCode = A.MenuCode
+where B.UserCode = 'super'
+and C.URL in ('/Erp/ErpConstruction/Index','/Erp/ErpConstruction')
+2020-01-29 18:52:06,727 [6428] DEBUG Servicemms_warehouse - 获取动态列表
+2020-01-29 18:52:06,730 [6428] DEBUG Mms - select WarehouseCode as value,WarehouseName as text from mms_warehouse where  ProjectCode =  '201306030001'
+2020-01-29 18:52:06,740 [6428] DEBUG Servicesys_code - 获取动态列表
+2020-01-29 18:52:06,741 [6428] DEBUG Sys - select Code as value,Text as text from sys_code where  CodeType =  'SupplyType'
+2020-01-29 18:52:13,313 [9712] DEBUG Serviceerp_construction - 获取动态列表
+2020-01-29 18:52:13,313 [9712] DEBUG Erp - select top 20 *
+                 from 
+                    Erp_Construction
+                 order by create_time
+2020-01-29 18:52:13,359 [9712] DEBUG Erp - select count(*) from ( select *
+                 from 
+                    Erp_Construction
+                 ) tb_temp
+2020-01-29 18:52:19,486 [5596] DEBUG Serviceerp_construction - 获取新主键
+2020-01-29 18:52:19,490 [5596] DEBUG Erp - select top 1 isnull(id,0) from erp_construction order by id desc
+2020-01-29 18:52:19,656 [10324] DEBUG Sys - 
+select 1
+from sys_roleMenuMap A
+left join sys_userRoleMap B on B.RoleCode = A.RoleCode
+left join sys_menu C on C.MenuCode = A.MenuCode
+where B.UserCode = 'super'
+and C.URL in ('/Erp/ErpConstruction/edit')
+2020-01-29 18:52:19,698 [10324] DEBUG Serviceerp_construction - 获取实体对象
+2020-01-29 18:52:19,699 [10324] DEBUG Erp - select erp_construction.* from erp_construction where  no =  'TO202001001'
+2020-01-29 18:52:19,724 [10324] DEBUG Serviceerp_construction - 获取上一条下一条数据
+2020-01-29 18:52:19,767 [10324] DEBUG Serviceerp_construction - 获取字段
+2020-01-29 18:52:19,769 [10324] DEBUG Erp - select top 1 no from erp_construction order by no
+2020-01-29 18:52:19,773 [10324] DEBUG Serviceerp_construction - 获取字段
+2020-01-29 18:52:19,773 [10324] DEBUG Erp - select top 1 no from erp_construction where  no < 'TO202001001' order by no desc
+2020-01-29 18:52:19,778 [10324] DEBUG Serviceerp_construction - 获取字段
+2020-01-29 18:52:19,779 [10324] DEBUG Erp - select top 1 no from erp_construction where  no >  'TO202001001' order by no
+2020-01-29 18:52:19,784 [10324] DEBUG Serviceerp_construction - 获取字段
+2020-01-29 18:52:19,784 [10324] DEBUG Erp - select top 1 no from erp_construction order by no desc
+2020-01-29 18:52:19,846 [10324] DEBUG Servicesys_code - 获取动态列表
+2020-01-29 18:52:19,846 [10324] DEBUG Sys - select Text as value,Text as text from sys_code where  CodeType =  'MeasureUnit'
+2020-01-29 18:52:22,199 [3088] DEBUG Serviceerp_construction - 获取动态列表
+2020-01-29 18:52:22,200 [3088] DEBUG Erp - select 
+                        *
+                     from 
+                        erp_parts
+                     where  con_no =  '' order by id
+2020-01-29 18:52:26,815 [3088] DEBUG ServiceModelBase - 获取动态列表
+2020-01-29 18:52:26,816 [3088] DEBUG Erp - select top 20 
+    id   as   value,name   as   text
+   from 
+    base_product
+   where  isenable in ('1') order by id
+2020-01-29 18:52:26,836 [3088] DEBUG Erp - select count(*) from ( select 
+    id   as   value,name   as   text
+   from 
+    base_product
+   where  isenable in ('1') ) tb_temp
+2020-01-29 18:52:28,239 [6428] DEBUG ServiceModelBase - 获取动态列表
+2020-01-29 18:52:28,240 [6428] DEBUG Erp - select 
+    id   as   value,name   as   text
+   from 
+    base_product
+   where  id in ('2') order by id
+2020-01-29 18:52:31,966 [10920] DEBUG ServiceModelBase - 获取动态列表
+2020-01-29 18:52:31,966 [10920] DEBUG Erp - select top 20 
+    id   as   value,name   as   text
+   from 
+    base_customer
+   where  isenable in ('1') order by id
+2020-01-29 18:52:31,975 [10920] DEBUG Erp - select count(*) from ( select 
+    id   as   value,name   as   text
+   from 
+    base_customer
+   where  isenable in ('1') ) tb_temp
+2020-01-29 18:52:32,933 [3088] DEBUG ServiceModelBase - 获取动态列表
+2020-01-29 18:52:32,933 [3088] DEBUG Erp - select 
+    id   as   value,name   as   text
+   from 
+    base_customer
+   where  id in ('1') order by id
+2020-01-29 18:52:41,730 [8312] DEBUG Serviceerp_construction - 编辑记录
+2020-01-29 18:52:41,758 [8312] DEBUG Serviceerp_construction - 获取动态对象
+2020-01-29 18:52:41,767 [8312] DEBUG Erp - select  erp_construction.* from  erp_construction where  id =  ''
+2020-01-29 18:52:41,806 [8312] DEBUG Erp - update  erp_construction set [no] = 'TO202001001', [product_id] = '2', [customer_id] = '1', [number] = '1', [guige] = '4', [zhuangdinfa] = '33', [baozhuangfa] = '1', [address] = '555', [delivery_date] = '2020/2/5 18:52:19', [source_no] = '22', [state] = '0', [create_time] = '2020/1/29 18:52:19', [create_username] = '超级管理员' where  id =  ''
+2020-01-29 18:52:41,836 [8312] DEBUG Erp - insert into  erp_construction([no],[product_id],[customer_id],[number],[guige],[zhuangdinfa],[baozhuangfa],[address],[delivery_date],[source_no],[state],[create_username],[create_time]) values('TO202001001','2','1','1','4','33','1','555','2020/2/5 18:52:19','22','0','超级管理员','2020/1/29 18:52:41')
+2020-01-29 18:52:41,877 [8312] ERROR Serviceerp_construction - 编辑记录失败
+System.Data.SqlClient.SqlException (0x80131904): 不能将值 NULL 插入列 'remark'，表 'Zephyr.Erp.dbo.erp_construction'；列不允许有 Null 值。INSERT 失败。
+语句已终止。
+   在 Zephyr.Data.ExecuteQueryHandler.HandleQueryException(Exception exception) 位置 D:\Project\Code\WEBERP\Code\Zephyr.Net\Zephyr.Data\Command\Handlers\ExecuteQueryHandler.cs:行号 107
+   在 Zephyr.Data.ExecuteQueryHandler.ExecuteQuery(Boolean useReader, Action action) 位置 D:\Project\Code\WEBERP\Code\Zephyr.Net\Zephyr.Data\Command\Handlers\ExecuteQueryHandler.cs:行号 28
+   在 Zephyr.Data.DbCommand.Execute() 位置 D:\Project\Code\WEBERP\Code\Zephyr.Net\Zephyr.Data\Command\PartialClasses\Execute.cs:行号 9
+   在 Zephyr.Data.BaseInsertBuilder.Execute() 位置 D:\Project\Code\WEBERP\Code\Zephyr.Net\Zephyr.Data\Builders\Insert\BaseInsertBuilder.cs:行号 22
+   在 Zephyr.Core.ServiceBase`1.<>c__DisplayClass34_0.<Edit>b__0() 位置 D:\Project\Code\WEBERP\Code\Zephyr.Net\Zephyr.Core\Base\ServiceBaseEdit.cs:行号 89
+   在 Zephyr.Core.LogHelper.Logger(ILog log, String function, ErrorHandle errorHandleType, Action tryHandle, Action`1 catchHandle, Action finallyHandle) 位置 D:\Project\Code\WEBERP\Code\Zephyr.Net\Zephyr.Core\Logs\LogHelper.cs:行号 44
+ClientConnectionId:df7d6038-29e9-4ac5-92dc-5ead130950c1
+Error Number:515,State:2,Class:16
+2020-01-29 18:52:41,975 [8312] ERROR /api/erp/ErpConstruction/edit/ - System.Data.SqlClient.SqlException (0x80131904): 不能将值 NULL 插入列 'remark'，表 'Zephyr.Erp.dbo.erp_construction'；列不允许有 Null 值。INSERT 失败。
+语句已终止。
+   在 Zephyr.Core.LogHelper.Logger(ILog log, String function, ErrorHandle errorHandleType, Action tryHandle, Action`1 catchHandle, Action finallyHandle) 位置 D:\Project\Code\WEBERP\Code\Zephyr.Net\Zephyr.Core\Logs\LogHelper.cs:行号 54
+   在 Zephyr.Core.ServiceBase`1.Logger(String function, Action tryHandle, Action`1 catchHandle, Action finallyHandle) 位置 D:\Project\Code\WEBERP\Code\Zephyr.Net\Zephyr.Core\Base\ServiceBaseLog.cs:行号 23
+   在 Zephyr.Core.ServiceBase`1.Edit(RequestWrapper formWrapper, RequestWrapper listWrapper, JObject data) 位置 D:\Project\Code\WEBERP\Code\Zephyr.Net\Zephyr.Core\Base\ServiceBaseEdit.cs:行号 68
+   在 CallSite.Target(Closure , CallSite , erp_constructionService , RequestWrapper , Object , Object )
+   在 System.Dynamic.UpdateDelegates.UpdateAndExecute4[T0,T1,T2,T3,TRet](CallSite site, T0 arg0, T1 arg1, T2 arg2, T3 arg3)
+   在 ERP.Web.Areas.Erp.Controllers.ErpBaseApi`4.Edit(Object data) 位置 D:\Project\Code\WEBERP\Code\ERP.Web\Areas\Erp\Common\ErpBaseApi.cs:行号 157
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClassf.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.<>c__DisplayClass5.<ExecuteAsync>b__4()
+   在 System.Threading.Tasks.TaskHelpers.RunSynchronously[TResult](Func`1 func, CancellationToken cancellationToken)
+ClientConnectionId:df7d6038-29e9-4ac5-92dc-5ead130950c1
+Error Number:515,State:2,Class:16
+2020-01-29 18:52:47,426 [9712] DEBUG Serviceerp_construction - 编辑记录
+2020-01-29 18:52:47,427 [9712] DEBUG Serviceerp_construction - 获取动态对象
+2020-01-29 18:52:47,467 [9712] DEBUG Erp - select  erp_construction.* from  erp_construction where  id =  ''
+2020-01-29 18:52:47,470 [9712] DEBUG Erp - update  erp_construction set [no] = 'TO202001001', [product_id] = '2', [customer_id] = '1', [number] = '1', [guige] = '4', [zhuangdinfa] = '33', [baozhuangfa] = '1', [address] = '555', [delivery_date] = '2020/2/5 18:52:19', [source_no] = '22', [remark] = '111111', [state] = '0', [create_time] = '2020/1/29 18:52:19', [create_username] = '超级管理员' where  id =  ''
+2020-01-29 18:52:47,491 [9712] DEBUG Erp - insert into  erp_construction([no],[product_id],[customer_id],[number],[guige],[zhuangdinfa],[baozhuangfa],[address],[delivery_date],[source_no],[remark],[state],[create_username],[create_time]) values('TO202001001','2','1','1','4','33','1','555','2020/2/5 18:52:19','22','111111','0','超级管理员','2020/1/29 18:52:47')
+2020-01-29 18:52:57,235 [6428] DEBUG Serviceerp_construction - 编辑记录
+2020-01-29 18:52:57,236 [6428] DEBUG Serviceerp_construction - 获取动态对象
+2020-01-29 18:52:57,288 [6428] DEBUG Erp - select  erp_construction.* from  erp_construction where  id =  ''
+2020-01-29 18:52:57,291 [6428] DEBUG Erp - update  erp_construction set [no] = 'TO202001001', [product_id] = '2', [customer_id] = '1', [number] = '1', [guige] = '4', [zhuangdinfa] = '33', [baozhuangfa] = '1', [address] = '555', [delivery_date] = '2020/2/5 18:52:19', [source_no] = '22', [remark] = '', [state] = '0', [create_time] = '2020/1/29 18:52:19', [create_username] = '超级管理员' where  id =  ''
+2020-01-29 18:52:57,309 [6428] DEBUG Erp - insert into  erp_construction([no],[product_id],[customer_id],[number],[guige],[zhuangdinfa],[baozhuangfa],[address],[delivery_date],[source_no],[remark],[state],[create_username],[create_time]) values('TO202001001','2','1','1','4','33','1','555','2020/2/5 18:52:19','22','','0','超级管理员','2020/1/29 18:52:57')
+2020-01-29 18:52:57,331 [6428] ERROR Serviceerp_construction - 编辑记录失败
+System.Exception: 主键重复，更新失败！
+   在 Zephyr.Core.Db.<>c.<Context>b__2_1(ErrorEventArgs e) 位置 D:\Project\Code\WEBERP\Code\Zephyr.Net\Zephyr.Core\Core\Db.cs:行号 98
+   在 Zephyr.Data.ExecuteQueryHandler.HandleQueryException(Exception exception) 位置 D:\Project\Code\WEBERP\Code\Zephyr.Net\Zephyr.Data\Command\Handlers\ExecuteQueryHandler.cs:行号 105
+   在 Zephyr.Data.ExecuteQueryHandler.ExecuteQuery(Boolean useReader, Action action) 位置 D:\Project\Code\WEBERP\Code\Zephyr.Net\Zephyr.Data\Command\Handlers\ExecuteQueryHandler.cs:行号 28
+   在 Zephyr.Data.DbCommand.Execute() 位置 D:\Project\Code\WEBERP\Code\Zephyr.Net\Zephyr.Data\Command\PartialClasses\Execute.cs:行号 9
+   在 Zephyr.Data.BaseInsertBuilder.Execute() 位置 D:\Project\Code\WEBERP\Code\Zephyr.Net\Zephyr.Data\Builders\Insert\BaseInsertBuilder.cs:行号 22
+   在 Zephyr.Core.ServiceBase`1.<>c__DisplayClass34_0.<Edit>b__0() 位置 D:\Project\Code\WEBERP\Code\Zephyr.Net\Zephyr.Core\Base\ServiceBaseEdit.cs:行号 89
+   在 Zephyr.Core.LogHelper.Logger(ILog log, String function, ErrorHandle errorHandleType, Action tryHandle, Action`1 catchHandle, Action finallyHandle) 位置 D:\Project\Code\WEBERP\Code\Zephyr.Net\Zephyr.Core\Logs\LogHelper.cs:行号 44
+2020-01-29 18:52:57,392 [6428] ERROR /api/erp/ErpConstruction/edit/ - System.Exception: 主键重复，更新失败！
+   在 Zephyr.Core.LogHelper.Logger(ILog log, String function, ErrorHandle errorHandleType, Action tryHandle, Action`1 catchHandle, Action finallyHandle) 位置 D:\Project\Code\WEBERP\Code\Zephyr.Net\Zephyr.Core\Logs\LogHelper.cs:行号 54
+   在 Zephyr.Core.ServiceBase`1.Logger(String function, Action tryHandle, Action`1 catchHandle, Action finallyHandle) 位置 D:\Project\Code\WEBERP\Code\Zephyr.Net\Zephyr.Core\Base\ServiceBaseLog.cs:行号 23
+   在 Zephyr.Core.ServiceBase`1.Edit(RequestWrapper formWrapper, RequestWrapper listWrapper, JObject data) 位置 D:\Project\Code\WEBERP\Code\Zephyr.Net\Zephyr.Core\Base\ServiceBaseEdit.cs:行号 68
+   在 CallSite.Target(Closure , CallSite , erp_constructionService , RequestWrapper , Object , Object )
+   在 ERP.Web.Areas.Erp.Controllers.ErpBaseApi`4.Edit(Object data) 位置 D:\Project\Code\WEBERP\Code\ERP.Web\Areas\Erp\Common\ErpBaseApi.cs:行号 157
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClassf.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.<>c__DisplayClass5.<ExecuteAsync>b__4()
+   在 System.Threading.Tasks.TaskHelpers.RunSynchronously[TResult](Func`1 func, CancellationToken cancellationToken)
+2020-01-29 19:07:14,275 [10236] DEBUG Sys - select * from sys_userSetting where UserCode='super'
+2020-01-29 19:07:14,742 [9792] DEBUG Sys - 
+--角色的菜单
+select distinct B.*
+from sys_roleMenuMap A
+inner join sys_menu  B on B.MenuCode = A.MenuCode
+where B.IsEnable='1'
+  and RoleCode in (
+  select RoleCode from sys_userRoleMap where UserCode = 'super' --用户的角色
+union all
+  select RoleCode from sys_organizeRoleMap where OrganizeCode in  --机构的角色
+  (
+	select OrganizeCode from sys_userOrganizeMap where UserCode = 'super'
+  )  
+)
+order by B.MenuSeq,B.MenuCode
+2020-01-29 19:07:32,387 [6868] DEBUG Sys - 
+select 1
+from sys_roleMenuMap A
+left join sys_userRoleMap B on B.RoleCode = A.RoleCode
+left join sys_menu C on C.MenuCode = A.MenuCode
+where B.UserCode = 'super'
+and C.URL in ('/Erp/ErpConstruction/Index','/Erp/ErpConstruction')
+2020-01-29 19:07:32,406 [6868] DEBUG Servicemms_warehouse - 获取动态列表
+2020-01-29 19:07:32,467 [6868] DEBUG Mms - select WarehouseCode as value,WarehouseName as text from mms_warehouse where  ProjectCode =  '201306030001'
+2020-01-29 19:07:32,469 [6868] DEBUG Servicesys_code - 获取动态列表
+2020-01-29 19:07:32,469 [6868] DEBUG Sys - select Code as value,Text as text from sys_code where  CodeType =  'SupplyType'
+2020-01-29 19:07:33,833 [10312] DEBUG Serviceerp_construction - 获取动态列表
+2020-01-29 19:07:33,854 [10312] DEBUG Erp - select top 20 *
+                 from 
+                    Erp_Construction
+                 order by create_time
+2020-01-29 19:07:33,856 [10312] DEBUG Erp - select count(*) from ( select *
+                 from 
+                    Erp_Construction
+                 ) tb_temp
+2020-01-29 19:07:36,538 [8632] DEBUG Sys - 
+select 1
+from sys_roleMenuMap A
+left join sys_userRoleMap B on B.RoleCode = A.RoleCode
+left join sys_menu C on C.MenuCode = A.MenuCode
+where B.UserCode = 'super'
+and C.URL in ('/Erp/ErpConstruction/edit')
+2020-01-29 19:07:36,546 [8632] DEBUG Serviceerp_construction - 获取实体对象
+2020-01-29 19:07:36,547 [8632] DEBUG Erp - select erp_construction.* from erp_construction where  no =  'TO202001001'
+2020-01-29 19:07:36,568 [8632] ERROR Serviceerp_construction - 获取实体对象失败
+Zephyr.Data.FluentDataException: Could not map: id
+   在 Zephyr.Data.ExecuteQueryHandler.HandleQueryException(Exception exception) 位置 D:\Project\Code\WEBERP\Code\Zephyr.Net\Zephyr.Data\Command\Handlers\ExecuteQueryHandler.cs:行号 107
+   在 Zephyr.Data.ExecuteQueryHandler.ExecuteQuery(Boolean useReader, Action action) 位置 D:\Project\Code\WEBERP\Code\Zephyr.Net\Zephyr.Data\Command\Handlers\ExecuteQueryHandler.cs:行号 28
+   在 Zephyr.Data.DbCommand.QuerySingle[TEntity](Action`2 customMapper) 位置 D:\Project\Code\WEBERP\Code\Zephyr.Net\Zephyr.Data\Command\PartialClasses\QuerySingle.cs:行号 12
+   在 Zephyr.Data.SelectBuilder`1.QuerySingle(Action`2 customMapper) 位置 D:\Project\Code\WEBERP\Code\Zephyr.Net\Zephyr.Data\Builders\Select\SelectBuilder.cs:行号 129
+   在 Zephyr.Core.ServiceBase`1.<>c__DisplayClass46_0.<GetModel>b__0() 位置 D:\Project\Code\WEBERP\Code\Zephyr.Net\Zephyr.Core\Base\ServiceBaseQuery.cs:行号 51
+   在 Zephyr.Core.LogHelper.Logger(ILog log, String function, ErrorHandle errorHandleType, Action tryHandle, Action`1 catchHandle, Action finallyHandle) 位置 D:\Project\Code\WEBERP\Code\Zephyr.Net\Zephyr.Core\Logs\LogHelper.cs:行号 44
+2020-01-29 19:07:36,597 [8632] ERROR /erp/ErpConstruction/edit/TO202001001 - Zephyr.Data.FluentDataException: Could not map: id
+   在 Zephyr.Core.LogHelper.Logger(ILog log, String function, ErrorHandle errorHandleType, Action tryHandle, Action`1 catchHandle, Action finallyHandle) 位置 D:\Project\Code\WEBERP\Code\Zephyr.Net\Zephyr.Core\Logs\LogHelper.cs:行号 54
+   在 Zephyr.Core.ServiceBase`1.Logger(String function, Action tryHandle, Action`1 catchHandle, Action finallyHandle) 位置 D:\Project\Code\WEBERP\Code\Zephyr.Net\Zephyr.Core\Base\ServiceBaseLog.cs:行号 23
+   在 Zephyr.Core.ServiceBase`1.GetModel(ParamQuery param) 位置 D:\Project\Code\WEBERP\Code\Zephyr.Net\Zephyr.Core\Base\ServiceBaseQuery.cs:行号 51
+   在 ERP.Web.Areas.Erp.Controllers.ErpBaseApi`4.GetEditMaster(String id) 位置 D:\Project\Code\WEBERP\Code\ERP.Web\Areas\Erp\Common\ErpBaseApi.cs:行号 86
+   在 ERP.Web.Areas.Erp.Controllers.ErpConstructionController.Edit(String id) 位置 D:\Project\Code\WEBERP\Code\ERP.Web\Areas\Erp\Controllers\ErpConstructionController.cs:行号 39
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)

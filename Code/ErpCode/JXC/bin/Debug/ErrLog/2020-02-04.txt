@@ -1,0 +1,144 @@
+出现应用程序未处理的异常：2020/2/4 2:05:49
+操作人:超级用户
+异常类型：SEHException
+异常消息：外部组件发生异常。
+异常信息：   在 DataLib.SysVar.RMPreview(IntPtr handle, String strCon, String strType, String Parm, String ParmValue)
+   在 Common.frmBill.PrintPreview() 位置 E:\Code\PrintErp\V08\ErpCode\Common\frmBill.cs:行号 198
+   在 Common.frmBill.biPreview_ItemClick(Object sender, ItemClickEventArgs e) 位置 E:\Code\PrintErp\V08\ErpCode\Common\frmBill.cs:行号 1929
+   在 DevExpress.XtraBars.BarItem.OnClick(BarItemLink link)
+   在 DevExpress.XtraBars.BarBaseButtonItem.OnClick(BarItemLink link)
+   在 DevExpress.XtraBars.BarItemLink.OnLinkClick()
+   在 DevExpress.XtraBars.BarItemLink.OnLinkAction(BarLinkAction action, Object actionArgs)
+   在 DevExpress.XtraBars.BarButtonItemLink.OnLinkAction(BarLinkAction action, Object actionArgs)
+   在 DevExpress.XtraBars.BarItemLink.OnLinkActionCore(BarLinkAction action, Object actionArgs)
+   在 DevExpress.XtraBars.ViewInfo.BarSelectionInfo.ClickLink(BarItemLink link)
+   在 DevExpress.XtraBars.ViewInfo.BarSelectionInfo.UnPressLink(BarItemLink link)
+   在 DevExpress.XtraBars.Controls.CustomLinksControl.OnMouseUp(MouseEventArgs e)
+   在 System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+
+---------------------------------------------------------
+出现应用程序未处理的异常：2020/2/4 2:05:57
+操作人:超级用户
+异常类型：SEHException
+异常消息：外部组件发生异常。
+异常信息：   在 DataLib.SysVar.RMPreview(IntPtr handle, String strCon, String strType, String Parm, String ParmValue)
+   在 Common.frmBill.PrintPreview() 位置 E:\Code\PrintErp\V08\ErpCode\Common\frmBill.cs:行号 198
+   在 Common.frmBill.biPreview_ItemClick(Object sender, ItemClickEventArgs e) 位置 E:\Code\PrintErp\V08\ErpCode\Common\frmBill.cs:行号 1929
+   在 DevExpress.XtraBars.BarItem.OnClick(BarItemLink link)
+   在 DevExpress.XtraBars.BarBaseButtonItem.OnClick(BarItemLink link)
+   在 DevExpress.XtraBars.BarItemLink.OnLinkClick()
+   在 DevExpress.XtraBars.BarItemLink.OnLinkAction(BarLinkAction action, Object actionArgs)
+   在 DevExpress.XtraBars.BarButtonItemLink.OnLinkAction(BarLinkAction action, Object actionArgs)
+   在 DevExpress.XtraBars.BarItemLink.OnLinkActionCore(BarLinkAction action, Object actionArgs)
+   在 DevExpress.XtraBars.ViewInfo.BarSelectionInfo.ClickLink(BarItemLink link)
+   在 DevExpress.XtraBars.ViewInfo.BarSelectionInfo.UnPressLink(BarItemLink link)
+   在 DevExpress.XtraBars.Controls.CustomLinksControl.OnMouseUp(MouseEventArgs e)
+   在 System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+
+---------------------------------------------------------
+出现应用程序未处理的异常：2020/2/4 2:16:25
+操作人:超级用户
+异常类型：InvalidCastException
+异常消息：对象不能从 DBNull 转换为其他类型。
+异常信息：   在 System.DBNull.System.IConvertible.ToDecimal(IFormatProvider provider)
+   在 System.Convert.ToDecimal(Object value)
+   在 OutProduct.frmOutBill.Expand(String strItemID, Decimal decQty) 位置 E:\Code\PrintErp\V08\ErpCode\OutProduct\frmOutBill.cs:行号 122
+   在 OutProduct.frmOutBill.Expand(String strItemID, Decimal decQty) 位置 E:\Code\PrintErp\V08\ErpCode\OutProduct\frmOutBill.cs:行号 148
+   在 OutProduct.frmOutBill.ExpandAll() 位置 E:\Code\PrintErp\V08\ErpCode\OutProduct\frmOutBill.cs:行号 83
+   在 OutProduct.frmOutBill.sbExpand_Click(Object sender, EventArgs e) 位置 E:\Code\PrintErp\V08\ErpCode\OutProduct\frmOutBill.cs:行号 353
+   在 System.Windows.Forms.Control.OnClick(EventArgs e)
+   在 DevExpress.XtraEditors.BaseButton.OnClick(EventArgs e)
+   在 DevExpress.XtraEditors.BaseButton.OnMouseUp(MouseEventArgs e)
+   在 System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 DevExpress.Utils.Controls.ControlBase.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+
+---------------------------------------------------------
+出现应用程序未处理的异常：2020/2/4 2:21:30
+操作人:超级用户
+异常类型：ArgumentException
+异常消息：列“F_CheckFlag”不属于表 Table。
+异常信息：   在 System.Data.DataRow.GetDataColumn(String columnName)
+   在 System.Data.DataRow.get_Item(String columnName)
+   在 Common.frmBill.TestMultCheck() 位置 E:\Code\PrintErp\V08\ErpCode\Common\frmBill.cs:行号 114
+   在 Common.frmBill.BindData() 位置 E:\Code\PrintErp\V08\ErpCode\Common\frmBill.cs:行号 1083
+   在 OutProduct.frmOutBill.BindData() 位置 E:\Code\PrintErp\V08\ErpCode\OutProduct\frmOutBill.cs:行号 210
+   在 OutProduct.frmOutBill.frmOutBill_Shown(Object sender, EventArgs e) 位置 E:\Code\PrintErp\V08\ErpCode\OutProduct\frmOutBill.cs:行号 376
+   在 System.EventHandler.Invoke(Object sender, EventArgs e)
+   在 System.Windows.Forms.Form.OnShown(EventArgs e)
+   在 System.Windows.Forms.Form.CallShownEvent()
+   在 System.Windows.Forms.Control.InvokeMarshaledCallbackDo(ThreadMethodEntry tme)
+   在 System.Windows.Forms.Control.InvokeMarshaledCallbackHelper(Object obj)
+   在 System.Threading.ExecutionContext.runTryCode(Object userData)
+   在 System.Runtime.CompilerServices.RuntimeHelpers.ExecuteCodeWithGuaranteedCleanup(TryCode code, CleanupCode backoutCode, Object userData)
+   在 System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   在 System.Windows.Forms.Control.InvokeMarshaledCallback(ThreadMethodEntry tme)
+   在 System.Windows.Forms.Control.InvokeMarshaledCallbacks()
+
+---------------------------------------------------------
+出现应用程序未处理的异常：2020/2/4 2:22:34
+操作人:超级用户
+异常类型：ArgumentException
+异常消息：列“F_CheckFlag”不属于表 Table。
+异常信息：   在 System.Data.DataRow.GetDataColumn(String columnName)
+   在 System.Data.DataRow.get_Item(String columnName)
+   在 Common.frmBill.TestMultCheck() 位置 E:\Code\PrintErp\V08\ErpCode\Common\frmBill.cs:行号 114
+   在 Common.frmBill.BindData() 位置 E:\Code\PrintErp\V08\ErpCode\Common\frmBill.cs:行号 1083
+   在 OutProduct.frmOutBill.BindData() 位置 E:\Code\PrintErp\V08\ErpCode\OutProduct\frmOutBill.cs:行号 210
+   在 OutProduct.frmOutBill.frmOutBill_Shown(Object sender, EventArgs e) 位置 E:\Code\PrintErp\V08\ErpCode\OutProduct\frmOutBill.cs:行号 376
+   在 System.EventHandler.Invoke(Object sender, EventArgs e)
+   在 System.Windows.Forms.Form.OnShown(EventArgs e)
+   在 System.Windows.Forms.Form.CallShownEvent()
+   在 System.Windows.Forms.Control.InvokeMarshaledCallbackDo(ThreadMethodEntry tme)
+   在 System.Windows.Forms.Control.InvokeMarshaledCallbackHelper(Object obj)
+   在 System.Threading.ExecutionContext.runTryCode(Object userData)
+   在 System.Runtime.CompilerServices.RuntimeHelpers.ExecuteCodeWithGuaranteedCleanup(TryCode code, CleanupCode backoutCode, Object userData)
+   在 System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   在 System.Windows.Forms.Control.InvokeMarshaledCallback(ThreadMethodEntry tme)
+   在 System.Windows.Forms.Control.InvokeMarshaledCallbacks()
+
+---------------------------------------------------------
+出现应用程序未处理的异常：2020/2/4 2:47:43
+操作人:超级用户
+异常类型：NullReferenceException
+异常消息：未将对象引用设置到对象的实例。
+异常信息：   在 Common.frmBillImport.cbBill_SelectedIndexChanged(Object sender, EventArgs e) 位置 E:\Code\PrintErp\V08\ErpCode\Common\frmBillImport.cs:行号 224
+   在 DevExpress.XtraEditors.Repository.RepositoryItemComboBox.RaiseSelectedIndexChanged(EventArgs e)
+   在 DevExpress.XtraEditors.ComboBoxEdit.UpdatePopupEditValueIndex(Int32 prevIndex)
+   在 DevExpress.XtraEditors.ComboBoxEdit.set_EditValue(Object value)
+   在 DevExpress.XtraEditors.ComboBoxEdit.set_SelectedItem(Object value)
+   在 DevExpress.XtraEditors.ComboBoxEdit.set_SelectedIndex(Int32 value)
+   在 Common.frmBillImport.GetBill(String strType) 位置 E:\Code\PrintErp\V08\ErpCode\Common\frmBillImport.cs:行号 182
+   在 Common.frmBill.LoadBill() 位置 E:\Code\PrintErp\V08\ErpCode\Common\frmBill.cs:行号 336
+   在 OutProduct.frmOutDrawGoods.LoadBill() 位置 E:\Code\PrintErp\V08\ErpCode\OutProduct\frmOutDrawGoods.cs:行号 33
+   在 Common.frmBill.btnLoadBill_ItemClick(Object sender, ItemClickEventArgs e) 位置 E:\Code\PrintErp\V08\ErpCode\Common\frmBill.cs:行号 1919
+   在 DevExpress.XtraBars.BarItem.OnClick(BarItemLink link)
+   在 DevExpress.XtraBars.BarBaseButtonItem.OnClick(BarItemLink link)
+   在 DevExpress.XtraBars.BarItemLink.OnLinkClick()
+   在 DevExpress.XtraBars.BarItemLink.OnLinkAction(BarLinkAction action, Object actionArgs)
+   在 DevExpress.XtraBars.BarButtonItemLink.OnLinkAction(BarLinkAction action, Object actionArgs)
+   在 DevExpress.XtraBars.BarItemLink.OnLinkActionCore(BarLinkAction action, Object actionArgs)
+   在 DevExpress.XtraBars.ViewInfo.BarSelectionInfo.ClickLink(BarItemLink link)
+   在 DevExpress.XtraBars.ViewInfo.BarSelectionInfo.UnPressLink(BarItemLink link)
+   在 DevExpress.XtraBars.Controls.CustomLinksControl.OnMouseUp(MouseEventArgs e)
+   在 System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 DevExpress.XtraBars.Controls.DockedBarControl.WndProc(Message& msg)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+
+---------------------------------------------------------

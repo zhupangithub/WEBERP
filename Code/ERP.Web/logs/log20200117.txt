@@ -1,0 +1,140 @@
+2020-01-17 18:43:06,405 [8016] DEBUG Servicesys_user - 获取实体对象
+2020-01-17 18:43:06,488 [8016] ERROR Servicesys_user - 获取实体对象失败
+System.Exception: 登陆数据库失败！
+   在 Zephyr.Core.Db.<>c.<Context>b__2_1(ErrorEventArgs e) 位置 D:\Project\Code\WEBERP\Code\Zephyr.Net\Zephyr.Core\Core\Db.cs:行号 98
+   在 Zephyr.Data.ExecuteQueryHandler.HandleQueryException(Exception exception) 位置 D:\Project\Code\WEBERP\Code\Zephyr.Net\Zephyr.Data\Command\Handlers\ExecuteQueryHandler.cs:行号 105
+   在 Zephyr.Data.ExecuteQueryHandler.ExecuteQuery(Boolean useReader, Action action) 位置 D:\Project\Code\WEBERP\Code\Zephyr.Net\Zephyr.Data\Command\Handlers\ExecuteQueryHandler.cs:行号 28
+   在 Zephyr.Data.DbCommand.QuerySingle[TEntity](Action`2 customMapper) 位置 D:\Project\Code\WEBERP\Code\Zephyr.Net\Zephyr.Data\Command\PartialClasses\QuerySingle.cs:行号 12
+   在 Zephyr.Data.SelectBuilder`1.QuerySingle(Action`2 customMapper) 位置 D:\Project\Code\WEBERP\Code\Zephyr.Net\Zephyr.Data\Builders\Select\SelectBuilder.cs:行号 129
+   在 Zephyr.Core.ServiceBase`1.<>c__DisplayClass46_0.<GetModel>b__0() 位置 D:\Project\Code\WEBERP\Code\Zephyr.Net\Zephyr.Core\Base\ServiceBaseQuery.cs:行号 51
+   在 Zephyr.Core.LogHelper.Logger(ILog log, String function, ErrorHandle errorHandleType, Action tryHandle, Action`1 catchHandle, Action finallyHandle) 位置 D:\Project\Code\WEBERP\Code\Zephyr.Net\Zephyr.Core\Logs\LogHelper.cs:行号 44
+2020-01-17 18:43:06,560 [8016] ERROR /login/doAction - System.Exception: 登陆数据库失败！
+   在 Zephyr.Core.LogHelper.Logger(ILog log, String function, ErrorHandle errorHandleType, Action tryHandle, Action`1 catchHandle, Action finallyHandle) 位置 D:\Project\Code\WEBERP\Code\Zephyr.Net\Zephyr.Core\Logs\LogHelper.cs:行号 54
+   在 Zephyr.Core.ServiceBase`1.Logger(String function, Action tryHandle, Action`1 catchHandle, Action finallyHandle) 位置 D:\Project\Code\WEBERP\Code\Zephyr.Net\Zephyr.Core\Base\ServiceBaseLog.cs:行号 23
+   在 Zephyr.Core.ServiceBase`1.GetModel(ParamQuery param) 位置 D:\Project\Code\WEBERP\Code\Zephyr.Net\Zephyr.Core\Base\ServiceBaseQuery.cs:行号 51
+   在 ERP.Web.Models.sys_userService.Login(JObject request) 位置 D:\Project\Code\WEBERP\Code\ERP.Web\Areas\Sys\Models\sys_user.cs:行号 24
+   在 ERP.Web.Controllers.LoginController.DoAction(JObject request) 位置 D:\Project\Code\WEBERP\Code\ERP.Web\Controllers\LoginController.cs:行号 42
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+2020-01-17 21:36:25,112 [7512] DEBUG Servicesys_user - 获取实体对象
+2020-01-17 21:36:25,173 [7512] ERROR Servicesys_user - 获取实体对象失败
+System.Exception: 登陆数据库失败！
+   在 Zephyr.Core.Db.<>c.<Context>b__2_1(ErrorEventArgs e) 位置 D:\Project\Code\WEBERP\Code\Zephyr.Net\Zephyr.Core\Core\Db.cs:行号 98
+   在 Zephyr.Data.ExecuteQueryHandler.HandleQueryException(Exception exception) 位置 D:\Project\Code\WEBERP\Code\Zephyr.Net\Zephyr.Data\Command\Handlers\ExecuteQueryHandler.cs:行号 105
+   在 Zephyr.Data.ExecuteQueryHandler.ExecuteQuery(Boolean useReader, Action action) 位置 D:\Project\Code\WEBERP\Code\Zephyr.Net\Zephyr.Data\Command\Handlers\ExecuteQueryHandler.cs:行号 28
+   在 Zephyr.Data.DbCommand.QuerySingle[TEntity](Action`2 customMapper) 位置 D:\Project\Code\WEBERP\Code\Zephyr.Net\Zephyr.Data\Command\PartialClasses\QuerySingle.cs:行号 12
+   在 Zephyr.Data.SelectBuilder`1.QuerySingle(Action`2 customMapper) 位置 D:\Project\Code\WEBERP\Code\Zephyr.Net\Zephyr.Data\Builders\Select\SelectBuilder.cs:行号 129
+   在 Zephyr.Core.ServiceBase`1.<>c__DisplayClass46_0.<GetModel>b__0() 位置 D:\Project\Code\WEBERP\Code\Zephyr.Net\Zephyr.Core\Base\ServiceBaseQuery.cs:行号 51
+   在 Zephyr.Core.LogHelper.Logger(ILog log, String function, ErrorHandle errorHandleType, Action tryHandle, Action`1 catchHandle, Action finallyHandle) 位置 D:\Project\Code\WEBERP\Code\Zephyr.Net\Zephyr.Core\Logs\LogHelper.cs:行号 44
+2020-01-17 21:36:25,232 [7512] ERROR /login/doAction - System.Exception: 登陆数据库失败！
+   在 Zephyr.Core.LogHelper.Logger(ILog log, String function, ErrorHandle errorHandleType, Action tryHandle, Action`1 catchHandle, Action finallyHandle) 位置 D:\Project\Code\WEBERP\Code\Zephyr.Net\Zephyr.Core\Logs\LogHelper.cs:行号 54
+   在 Zephyr.Core.ServiceBase`1.Logger(String function, Action tryHandle, Action`1 catchHandle, Action finallyHandle) 位置 D:\Project\Code\WEBERP\Code\Zephyr.Net\Zephyr.Core\Base\ServiceBaseLog.cs:行号 23
+   在 Zephyr.Core.ServiceBase`1.GetModel(ParamQuery param) 位置 D:\Project\Code\WEBERP\Code\Zephyr.Net\Zephyr.Core\Base\ServiceBaseQuery.cs:行号 51
+   在 ERP.Web.Models.sys_userService.Login(JObject request) 位置 D:\Project\Code\WEBERP\Code\ERP.Web\Areas\Sys\Models\sys_user.cs:行号 24
+   在 ERP.Web.Controllers.LoginController.DoAction(JObject request) 位置 D:\Project\Code\WEBERP\Code\ERP.Web\Controllers\LoginController.cs:行号 42
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+2020-01-17 21:52:20,854 [8220] DEBUG Servicesys_user - 获取实体对象
+2020-01-17 21:52:21,023 [8220] DEBUG Sys - select sys_user.* from sys_user where  UserCode =  'super'and Password =  '1234'and IsEnable =  'True'
+2020-01-17 21:52:21,240 [8220] DEBUG Sys - 
+update sys_user
+set LoginCount = isnull(LoginCount,0) + 1
+   ,LastLoginDate = getdate()
+where UserCode = 'super' 
+2020-01-17 21:52:21,353 [8220] DEBUG Sys - insert into sys_loginHistory([UserCode],[UserName],[HostName],[HostIP],[LoginCity],[LoginDate]) values('super','超级管理员','4S6DBKLDWJUEQVW','localhost','上海市','2020/1/17 21:52:21')
+2020-01-17 21:52:21,365 [8220] DEBUG Servicemms_project - 获取实体对象
+2020-01-17 21:52:21,376 [8220] DEBUG Mms - select mms_project.* from mms_project where  ProjectCode =  '201306030001'
+2020-01-17 21:52:21,468 [8156] DEBUG Sys - select * from sys_userSetting where UserCode='super'
+2020-01-17 21:52:24,356 [8216] DEBUG Sys - 
+--角色的菜单
+select distinct B.*
+from sys_roleMenuMap A
+inner join sys_menu  B on B.MenuCode = A.MenuCode
+where B.IsEnable='1'
+  and RoleCode in (
+  select RoleCode from sys_userRoleMap where UserCode = 'super' --用户的角色
+union all
+  select RoleCode from sys_organizeRoleMap where OrganizeCode in  --机构的角色
+  (
+	select OrganizeCode from sys_userOrganizeMap where UserCode = 'super'
+  )  
+)
+order by B.MenuSeq,B.MenuCode
+2020-01-17 21:52:29,492 [8220] DEBUG Sys - 
+select 1
+from sys_roleMenuMap A
+left join sys_userRoleMap B on B.RoleCode = A.RoleCode
+left join sys_menu C on C.MenuCode = A.MenuCode
+where B.UserCode = 'super'
+and C.URL in ('/Erp/ErpConstruction/Index','/Erp/ErpConstruction')
+2020-01-17 21:52:29,546 [8220] DEBUG Servicemms_warehouse - 获取动态列表
+2020-01-17 21:52:29,552 [8220] DEBUG Mms - select WarehouseCode as value,WarehouseName as text from mms_warehouse where  ProjectCode =  '201306030001'
+2020-01-17 21:52:29,566 [8220] DEBUG Servicesys_code - 获取动态列表
+2020-01-17 21:52:29,567 [8220] DEBUG Sys - select Code as value,Text as text from sys_code where  CodeType =  'SupplyType'
+2020-01-17 21:52:30,927 [8156] DEBUG Serviceerp_construction - 获取动态列表
+2020-01-17 21:52:30,934 [8156] DEBUG Erp - select top 20 *
+                 from 
+                    Erp_Construction
+                 order by create_time
+2020-01-17 21:52:30,963 [8156] DEBUG Erp - select count(*) from ( select *
+                 from 
+                    Erp_Construction
+                 ) tb_temp
+2020-01-17 21:52:32,301 [7520] DEBUG Serviceerp_construction - 获取新主键
+2020-01-17 21:52:32,305 [7520] DEBUG Erp - select top 1 isnull(id,0) from erp_construction order by id desc
+2020-01-17 21:52:32,476 [7164] DEBUG Sys - 
+select 1
+from sys_roleMenuMap A
+left join sys_userRoleMap B on B.RoleCode = A.RoleCode
+left join sys_menu C on C.MenuCode = A.MenuCode
+where B.UserCode = 'super'
+and C.URL in ('/Erp/ErpConstruction/edit')
+2020-01-17 21:52:32,498 [7164] DEBUG Serviceerp_construction - 获取实体对象
+2020-01-17 21:52:32,498 [7164] DEBUG Erp - select erp_construction.* from erp_construction where  no =  'TO20200100'
+2020-01-17 21:52:32,503 [7164] DEBUG Serviceerp_construction - 获取上一条下一条数据
+2020-01-17 21:52:32,539 [7164] DEBUG Serviceerp_construction - 获取字段
+2020-01-17 21:52:32,541 [7164] DEBUG Erp - select top 1 no from erp_construction order by no
+2020-01-17 21:52:32,546 [7164] DEBUG Serviceerp_construction - 获取字段
+2020-01-17 21:52:32,547 [7164] DEBUG Erp - select top 1 no from erp_construction where  no < 'TO20200100' order by no desc
+2020-01-17 21:52:32,552 [7164] DEBUG Serviceerp_construction - 获取字段
+2020-01-17 21:52:32,552 [7164] DEBUG Erp - select top 1 no from erp_construction where  no >  'TO20200100' order by no
+2020-01-17 21:52:32,557 [7164] DEBUG Serviceerp_construction - 获取字段
+2020-01-17 21:52:32,557 [7164] DEBUG Erp - select top 1 no from erp_construction order by no desc
+2020-01-17 21:52:32,601 [7164] DEBUG Servicesys_code - 获取动态列表
+2020-01-17 21:52:32,602 [7164] DEBUG Sys - select Text as value,Text as text from sys_code where  CodeType =  'MeasureUnit'
+2020-01-17 21:52:34,744 [6744] DEBUG Serviceerp_construction - 获取动态列表
+2020-01-17 21:52:34,745 [6744] DEBUG Erp - select 
+                        *
+                     from 
+                        erp_parts
+                     where  con_no =  '' order by id

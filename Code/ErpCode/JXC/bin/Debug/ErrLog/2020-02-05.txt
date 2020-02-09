@@ -1,0 +1,213 @@
+出现应用程序未处理的异常：2020/2/5 0:32:48
+操作人:超级用户
+异常类型：DBConcurrencyException
+异常消息：违反并发性: DeleteCommand 影响了预期 1 条记录中的 0 条。
+异常信息：   在 System.Data.Common.DbDataAdapter.UpdatedRowStatusErrors(RowUpdatedEventArgs rowUpdatedEvent, BatchCommandInfo[] batchCommands, Int32 commandCount)
+   在 System.Data.Common.DbDataAdapter.UpdatedRowStatus(RowUpdatedEventArgs rowUpdatedEvent, BatchCommandInfo[] batchCommands, Int32 commandCount)
+   在 System.Data.Common.DbDataAdapter.Update(DataRow[] dataRows, DataTableMapping tableMapping)
+   在 System.Data.Common.DbDataAdapter.UpdateFromDataTable(DataTable dataTable, DataTableMapping tableMapping)
+   在 System.Data.Common.DbDataAdapter.Update(DataSet dataSet, String srcTable)
+   在 System.Data.Common.DbDataAdapter.Update(DataSet dataSet)
+   在 CenterLib.Service.SaveData(String strDB, DataSet ds, String strSQL) 位置 E:\Code\PrintErp\V08\ErpCode\CenterLib\CenterLib\Service.cs:行号 174
+   在 DataLib.DataHelper.SaveData(DataSet ds, String strSQL) 位置 E:\Code\PrintErp\V08\ErpCode\DataLib\DataHelper.cs:行号 236
+   在 Sys.frmBalanceType.Save()
+   在 Sys.frmBalanceType.tsSave_Click(Object sender, EventArgs e)
+   在 System.Windows.Forms.ToolStripItem.RaiseEvent(Object key, EventArgs e)
+   在 System.Windows.Forms.ToolStripButton.OnClick(EventArgs e)
+   在 System.Windows.Forms.ToolStripItem.HandleClick(EventArgs e)
+   在 System.Windows.Forms.ToolStripItem.HandleMouseUp(MouseEventArgs e)
+   在 System.Windows.Forms.ToolStripItem.FireEventInteractive(EventArgs e, ToolStripItemEventType met)
+   在 System.Windows.Forms.ToolStripItem.FireEvent(EventArgs e, ToolStripItemEventType met)
+   在 System.Windows.Forms.ToolStrip.OnMouseUp(MouseEventArgs mea)
+   在 System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 System.Windows.Forms.ScrollableControl.WndProc(Message& m)
+   在 System.Windows.Forms.ToolStrip.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+
+---------------------------------------------------------
+出现应用程序未处理的异常：2020/2/5 0:33:03
+操作人:超级用户
+异常类型：DBConcurrencyException
+异常消息：违反并发性: DeleteCommand 影响了预期 1 条记录中的 0 条。
+异常信息：   在 System.Data.Common.DbDataAdapter.UpdatedRowStatusErrors(RowUpdatedEventArgs rowUpdatedEvent, BatchCommandInfo[] batchCommands, Int32 commandCount)
+   在 System.Data.Common.DbDataAdapter.UpdatedRowStatus(RowUpdatedEventArgs rowUpdatedEvent, BatchCommandInfo[] batchCommands, Int32 commandCount)
+   在 System.Data.Common.DbDataAdapter.Update(DataRow[] dataRows, DataTableMapping tableMapping)
+   在 System.Data.Common.DbDataAdapter.UpdateFromDataTable(DataTable dataTable, DataTableMapping tableMapping)
+   在 System.Data.Common.DbDataAdapter.Update(DataSet dataSet, String srcTable)
+   在 System.Data.Common.DbDataAdapter.Update(DataSet dataSet)
+   在 CenterLib.Service.SaveData(String strDB, DataSet ds, String strSQL) 位置 E:\Code\PrintErp\V08\ErpCode\CenterLib\CenterLib\Service.cs:行号 174
+   在 DataLib.DataHelper.SaveData(DataSet ds, String strSQL) 位置 E:\Code\PrintErp\V08\ErpCode\DataLib\DataHelper.cs:行号 236
+   在 Sys.frmBalanceType.Save()
+   在 Sys.frmBalanceType.tsSave_Click(Object sender, EventArgs e)
+   在 System.Windows.Forms.ToolStripItem.RaiseEvent(Object key, EventArgs e)
+   在 System.Windows.Forms.ToolStripButton.OnClick(EventArgs e)
+   在 System.Windows.Forms.ToolStripItem.HandleClick(EventArgs e)
+   在 System.Windows.Forms.ToolStripItem.HandleMouseUp(MouseEventArgs e)
+   在 System.Windows.Forms.ToolStripItem.FireEventInteractive(EventArgs e, ToolStripItemEventType met)
+   在 System.Windows.Forms.ToolStripItem.FireEvent(EventArgs e, ToolStripItemEventType met)
+   在 System.Windows.Forms.ToolStrip.OnMouseUp(MouseEventArgs mea)
+   在 System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 System.Windows.Forms.ScrollableControl.WndProc(Message& m)
+   在 System.Windows.Forms.ToolStrip.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+
+---------------------------------------------------------
+出现应用程序未处理的异常：2020/2/5 0:33:08
+操作人:超级用户
+异常类型：DBConcurrencyException
+异常消息：违反并发性: DeleteCommand 影响了预期 1 条记录中的 0 条。
+异常信息：   在 System.Data.Common.DbDataAdapter.UpdatedRowStatusErrors(RowUpdatedEventArgs rowUpdatedEvent, BatchCommandInfo[] batchCommands, Int32 commandCount)
+   在 System.Data.Common.DbDataAdapter.UpdatedRowStatus(RowUpdatedEventArgs rowUpdatedEvent, BatchCommandInfo[] batchCommands, Int32 commandCount)
+   在 System.Data.Common.DbDataAdapter.Update(DataRow[] dataRows, DataTableMapping tableMapping)
+   在 System.Data.Common.DbDataAdapter.UpdateFromDataTable(DataTable dataTable, DataTableMapping tableMapping)
+   在 System.Data.Common.DbDataAdapter.Update(DataSet dataSet, String srcTable)
+   在 System.Data.Common.DbDataAdapter.Update(DataSet dataSet)
+   在 CenterLib.Service.SaveData(String strDB, DataSet ds, String strSQL) 位置 E:\Code\PrintErp\V08\ErpCode\CenterLib\CenterLib\Service.cs:行号 174
+   在 DataLib.DataHelper.SaveData(DataSet ds, String strSQL) 位置 E:\Code\PrintErp\V08\ErpCode\DataLib\DataHelper.cs:行号 236
+   在 Sys.frmBalanceType.Save()
+   在 Sys.frmBalanceType.tsSave_Click(Object sender, EventArgs e)
+   在 System.Windows.Forms.ToolStripItem.RaiseEvent(Object key, EventArgs e)
+   在 System.Windows.Forms.ToolStripButton.OnClick(EventArgs e)
+   在 System.Windows.Forms.ToolStripItem.HandleClick(EventArgs e)
+   在 System.Windows.Forms.ToolStripItem.HandleMouseUp(MouseEventArgs e)
+   在 System.Windows.Forms.ToolStripItem.FireEventInteractive(EventArgs e, ToolStripItemEventType met)
+   在 System.Windows.Forms.ToolStripItem.FireEvent(EventArgs e, ToolStripItemEventType met)
+   在 System.Windows.Forms.ToolStrip.OnMouseUp(MouseEventArgs mea)
+   在 System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 System.Windows.Forms.ScrollableControl.WndProc(Message& m)
+   在 System.Windows.Forms.ToolStrip.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+
+---------------------------------------------------------
+出现应用程序未处理的异常：2020/2/5 0:33:27
+操作人:超级用户
+异常类型：DBConcurrencyException
+异常消息：违反并发性: DeleteCommand 影响了预期 1 条记录中的 0 条。
+异常信息：   在 System.Data.Common.DbDataAdapter.UpdatedRowStatusErrors(RowUpdatedEventArgs rowUpdatedEvent, BatchCommandInfo[] batchCommands, Int32 commandCount)
+   在 System.Data.Common.DbDataAdapter.UpdatedRowStatus(RowUpdatedEventArgs rowUpdatedEvent, BatchCommandInfo[] batchCommands, Int32 commandCount)
+   在 System.Data.Common.DbDataAdapter.Update(DataRow[] dataRows, DataTableMapping tableMapping)
+   在 System.Data.Common.DbDataAdapter.UpdateFromDataTable(DataTable dataTable, DataTableMapping tableMapping)
+   在 System.Data.Common.DbDataAdapter.Update(DataSet dataSet, String srcTable)
+   在 System.Data.Common.DbDataAdapter.Update(DataSet dataSet)
+   在 CenterLib.Service.SaveData(String strDB, DataSet ds, String strSQL) 位置 E:\Code\PrintErp\V08\ErpCode\CenterLib\CenterLib\Service.cs:行号 174
+   在 DataLib.DataHelper.SaveData(DataSet ds, String strSQL) 位置 E:\Code\PrintErp\V08\ErpCode\DataLib\DataHelper.cs:行号 236
+   在 Sys.frmBalanceType.Save()
+   在 Sys.frmBalanceType.tsSave_Click(Object sender, EventArgs e)
+   在 System.Windows.Forms.ToolStripItem.RaiseEvent(Object key, EventArgs e)
+   在 System.Windows.Forms.ToolStripButton.OnClick(EventArgs e)
+   在 System.Windows.Forms.ToolStripItem.HandleClick(EventArgs e)
+   在 System.Windows.Forms.ToolStripItem.HandleMouseUp(MouseEventArgs e)
+   在 System.Windows.Forms.ToolStripItem.FireEventInteractive(EventArgs e, ToolStripItemEventType met)
+   在 System.Windows.Forms.ToolStripItem.FireEvent(EventArgs e, ToolStripItemEventType met)
+   在 System.Windows.Forms.ToolStrip.OnMouseUp(MouseEventArgs mea)
+   在 System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 System.Windows.Forms.ScrollableControl.WndProc(Message& m)
+   在 System.Windows.Forms.ToolStrip.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+
+---------------------------------------------------------
+出现应用程序未处理的异常：2020/2/5 0:51:30
+操作人:
+异常类型：ArgumentException
+异常消息：这将导致集合中的两个绑定绑定到同一个属性。
+参数名: binding
+异常信息：   在 System.Windows.Forms.ControlBindingsCollection.CheckDuplicates(Binding binding)
+   在 System.Windows.Forms.Binding.CheckBinding()
+   在 System.Windows.Forms.Binding.SetBindableComponent(IBindableComponent value)
+   在 System.Windows.Forms.ControlBindingsCollection.AddCore(Binding dataBinding)
+   在 System.Windows.Forms.BindingsCollection.Add(Binding binding)
+   在 System.Windows.Forms.ControlBindingsCollection.Add(String propertyName, Object dataSource, String dataMember, Boolean formattingEnabled, DataSourceUpdateMode updateMode, Object nullValue, String formatString, IFormatProvider formatInfo)
+   在 System.Windows.Forms.ControlBindingsCollection.Add(String propertyName, Object dataSource, String dataMember)
+   在 Sys.frmBalanceType.BindData() 位置 E:\Code\PrintErp\V08\ErpCode\Sys\frmBalanceType.cs:行号 27
+   在 Sys.frmBalanceType.Save() 位置 E:\Code\PrintErp\V08\ErpCode\Sys\frmBalanceType.cs:行号 104
+   在 Sys.frmBalanceType.tsSave_Click(Object sender, EventArgs e) 位置 E:\Code\PrintErp\V08\ErpCode\Sys\frmBalanceType.cs:行号 138
+   在 System.Windows.Forms.ToolStripItem.RaiseEvent(Object key, EventArgs e)
+   在 System.Windows.Forms.ToolStripButton.OnClick(EventArgs e)
+   在 System.Windows.Forms.ToolStripItem.HandleClick(EventArgs e)
+   在 System.Windows.Forms.ToolStripItem.HandleMouseUp(MouseEventArgs e)
+   在 System.Windows.Forms.ToolStripItem.FireEventInteractive(EventArgs e, ToolStripItemEventType met)
+   在 System.Windows.Forms.ToolStripItem.FireEvent(EventArgs e, ToolStripItemEventType met)
+   在 System.Windows.Forms.ToolStrip.OnMouseUp(MouseEventArgs mea)
+   在 System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 System.Windows.Forms.ScrollableControl.WndProc(Message& m)
+   在 System.Windows.Forms.ToolStrip.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+
+---------------------------------------------------------
+出现应用程序未处理的异常：2020/2/5 0:51:48
+操作人:
+异常类型：ArgumentException
+异常消息：这将导致集合中的两个绑定绑定到同一个属性。
+参数名: binding
+异常信息：   在 System.Windows.Forms.ControlBindingsCollection.CheckDuplicates(Binding binding)
+   在 System.Windows.Forms.Binding.CheckBinding()
+   在 System.Windows.Forms.Binding.SetBindableComponent(IBindableComponent value)
+   在 System.Windows.Forms.ControlBindingsCollection.AddCore(Binding dataBinding)
+   在 System.Windows.Forms.BindingsCollection.Add(Binding binding)
+   在 System.Windows.Forms.ControlBindingsCollection.Add(String propertyName, Object dataSource, String dataMember, Boolean formattingEnabled, DataSourceUpdateMode updateMode, Object nullValue, String formatString, IFormatProvider formatInfo)
+   在 System.Windows.Forms.ControlBindingsCollection.Add(String propertyName, Object dataSource, String dataMember)
+   在 Sys.frmBalanceType.BindData() 位置 E:\Code\PrintErp\V08\ErpCode\Sys\frmBalanceType.cs:行号 27
+   在 Sys.frmBalanceType.Save() 位置 E:\Code\PrintErp\V08\ErpCode\Sys\frmBalanceType.cs:行号 104
+   在 Sys.frmBalanceType.tsSave_Click(Object sender, EventArgs e) 位置 E:\Code\PrintErp\V08\ErpCode\Sys\frmBalanceType.cs:行号 138
+   在 System.Windows.Forms.ToolStripItem.RaiseEvent(Object key, EventArgs e)
+   在 System.Windows.Forms.ToolStripButton.OnClick(EventArgs e)
+   在 System.Windows.Forms.ToolStripItem.HandleClick(EventArgs e)
+   在 System.Windows.Forms.ToolStripItem.HandleMouseUp(MouseEventArgs e)
+   在 System.Windows.Forms.ToolStripItem.FireEventInteractive(EventArgs e, ToolStripItemEventType met)
+   在 System.Windows.Forms.ToolStripItem.FireEvent(EventArgs e, ToolStripItemEventType met)
+   在 System.Windows.Forms.ToolStrip.OnMouseUp(MouseEventArgs mea)
+   在 System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 System.Windows.Forms.ScrollableControl.WndProc(Message& m)
+   在 System.Windows.Forms.ToolStrip.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+
+---------------------------------------------------------
+出现应用程序未处理的异常：2020/2/5 0:51:56
+操作人:
+异常类型：ArgumentException
+异常消息：这将导致集合中的两个绑定绑定到同一个属性。
+参数名: binding
+异常信息：   在 System.Windows.Forms.ControlBindingsCollection.CheckDuplicates(Binding binding)
+   在 System.Windows.Forms.Binding.CheckBinding()
+   在 System.Windows.Forms.Binding.SetBindableComponent(IBindableComponent value)
+   在 System.Windows.Forms.ControlBindingsCollection.AddCore(Binding dataBinding)
+   在 System.Windows.Forms.BindingsCollection.Add(Binding binding)
+   在 System.Windows.Forms.ControlBindingsCollection.Add(String propertyName, Object dataSource, String dataMember, Boolean formattingEnabled, DataSourceUpdateMode updateMode, Object nullValue, String formatString, IFormatProvider formatInfo)
+   在 System.Windows.Forms.ControlBindingsCollection.Add(String propertyName, Object dataSource, String dataMember)
+   在 Sys.frmBalanceType.BindData() 位置 E:\Code\PrintErp\V08\ErpCode\Sys\frmBalanceType.cs:行号 27
+   在 Sys.frmBalanceType.Save() 位置 E:\Code\PrintErp\V08\ErpCode\Sys\frmBalanceType.cs:行号 104
+   在 Sys.frmBalanceType.tsSave_Click(Object sender, EventArgs e) 位置 E:\Code\PrintErp\V08\ErpCode\Sys\frmBalanceType.cs:行号 138
+   在 System.Windows.Forms.ToolStripItem.RaiseEvent(Object key, EventArgs e)
+   在 System.Windows.Forms.ToolStripButton.OnClick(EventArgs e)
+   在 System.Windows.Forms.ToolStripItem.HandleClick(EventArgs e)
+   在 System.Windows.Forms.ToolStripItem.HandleMouseUp(MouseEventArgs e)
+   在 System.Windows.Forms.ToolStripItem.FireEventInteractive(EventArgs e, ToolStripItemEventType met)
+   在 System.Windows.Forms.ToolStripItem.FireEvent(EventArgs e, ToolStripItemEventType met)
+   在 System.Windows.Forms.ToolStrip.OnMouseUp(MouseEventArgs mea)
+   在 System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 System.Windows.Forms.ScrollableControl.WndProc(Message& m)
+   在 System.Windows.Forms.ToolStrip.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+
+---------------------------------------------------------
