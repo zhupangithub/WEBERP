@@ -36,8 +36,8 @@ namespace Common
             this.btnEdit = new DevExpress.XtraBars.BarButtonItem();
             this.btnDel = new DevExpress.XtraBars.BarButtonItem();
             this.btnPrint = new DevExpress.XtraBars.BarButtonItem();
-            this.btnPreview = new DevExpress.XtraBars.BarButtonItem();
             this.btnExport = new DevExpress.XtraBars.BarButtonItem();
+            this.btnPreview = new DevExpress.XtraBars.BarButtonItem();
             this.btnClose = new DevExpress.XtraBars.BarButtonItem();
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
@@ -153,16 +153,6 @@ namespace Common
             this.btnPrint.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.btnPrint.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPrint_ItemClick);
             // 
-            // btnPreview
-            // 
-            this.btnPreview.Caption = "预览";
-            this.btnPreview.Glyph = ((System.Drawing.Image)(resources.GetObject("btnPreview.Glyph")));
-            this.btnPreview.Id = 6;
-            this.btnPreview.ItemShortcut = new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V));
-            this.btnPreview.Name = "btnPreview";
-            this.btnPreview.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.btnPreview.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPreview_ItemClick);
-            // 
             // btnExport
             // 
             this.btnExport.Caption = "引出";
@@ -172,6 +162,16 @@ namespace Common
             this.btnExport.Name = "btnExport";
             this.btnExport.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.btnExport.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnExport_ItemClick);
+            // 
+            // btnPreview
+            // 
+            this.btnPreview.Caption = "预览";
+            this.btnPreview.Glyph = ((System.Drawing.Image)(resources.GetObject("btnPreview.Glyph")));
+            this.btnPreview.Id = 6;
+            this.btnPreview.ItemShortcut = new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V));
+            this.btnPreview.Name = "btnPreview";
+            this.btnPreview.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnPreview.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPreview_ItemClick);
             // 
             // btnClose
             // 
@@ -214,26 +214,26 @@ namespace Common
             // 
             // barDockControlTop
             // 
-            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(4);
             // 
             // barDockControlBottom
             // 
-            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(4);
             // 
             // barDockControlLeft
             // 
-            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(4);
             // 
             // barDockControlRight
             // 
-            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(4);
             // 
             // cbType
             // 
             this.cbType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbType.EditValue = "按单据";
             this.cbType.Location = new System.Drawing.Point(1111, 16);
-            this.cbType.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbType.Margin = new System.Windows.Forms.Padding(4);
             this.cbType.Name = "cbType";
             this.cbType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -248,10 +248,10 @@ namespace Common
             // gcList
             // 
             this.gcList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcList.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gcList.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
             this.gcList.Location = new System.Drawing.Point(0, 88);
             this.gcList.MainView = this.gvList;
-            this.gcList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gcList.Margin = new System.Windows.Forms.Padding(4);
             this.gcList.Name = "gcList";
             this.gcList.Size = new System.Drawing.Size(1195, 540);
             this.gcList.TabIndex = 6;
@@ -279,7 +279,7 @@ namespace Common
             this.ucDate.BackColor = System.Drawing.Color.Transparent;
             this.ucDate.DateTag = myControl.DateFlag.当天;
             this.ucDate.Location = new System.Drawing.Point(4, 10);
-            this.ucDate.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.ucDate.Margin = new System.Windows.Forms.Padding(5);
             this.ucDate.Name = "ucDate";
             this.ucDate.Size = new System.Drawing.Size(529, 35);
             this.ucDate.TabIndex = 8;
@@ -315,7 +315,7 @@ namespace Common
             // 
             this.cbCheck.EditValue = "全部 ";
             this.cbCheck.Location = new System.Drawing.Point(640, 16);
-            this.cbCheck.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbCheck.Margin = new System.Windows.Forms.Padding(4);
             this.cbCheck.Name = "cbCheck";
             this.cbCheck.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -356,7 +356,7 @@ namespace Common
             this.cbFinish.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbFinish.EditValue = "全部";
             this.cbFinish.Location = new System.Drawing.Point(953, 16);
-            this.cbFinish.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbFinish.Margin = new System.Windows.Forms.Padding(4);
             this.cbFinish.Name = "cbFinish";
             this.cbFinish.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -386,7 +386,7 @@ namespace Common
             this.cbCutOff.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbCutOff.EditValue = "全部";
             this.cbCutOff.Location = new System.Drawing.Point(796, 16);
-            this.cbCutOff.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbCutOff.Margin = new System.Windows.Forms.Padding(4);
             this.cbCutOff.Name = "cbCutOff";
             this.cbCutOff.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -413,7 +413,7 @@ namespace Common
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 30);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1195, 58);
             this.panel1.TabIndex = 16;
@@ -428,7 +428,7 @@ namespace Common
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "frmBillList";
             this.Load += new System.EventHandler(this.frmBillList_Load);
             this.Shown += new System.EventHandler(this.frmBillList_Shown);

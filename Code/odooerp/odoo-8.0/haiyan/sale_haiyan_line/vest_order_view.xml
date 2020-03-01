@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="zp_vest_view_filter" model="ir.ui.view">
+            <field name="name">zp.vest.Search</field>
+            <field name="model">zp.haiyan</field>
+            <field name="arch" type="xml">
+                <search string="量身单查询">
+                    <field name="name"
+                           filter_domain="['|',('name','ilike',self),('partner_id','ilike',self)]"/>
+                    <filter help="只看自己的" icon="terp-personal+" domain="[('user_id','=',uid)]"/>
+                    <separator/>
+                    <group expand="0" string="分组...">
+                        <filter string="用户分组" icon="terp-personal" domain="[]" context="{'group_by' : 'user_id'}"/>
+                    </group>
+                    <group expand="0" string="分类...">
+                        <filter string="量身单状态" icon="terp-personal" domain="[]" context="{'group_by' : 'state'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <!--表单-->
+        <record id="zp_vest_view_form" model="ir.ui.view">
+            <field name="name">zp.haiyan.vest.form</field>
+            <field name="model">zp.haiyan</field>
+            <field name="arch" type="xml">
+                <form version="7.0">
+                    <sheet>
+                        <group string="背心信息">
+                            <group>
+                                <field name="vest_count"/>
+                                <field name="vest_qianchang"/>
+                                <field name="vest_houchang"/>
+                            </group>
+                            <group>
+                                <field name="vest_mashu"/>
+                                <field name="vest_shang"/>
+                                <field name="vest_zhong"/>
+                            </group>
+                        </group>
+                        <group string="背心备注">
+                            <field name="vest_beizhu"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!--列表-->
+        <record id="zp_vest_view_tree" model="ir.ui.view">
+            <field name="name">zp.vest.tree</field>
+            <field name="model">zp.haiyan</field>
+            <field name="priority">50</field>
+            <field name="arch" type="xml">
+                <tree string="列表">
+                    <field name="name"/>
+                    <field name="vest_count"/>
+                    <field name="vest_qianchang"/>
+                    <field name="vest_houchang"/>
+                    <field name="vest_mashu"/>
+                    <field name="vest_beizhu"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <!--  窗体事件 查询  Search  graph,gantt-->
+        <record id="zp_haiyan_order_action_vest" model="ir.actions.act_window">
+            <field name="name">背心信息</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">zp.haiyan</field>
+            <field name="view_type">form</field>
+            <field name="limit">20</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="zp_vest_view_filter"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    背心信息
+                </p>
+            </field>
+        </record>
+
+        <record id="action_haiyan_vest_view_tree" model="ir.actions.act_window.view">
+            <field name="sequence">1</field>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="zp_vest_view_tree"/>
+            <field name="act_window_id" ref="zp_haiyan_order_action_vest"/>
+        </record>
+
+        <record id="action_haiyan_vest_view_form" model="ir.actions.act_window.view">
+            <field name="sequence">2</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="zp_vest_view_form"/>
+            <field name="act_window_id" ref="zp_haiyan_order_action_vest"/>
+        </record>
+
+        <menuitem name="背心" id="base.menu_haiyan_vest" parent="base.menu_haiyan" sequence="3"
+                  action="zp_haiyan_order_action_vest"/>
+    </data>
+</openerp>

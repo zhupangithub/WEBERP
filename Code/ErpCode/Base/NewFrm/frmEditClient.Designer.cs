@@ -449,8 +449,8 @@ namespace Base
             this.Controls.SetChildIndex(this.ckCopy, 0);
             this.Controls.SetChildIndex(this.BtnOK, 0);
             this.Controls.SetChildIndex(this.btnCancel, 0);
-            this.Controls.SetChildIndex(this.gbox, 0);
             this.Controls.SetChildIndex(this.ckOption, 0);
+            this.Controls.SetChildIndex(this.gbox, 0);
             this.gbox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.binData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ckCopy.Properties)).EndInit();

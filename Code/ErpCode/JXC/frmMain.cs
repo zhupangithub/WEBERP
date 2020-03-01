@@ -505,7 +505,7 @@ namespace JXC
                         mySellPreList.Show();
                     }
                     break;
-                case "销售单":
+                case "发货单":
                     if (IsOpenAs("frmSellOutList") == false)
                     {
                         Sell.frmSellOutList mySellOutList = new Sell.frmSellOutList();

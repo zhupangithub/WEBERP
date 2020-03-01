@@ -37,22 +37,29 @@ namespace Sell
             binMaster.EndEdit();
         }
 
-   
+
         /// <summary>
         /// 调单
         /// </summary>
         protected override void LoadBill()
         {
-            if (DataLib.SysVar.GetParmValue("F_N44"))
+            //if (DataLib.SysVar.GetParmValue("F_N44"))
+            //{
+            //    if (lupControl1.GetValue() == DBNull.Value)
+            //    {
+            //        MessageBox.Show("请选择客户!!", "提示");
+            //        lupControl1.Focus();
+            //        return;
+            //    }
+            //    this.strValue = lupControl1.GetValue().ToString();
+            //}
+            if (lupControl1.GetValue() == DBNull.Value)
             {
-                if (lupControl1.GetValue() == DBNull.Value)
-                {
-                    MessageBox.Show("请选择客户!!", "提示");
-                    lupControl1.Focus();
-                    return;
-                }
-                this.strValue = lupControl1.GetValue().ToString();
+                MessageBox.Show("请选择客户!!", "提示");
+                lupControl1.Focus();
+                return;
             }
+            this.strValue = lupControl1.GetValue().ToString();
             base.LoadBill();
         }
 
@@ -128,10 +135,13 @@ namespace Sell
         {
             binMaster.EndEdit();
             DataRow drMaster = ((DataRowView)binMaster.Current).Row;
-            DataRow drSlaver = ((DataRowView)binSlaver.Current).Row;
-            drSlaver.BeginEdit();
-            drSlaver["F_Price"] = DataLib.sysClass.GetSellPrice(drMaster["F_ClientID"].ToString(), sItemID);
-            drSlaver.EndEdit();
+            if (binSlaver.Current != null)
+            {
+                DataRow drSlaver = ((DataRowView)binSlaver.Current).Row;
+                drSlaver.BeginEdit();
+                drSlaver["F_Price"] = DataLib.sysClass.GetSellPrice(drMaster["F_ClientID"].ToString(), sItemID);
+                drSlaver.EndEdit();
+            }
             binSlaver.EndEdit();
 
         }
@@ -145,6 +155,7 @@ namespace Sell
                 dr.BeginEdit();
                 dr["F_Price"] = DataLib.sysClass.GetSellPrice(sClientID, dr["F_ItemID"].ToString());
                 dr.EndEdit();
+                SetOnePrice(dr["F_ItemID"].ToString());
             }
         }
 
@@ -155,7 +166,7 @@ namespace Sell
             DataRow dr = e.Row;
             if (dt.Columns.Contains("F_TaxRate") != false)           //增行时默认税率
                 dr["F_TaxRate"] = decTaxRate;
-            
+
         }
 
         protected override void MasterColumnChanged(object Sender, DataColumnChangeEventArgs e)
@@ -164,7 +175,7 @@ namespace Sell
             if (e.Column.ColumnName == "F_ClientID")
             {
                 DataLib.DataHelper myHelper = new DataLib.DataHelper();
-                DataSet ds = myHelper.GetDs("select * from t_Client where F_ID = '"+e.ProposedValue.ToString()+"'");
+                DataSet ds = myHelper.GetDs("select * from t_Client where F_ID = '" + e.ProposedValue.ToString() + "'");
                 e.Row.BeginEdit();
                 e.Row["F_LinkMan"] = ds.Tables[0].Rows[0]["F_LinkMan"].ToString();
                 e.Row["F_LinkTel"] = ds.Tables[0].Rows[0]["F_Tel"].ToString();
@@ -182,7 +193,7 @@ namespace Sell
 
         private void frmStockOrder_Load(object sender, EventArgs e)
         {
-          
+
         }
 
         private void frmSellOrder_KeyDown(object sender, KeyEventArgs e)

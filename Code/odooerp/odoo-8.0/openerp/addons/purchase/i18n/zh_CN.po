@@ -738,7 +738,7 @@ msgstr "为公司 \"%s\" (id:%d)  定义采购账簿。"
 #. module: purchase
 #: field:purchase.order,picking_type_id:0
 msgid "Deliver To"
-msgstr "交货到"
+msgstr "交货仓库"
 
 #. module: purchase
 #: view:purchase.order:purchase.purchase_order_form

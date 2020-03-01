@@ -65,6 +65,7 @@ namespace Common
                 // The main form and items in the component tray will be at the
                 // same level, so we have to create a higher super-root in order
                 // to construct our XmlDocument.
+                return "";
                 MemoryStream s = LoadFormDB(FormTag);
                 if (s == null) return "";
                 StreamReader sr = new StreamReader(s);
@@ -318,7 +319,6 @@ namespace Common
                 if (type.Name == "GridColumn") return null;
 
                 instance = (Control)Activator.CreateInstance(type);
-
                 ((Control)instance).Name = nameAttr.Value;
                 host.Controls.Add(((Control)instance));
 

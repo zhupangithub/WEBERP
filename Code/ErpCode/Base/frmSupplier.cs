@@ -43,6 +43,7 @@ namespace Base
             base.Edit();
             DataRow dr = gvBase.GetDataRow(gvBase.FocusedRowHandle);
             frmEditSupplier myEditSupplier = new frmEditSupplier();
+            //myEditSupplier.TopLevel = false;
             myEditSupplier.Edit(dr["F_ID"].ToString());
             if (myEditSupplier.ShowDialog() == DialogResult.OK)
                 BindData();

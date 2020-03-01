@@ -1,0 +1,216 @@
+出现应用程序未处理的异常：2020/2/15 19:23:44
+操作人:超级用户
+异常类型：IndexOutOfRangeException
+异常消息：索引超出了数组界限。
+异常信息：   在 Common.frmBillList.SaveFieldFormat()
+   在 Common.frmBillList.frmBillList_KeyDown(Object sender, KeyEventArgs e)
+   在 System.Windows.Forms.KeyEventHandler.Invoke(Object sender, KeyEventArgs e)
+   在 System.Windows.Forms.Control.OnKeyDown(KeyEventArgs e)
+   在 System.Windows.Forms.Control.ProcessKeyEventArgs(Message& m)
+   在 System.Windows.Forms.Form.ProcessKeyPreview(Message& m)
+   在 System.Windows.Forms.Control.ProcessKeyMessage(Message& m)
+   在 System.Windows.Forms.Control.WmKeyChar(Message& m)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 DevExpress.XtraEditors.Container.EditorContainer.WndProc(Message& m)
+   在 DevExpress.XtraGrid.GridControl.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+
+---------------------------------------------------------
+出现应用程序未处理的异常：2020/2/15 19:24:54
+操作人:超级用户
+异常类型：NullReferenceException
+异常消息：未将对象引用设置到对象的实例。
+异常信息：   在 Common.frmBillList.SaveFieldFormat()
+   在 Common.frmBillList.frmBillList_KeyDown(Object sender, KeyEventArgs e)
+   在 System.Windows.Forms.KeyEventHandler.Invoke(Object sender, KeyEventArgs e)
+   在 System.Windows.Forms.Control.OnKeyDown(KeyEventArgs e)
+   在 System.Windows.Forms.Control.ProcessKeyEventArgs(Message& m)
+   在 System.Windows.Forms.Form.ProcessKeyPreview(Message& m)
+   在 System.Windows.Forms.Control.ProcessKeyMessage(Message& m)
+   在 System.Windows.Forms.Control.WmKeyChar(Message& m)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 DevExpress.XtraEditors.Container.EditorContainer.WndProc(Message& m)
+   在 DevExpress.XtraGrid.GridControl.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+
+---------------------------------------------------------
+出现应用程序未处理的异常：2020/2/15 21:57:49
+操作人:超级用户
+异常类型：InvalidCastException
+异常消息：对象不能从 DBNull 转换为其他类型。
+异常信息：   在 System.DBNull.System.IConvertible.ToDecimal(IFormatProvider provider)
+   在 System.Convert.ToDecimal(Object value)
+   在 Product.frmProductArrange.Anly() 位置 D:\Project\Code\WEBERP\Code\ErpCode\Product\frmProductArrange.cs:行号 54
+   在 Product.frmProductArrange.sbAnly_Click(Object sender, EventArgs e) 位置 D:\Project\Code\WEBERP\Code\ErpCode\Product\frmProductArrange.cs:行号 254
+   在 System.Windows.Forms.Control.OnClick(EventArgs e)
+   在 DevExpress.XtraEditors.BaseButton.OnClick(EventArgs e)
+   在 DevExpress.XtraEditors.BaseButton.OnMouseUp(MouseEventArgs e)
+   在 System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 DevExpress.Utils.Controls.ControlBase.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+
+---------------------------------------------------------
+出现应用程序未处理的异常：2020/2/15 22:19:47
+操作人:超级用户
+Application UnhandledException:线程间操作无效: 从不是创建控件“ListWake”的线程访问它。;
+堆栈信息:   在 System.Windows.Forms.Control.get_Handle()
+   在 System.Windows.Forms.Control.SendMessage(Int32 msg, Int32 wparam, String lparam)
+   在 System.Windows.Forms.ListBox.NativeAdd(Object item)
+   在 System.Windows.Forms.ListBox.ObjectCollection.AddInternal(Object item)
+   在 System.Windows.Forms.ListBox.ObjectCollection.Add(Object item)
+   在 JXC.frmBack.BillNoCheck() 位置 D:\Project\Code\WEBERP\Code\ErpCode\JXC\frmBack.cs:行号 321
+   在 System.Threading.ThreadHelper.ThreadStart_Context(Object state)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   在 System.Threading.ThreadHelper.ThreadStart()
+---------------------------------------------------------
+出现应用程序未处理的异常：2020/2/15 22:20:07
+操作人:超级用户
+Application UnhandledException:线程间操作无效: 从不是创建控件“ListWake”的线程访问它。;
+堆栈信息:   在 System.Windows.Forms.Control.get_Handle()
+   在 System.Windows.Forms.Control.SendMessage(Int32 msg, Int32 wparam, String lparam)
+   在 System.Windows.Forms.ListBox.NativeAdd(Object item)
+   在 System.Windows.Forms.ListBox.ObjectCollection.AddInternal(Object item)
+   在 System.Windows.Forms.ListBox.ObjectCollection.Add(Object item)
+   在 JXC.frmBack.BillNoCheck() 位置 D:\Project\Code\WEBERP\Code\ErpCode\JXC\frmBack.cs:行号 331
+   在 System.Threading.ThreadHelper.ThreadStart_Context(Object state)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   在 System.Threading.ThreadHelper.ThreadStart()
+---------------------------------------------------------
+出现应用程序未处理的异常：2020/2/15 22:20:48
+操作人:超级用户
+Application UnhandledException:线程间操作无效: 从不是创建控件“ListWake”的线程访问它。;
+堆栈信息:   在 System.Windows.Forms.Control.get_Handle()
+   在 System.Windows.Forms.Control.SendMessage(Int32 msg, Int32 wparam, Int32 lparam)
+   在 System.Windows.Forms.ListBox.NativeClear()
+   在 System.Windows.Forms.ListBox.ObjectCollection.ClearInternal()
+   在 System.Windows.Forms.ListBox.ObjectCollection.Clear()
+   在 JXC.frmBack.BillNoCheck() 位置 D:\Project\Code\WEBERP\Code\ErpCode\JXC\frmBack.cs:行号 122
+   在 System.Threading.ThreadHelper.ThreadStart_Context(Object state)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   在 System.Threading.ThreadHelper.ThreadStart()
+---------------------------------------------------------
+出现应用程序未处理的异常：2020/2/15 22:21:12
+操作人:超级用户
+Application UnhandledException:线程间操作无效: 从不是创建控件“ListWake”的线程访问它。;
+堆栈信息:   在 System.Windows.Forms.Control.get_Handle()
+   在 System.Windows.Forms.Control.SendMessage(Int32 msg, Int32 wparam, Int32 lparam)
+   在 System.Windows.Forms.ListBox.NativeClear()
+   在 System.Windows.Forms.ListBox.ObjectCollection.ClearInternal()
+   在 System.Windows.Forms.ListBox.ObjectCollection.Clear()
+   在 JXC.frmBack.BillNoCheck() 位置 D:\Project\Code\WEBERP\Code\ErpCode\JXC\frmBack.cs:行号 122
+   在 System.Threading.ThreadHelper.ThreadStart_Context(Object state)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   在 System.Threading.ThreadHelper.ThreadStart()
+---------------------------------------------------------
+出现应用程序未处理的异常：2020/2/15 22:28:59
+操作人:超级用户
+异常类型：NullReferenceException
+异常消息：未将对象引用设置到对象的实例。
+异常信息：   在 Common.frmBillImport.cbBill_SelectedIndexChanged(Object sender, EventArgs e) 位置 D:\Project\Code\WEBERP\Code\ErpCode\Common\frmBillImport.cs:行号 224
+   在 Common.frmBillImport.ucDate_RefreshDateChanged(Object sender, EventArgs e) 位置 D:\Project\Code\WEBERP\Code\ErpCode\Common\frmBillImport.cs:行号 248
+   在 System.EventHandler.Invoke(Object sender, EventArgs e)
+   在 System.Windows.Forms.ListControl.OnSelectedValueChanged(EventArgs e)
+   在 System.Windows.Forms.ComboBox.OnSelectedValueChanged(EventArgs e)
+   在 System.Windows.Forms.ComboBox.OnSelectedIndexChanged(EventArgs e)
+   在 System.Windows.Forms.ComboBox.WmReflectCommand(Message& m)
+   在 System.Windows.Forms.ComboBox.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+
+---------------------------------------------------------
+出现应用程序未处理的异常：2020/2/15 22:38:38
+操作人:超级用户
+异常类型：NullReferenceException
+异常消息：未将对象引用设置到对象的实例。
+异常信息：   在 Sell.frmSellOrder.SetOnePrice(String sItemID)
+   在 Sell.frmSellOrder.ColumnChanged(Object Sender, DataColumnChangeEventArgs e)
+   在 System.Data.DataTable.OnColumnChanged(DataColumnChangeEventArgs e)
+   在 System.Data.DataRow.set_Item(DataColumn column, Object value)
+   在 System.Data.DataRow.set_Item(String columnName, Object value)
+   在 Common.frmBillImport.ImportBill() 位置 D:\Project\Code\WEBERP\Code\ErpCode\Common\frmBillImport.cs:行号 361
+   在 Common.frmBillImport.sbOK_Click(Object sender, EventArgs e) 位置 D:\Project\Code\WEBERP\Code\ErpCode\Common\frmBillImport.cs:行号 371
+   在 System.Windows.Forms.Control.OnClick(EventArgs e)
+   在 DevExpress.XtraEditors.BaseButton.OnClick(EventArgs e)
+   在 DevExpress.XtraEditors.BaseButton.OnMouseUp(MouseEventArgs e)
+   在 System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 DevExpress.Utils.Controls.ControlBase.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+
+---------------------------------------------------------
+出现应用程序未处理的异常：2020/2/15 22:39:49
+操作人:超级用户
+异常类型：NullReferenceException
+异常消息：未将对象引用设置到对象的实例。
+异常信息：   在 Sell.frmSellOrder.SetOnePrice(String sItemID)
+   在 Sell.frmSellOrder.ColumnChanged(Object Sender, DataColumnChangeEventArgs e)
+   在 System.Data.DataTable.OnColumnChanged(DataColumnChangeEventArgs e)
+   在 System.Data.DataRow.set_Item(DataColumn column, Object value)
+   在 System.Data.DataRow.set_Item(String columnName, Object value)
+   在 Common.frmBillImport.ImportBill() 位置 D:\Project\Code\WEBERP\Code\ErpCode\Common\frmBillImport.cs:行号 361
+   在 Common.frmBillImport.sbOK_Click(Object sender, EventArgs e) 位置 D:\Project\Code\WEBERP\Code\ErpCode\Common\frmBillImport.cs:行号 371
+   在 System.Windows.Forms.Control.OnClick(EventArgs e)
+   在 DevExpress.XtraEditors.BaseButton.OnClick(EventArgs e)
+   在 DevExpress.XtraEditors.BaseButton.OnMouseUp(MouseEventArgs e)
+   在 System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 DevExpress.Utils.Controls.ControlBase.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+
+---------------------------------------------------------
+出现应用程序未处理的异常：2020/2/15 22:40:50
+操作人:超级用户
+异常类型：NullReferenceException
+异常消息：未将对象引用设置到对象的实例。
+异常信息：   在 Sell.frmSellOrder.SetOnePrice(String sItemID)
+   在 Sell.frmSellOrder.ColumnChanged(Object Sender, DataColumnChangeEventArgs e)
+   在 System.Data.DataTable.OnColumnChanged(DataColumnChangeEventArgs e)
+   在 System.Data.DataRow.set_Item(DataColumn column, Object value)
+   在 System.Data.DataRow.set_Item(String columnName, Object value)
+   在 Common.frmBillImport.ImportBill() 位置 D:\Project\Code\WEBERP\Code\ErpCode\Common\frmBillImport.cs:行号 361
+   在 Common.frmBillImport.sbOK_Click(Object sender, EventArgs e) 位置 D:\Project\Code\WEBERP\Code\ErpCode\Common\frmBillImport.cs:行号 371
+   在 System.Windows.Forms.Control.OnClick(EventArgs e)
+   在 DevExpress.XtraEditors.BaseButton.OnClick(EventArgs e)
+   在 DevExpress.XtraEditors.BaseButton.OnMouseUp(MouseEventArgs e)
+   在 System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 DevExpress.Utils.Controls.ControlBase.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+
+---------------------------------------------------------
+出现应用程序未处理的异常：2020/2/15 22:59:35
+操作人:超级用户
+异常类型：NullReferenceException
+异常消息：未将对象引用设置到对象的实例。
+异常信息：   在 Sell.frmSellOrder.SetOnePrice(String sItemID)
+   在 Sell.frmSellOrder.ColumnChanged(Object Sender, DataColumnChangeEventArgs e)
+   在 System.Data.DataTable.OnColumnChanged(DataColumnChangeEventArgs e)
+   在 System.Data.DataRow.set_Item(DataColumn column, Object value)
+   在 System.Data.DataRow.set_Item(String columnName, Object value)
+   在 Common.frmBillImport.ImportBill() 位置 D:\Project\Code\WEBERP\Code\ErpCode\Common\frmBillImport.cs:行号 361
+   在 Common.frmBillImport.sbOK_Click(Object sender, EventArgs e) 位置 D:\Project\Code\WEBERP\Code\ErpCode\Common\frmBillImport.cs:行号 371
+   在 System.Windows.Forms.Control.OnClick(EventArgs e)
+   在 DevExpress.XtraEditors.BaseButton.OnClick(EventArgs e)
+   在 DevExpress.XtraEditors.BaseButton.OnMouseUp(MouseEventArgs e)
+   在 System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 DevExpress.Utils.Controls.ControlBase.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+
+---------------------------------------------------------

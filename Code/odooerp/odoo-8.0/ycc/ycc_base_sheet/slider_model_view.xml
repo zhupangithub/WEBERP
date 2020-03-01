@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="ycc_slidermodel_view_filter" model="ir.ui.view">
+            <field name="name">ycc.slidermodel.Search</field>
+            <field name="model">ycc.slidermodel</field>
+            <field name="arch" type="xml">
+                <search string="拉头查询">
+                    <field name="name"
+                           filter_domain="['|',('name','ilike',self)]"/>
+                    <separator/>
+                    <group expand="0" string="分组...">
+                        <filter string="拉头分组" icon="terp-personal" domain="[]" context="{'group_by' : 'name'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <!--表单-->
+        <record id="ycc_slidermodel_view_form" model="ir.ui.view">
+            <field name="name">ycc.slidermodel.form</field>
+            <field name="model">ycc.slidermodel</field>
+            <field name="arch" type="xml">
+                <form string="拉头审核" groups="base.group_user">
+                    <header>
+                        <button name="dt_review" string="提交审核" states="draft" type="object" class="oe_highlight"/>
+                        <button name="dt_done" string="生成拉头BOM" states="review" type="object" class="oe_highlight"/>
+                        <button name="dt_cancel" string="取消" states="done" type="object" class="oe_highlight"/>
+                        <button name="dt_draft" string="重置为草稿" states="cancel,review" type="object"
+                                class="oe_highlight"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,review,done,close"/>
+                    </header>
+                    <sheet>
+                        <group string="虚拟拉头物品">
+                            <group>
+                                <field name="slider_pian"
+                                       class="oe_inline" on_change="onchange_pian_name(slider_pian)"/>
+                                <field name="name" class="oe_inline"
+                                       on_change="onchange_slider_name(name)"/>
+                                <field name="tz_name" class="oe_inline"
+                                       attrs="{'invisible':[('tz_state','!=','A')],'required': [('tz_state','=','A')]}"/>
+                                <field name="slider_bentou" class="oe_inline"/>
+                                <field name="slider_key" class="oe_inline" invisible="1"/>
+                                <field name="tz_state" invisible="1"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" help="加入关注"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <!--列表-->
+        <record id="ycc_slidermodel_view_tree" model="ir.ui.view">
+            <field name="name">ycc.slidermodel.tree</field>
+            <field name="model">ycc.slidermodel</field>
+            <field name="priority">1</field>
+            <field name="arch" type="xml">
+                <tree string="拉头列表">
+                    <field name="name"/>
+                    <field name="slider_pian"/>
+                    <field name="slider_bentou"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <!--  窗体事件 查询  Search  graph,gantt-->
+        <record id="zp_slider_model_action" model="ir.actions.act_window">
+            <field name="name">拉头物品</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">ycc.slidermodel</field>
+            <field name="view_type">form</field>
+            <field name="limit">50</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="ycc_slidermodel_view_tree"/>
+            <field name="search_view_id" ref="ycc_slidermodel_view_filter"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    通过虚拟拉头,产生新的拉头物品和BOM
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="拉头BOM生成" id="base.slider_model" groups="base.group_sale_salesman,base.group_sale_manager"
+                  parent="base.menu_product" sequence="3" action="zp_slider_model_action"/>
+    </data>
+</openerp>

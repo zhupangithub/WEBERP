@@ -183,8 +183,11 @@ namespace Common
             lupType.LookUpDisplayField = "F_Name";
             lupType.LookUpKeyField = "F_ID";
 
-            //BindData();
+            this.gvMain.HorzScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
+            this.gvMain.OptionsView.ColumnAutoWidth = true;
+            BindData();
             //BindStore();
+            //sbRefresh_Click(null,null);
         }
 
         private void sbCancel_Click(object sender, EventArgs e)

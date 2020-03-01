@@ -913,7 +913,7 @@ msgstr "成本"
 #. module: stock
 #: view:product.template:stock.view_template_property_form
 msgid "Counter-Part Locations Properties"
-msgstr "对方位置属性"
+msgstr "堆放位置属性"
 
 #. module: stock
 #. openerp-web

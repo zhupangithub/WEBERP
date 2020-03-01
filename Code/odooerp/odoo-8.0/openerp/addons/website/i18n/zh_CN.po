@@ -1864,14 +1864,14 @@ msgstr "我们的产品和服务"
 msgid ""
 "Our products are designed for small to medium size companies willing to optimize\n"
 "                                      their performance."
-msgstr "我们的产品面向那些希望有更好表现的中小型企业。"
+msgstr "。"
 
 #. module: website
 #: view:website:website.layout
 msgid ""
 "Our products are designed for small to medium size companies willing to optimize\n"
 "                            their performance."
-msgstr "我们的产品面向那些希望有更好表现的中小型企业。"
+msgstr "。"
 
 #. module: website
 #. openerp-web
@@ -2794,7 +2794,7 @@ msgid ""
 "We are a team of passionate people whose goal is to improve everyone's\n"
 "                                      life through disruptive products. We build great products to solve your\n"
 "                                      business problems."
-msgstr "我们团队试图通过开发一款，具有颠覆性意义软件系统的产品，以此来提高诸位生活质量。我们构建了一个伟大的产品来解决您们商业中出现的诸多问题。"
+msgstr "宣传标语"
 
 #. module: website
 #: view:website:website.layout
@@ -2802,7 +2802,7 @@ msgid ""
 "We are a team of passionate people whose goal is to improve everyone's\n"
 "                            life through disruptive products. We build great products to solve your\n"
 "                            business problems."
-msgstr "我们是一支充满激情朝气磅礴的团队！我们的愿景是试图通过构建一个具有颠覆意义的软件系统，这样一个具有颠覆意义的产品！\n                          以此提升各位在座的每一位女士先生们的生活品质，\n                          来解决各位在商业活动中遇到的诸多问题！如有Odoo相关疑问您可加入Odoo应用群212904得到帮助！"
+msgstr "公司简介"
 
 #. module: website
 #: view:website:website.contactus

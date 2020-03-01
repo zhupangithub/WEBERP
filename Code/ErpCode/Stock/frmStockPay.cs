@@ -117,7 +117,7 @@ namespace Stock
                 DataRow dr = gvList.GetDataRow(i);
                 dr["F_ThisMoney"] = dr["F_NoMoney"];
                 if (dr["F_Tag"].ToString() != "采购进货" && dr["F_Tag"].ToString() != "期初")
-                    dr["F_ThisMoney1"] = -Convert.ToDecimal(dr["F_NoMoney"]);
+                    dr["F_ThisMoney1"] = -Convert.ToDecimal(dr["F_NoMoney"].ToString() == "" ? "0" : dr["F_NoMoney"].ToString());
                 else
                     dr["F_ThisMoney1"] = dr["F_NoMoney"];
                 dr["F_Flag"] = true;

@@ -65,30 +65,42 @@ namespace Storage
             if (DataLib.SysVar.GetParmValue("F_N44"))
             {
                 //if (strSelectValue == "销售退货入库" || strSelectValue == "采购进货入库")
-                if (lupControl1.Visible == true)
-                {
-                    if (lupControl1.GetValue() == DBNull.Value)
-                    {
+                //if (lupControl1.Visible == true)
+                //{
+                //    if (lupControl1.GetValue() == DBNull.Value)
+                //    {
 
-                        MessageBox.Show("请选择" + lupControl1.EditLabel + "!!", "提示");
-                        lupControl1.Focus();
-                        return;
-                    }
+                //        MessageBox.Show("请选择" + lupControl1.EditLabel + "!!", "提示");
+                //        lupControl1.Focus();
+                //        return;
+                //    }
 
-                    //if (lupControl1.GetValue() == DBNull.Value && strSelectValue == "采购进货入库")
-                    //{
-                    //    MessageBox.Show("请选择供应商!!", "提示");
-                    //    lupControl1.Focus();
-                    //    return;
-                    //}
+                //    //if (lupControl1.GetValue() == DBNull.Value && strSelectValue == "采购进货入库")
+                //    //{
+                //    //    MessageBox.Show("请选择供应商!!", "提示");
+                //    //    lupControl1.Focus();
+                //    //    return;
+                //    //}
 
-                    if (lupControl1.GetValue() != DBNull.Value)
-                        this.strValue = lupControl1.GetValue().ToString();
-                    else
-                        this.strValue = "";
-
-                }
+                //    if (lupControl1.GetValue() != DBNull.Value)
+                //        this.strValue = lupControl1.GetValue().ToString();
+                //    else
+                //        this.strValue = "";
+                //}
             }
+
+
+            if (lupControl1.GetValue() == DBNull.Value)
+            {
+
+                MessageBox.Show("请选择" + lupControl1.EditLabel + "!!", "提示");
+                lupControl1.Focus();
+                return;
+            }
+            if (lupControl1.GetValue() != DBNull.Value)
+                this.strValue = lupControl1.GetValue().ToString();
+            else
+                this.strValue = "";
            
             base.LoadBill();
         }

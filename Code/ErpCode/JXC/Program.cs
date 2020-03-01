@@ -6,6 +6,7 @@ using System.Data;
 using System.Text;
 using System.IO;
 using Sys;
+using Base;
 
 namespace JXC
 {
@@ -169,7 +170,8 @@ namespace JXC
                 Application.Run(new frmMain());
 
 
-                //Application.Run(new frmRight());
+                //DataLib.SysVar.strUGroup = "超级用户";
+                //Application.Run(new frmClient());
             }
             catch (Exception ex)
             {

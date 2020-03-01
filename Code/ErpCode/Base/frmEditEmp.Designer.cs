@@ -28,8 +28,8 @@ namespace Base
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.ComboBoxItem comboBoxItem1 = new DevExpress.XtraEditors.Controls.ComboBoxItem();
-            DevExpress.XtraEditors.Controls.ComboBoxItem comboBoxItem2 = new DevExpress.XtraEditors.Controls.ComboBoxItem();
+            DevExpress.XtraEditors.Controls.ComboBoxItem comboBoxItem5 = new DevExpress.XtraEditors.Controls.ComboBoxItem();
+            DevExpress.XtraEditors.Controls.ComboBoxItem comboBoxItem6 = new DevExpress.XtraEditors.Controls.ComboBoxItem();
             this.editControl1 = new myControl.EditControl();
             this.editControl2 = new myControl.EditControl();
             this.lupControl1 = new myControl.lupControl();
@@ -88,14 +88,16 @@ namespace Base
             // 
             this.BtnOK.Appearance.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnOK.Appearance.Options.UseFont = true;
-            this.BtnOK.Location = new System.Drawing.Point(643, 507);
+            this.BtnOK.Location = new System.Drawing.Point(857, 634);
+            this.BtnOK.Margin = new System.Windows.Forms.Padding(5);
             this.BtnOK.Text = "保存(&S)";
             // 
             // btnCancel
             // 
             this.btnCancel.Appearance.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.Appearance.Options.UseFont = true;
-            this.btnCancel.Location = new System.Drawing.Point(724, 507);
+            this.btnCancel.Location = new System.Drawing.Point(965, 634);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(5);
             // 
             // gbox
             // 
@@ -142,7 +144,9 @@ namespace Base
             this.gbox.Controls.Add(this.lupControl1);
             this.gbox.Controls.Add(this.editControl2);
             this.gbox.Controls.Add(this.editControl1);
-            this.gbox.Size = new System.Drawing.Size(798, 479);
+            this.gbox.Margin = new System.Windows.Forms.Padding(5);
+            this.gbox.Padding = new System.Windows.Forms.Padding(5);
+            this.gbox.Size = new System.Drawing.Size(1064, 599);
             // 
             // ckCopy
             // 
@@ -153,10 +157,11 @@ namespace Base
             this.editControl1.DataField = "F_ID";
             this.editControl1.DataSource = null;
             this.editControl1.EditLabel = "员工编码:";
-            this.editControl1.Location = new System.Drawing.Point(16, 21);
+            this.editControl1.Location = new System.Drawing.Point(21, 26);
+            this.editControl1.Margin = new System.Windows.Forms.Padding(5);
             this.editControl1.Name = "editControl1";
             this.editControl1.Request = true;
-            this.editControl1.Size = new System.Drawing.Size(190, 27);
+            this.editControl1.Size = new System.Drawing.Size(253, 34);
             this.editControl1.TabIndex = 0;
             // 
             // editControl2
@@ -165,10 +170,11 @@ namespace Base
             this.editControl2.DataField = "F_Name";
             this.editControl2.DataSource = null;
             this.editControl2.EditLabel = "姓名:";
-            this.editControl2.Location = new System.Drawing.Point(252, 21);
+            this.editControl2.Location = new System.Drawing.Point(336, 26);
+            this.editControl2.Margin = new System.Windows.Forms.Padding(5);
             this.editControl2.Name = "editControl2";
             this.editControl2.Request = true;
-            this.editControl2.Size = new System.Drawing.Size(183, 27);
+            this.editControl2.Size = new System.Drawing.Size(244, 34);
             this.editControl2.TabIndex = 1;
             // 
             // lupControl1
@@ -181,14 +187,15 @@ namespace Base
             this.lupControl1.EditLabel = "部门:";
             this.lupControl1.InvokeClass = "";
             this.lupControl1.LinkFields = null;
-            this.lupControl1.Location = new System.Drawing.Point(40, 67);
+            this.lupControl1.Location = new System.Drawing.Point(53, 84);
             this.lupControl1.LookUpDataSource = null;
             this.lupControl1.LookUpDisplayField = null;
             this.lupControl1.LookUpKeyField = null;
+            this.lupControl1.Margin = new System.Windows.Forms.Padding(4);
             this.lupControl1.Name = "lupControl1";
             this.lupControl1.PopWidth = 150;
             this.lupControl1.Request = true;
-            this.lupControl1.Size = new System.Drawing.Size(164, 22);
+            this.lupControl1.Size = new System.Drawing.Size(219, 28);
             this.lupControl1.TabIndex = 2;
             // 
             // editControl4
@@ -197,10 +204,11 @@ namespace Base
             this.editControl4.DataField = "F_Tel";
             this.editControl4.DataSource = null;
             this.editControl4.EditLabel = "电话1:";
-            this.editControl4.Location = new System.Drawing.Point(18, 173);
+            this.editControl4.Location = new System.Drawing.Point(24, 216);
+            this.editControl4.Margin = new System.Windows.Forms.Padding(5);
             this.editControl4.Name = "editControl4";
             this.editControl4.Request = false;
-            this.editControl4.Size = new System.Drawing.Size(186, 27);
+            this.editControl4.Size = new System.Drawing.Size(248, 34);
             this.editControl4.TabIndex = 8;
             // 
             // editControl8
@@ -209,10 +217,11 @@ namespace Base
             this.editControl8.DataField = "F_Adr";
             this.editControl8.DataSource = null;
             this.editControl8.EditLabel = "地址:";
-            this.editControl8.Location = new System.Drawing.Point(31, 239);
+            this.editControl8.Location = new System.Drawing.Point(41, 299);
+            this.editControl8.Margin = new System.Windows.Forms.Padding(5);
             this.editControl8.Name = "editControl8";
             this.editControl8.Request = false;
-            this.editControl8.Size = new System.Drawing.Size(541, 27);
+            this.editControl8.Size = new System.Drawing.Size(721, 34);
             this.editControl8.TabIndex = 14;
             // 
             // editControl3
@@ -221,10 +230,11 @@ namespace Base
             this.editControl3.DataField = "F_IDCard";
             this.editControl3.DataSource = null;
             this.editControl3.EditLabel = "身份证号:";
-            this.editControl3.Location = new System.Drawing.Point(18, 140);
+            this.editControl3.Location = new System.Drawing.Point(24, 175);
+            this.editControl3.Margin = new System.Windows.Forms.Padding(5);
             this.editControl3.Name = "editControl3";
             this.editControl3.Request = false;
-            this.editControl3.Size = new System.Drawing.Size(199, 27);
+            this.editControl3.Size = new System.Drawing.Size(265, 34);
             this.editControl3.TabIndex = 6;
             // 
             // editControl10
@@ -233,10 +243,11 @@ namespace Base
             this.editControl10.DataField = "F_EMail";
             this.editControl10.DataSource = null;
             this.editControl10.EditLabel = "EMail:";
-            this.editControl10.Location = new System.Drawing.Point(236, 140);
+            this.editControl10.Location = new System.Drawing.Point(315, 175);
+            this.editControl10.Margin = new System.Windows.Forms.Padding(5);
             this.editControl10.Name = "editControl10";
             this.editControl10.Request = false;
-            this.editControl10.Size = new System.Drawing.Size(199, 27);
+            this.editControl10.Size = new System.Drawing.Size(265, 34);
             this.editControl10.TabIndex = 7;
             // 
             // spinControl1
@@ -245,28 +256,30 @@ namespace Base
             this.spinControl1.DataField = "F_Wage";
             this.spinControl1.DataSource = null;
             this.spinControl1.EditLabel = "基本工资";
-            this.spinControl1.Location = new System.Drawing.Point(18, 344);
+            this.spinControl1.Location = new System.Drawing.Point(24, 430);
+            this.spinControl1.Margin = new System.Windows.Forms.Padding(5);
             this.spinControl1.Name = "spinControl1";
-            this.spinControl1.Size = new System.Drawing.Size(170, 27);
+            this.spinControl1.Size = new System.Drawing.Size(227, 34);
             this.spinControl1.TabIndex = 17;
             // 
             // cbControl1
             // 
             this.cbControl1.BackColor = System.Drawing.Color.Transparent;
-            comboBoxItem1.Value = "男";
-            comboBoxItem2.Value = "女";
+            comboBoxItem5.Value = "男";
+            comboBoxItem6.Value = "女";
             this.cbControl1.cbItem = new DevExpress.XtraEditors.Controls.ComboBoxItem[] {
-        comboBoxItem1,
-        comboBoxItem2};
+        comboBoxItem5,
+        comboBoxItem6};
             this.cbControl1.DataField = "F_Sex";
             this.cbControl1.DataSource = null;
             this.cbControl1.EditLabel = "性别:";
             this.cbControl1.EditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.cbControl1.Location = new System.Drawing.Point(252, 63);
+            this.cbControl1.Location = new System.Drawing.Point(336, 79);
+            this.cbControl1.Margin = new System.Windows.Forms.Padding(5);
             this.cbControl1.Name = "cbControl1";
             this.cbControl1.Request = false;
             this.cbControl1.SelectedIndex = -1;
-            this.cbControl1.Size = new System.Drawing.Size(150, 26);
+            this.cbControl1.Size = new System.Drawing.Size(200, 32);
             this.cbControl1.TabIndex = 3;
             // 
             // dateControl1
@@ -277,10 +290,11 @@ namespace Base
             this.dateControl1.DisplayFormat = "d";
             this.dateControl1.EditLabel = "出生日期:";
             this.dateControl1.EditMask = "d";
-            this.dateControl1.Location = new System.Drawing.Point(16, 104);
+            this.dateControl1.Location = new System.Drawing.Point(21, 130);
+            this.dateControl1.Margin = new System.Windows.Forms.Padding(5);
             this.dateControl1.Name = "dateControl1";
             this.dateControl1.Request = false;
-            this.dateControl1.Size = new System.Drawing.Size(192, 28);
+            this.dateControl1.Size = new System.Drawing.Size(256, 35);
             this.dateControl1.TabIndex = 4;
             // 
             // lupControl2
@@ -293,32 +307,35 @@ namespace Base
             this.lupControl2.EditLabel = "所属工组:";
             this.lupControl2.InvokeClass = "";
             this.lupControl2.LinkFields = null;
-            this.lupControl2.Location = new System.Drawing.Point(308, 344);
+            this.lupControl2.Location = new System.Drawing.Point(411, 430);
             this.lupControl2.LookUpDataSource = null;
             this.lupControl2.LookUpDisplayField = null;
             this.lupControl2.LookUpKeyField = null;
+            this.lupControl2.Margin = new System.Windows.Forms.Padding(4);
             this.lupControl2.Name = "lupControl2";
             this.lupControl2.PopWidth = 150;
             this.lupControl2.Request = false;
-            this.lupControl2.Size = new System.Drawing.Size(204, 22);
+            this.lupControl2.Size = new System.Drawing.Size(272, 28);
             this.lupControl2.TabIndex = 18;
             // 
             // ckOption
             // 
             this.ckOption.EditValue = true;
-            this.ckOption.Location = new System.Drawing.Point(11, 511);
+            this.ckOption.Location = new System.Drawing.Point(15, 639);
+            this.ckOption.Margin = new System.Windows.Forms.Padding(4);
             this.ckOption.Name = "ckOption";
             this.ckOption.Properties.Caption = "保存后新增";
-            this.ckOption.Size = new System.Drawing.Size(101, 19);
+            this.ckOption.Size = new System.Drawing.Size(135, 23);
             this.ckOption.TabIndex = 4;
             this.ckOption.CheckedChanged += new System.EventHandler(this.ckOption_CheckedChanged);
             // 
             // ckOPer
             // 
-            this.ckOPer.Location = new System.Drawing.Point(211, 511);
+            this.ckOPer.Location = new System.Drawing.Point(281, 639);
+            this.ckOPer.Margin = new System.Windows.Forms.Padding(4);
             this.ckOPer.Name = "ckOPer";
             this.ckOPer.Properties.Caption = "业务员";
-            this.ckOPer.Size = new System.Drawing.Size(75, 19);
+            this.ckOPer.Size = new System.Drawing.Size(100, 23);
             this.ckOPer.TabIndex = 5;
             // 
             // lupControl3
@@ -331,14 +348,15 @@ namespace Base
             this.lupControl3.EditLabel = "班次:";
             this.lupControl3.InvokeClass = "";
             this.lupControl3.LinkFields = null;
-            this.lupControl3.Location = new System.Drawing.Point(34, 377);
+            this.lupControl3.Location = new System.Drawing.Point(45, 471);
             this.lupControl3.LookUpDataSource = null;
             this.lupControl3.LookUpDisplayField = "F_Name";
             this.lupControl3.LookUpKeyField = "F_ID";
+            this.lupControl3.Margin = new System.Windows.Forms.Padding(4);
             this.lupControl3.Name = "lupControl3";
             this.lupControl3.PopWidth = 150;
             this.lupControl3.Request = false;
-            this.lupControl3.Size = new System.Drawing.Size(183, 22);
+            this.lupControl3.Size = new System.Drawing.Size(244, 28);
             this.lupControl3.TabIndex = 19;
             // 
             // lupControl4
@@ -351,14 +369,15 @@ namespace Base
             this.lupControl4.EditLabel = "考勤规则:";
             this.lupControl4.InvokeClass = "";
             this.lupControl4.LinkFields = null;
-            this.lupControl4.Location = new System.Drawing.Point(308, 377);
+            this.lupControl4.Location = new System.Drawing.Point(411, 471);
             this.lupControl4.LookUpDataSource = null;
             this.lupControl4.LookUpDisplayField = "F_Name";
             this.lupControl4.LookUpKeyField = "F_ID";
+            this.lupControl4.Margin = new System.Windows.Forms.Padding(4);
             this.lupControl4.Name = "lupControl4";
             this.lupControl4.PopWidth = 150;
             this.lupControl4.Request = false;
-            this.lupControl4.Size = new System.Drawing.Size(204, 22);
+            this.lupControl4.Size = new System.Drawing.Size(272, 28);
             this.lupControl4.TabIndex = 20;
             // 
             // editControl5
@@ -367,10 +386,11 @@ namespace Base
             this.editControl5.DataField = "F_Adr1";
             this.editControl5.DataSource = null;
             this.editControl5.EditLabel = "现住址:";
-            this.editControl5.Location = new System.Drawing.Point(18, 277);
+            this.editControl5.Location = new System.Drawing.Point(24, 346);
+            this.editControl5.Margin = new System.Windows.Forms.Padding(5);
             this.editControl5.Name = "editControl5";
             this.editControl5.Request = false;
-            this.editControl5.Size = new System.Drawing.Size(557, 27);
+            this.editControl5.Size = new System.Drawing.Size(743, 34);
             this.editControl5.TabIndex = 15;
             // 
             // editControl6
@@ -379,10 +399,11 @@ namespace Base
             this.editControl6.DataField = "F_LinkMan1";
             this.editControl6.DataSource = null;
             this.editControl6.EditLabel = "联系人1:";
-            this.editControl6.Location = new System.Drawing.Point(9, 206);
+            this.editControl6.Location = new System.Drawing.Point(12, 258);
+            this.editControl6.Margin = new System.Windows.Forms.Padding(5);
             this.editControl6.Name = "editControl6";
             this.editControl6.Request = false;
-            this.editControl6.Size = new System.Drawing.Size(179, 27);
+            this.editControl6.Size = new System.Drawing.Size(239, 34);
             this.editControl6.TabIndex = 11;
             // 
             // editControl7
@@ -391,10 +412,11 @@ namespace Base
             this.editControl7.DataField = "F_LinkMan2";
             this.editControl7.DataSource = null;
             this.editControl7.EditLabel = "联系人2:";
-            this.editControl7.Location = new System.Drawing.Point(220, 206);
+            this.editControl7.Location = new System.Drawing.Point(293, 258);
+            this.editControl7.Margin = new System.Windows.Forms.Padding(5);
             this.editControl7.Name = "editControl7";
             this.editControl7.Request = false;
-            this.editControl7.Size = new System.Drawing.Size(172, 27);
+            this.editControl7.Size = new System.Drawing.Size(229, 34);
             this.editControl7.TabIndex = 12;
             // 
             // editControl11
@@ -403,10 +425,11 @@ namespace Base
             this.editControl11.DataField = "F_LinkMan3";
             this.editControl11.DataSource = null;
             this.editControl11.EditLabel = "联系人3:";
-            this.editControl11.Location = new System.Drawing.Point(398, 206);
+            this.editControl11.Location = new System.Drawing.Point(531, 258);
+            this.editControl11.Margin = new System.Windows.Forms.Padding(5);
             this.editControl11.Name = "editControl11";
             this.editControl11.Request = false;
-            this.editControl11.Size = new System.Drawing.Size(177, 27);
+            this.editControl11.Size = new System.Drawing.Size(236, 34);
             this.editControl11.TabIndex = 13;
             // 
             // editControl12
@@ -415,10 +438,11 @@ namespace Base
             this.editControl12.DataField = "F_Tel1";
             this.editControl12.DataSource = null;
             this.editControl12.EditLabel = "电话2:";
-            this.editControl12.Location = new System.Drawing.Point(215, 173);
+            this.editControl12.Location = new System.Drawing.Point(287, 216);
+            this.editControl12.Margin = new System.Windows.Forms.Padding(5);
             this.editControl12.Name = "editControl12";
             this.editControl12.Request = false;
-            this.editControl12.Size = new System.Drawing.Size(177, 27);
+            this.editControl12.Size = new System.Drawing.Size(236, 34);
             this.editControl12.TabIndex = 9;
             // 
             // editControl13
@@ -427,10 +451,11 @@ namespace Base
             this.editControl13.DataField = "F_Tel2";
             this.editControl13.DataSource = null;
             this.editControl13.EditLabel = "电话3:";
-            this.editControl13.Location = new System.Drawing.Point(398, 173);
+            this.editControl13.Location = new System.Drawing.Point(531, 216);
+            this.editControl13.Margin = new System.Windows.Forms.Padding(5);
             this.editControl13.Name = "editControl13";
             this.editControl13.Request = false;
-            this.editControl13.Size = new System.Drawing.Size(177, 27);
+            this.editControl13.Size = new System.Drawing.Size(236, 34);
             this.editControl13.TabIndex = 10;
             // 
             // lupControl5
@@ -443,14 +468,15 @@ namespace Base
             this.lupControl5.EditLabel = "职工类别:";
             this.lupControl5.InvokeClass = "";
             this.lupControl5.LinkFields = null;
-            this.lupControl5.Location = new System.Drawing.Point(578, 20);
+            this.lupControl5.Location = new System.Drawing.Point(771, 25);
             this.lupControl5.LookUpDataSource = null;
             this.lupControl5.LookUpDisplayField = "F_Name";
             this.lupControl5.LookUpKeyField = "F_ID";
+            this.lupControl5.Margin = new System.Windows.Forms.Padding(4);
             this.lupControl5.Name = "lupControl5";
             this.lupControl5.PopWidth = 150;
             this.lupControl5.Request = false;
-            this.lupControl5.Size = new System.Drawing.Size(191, 22);
+            this.lupControl5.Size = new System.Drawing.Size(255, 28);
             this.lupControl5.TabIndex = 21;
             // 
             // lupControl6
@@ -463,14 +489,15 @@ namespace Base
             this.lupControl6.EditLabel = "人员类别:";
             this.lupControl6.InvokeClass = "";
             this.lupControl6.LinkFields = null;
-            this.lupControl6.Location = new System.Drawing.Point(578, 48);
+            this.lupControl6.Location = new System.Drawing.Point(771, 60);
             this.lupControl6.LookUpDataSource = null;
             this.lupControl6.LookUpDisplayField = "F_Name";
             this.lupControl6.LookUpKeyField = "F_ID";
+            this.lupControl6.Margin = new System.Windows.Forms.Padding(4);
             this.lupControl6.Name = "lupControl6";
             this.lupControl6.PopWidth = 150;
             this.lupControl6.Request = false;
-            this.lupControl6.Size = new System.Drawing.Size(191, 22);
+            this.lupControl6.Size = new System.Drawing.Size(255, 28);
             this.lupControl6.TabIndex = 22;
             // 
             // lupControl7
@@ -483,14 +510,15 @@ namespace Base
             this.lupControl7.EditLabel = "管理级别:";
             this.lupControl7.InvokeClass = "";
             this.lupControl7.LinkFields = null;
-            this.lupControl7.Location = new System.Drawing.Point(578, 76);
+            this.lupControl7.Location = new System.Drawing.Point(771, 95);
             this.lupControl7.LookUpDataSource = null;
             this.lupControl7.LookUpDisplayField = "F_Name";
             this.lupControl7.LookUpKeyField = "F_ID";
+            this.lupControl7.Margin = new System.Windows.Forms.Padding(4);
             this.lupControl7.Name = "lupControl7";
             this.lupControl7.PopWidth = 150;
             this.lupControl7.Request = false;
-            this.lupControl7.Size = new System.Drawing.Size(191, 22);
+            this.lupControl7.Size = new System.Drawing.Size(255, 28);
             this.lupControl7.TabIndex = 23;
             // 
             // lupControl8
@@ -503,14 +531,15 @@ namespace Base
             this.lupControl8.EditLabel = "职称:";
             this.lupControl8.InvokeClass = "";
             this.lupControl8.LinkFields = null;
-            this.lupControl8.Location = new System.Drawing.Point(605, 104);
+            this.lupControl8.Location = new System.Drawing.Point(807, 130);
             this.lupControl8.LookUpDataSource = null;
             this.lupControl8.LookUpDisplayField = "F_Name";
             this.lupControl8.LookUpKeyField = "F_ID";
+            this.lupControl8.Margin = new System.Windows.Forms.Padding(4);
             this.lupControl8.Name = "lupControl8";
             this.lupControl8.PopWidth = 150;
             this.lupControl8.Request = false;
-            this.lupControl8.Size = new System.Drawing.Size(164, 22);
+            this.lupControl8.Size = new System.Drawing.Size(219, 28);
             this.lupControl8.TabIndex = 24;
             // 
             // lupControl9
@@ -523,14 +552,15 @@ namespace Base
             this.lupControl9.EditLabel = "学历:";
             this.lupControl9.InvokeClass = "";
             this.lupControl9.LinkFields = null;
-            this.lupControl9.Location = new System.Drawing.Point(605, 132);
+            this.lupControl9.Location = new System.Drawing.Point(807, 165);
             this.lupControl9.LookUpDataSource = null;
             this.lupControl9.LookUpDisplayField = "F_Name";
             this.lupControl9.LookUpKeyField = "F_ID";
+            this.lupControl9.Margin = new System.Windows.Forms.Padding(4);
             this.lupControl9.Name = "lupControl9";
             this.lupControl9.PopWidth = 150;
             this.lupControl9.Request = false;
-            this.lupControl9.Size = new System.Drawing.Size(164, 22);
+            this.lupControl9.Size = new System.Drawing.Size(219, 28);
             this.lupControl9.TabIndex = 25;
             // 
             // lupControl10
@@ -543,14 +573,15 @@ namespace Base
             this.lupControl10.EditLabel = "学位:";
             this.lupControl10.InvokeClass = "";
             this.lupControl10.LinkFields = null;
-            this.lupControl10.Location = new System.Drawing.Point(605, 160);
+            this.lupControl10.Location = new System.Drawing.Point(807, 200);
             this.lupControl10.LookUpDataSource = null;
             this.lupControl10.LookUpDisplayField = "F_Name";
             this.lupControl10.LookUpKeyField = "F_ID";
+            this.lupControl10.Margin = new System.Windows.Forms.Padding(4);
             this.lupControl10.Name = "lupControl10";
             this.lupControl10.PopWidth = 150;
             this.lupControl10.Request = false;
-            this.lupControl10.Size = new System.Drawing.Size(164, 22);
+            this.lupControl10.Size = new System.Drawing.Size(219, 28);
             this.lupControl10.TabIndex = 26;
             // 
             // lupControl11
@@ -563,14 +594,15 @@ namespace Base
             this.lupControl11.EditLabel = "户籍种类:";
             this.lupControl11.InvokeClass = "";
             this.lupControl11.LinkFields = null;
-            this.lupControl11.Location = new System.Drawing.Point(605, 188);
+            this.lupControl11.Location = new System.Drawing.Point(807, 235);
             this.lupControl11.LookUpDataSource = null;
             this.lupControl11.LookUpDisplayField = "F_Name";
             this.lupControl11.LookUpKeyField = "F_ID";
+            this.lupControl11.Margin = new System.Windows.Forms.Padding(4);
             this.lupControl11.Name = "lupControl11";
             this.lupControl11.PopWidth = 150;
             this.lupControl11.Request = false;
-            this.lupControl11.Size = new System.Drawing.Size(164, 22);
+            this.lupControl11.Size = new System.Drawing.Size(219, 28);
             this.lupControl11.TabIndex = 27;
             // 
             // lupControl12
@@ -583,14 +615,15 @@ namespace Base
             this.lupControl12.EditLabel = "政治面貌:";
             this.lupControl12.InvokeClass = "";
             this.lupControl12.LinkFields = null;
-            this.lupControl12.Location = new System.Drawing.Point(605, 216);
+            this.lupControl12.Location = new System.Drawing.Point(807, 270);
             this.lupControl12.LookUpDataSource = null;
             this.lupControl12.LookUpDisplayField = "F_Name";
             this.lupControl12.LookUpKeyField = "F_ID";
+            this.lupControl12.Margin = new System.Windows.Forms.Padding(4);
             this.lupControl12.Name = "lupControl12";
             this.lupControl12.PopWidth = 150;
             this.lupControl12.Request = false;
-            this.lupControl12.Size = new System.Drawing.Size(164, 22);
+            this.lupControl12.Size = new System.Drawing.Size(219, 28);
             this.lupControl12.TabIndex = 28;
             // 
             // lupControl13
@@ -603,14 +636,15 @@ namespace Base
             this.lupControl13.EditLabel = "籍贯:";
             this.lupControl13.InvokeClass = "";
             this.lupControl13.LinkFields = null;
-            this.lupControl13.Location = new System.Drawing.Point(605, 244);
+            this.lupControl13.Location = new System.Drawing.Point(807, 305);
             this.lupControl13.LookUpDataSource = null;
             this.lupControl13.LookUpDisplayField = "F_Name";
             this.lupControl13.LookUpKeyField = "F_ID";
+            this.lupControl13.Margin = new System.Windows.Forms.Padding(4);
             this.lupControl13.Name = "lupControl13";
             this.lupControl13.PopWidth = 150;
             this.lupControl13.Request = false;
-            this.lupControl13.Size = new System.Drawing.Size(164, 22);
+            this.lupControl13.Size = new System.Drawing.Size(219, 28);
             this.lupControl13.TabIndex = 29;
             // 
             // lupControl14
@@ -623,14 +657,15 @@ namespace Base
             this.lupControl14.EditLabel = "民族:";
             this.lupControl14.InvokeClass = "";
             this.lupControl14.LinkFields = null;
-            this.lupControl14.Location = new System.Drawing.Point(605, 272);
+            this.lupControl14.Location = new System.Drawing.Point(807, 340);
             this.lupControl14.LookUpDataSource = null;
             this.lupControl14.LookUpDisplayField = "F_Name";
             this.lupControl14.LookUpKeyField = "F_ID";
+            this.lupControl14.Margin = new System.Windows.Forms.Padding(4);
             this.lupControl14.Name = "lupControl14";
             this.lupControl14.PopWidth = 150;
             this.lupControl14.Request = false;
-            this.lupControl14.Size = new System.Drawing.Size(164, 22);
+            this.lupControl14.Size = new System.Drawing.Size(219, 28);
             this.lupControl14.TabIndex = 30;
             // 
             // lupControl15
@@ -643,14 +678,15 @@ namespace Base
             this.lupControl15.EditLabel = "健康状况:";
             this.lupControl15.InvokeClass = "";
             this.lupControl15.LinkFields = null;
-            this.lupControl15.Location = new System.Drawing.Point(605, 300);
+            this.lupControl15.Location = new System.Drawing.Point(807, 375);
             this.lupControl15.LookUpDataSource = null;
             this.lupControl15.LookUpDisplayField = "F_Name";
             this.lupControl15.LookUpKeyField = "F_ID";
+            this.lupControl15.Margin = new System.Windows.Forms.Padding(4);
             this.lupControl15.Name = "lupControl15";
             this.lupControl15.PopWidth = 150;
             this.lupControl15.Request = false;
-            this.lupControl15.Size = new System.Drawing.Size(164, 22);
+            this.lupControl15.Size = new System.Drawing.Size(219, 28);
             this.lupControl15.TabIndex = 31;
             // 
             // lupControl16
@@ -663,14 +699,15 @@ namespace Base
             this.lupControl16.EditLabel = "婚姻状况:";
             this.lupControl16.InvokeClass = "";
             this.lupControl16.LinkFields = null;
-            this.lupControl16.Location = new System.Drawing.Point(605, 328);
+            this.lupControl16.Location = new System.Drawing.Point(807, 410);
             this.lupControl16.LookUpDataSource = null;
             this.lupControl16.LookUpDisplayField = "F_Name";
             this.lupControl16.LookUpKeyField = "F_ID";
+            this.lupControl16.Margin = new System.Windows.Forms.Padding(4);
             this.lupControl16.Name = "lupControl16";
             this.lupControl16.PopWidth = 150;
             this.lupControl16.Request = false;
-            this.lupControl16.Size = new System.Drawing.Size(164, 22);
+            this.lupControl16.Size = new System.Drawing.Size(219, 28);
             this.lupControl16.TabIndex = 32;
             // 
             // lupControl17
@@ -683,14 +720,15 @@ namespace Base
             this.lupControl17.EditLabel = "用工形式:";
             this.lupControl17.InvokeClass = "";
             this.lupControl17.LinkFields = null;
-            this.lupControl17.Location = new System.Drawing.Point(605, 356);
+            this.lupControl17.Location = new System.Drawing.Point(807, 445);
             this.lupControl17.LookUpDataSource = null;
             this.lupControl17.LookUpDisplayField = "F_Name";
             this.lupControl17.LookUpKeyField = "F_ID";
+            this.lupControl17.Margin = new System.Windows.Forms.Padding(4);
             this.lupControl17.Name = "lupControl17";
             this.lupControl17.PopWidth = 150;
             this.lupControl17.Request = false;
-            this.lupControl17.Size = new System.Drawing.Size(164, 22);
+            this.lupControl17.Size = new System.Drawing.Size(219, 28);
             this.lupControl17.TabIndex = 33;
             // 
             // lupControl18
@@ -703,14 +741,15 @@ namespace Base
             this.lupControl18.EditLabel = "学习形式:";
             this.lupControl18.InvokeClass = "";
             this.lupControl18.LinkFields = null;
-            this.lupControl18.Location = new System.Drawing.Point(605, 384);
+            this.lupControl18.Location = new System.Drawing.Point(807, 480);
             this.lupControl18.LookUpDataSource = null;
             this.lupControl18.LookUpDisplayField = "F_Name";
             this.lupControl18.LookUpKeyField = "F_ID";
+            this.lupControl18.Margin = new System.Windows.Forms.Padding(4);
             this.lupControl18.Name = "lupControl18";
             this.lupControl18.PopWidth = 150;
             this.lupControl18.Request = false;
-            this.lupControl18.Size = new System.Drawing.Size(164, 22);
+            this.lupControl18.Size = new System.Drawing.Size(219, 28);
             this.lupControl18.TabIndex = 34;
             // 
             // lupControl19
@@ -723,14 +762,15 @@ namespace Base
             this.lupControl19.EditLabel = "专业:";
             this.lupControl19.InvokeClass = "";
             this.lupControl19.LinkFields = null;
-            this.lupControl19.Location = new System.Drawing.Point(605, 412);
+            this.lupControl19.Location = new System.Drawing.Point(807, 515);
             this.lupControl19.LookUpDataSource = null;
             this.lupControl19.LookUpDisplayField = "F_Name";
             this.lupControl19.LookUpKeyField = "F_ID";
+            this.lupControl19.Margin = new System.Windows.Forms.Padding(4);
             this.lupControl19.Name = "lupControl19";
             this.lupControl19.PopWidth = 150;
             this.lupControl19.Request = false;
-            this.lupControl19.Size = new System.Drawing.Size(164, 22);
+            this.lupControl19.Size = new System.Drawing.Size(219, 28);
             this.lupControl19.TabIndex = 35;
             // 
             // lupControl20
@@ -743,14 +783,15 @@ namespace Base
             this.lupControl20.EditLabel = "证件类型:";
             this.lupControl20.InvokeClass = "";
             this.lupControl20.LinkFields = null;
-            this.lupControl20.Location = new System.Drawing.Point(605, 440);
+            this.lupControl20.Location = new System.Drawing.Point(807, 550);
             this.lupControl20.LookUpDataSource = null;
             this.lupControl20.LookUpDisplayField = "F_Name";
             this.lupControl20.LookUpKeyField = "F_ID";
+            this.lupControl20.Margin = new System.Windows.Forms.Padding(4);
             this.lupControl20.Name = "lupControl20";
             this.lupControl20.PopWidth = 150;
             this.lupControl20.Request = false;
-            this.lupControl20.Size = new System.Drawing.Size(164, 22);
+            this.lupControl20.Size = new System.Drawing.Size(219, 28);
             this.lupControl20.TabIndex = 36;
             // 
             // editControl14
@@ -759,10 +800,11 @@ namespace Base
             this.editControl14.DataField = "F_QQ";
             this.editControl14.DataSource = null;
             this.editControl14.EditLabel = "QQ号:";
-            this.editControl14.Location = new System.Drawing.Point(236, 99);
+            this.editControl14.Location = new System.Drawing.Point(315, 124);
+            this.editControl14.Margin = new System.Windows.Forms.Padding(5);
             this.editControl14.Name = "editControl14";
             this.editControl14.Request = false;
-            this.editControl14.Size = new System.Drawing.Size(199, 27);
+            this.editControl14.Size = new System.Drawing.Size(265, 34);
             this.editControl14.TabIndex = 37;
             // 
             // editControl15
@@ -771,10 +813,11 @@ namespace Base
             this.editControl15.DataField = "F_ShortTel";
             this.editControl15.DataSource = null;
             this.editControl15.EditLabel = "短号:";
-            this.editControl15.Location = new System.Drawing.Point(441, 140);
+            this.editControl15.Location = new System.Drawing.Point(588, 175);
+            this.editControl15.Margin = new System.Windows.Forms.Padding(5);
             this.editControl15.Name = "editControl15";
             this.editControl15.Request = false;
-            this.editControl15.Size = new System.Drawing.Size(131, 27);
+            this.editControl15.Size = new System.Drawing.Size(175, 34);
             this.editControl15.TabIndex = 38;
             // 
             // dateControl2
@@ -785,10 +828,11 @@ namespace Base
             this.dateControl2.DisplayFormat = "d";
             this.dateControl2.EditLabel = "离职日期:";
             this.dateControl2.EditMask = "d";
-            this.dateControl2.Location = new System.Drawing.Point(297, 310);
+            this.dateControl2.Location = new System.Drawing.Point(396, 388);
+            this.dateControl2.Margin = new System.Windows.Forms.Padding(5);
             this.dateControl2.Name = "dateControl2";
             this.dateControl2.Request = false;
-            this.dateControl2.Size = new System.Drawing.Size(192, 28);
+            this.dateControl2.Size = new System.Drawing.Size(256, 35);
             this.dateControl2.TabIndex = 39;
             // 
             // dateControl3
@@ -799,25 +843,28 @@ namespace Base
             this.dateControl3.DisplayFormat = "d";
             this.dateControl3.EditLabel = "入职日期:";
             this.dateControl3.EditMask = "d";
-            this.dateControl3.Location = new System.Drawing.Point(9, 310);
+            this.dateControl3.Location = new System.Drawing.Point(12, 388);
+            this.dateControl3.Margin = new System.Windows.Forms.Padding(5);
             this.dateControl3.Name = "dateControl3";
             this.dateControl3.Request = false;
-            this.dateControl3.Size = new System.Drawing.Size(192, 28);
+            this.dateControl3.Size = new System.Drawing.Size(256, 35);
             this.dateControl3.TabIndex = 40;
             // 
             // meRemark
             // 
-            this.meRemark.Location = new System.Drawing.Point(74, 405);
+            this.meRemark.Location = new System.Drawing.Point(99, 506);
+            this.meRemark.Margin = new System.Windows.Forms.Padding(4);
             this.meRemark.Name = "meRemark";
-            this.meRemark.Size = new System.Drawing.Size(501, 57);
+            this.meRemark.Size = new System.Drawing.Size(668, 71);
             this.meRemark.TabIndex = 41;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(33, 407);
+            this.label1.Location = new System.Drawing.Point(44, 509);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 12);
+            this.label1.Size = new System.Drawing.Size(45, 15);
             this.label1.TabIndex = 42;
             this.label1.Text = "备注:";
             // 
@@ -827,24 +874,27 @@ namespace Base
             this.ckControl1.DataField = "F_Out";
             this.ckControl1.DataSource = null;
             this.ckControl1.EditLabel = "离职";
-            this.ckControl1.Location = new System.Drawing.Point(504, 310);
+            this.ckControl1.Location = new System.Drawing.Point(672, 388);
+            this.ckControl1.Margin = new System.Windows.Forms.Padding(5);
             this.ckControl1.Name = "ckControl1";
-            this.ckControl1.Size = new System.Drawing.Size(54, 19);
+            this.ckControl1.Size = new System.Drawing.Size(72, 24);
             this.ckControl1.TabIndex = 43;
             // 
             // picMan
             // 
-            this.picMan.Location = new System.Drawing.Point(450, 14);
+            this.picMan.Location = new System.Drawing.Point(600, 18);
+            this.picMan.Margin = new System.Windows.Forms.Padding(4);
             this.picMan.Name = "picMan";
-            this.picMan.Size = new System.Drawing.Size(122, 120);
+            this.picMan.Size = new System.Drawing.Size(163, 150);
             this.picMan.TabIndex = 44;
             // 
             // frmEditEmp
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
-            this.ClientSize = new System.Drawing.Size(823, 532);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.ClientSize = new System.Drawing.Size(1097, 665);
             this.Controls.Add(this.ckOPer);
             this.Controls.Add(this.ckOption);
+            this.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.Name = "frmEditEmp";
             this.Text = "员工资料--编辑";
             this.Controls.SetChildIndex(this.ckCopy, 0);

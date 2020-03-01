@@ -54,9 +54,10 @@ namespace Common
             // ucDate
             // 
             this.ucDate.DateTag = myControl.DateFlag.当天;
-            this.ucDate.Location = new System.Drawing.Point(1, 3);
+            this.ucDate.Location = new System.Drawing.Point(1, 4);
+            this.ucDate.Margin = new System.Windows.Forms.Padding(5);
             this.ucDate.Name = "ucDate";
-            this.ucDate.Size = new System.Drawing.Size(397, 28);
+            this.ucDate.Size = new System.Drawing.Size(529, 35);
             this.ucDate.TabIndex = 0;
             this.ucDate.RefreshDateChanged += new myControl.RefreshDateEventHandler(this.ucDate_RefreshDateChanged);
             // 
@@ -64,11 +65,12 @@ namespace Common
             // 
             this.gcMaster.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.gcMaster.EmbeddedNavigator.Name = "";
-            this.gcMaster.Location = new System.Drawing.Point(13, 38);
+            this.gcMaster.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
+            this.gcMaster.Location = new System.Drawing.Point(17, 48);
             this.gcMaster.MainView = this.gvMaster;
+            this.gcMaster.Margin = new System.Windows.Forms.Padding(4);
             this.gcMaster.Name = "gcMaster";
-            this.gcMaster.Size = new System.Drawing.Size(632, 156);
+            this.gcMaster.Size = new System.Drawing.Size(843, 195);
             this.gcMaster.TabIndex = 1;
             this.gcMaster.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvMaster,
@@ -99,11 +101,12 @@ namespace Common
             this.gcSlaver.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.gcSlaver.EmbeddedNavigator.Name = "";
-            this.gcSlaver.Location = new System.Drawing.Point(12, 200);
+            this.gcSlaver.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
+            this.gcSlaver.Location = new System.Drawing.Point(16, 250);
             this.gcSlaver.MainView = this.gvSlaver;
+            this.gcSlaver.Margin = new System.Windows.Forms.Padding(4);
             this.gcSlaver.Name = "gcSlaver";
-            this.gcSlaver.Size = new System.Drawing.Size(632, 188);
+            this.gcSlaver.Size = new System.Drawing.Size(843, 235);
             this.gcSlaver.TabIndex = 2;
             this.gcSlaver.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvSlaver,
@@ -132,9 +135,10 @@ namespace Common
             this.sbOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.sbOK.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sbOK.Appearance.Options.UseFont = true;
-            this.sbOK.Location = new System.Drawing.Point(488, 395);
+            this.sbOK.Location = new System.Drawing.Point(651, 494);
+            this.sbOK.Margin = new System.Windows.Forms.Padding(4);
             this.sbOK.Name = "sbOK";
-            this.sbOK.Size = new System.Drawing.Size(75, 23);
+            this.sbOK.Size = new System.Drawing.Size(100, 29);
             this.sbOK.TabIndex = 3;
             this.sbOK.Text = "导入到单据";
             this.sbOK.Click += new System.EventHandler(this.sbOK_Click);
@@ -144,9 +148,10 @@ namespace Common
             this.spClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.spClose.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.spClose.Appearance.Options.UseFont = true;
-            this.spClose.Location = new System.Drawing.Point(569, 395);
+            this.spClose.Location = new System.Drawing.Point(759, 494);
+            this.spClose.Margin = new System.Windows.Forms.Padding(4);
             this.spClose.Name = "spClose";
-            this.spClose.Size = new System.Drawing.Size(75, 23);
+            this.spClose.Size = new System.Drawing.Size(100, 29);
             this.spClose.TabIndex = 4;
             this.spClose.Text = "关闭(&C)";
             this.spClose.Click += new System.EventHandler(this.spClose_Click);
@@ -155,37 +160,40 @@ namespace Common
             // 
             this.ckAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.ckAll.EditValue = true;
-            this.ckAll.Location = new System.Drawing.Point(12, 394);
+            this.ckAll.Location = new System.Drawing.Point(16, 492);
+            this.ckAll.Margin = new System.Windows.Forms.Padding(4);
             this.ckAll.Name = "ckAll";
             this.ckAll.Properties.Caption = "全选";
-            this.ckAll.Size = new System.Drawing.Size(75, 19);
+            this.ckAll.Size = new System.Drawing.Size(100, 23);
             this.ckAll.TabIndex = 5;
             this.ckAll.CheckedChanged += new System.EventHandler(this.ckAll_CheckedChanged);
             // 
             // cbBill
             // 
-            this.cbBill.Location = new System.Drawing.Point(496, 8);
+            this.cbBill.Location = new System.Drawing.Point(661, 10);
+            this.cbBill.Margin = new System.Windows.Forms.Padding(4);
             this.cbBill.Name = "cbBill";
             this.cbBill.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbBill.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.cbBill.Size = new System.Drawing.Size(148, 21);
+            this.cbBill.Size = new System.Drawing.Size(197, 25);
             this.cbBill.TabIndex = 6;
             this.cbBill.SelectedIndexChanged += new System.EventHandler(this.cbBill_SelectedIndexChanged);
             // 
             // ckAddImport
             // 
             this.ckAddImport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.ckAddImport.Location = new System.Drawing.Point(173, 395);
+            this.ckAddImport.Location = new System.Drawing.Point(231, 494);
+            this.ckAddImport.Margin = new System.Windows.Forms.Padding(4);
             this.ckAddImport.Name = "ckAddImport";
             this.ckAddImport.Properties.Caption = "合并导入";
-            this.ckAddImport.Size = new System.Drawing.Size(75, 19);
+            this.ckAddImport.Size = new System.Drawing.Size(100, 23);
             this.ckAddImport.TabIndex = 7;
             // 
             // frmBillImport
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
-            this.ClientSize = new System.Drawing.Size(657, 426);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.ClientSize = new System.Drawing.Size(876, 532);
             this.Controls.Add(this.ckAddImport);
             this.Controls.Add(this.cbBill);
             this.Controls.Add(this.ckAll);
@@ -194,6 +202,7 @@ namespace Common
             this.Controls.Add(this.gcSlaver);
             this.Controls.Add(this.gcMaster);
             this.Controls.Add(this.ucDate);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "frmBillImport";
             this.Text = "单据导入";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmBillImport_KeyDown);

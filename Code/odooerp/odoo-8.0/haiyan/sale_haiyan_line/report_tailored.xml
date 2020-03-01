@@ -1,0 +1,1036 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="report_saleorder_document2">
+            <div class="page">
+                <div class="oe_structure"/>
+                <div class="row">
+                    <div class="col-xs-4 pull-center">
+                        <center>
+                            <table class="text-center" border="1" cellspacing="100" width="1000">
+                                <center t-foreach="o.order_line" t-as="l">
+                                    <center t-foreach="l.haiyan_name" t-as="H">
+                                        <tr height="40">
+                                            <td class="text-center" width="1000" colspan="12">
+                                                <font size="6">
+                                                    <strong>
+                                                        海彦男仕礼服
+                                                    </strong>
+                                                </font>
+                                            </td>
+                                        </tr>
+                                        <tr height="30">
+                                            <td class="text-center" width="83">
+                                                <strong>
+                                                    店名：
+                                                </strong>
+                                            </td>
+                                            <td class="text-left" width="249" colspan="3">
+                                                <span t-field="H.team_name"/>
+                                            </td>
+
+                                            <td class="text-center" width="83">
+                                                <strong>
+                                                    量身师：
+                                                </strong>
+                                            </td>
+                                            <td class="text-left" width="249" colspan="3">
+                                                <span t-field="H.user_id"/>
+                                            </td>
+
+                                            <td class="text-center" width="83">
+                                                <strong>
+                                                    设计师：
+                                                </strong>
+                                            </td>
+                                            <td class="text-left" width="249" colspan="3">
+                                                <span t-field="o.designer"/>
+                                            </td>
+                                        </tr>
+
+                                        <tr height="30">
+                                            <td class="text-center" width="83">
+                                                <strong>
+                                                    客户姓名：
+                                                </strong>
+                                            </td>
+                                            <td class="text-left" width="249" colspan="3">
+                                                <span t-field="o.partner_id"/>
+                                            </td>
+
+                                            <td class="text-center" width="83">
+                                                <strong>联系方式：</strong>
+                                            </td>
+                                            <td class="text-left" width="249" colspan="3" t-foreach="o.partner_id"
+                                                t-as="R">
+                                                <span t-field="R.mobile"/>
+                                            </td>
+
+                                            <td class="text-center" width="83">
+                                                <strong>量身单号：</strong>
+                                            </td>
+                                            <td class="text-left" width="249" colspan="3">
+                                                <span t-field="H.name"/>
+                                            </td>
+                                        </tr>
+
+                                        <tr height="40">
+                                            <td colspan="4">
+                                                <font size="4">
+                                                    <strong>上衣尺寸信息</strong>
+                                                </font>
+                                            </td>
+
+                                            <td colspan="4">
+                                                <font size="4">
+                                                    <strong>裤子尺寸信息</strong>
+                                                </font>
+                                            </td>
+
+                                            <td colspan="4">
+                                                <font size="4">
+                                                    <strong>衬衣尺寸信息</strong>
+                                                </font>
+                                            </td>
+                                        </tr>
+
+                                        <tr height="30">
+                                            <td class="text-center" width="83">
+                                                <strong>
+                                                    上衣
+                                                </strong>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                实际尺寸
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                校正尺寸1
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                校正尺寸2
+                                            </td>
+
+                                            <td class="text-center" width="83">
+                                                <strong>
+                                                    裤子
+                                                </strong>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                实际尺寸
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                校正尺寸1
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                校正尺寸2
+                                            </td>
+
+                                            <td class="text-center" width="83">
+                                                <strong>
+                                                    衬衣
+                                                </strong>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                实际尺寸
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                校正尺寸1
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                校正尺寸2
+                                            </td>
+                                        </tr>
+
+                                        <tr height="30">
+                                            <td class="text-center" width="83">
+                                                <strong>
+                                                    肩宽
+                                                </strong>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.coat_shoulder"/>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.coat_shoulder_two"/>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.coat_shoulder_three"/>
+                                            </td>
+
+                                            <td class="text-center" width="83">
+                                                <strong>
+                                                    腰围
+                                                </strong>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.trousers_waist"/>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.trousers_waist_two"/>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.trousers_waist_three"/>
+                                            </td>
+
+                                            <td class="text-center" width="83">
+                                                <strong>
+                                                    衬衣肩宽
+                                                </strong>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.shirt_shoulder"/>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.shirt_shoulder_two"/>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.shirt_shoulder_three"/>
+                                            </td>
+
+                                        </tr>
+
+                                        <tr height="30">
+                                            <td class="text-center" width="83">
+                                                <strong>
+                                                    袖长
+                                                </strong>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.coat_sleeves"/>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.coat_sleeves_two"/>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.coat_sleeves_three"/>
+                                            </td>
+
+                                            <td class="text-center" width="83">
+                                                <strong>
+                                                    臀围
+                                                </strong>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.trousers_hip"/>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.trousers_hip_two"/>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.trousers_hip_three"/>
+                                            </td>
+
+                                            <td class="text-center" width="83">
+                                                <strong>
+                                                    衬衣袖长
+                                                </strong>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.shirt_sleeves"/>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.shirt_sleeves_two"/>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.shirt_sleeves_three"/>
+                                            </td>
+                                        </tr>
+
+                                        <tr height="30">
+                                            <td class="text-center" width="83">
+                                                <strong>
+                                                    前衣长
+                                                </strong>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.coat_before_long"/>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.coat_before_long_two"/>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.coat_before_long_three"/>
+                                            </td>
+
+                                            <td class="text-center" width="83">
+                                                <strong>
+                                                    裤长
+                                                </strong>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.trousers_long"/>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.trousers_long_two"/>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.trousers_long_three"/>
+                                            </td>
+
+                                            <td class="text-center" width="83">
+                                                <strong>
+                                                    衬衣前衣长
+                                                </strong>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.shirt_yichang"/>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.shirt_yichang_two"/>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.shirt_yichang_three"/>
+                                            </td>
+                                        </tr>
+
+                                        <tr height="30">
+                                            <td class="text-center" width="83">
+                                                <strong>
+                                                    后衣长
+                                                </strong>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.coat_after_long"/>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.coat_after_long_two"/>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.coat_after_long_three"/>
+                                            </td>
+
+                                            <td class="text-center" width="83">
+                                                <strong>
+                                                    裤长
+                                                </strong>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.trousers_shangdang"/>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.trousers_shangdang_two"/>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.trousers_shangdang_three"/>
+                                            </td>
+
+                                            <td class="text-center" width="83">
+                                                <strong>
+                                                    衬衣后衣长
+                                                </strong>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.shirt_houchang"/>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.shirt_houchang_two"/>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.shirt_houchang_three"/>
+                                            </td>
+
+                                        </tr>
+
+                                        <tr height="30">
+                                            <td class="text-center" width="83">
+                                                <strong>
+                                                    胸围
+                                                </strong>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.coat_chest"/>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.coat_chest_two"/>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.coat_chest_three"/>
+                                            </td>
+
+                                            <td class="text-center" width="83">
+                                                <strong>
+                                                    全档
+                                                </strong>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.trousers_quandang"/>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.trousers_quandang_two"/>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.trousers_quandang_three"/>
+                                            </td>
+
+                                            <td class="text-center" width="83">
+                                                <strong>
+                                                    衬衣胸围
+                                                </strong>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.shirt_chest"/>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.shirt_chest_two"/>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.shirt_chest_three"/>
+                                            </td>
+                                        </tr>
+
+                                        <tr height="30">
+                                            <td class="text-center" width="83">
+                                                <strong>
+                                                    腰围
+                                                </strong>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.coat_waist"/>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.coat_waist_two"/>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.coat_waist_three"/>
+                                            </td>
+
+                                            <td class="text-center" width="83">
+                                                <strong>
+                                                    腰下
+                                                </strong>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.trousers_yaoxia"/>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.trousers_yaoxia_two"/>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.trousers_yaoxia_three"/>
+                                            </td>
+
+                                            <td class="text-center" width="83">
+                                                <strong>
+                                                    衬衣腰围
+                                                </strong>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.shirt_waist"/>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.shirt_waist_two"/>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.shirt_waist_three"/>
+                                            </td>
+                                        </tr>
+
+                                        <tr height="30">
+                                            <td class="text-center" width="83">
+                                                <strong>
+                                                    臀围
+                                                </strong>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.coat_hip"/>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.coat_hip_two"/>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.coat_hip_three"/>
+                                            </td>
+
+                                            <td class="text-center" width="83">
+                                                <strong>
+                                                    腿围
+                                                </strong>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.trousers_tuiwei"/>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.trousers_tuiwei_two"/>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.trousers_tuiwei_three"/>
+                                            </td>
+
+                                            <td class="text-center" width="83">
+                                                <strong>
+                                                    衬衣臀围
+                                                </strong>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.shirt_hip"/>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.shirt_hip_two"/>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.shirt_hip_three"/>
+                                            </td>
+                                        </tr>
+
+                                        <tr height="30">
+                                            <td class="text-center" width="83">
+                                                <strong>
+                                                    胸宽
+                                                </strong>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.coat_chest_width"/>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.coat_chest_width_two"/>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.coat_chest_width_three"/>
+                                            </td>
+
+                                            <td class="text-center" width="83">
+                                                <strong>
+                                                    膝围
+                                                </strong>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.trousers_xiwei"/>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.trousers_xiwei_two"/>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.trousers_xiwei_three"/>
+                                            </td>
+
+                                            <td class="text-center" width="83">
+                                                <strong>
+                                                    衬衣胸宽
+                                                </strong>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.shirt_chest_width"/>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.shirt_chest_width_two"/>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.shirt_chest_width_three"/>
+                                            </td>
+                                        </tr>
+
+                                        <tr height="30">
+                                            <td class="text-center" width="83">
+                                                <strong>
+                                                    背宽
+                                                </strong>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.coat_back_width"/>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.coat_back_width_two"/>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.coat_back_width_three"/>
+                                            </td>
+
+                                            <td class="text-center" width="83">
+                                                <strong>
+                                                    裤口
+                                                </strong>
+                                            </td>
+                                            <td class="text-center" width="249" colspan="3">
+                                                <span t-field="H.trousers_xiwei"/>
+                                            </td>
+
+                                            <td class="text-center" width="83">
+                                                <strong>
+                                                    衬衣背宽
+                                                </strong>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.shirt_back_width"/>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.shirt_back_width_two"/>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.shirt_back_width_three"/>
+                                            </td>
+                                        </tr>
+
+                                        <tr height="30">
+                                            <td class="text-center" width="83">
+                                                <strong>
+                                                    背宽
+                                                </strong>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.coat_back_width"/>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.coat_back_width_two"/>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.coat_back_width_three"/>
+                                            </td>
+
+                                            <td class="text-center" width="83">
+                                                <strong>
+                                                    裤口
+                                                </strong>
+                                            </td>
+                                            <td class="text-center" width="249" colspan="3">
+                                                <span t-field="H.trousers_xiwei"/>
+                                            </td>
+
+                                            <td class="text-center" width="83">
+                                                <strong>
+                                                    衬衣背宽
+                                                </strong>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.shirt_back_width"/>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.shirt_back_width_two"/>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.shirt_back_width_three"/>
+                                            </td>
+                                        </tr>
+
+                                        <tr height="30">
+                                            <td class="text-center" width="83">
+                                                <strong>
+                                                    领围
+                                                </strong>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.coat_neck_size"/>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <strong>
+                                                    领型
+                                                </strong>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.coat_neck_shape"/>
+                                            </td>
+
+                                            <td class="text-center" width="166" colspan="2">
+                                                有肚
+                                                <span t-field="H.trousers_youdu"/>
+                                            </td>
+                                            <td class="text-center" width="166" colspan="2">
+                                                S腿
+                                                <span t-field="H.trousers_stui"/>
+                                            </td>
+
+                                            <td class="text-center" width="83">
+                                                <strong>
+                                                    衬衣领围
+                                                </strong>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.shirt_back_linwei"/>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <strong>
+                                                    衬衣领型
+                                                </strong>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.shirt_neck_shape"/>
+                                            </td>
+                                        </tr>
+
+                                        <tr height="30">
+                                            <td class="text-center" width="83">
+                                                <strong>
+                                                    前襟
+                                                </strong>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.coat_before_yijing"/>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <strong>
+                                                    袖口
+                                                </strong>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.coat_xiukou"/>
+                                            </td>
+
+                                            <td class="text-center" width="166" colspan="2">
+                                                翘腿
+                                                <span t-field="H.trousers_qiaotui"/>
+                                            </td>
+                                            <td class="text-center" width="166" colspan="2">
+                                                平臀
+                                                <span t-field="H.trousers_pingtun"/>
+                                            </td>
+
+                                            <td class="text-center" width="83">
+                                                <strong>
+                                                    衬衣前襟
+                                                </strong>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.shirt_before_yijing"/>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <strong>
+                                                    衬衣袖口
+                                                </strong>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.shirt_xiukou"/>
+                                            </td>
+                                        </tr>
+
+                                        <tr height="30">
+                                            <td class="text-center" width="83">
+                                                <strong>
+                                                    试版款
+                                                </strong>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.coat_try"/>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <strong>
+                                                    试版码数
+                                                </strong>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.coat_number"/>
+                                            </td>
+
+                                            <td class="text-center" width="166" colspan="2">
+                                                O腿
+                                                <span t-field="H.trousers_otui"/>
+                                            </td>
+                                            <td class="text-center" width="166" colspan="2">
+                                                X腿
+                                                <span t-field="H.trousers_xtui"/>
+                                            </td>
+
+                                            <td class="text-center" width="83">
+                                                <strong>
+                                                    衬衣试版款
+                                                </strong>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.shirt_try"/>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <strong>
+                                                    试版码数
+                                                </strong>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.shirt_number"/>
+                                            </td>
+                                        </tr>
+
+                                        <tr height="30">
+                                            <td class="text-center" width="83">
+                                                <strong>
+                                                    定做款
+                                                </strong>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.coat_customized"/>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <strong>
+                                                    定做件数
+                                                </strong>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.coat_count"/>件
+                                            </td>
+
+                                            <td class="text-center" width="166" colspan="2">
+                                                <span t-field="H.trousers_dazhe"/>
+                                                打折
+                                            </td>
+                                            <td class="text-center" width="166" colspan="2">
+                                                <span t-field="H.trousers_pingkou"/>
+                                                平口
+                                            </td>
+
+                                            <td class="text-center" width="83">
+                                                <strong>
+                                                    衬衣定做款
+                                                </strong>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.shirt_customized"/>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <strong>
+                                                    定做件数
+                                                </strong>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.shirt_count"/>件
+                                            </td>
+                                        </tr>
+
+                                        <tr height="30">
+                                            <td class="text-center" width="166" colspan="2">
+                                                <span t-field="H.coat_gaodijian"/>
+                                                高低肩
+                                            </td>
+                                            <td class="text-center" width="166" colspan="2">
+                                                <span t-field="H.coat_dadu"/>
+                                                大肚
+                                            </td>
+
+                                            <td class="text-center" width="83">
+                                                <strong>
+                                                    试穿码数
+                                                </strong>
+                                            </td>
+                                            <td class="text-center" width="249" colspan="3">
+                                                <span t-field="H.trousers_mashu"/>
+                                            </td>
+
+                                            <td class="text-center" width="166" colspan="2">
+                                                <span t-field="H.shirt_gaodijian"/>
+                                                高低肩
+                                            </td>
+                                            <td class="text-center" width="166" colspan="2">
+                                                <span t-field="H.shirt_dadu"/>
+                                                大肚
+                                            </td>
+                                        </tr>
+
+                                        <tr height="30">
+                                            <td class="text-center" width="166" colspan="2">
+                                                <span t-field="H.coat_xiajian"/>
+                                                斜肩
+                                            </td>
+                                            <td class="text-center" width="166" colspan="2">
+                                                <span t-field="H.coat_pingjian"/>
+                                                平肩
+                                            </td>
+
+                                            <td class="text-center" width="83">
+                                                <strong>
+                                                    定做款式
+                                                </strong>
+                                            </td>
+                                            <td class="text-center" width="249" colspan="3">
+                                                <span t-field="H.trousers_kuanshi"/>
+                                            </td>
+
+                                            <td class="text-center" width="166" colspan="2">
+                                                <span t-field="H.shirt_xiajian"/>
+                                                斜肩
+                                            </td>
+                                            <td class="text-center" width="166" colspan="2">
+                                                <span t-field="H.shirt_pingjian"/>
+                                                平肩
+                                            </td>
+                                        </tr>
+
+                                        <tr height="30">
+                                            <td class="text-center" width="166" colspan="2">
+                                                <span t-field="H.coat_youbei"/>
+                                                有背
+                                            </td>
+                                            <td class="text-center" width="166" colspan="2">
+                                                <span t-field="H.coat_tingxiong"/>
+                                                挺胸
+                                            </td>
+
+                                            <td class="text-center" width="83">
+                                                <strong>
+                                                    件数
+                                                </strong>
+                                            </td>
+                                            <td class="text-center" width="249" colspan="3">
+                                                <span t-field="H.trousers_count"/>件
+                                            </td>
+
+                                            <td class="text-center" width="166" colspan="2">
+                                                <span t-field="H.shirt_youbei"/>
+                                                有背
+                                            </td>
+                                            <td class="text-center" width="166" colspan="2">
+                                                <span t-field="H.shirt_tingxiong"/>
+                                                挺胸
+                                            </td>
+                                        </tr>
+
+                                        <tr height="30">
+                                            <td colspan="4">
+                                                <strong>背心尺寸信息</strong>
+                                            </td>
+
+                                            <td colspan="4">
+                                                <strong>订单时间安排</strong>
+                                            </td>
+
+                                            <td colspan="4">
+                                                <strong>工艺备注</strong>
+                                            </td>
+                                        </tr>
+
+                                        <tr height="30">
+                                            <td class="text-center" width="83">
+                                                <strong>
+                                                    背心前长
+                                                </strong>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.vest_qianchang"/>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <strong>
+                                                    背心后长
+                                                </strong>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.vest_houchang"/>
+                                            </td>
+
+                                            <td class="text-center" width="83">
+                                                <strong>
+                                                    定做日期
+                                                </strong>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <strong>
+                                                    试版日期
+                                                </strong>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="o.date_state"/>
+                                            </td>
+
+                                            <td class="text-center" width="83">
+                                                <strong>
+                                                    上衣备注
+                                                </strong>
+                                            </td>
+                                            <td class="text-center" width="249" colspan="3">
+                                                <span t-field="H.coat_beizhu"/>
+                                            </td>
+                                        </tr>
+
+                                        <tr height="30">
+                                            <td class="text-center" width="83">
+                                                <strong>
+                                                    上
+                                                </strong>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.vest_shang"/>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <strong>
+                                                    中
+                                                </strong>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.vest_zhong"/>
+                                            </td>
+
+                                            <td class="text-center" width="83">
+                                                <strong>
+                                                    试取日期
+                                                </strong>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="o.date_end"/>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <strong>
+                                                    下单日期
+                                                </strong>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="o.date_order"/>
+                                            </td>
+
+                                            <td class="text-center" width="83">
+                                                <strong>
+                                                    裤子备注
+                                                </strong>
+                                            </td>
+                                            <td class="text-center" width="249" colspan="3">
+                                                <span t-field="H.trousers_beizhu"/>
+                                            </td>
+                                        </tr>
+
+                                        <tr height="30">
+                                            <td class="text-center" width="83">
+                                                <strong>
+                                                    背心码数
+                                                </strong>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="H.vest_mashu"/>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <strong>
+                                                    西服顾问
+                                                </strong>
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <span t-field="o.consultant"/>
+                                            </td>
+
+                                            <td class="text-center" width="83">
+                                                <strong>
+                                                   到件日
+                                                </strong>
+                                            </td>
+                                            <td class="text-center" width="83">
+
+                                            </td>
+                                            <td class="text-center" width="83">
+                                                <strong>
+                                                    取件日
+                                                </strong>
+                                            </td>
+                                            <td class="text-center" width="83">
+
+                                            </td>
+
+                                            <td class="text-center" width="83">
+                                                <strong>
+                                                    衬衣备注
+                                                </strong>
+                                            </td>
+                                            <td class="text-center" width="249" colspan="3">
+                                                <span t-field="H.shirt_beizhu"/>
+                                            </td>
+                                        </tr>
+                                    </center>
+                                </center>
+                            </table>
+                        </center>
+                    </div>
+
+                </div>
+            </div>
+        </template>
+
+        <template id="report_tailored">
+            <t t-call="report.html_container">
+                <t t-foreach="doc_ids" t-as="doc_id">
+                    <t t-raw="translate_doc(doc_id, doc_model, 'partner_id.lang', 'sale_haiyan_line.report_saleorder_document2')"/>
+                </t>
+            </t>
+        </template>
+    </data>
+</openerp>

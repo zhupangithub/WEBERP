@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <report
+                id="report_haiyan_tailored"
+                string="量身单打印"
+                model="sale.order"
+                report_type="qweb-pdf"
+                file="sale_haiyan_line.report_tailored"
+                name="sale_haiyan_line.report_tailored"
+                />
+    </data>
+</openerp>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="haiyan_order_from">
+            <field name="name">haiyan.order.form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='project_id']" position="after">
+                    <field name="company"/>
+                </xpath>
+                <xpath expr="//field[@name='company']" position="after">
+                    <field name="consultant"/>
+                </xpath>
+                <xpath expr="//field[@name='consultant']" position="after">
+                    <field name="designer"/>
+                </xpath>
+                <xpath expr="//field[@name='designer']" position="after">
+                    <field name="order_instructions"/>
+                </xpath>
+                <xpath expr="//field[@name='date_order']" position="after">
+                    <field name="date_state"/>
+                </xpath>
+                <xpath expr="//field[@name='date_state']" position="after">
+                    <field name="date_end"/>
+                </xpath>
+                <xpath expr="//field[@name='date_end']" position="after">
+                    <field name="order_type"/>
+                </xpath>
+                <xpath expr="//field[@name='order_type']" position="after">
+                    <field name="order_chuzu_datestate"/>
+                </xpath>
+                <xpath expr="//field[@name='order_chuzu_datestate']" position="after">
+                    <field name="order_chuzu_dateend"/>
+                </xpath>
+                <xpath expr="//field[@name='order_chuzu_dateend']" position="after">
+                    <field name="order_yajin"/>
+                </xpath>
+                <xpath expr="//field[@name='order_yajin']" position="after">
+                    <field name="order_yukuan"/>
+                </xpath>
+                <xpath expr="//field[@name='order_line']/form//field[@name='product_id']" position="after">
+                    <field name="haiyan_name"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="haiyan_partner_form">
+            <field name="name">haiyan.partner.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='website']" position="after">
+                    <field name="haiyan_customer_dinhun"/>
+                </xpath>
+                <xpath expr="//field[@name='haiyan_customer_dinhun']" position="after">
+                    <field name="haiyan_customer_jiehunri"/>
+                </xpath>
+                <xpath expr="//field[@name='haiyan_customer_jiehunri']" position="after">
+                    <field name="haiyan_customer_shengri"/>
+                </xpath>
+                <xpath expr="//field[@name='haiyan_customer_shengri']" position="after">
+                    <field name="haiyan_customer_vip"/>
+                </xpath>
+                <xpath expr="//field[@name='haiyan_customer_vip']" position="after">
+                    <field name="haiyan_phase"/>
+                </xpath>
+
+                <xpath expr="//field[@name='title']" position="after">
+                    <field name="haiyan_paizhao_date"/>
+                </xpath>
+                <xpath expr="//field[@name='haiyan_paizhao_date']" position="after">
+                    <field name="haiyan_customer_zhiye"/>
+                </xpath>
+                <xpath expr="//field[@name='haiyan_customer_zhiye']" position="after">
+                    <field name="haiyan_customer_income"/>
+                </xpath>
+                <xpath expr="//field[@name='haiyan_customer_income']" position="after">
+                    <field name="haiyan_intend"/>
+                </xpath>
+
+                <xpath expr="//page[@string='Contacts']" position="before">
+                    <page string="图片上传">
+                        <group colspan="3">
+                            <field name="haiyan_customer_image1" widget="image"
+                                   class="oe_left oe_avatar oe_inline"
+                                   options='{"size": [400, 300]}'/>
+                        </group>
+                        <group colspan="3">
+                            <field name="haiyan_customer_image2" widget="image"
+                                   class="oe_left oe_avatar oe_inline"
+                                   options='{"size": [400, 300]}'/>
+                        </group>
+                        <group colspan="3">
+                            <field name="haiyan_customer_image3" widget="image"
+                                   class="oe_left oe_avatar oe_inline"
+                                   options='{"size": [400, 300]}'/>
+                        </group>
+                        <group colspan="3">
+                            <field name="haiyan_customer_image4" widget="image"
+                                   class="oe_left oe_avatar oe_inline"
+                                   options='{"size": [400, 300]}'/>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>

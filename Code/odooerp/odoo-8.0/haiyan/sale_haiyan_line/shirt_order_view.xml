@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="zp_shirt_view_filter" model="ir.ui.view">
+            <field name="name">zp.shirt.Search</field>
+            <field name="model">zp.haiyan</field>
+            <field name="arch" type="xml">
+                <search string="量身单查询">
+                    <field name="name"
+                           filter_domain="['|',('name','ilike',self),('partner_id','ilike',self)]"/>
+                    <filter help="只看自己的" icon="terp-personal+" domain="[('user_id','=',uid)]"/>
+                    <separator/>
+                    <group expand="0" string="分组...">
+                        <filter string="用户分组" icon="terp-personal" domain="[]" context="{'group_by' : 'user_id'}"/>
+                    </group>
+                    <group expand="0" string="分类...">
+                        <filter string="量身单状态" icon="terp-personal" domain="[]" context="{'group_by' : 'state'}"/>
+                    </group>
+                    `
+                </search>
+            </field>
+        </record>
+
+        <!--表单-->
+        <record id="zp_shirt_view_form" model="ir.ui.view">
+            <field name="name">zp.haiyan.shirt.form</field>
+            <field name="model">zp.haiyan</field>
+            <field name="arch" type="xml">
+                <form version="7.0">
+                    <sheet>
+                        <group string="衬衣尺寸">
+                            <label for="shirt_shoulder"/>
+                            <div>
+                                <field name="shirt_shoulder" class="oe_inline"/>
+                                <field name="shirt_shoulder_two" class="oe_inline"/>
+                                <field name="shirt_shoulder_three" class="oe_inline"/>
+                            </div>
+
+                            <label for="shirt_sleeves"/>
+                            <div>
+                                <field name="shirt_sleeves" class="oe_inline"/>
+                                <field name="shirt_sleeves_two" class="oe_inline"/>
+                                <field name="shirt_sleeves_three" class="oe_inline"/>
+                            </div>
+
+                            <label for="shirt_yichang"/>
+                            <div>
+                                <field name="shirt_yichang" class="oe_inline"/>
+                                <field name="shirt_yichang_two" class="oe_inline"/>
+                                <field name="shirt_yichang_three" class="oe_inline"/>
+                            </div>
+
+                            <label for="shirt_houchang"/>
+                            <div>
+                                <field name="shirt_houchang" class="oe_inline"/>
+                                <field name="shirt_houchang_two" class="oe_inline"/>
+                                <field name="shirt_houchang_three" class="oe_inline"/>
+                            </div>
+
+                            <label for="shirt_chest"/>
+                            <div>
+                                <field name="shirt_chest" class="oe_inline"/>
+                                <field name="shirt_chest_two" class="oe_inline"/>
+                                <field name="shirt_chest_three" class="oe_inline"/>
+                            </div>
+
+                            <label for="shirt_waist"/>
+                            <div>
+                                <field name="shirt_waist" class="oe_inline"/>
+                                <field name="shirt_waist_two" class="oe_inline"/>
+                                <field name="shirt_waist_three" class="oe_inline"/>
+                            </div>
+
+                            <label for="shirt_hip"/>
+                            <div>
+                                <field name="shirt_hip" class="oe_inline"/>
+                                <field name="shirt_hip_two" class="oe_inline"/>
+                                <field name="shirt_hip_three" class="oe_inline"/>
+                            </div>
+
+                            <label for="shirt_chest_width"/>
+                            <div>
+                                <field name="shirt_chest_width" class="oe_inline"/>
+                                <field name="shirt_chest_width_two" class="oe_inline"/>
+                                <field name="shirt_chest_width_three" class="oe_inline"/>
+                            </div>
+
+                            <label for="shirt_back_width"/>
+                            <div>
+                                <field name="shirt_back_width" class="oe_inline"/>
+                                <field name="shirt_back_width_two" class="oe_inline"/>
+                                <field name="shirt_back_width_three" class="oe_inline"/>
+                            </div>
+                        </group>
+
+
+                        <group string="其他属性">
+                            <group>
+                                <field name="shirt_number" class="oe_inline"/>
+                                <field name="shirt_try" class="oe_inline"/>
+                                <field name="shirt_customized" class="oe_inline"/>
+                                <field name="shirt_count" class="oe_inline"/>
+                                <field name="shirt_before_yijing" class="oe_inline"/>
+                                <field name="shirt_xiukou" class="oe_inline"/>
+                            </group>
+
+                            <group>
+                                <field name="shirt_color" class="oe_inline"/>
+                                <field name="shirt_neck_shape" class="oe_inline"/>
+                                <group>
+                                    <field name="shirt_gaodijian"/>
+                                    <field name="shirt_dadu"/>
+                                    <field name="shirt_xiajian"/>
+                                </group>
+                                <group>
+                                    <field name="shirt_pingjian"/>
+                                    <field name="shirt_youbei"/>
+                                    <field name="shirt_tingxiong"/>
+                                </group>
+                            </group>
+                        </group>
+                        <group string="衬衣备注">
+                            <field name="shirt_beizhu"/>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" help="加入关注"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <!--列表-->
+        <record id="zp_shirt_view_tree" model="ir.ui.view">
+            <field name="name">zp.shirt.tree</field>
+            <field name="model">zp.haiyan</field>
+            <field name="priority">3</field>
+            <field name="arch" type="xml">
+                <tree string="列表">
+                    <field name="name"/>
+                    <field name="shirt_color"/>
+                    <field name="shirt_count"/>
+                    <field name="shirt_number"/>
+                    <field name="shirt_try"/>
+                    <field name="shirt_beizhu"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <!--  窗体事件 查询  Search  graph,gantt-->
+        <record id="zp_haiyan_order_action_shirt" model="ir.actions.act_window">
+            <field name="name">衬衣信息</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">zp.haiyan</field>
+            <field name="view_type">form</field>
+            <field name="limit">50</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="zp_shirt_view_filter"/>
+
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    录入衬衣信息
+                </p>
+            </field>
+        </record>
+
+        <record id="action_haiyan_shirt_view_tree" model="ir.actions.act_window.view">
+            <field name="sequence">1</field>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="zp_shirt_view_tree"/>
+            <field name="act_window_id" ref="zp_haiyan_order_action_shirt"/>
+        </record>
+
+        <record id="action_haiyan_shirt_view_form" model="ir.actions.act_window.view">
+            <field name="sequence">2</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="zp_shirt_view_form"/>
+            <field name="act_window_id" ref="zp_haiyan_order_action_shirt"/>
+        </record>
+
+        <menuitem name="衬衣" id="base.menu_haiyan_shirt" parent="base.menu_haiyan" sequence="2"
+                  action="zp_haiyan_order_action_shirt"/>
+    </data>
+</openerp>

@@ -25,6 +25,8 @@ namespace Common
         {
             InitializeComponent();
             gvBase.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(FocusedRowChange);
+            this.gvBase.HorzScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
+            this.gvBase.OptionsView.ColumnAutoWidth = true;
         }
 
         /// <summary>

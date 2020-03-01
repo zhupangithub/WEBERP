@@ -29,8 +29,8 @@ namespace Base
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.ComboBoxItem comboBoxItem3 = new DevExpress.XtraEditors.Controls.ComboBoxItem();
-            DevExpress.XtraEditors.Controls.ComboBoxItem comboBoxItem4 = new DevExpress.XtraEditors.Controls.ComboBoxItem();
+            DevExpress.XtraEditors.Controls.ComboBoxItem comboBoxItem5 = new DevExpress.XtraEditors.Controls.ComboBoxItem();
+            DevExpress.XtraEditors.Controls.ComboBoxItem comboBoxItem6 = new DevExpress.XtraEditors.Controls.ComboBoxItem();
             this.editControl1 = new myControl.EditControl();
             this.editControl2 = new myControl.EditControl();
             this.lupControl1 = new myControl.lupControl();
@@ -117,14 +117,16 @@ namespace Base
             // 
             this.BtnOK.Appearance.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnOK.Appearance.Options.UseFont = true;
-            this.BtnOK.Location = new System.Drawing.Point(489, 412);
+            this.BtnOK.Location = new System.Drawing.Point(652, 515);
+            this.BtnOK.Margin = new System.Windows.Forms.Padding(5);
             this.BtnOK.Text = "保存(&S)";
             // 
             // btnCancel
             // 
             this.btnCancel.Appearance.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.Appearance.Options.UseFont = true;
-            this.btnCancel.Location = new System.Drawing.Point(570, 412);
+            this.btnCancel.Location = new System.Drawing.Point(760, 515);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(5);
             // 
             // gbox
             // 
@@ -163,12 +165,15 @@ namespace Base
             this.gbox.Controls.Add(this.lupControl1);
             this.gbox.Controls.Add(this.editControl2);
             this.gbox.Controls.Add(this.editControl1);
-            this.gbox.Location = new System.Drawing.Point(19, 38);
-            this.gbox.Size = new System.Drawing.Size(625, 367);
+            this.gbox.Location = new System.Drawing.Point(25, 48);
+            this.gbox.Margin = new System.Windows.Forms.Padding(5);
+            this.gbox.Padding = new System.Windows.Forms.Padding(5);
+            this.gbox.Size = new System.Drawing.Size(833, 459);
             // 
             // ckCopy
             // 
-            this.ckCopy.Location = new System.Drawing.Point(157, 416);
+            this.ckCopy.Location = new System.Drawing.Point(209, 520);
+            this.ckCopy.Margin = new System.Windows.Forms.Padding(5);
             this.ckCopy.Visible = true;
             // 
             // editControl1
@@ -177,10 +182,11 @@ namespace Base
             this.editControl1.DataField = "F_ID";
             this.editControl1.DataSource = null;
             this.editControl1.EditLabel = "物料代码:";
-            this.editControl1.Location = new System.Drawing.Point(6, 12);
+            this.editControl1.Location = new System.Drawing.Point(8, 15);
+            this.editControl1.Margin = new System.Windows.Forms.Padding(5);
             this.editControl1.Name = "editControl1";
             this.editControl1.Request = true;
-            this.editControl1.Size = new System.Drawing.Size(190, 27);
+            this.editControl1.Size = new System.Drawing.Size(253, 34);
             this.editControl1.TabIndex = 0;
             // 
             // editControl2
@@ -189,10 +195,11 @@ namespace Base
             this.editControl2.DataField = "F_Name";
             this.editControl2.DataSource = null;
             this.editControl2.EditLabel = "物料名称:";
-            this.editControl2.Location = new System.Drawing.Point(231, 14);
+            this.editControl2.Location = new System.Drawing.Point(308, 18);
+            this.editControl2.Margin = new System.Windows.Forms.Padding(5);
             this.editControl2.Name = "editControl2";
             this.editControl2.Request = true;
-            this.editControl2.Size = new System.Drawing.Size(302, 27);
+            this.editControl2.Size = new System.Drawing.Size(403, 34);
             this.editControl2.TabIndex = 1;
             // 
             // lupControl1
@@ -201,15 +208,19 @@ namespace Base
             this.lupControl1.DataField = "F_Type";
             this.lupControl1.DataSource = null;
             this.lupControl1.DisplayCaption = "";
+            this.lupControl1.DropSQL = "";
             this.lupControl1.EditLabel = "物料类别:";
-            this.lupControl1.Location = new System.Drawing.Point(6, 45);
+            this.lupControl1.InvokeClass = "";
+            this.lupControl1.LinkFields = null;
+            this.lupControl1.Location = new System.Drawing.Point(8, 56);
             this.lupControl1.LookUpDataSource = null;
             this.lupControl1.LookUpDisplayField = null;
             this.lupControl1.LookUpKeyField = null;
+            this.lupControl1.Margin = new System.Windows.Forms.Padding(4);
             this.lupControl1.Name = "lupControl1";
             this.lupControl1.PopWidth = 150;
             this.lupControl1.Request = true;
-            this.lupControl1.Size = new System.Drawing.Size(190, 22);
+            this.lupControl1.Size = new System.Drawing.Size(253, 28);
             this.lupControl1.TabIndex = 2;
             // 
             // editControl9
@@ -218,10 +229,11 @@ namespace Base
             this.editControl9.DataField = "F_Remark";
             this.editControl9.DataSource = null;
             this.editControl9.EditLabel = "备注:";
-            this.editControl9.Location = new System.Drawing.Point(12, 270);
+            this.editControl9.Location = new System.Drawing.Point(16, 338);
+            this.editControl9.Margin = new System.Windows.Forms.Padding(5);
             this.editControl9.Name = "editControl9";
             this.editControl9.Request = false;
-            this.editControl9.Size = new System.Drawing.Size(520, 21);
+            this.editControl9.Size = new System.Drawing.Size(693, 26);
             this.editControl9.TabIndex = 23;
             // 
             // editControl3
@@ -230,28 +242,31 @@ namespace Base
             this.editControl3.DataField = "F_Spec";
             this.editControl3.DataSource = null;
             this.editControl3.EditLabel = "规格:";
-            this.editControl3.Location = new System.Drawing.Point(31, 73);
+            this.editControl3.Location = new System.Drawing.Point(41, 91);
+            this.editControl3.Margin = new System.Windows.Forms.Padding(5);
             this.editControl3.Name = "editControl3";
             this.editControl3.Request = false;
-            this.editControl3.Size = new System.Drawing.Size(501, 27);
+            this.editControl3.Size = new System.Drawing.Size(668, 34);
             this.editControl3.TabIndex = 3;
             // 
             // cbControl1
             // 
             this.cbControl1.BackColor = System.Drawing.Color.Transparent;
-            comboBoxItem3.Value = "原材料";
-            comboBoxItem4.Value = "其它";
+            comboBoxItem5.Value = "原材料";
+            comboBoxItem6.Value = "其它";
             this.cbControl1.cbItem = new DevExpress.XtraEditors.Controls.ComboBoxItem[] {
-        comboBoxItem3,
-        comboBoxItem4};
+        comboBoxItem5,
+        comboBoxItem6};
             this.cbControl1.DataField = "F_Kind";
             this.cbControl1.DataSource = null;
             this.cbControl1.EditLabel = "物料属性:";
             this.cbControl1.EditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.cbControl1.Location = new System.Drawing.Point(6, 102);
+            this.cbControl1.Location = new System.Drawing.Point(8, 128);
+            this.cbControl1.Margin = new System.Windows.Forms.Padding(5);
             this.cbControl1.Name = "cbControl1";
             this.cbControl1.Request = true;
-            this.cbControl1.Size = new System.Drawing.Size(164, 21);
+            this.cbControl1.SelectedIndex = -1;
+            this.cbControl1.Size = new System.Drawing.Size(219, 26);
             this.cbControl1.TabIndex = 4;
             // 
             // lupControl2
@@ -260,15 +275,19 @@ namespace Base
             this.lupControl2.DataField = "F_StorageID";
             this.lupControl2.DataSource = null;
             this.lupControl2.DisplayCaption = "";
+            this.lupControl2.DropSQL = "";
             this.lupControl2.EditLabel = "默认仓库:";
-            this.lupControl2.Location = new System.Drawing.Point(6, 133);
+            this.lupControl2.InvokeClass = "";
+            this.lupControl2.LinkFields = null;
+            this.lupControl2.Location = new System.Drawing.Point(8, 166);
             this.lupControl2.LookUpDataSource = null;
             this.lupControl2.LookUpDisplayField = null;
             this.lupControl2.LookUpKeyField = null;
+            this.lupControl2.Margin = new System.Windows.Forms.Padding(4);
             this.lupControl2.Name = "lupControl2";
             this.lupControl2.PopWidth = 150;
             this.lupControl2.Request = false;
-            this.lupControl2.Size = new System.Drawing.Size(188, 22);
+            this.lupControl2.Size = new System.Drawing.Size(251, 28);
             this.lupControl2.TabIndex = 7;
             // 
             // spinControl1
@@ -277,9 +296,10 @@ namespace Base
             this.spinControl1.DataField = "F_UpLimit";
             this.spinControl1.DataSource = null;
             this.spinControl1.EditLabel = "库存上限:";
-            this.spinControl1.Location = new System.Drawing.Point(12, 189);
+            this.spinControl1.Location = new System.Drawing.Point(16, 236);
+            this.spinControl1.Margin = new System.Windows.Forms.Padding(5);
             this.spinControl1.Name = "spinControl1";
-            this.spinControl1.Size = new System.Drawing.Size(130, 21);
+            this.spinControl1.Size = new System.Drawing.Size(173, 26);
             this.spinControl1.TabIndex = 19;
             // 
             // spinControl2
@@ -288,9 +308,10 @@ namespace Base
             this.spinControl2.DataField = "F_DownLimit";
             this.spinControl2.DataSource = null;
             this.spinControl2.EditLabel = "库存下限:";
-            this.spinControl2.Location = new System.Drawing.Point(148, 189);
+            this.spinControl2.Location = new System.Drawing.Point(197, 236);
+            this.spinControl2.Margin = new System.Windows.Forms.Padding(5);
             this.spinControl2.Name = "spinControl2";
-            this.spinControl2.Size = new System.Drawing.Size(130, 21);
+            this.spinControl2.Size = new System.Drawing.Size(173, 26);
             this.spinControl2.TabIndex = 20;
             // 
             // spinControl3
@@ -299,9 +320,10 @@ namespace Base
             this.spinControl3.DataField = "F_SafeQty";
             this.spinControl3.DataSource = null;
             this.spinControl3.EditLabel = "安全库存:";
-            this.spinControl3.Location = new System.Drawing.Point(389, 162);
+            this.spinControl3.Location = new System.Drawing.Point(519, 202);
+            this.spinControl3.Margin = new System.Windows.Forms.Padding(5);
             this.spinControl3.Name = "spinControl3";
-            this.spinControl3.Size = new System.Drawing.Size(143, 21);
+            this.spinControl3.Size = new System.Drawing.Size(191, 26);
             this.spinControl3.TabIndex = 18;
             // 
             // spinControl4
@@ -310,9 +332,10 @@ namespace Base
             this.spinControl4.DataField = "F_StockPrice";
             this.spinControl4.DataSource = null;
             this.spinControl4.EditLabel = "默认进价:";
-            this.spinControl4.Location = new System.Drawing.Point(231, 130);
+            this.spinControl4.Location = new System.Drawing.Point(308, 162);
+            this.spinControl4.Margin = new System.Windows.Forms.Padding(5);
             this.spinControl4.Name = "spinControl4";
-            this.spinControl4.Size = new System.Drawing.Size(155, 21);
+            this.spinControl4.Size = new System.Drawing.Size(207, 26);
             this.spinControl4.TabIndex = 8;
             // 
             // editControl4
@@ -321,10 +344,11 @@ namespace Base
             this.editControl4.DataField = "F_Grade";
             this.editControl4.DataSource = null;
             this.editControl4.EditLabel = "等级:";
-            this.editControl4.Location = new System.Drawing.Point(426, 103);
+            this.editControl4.Location = new System.Drawing.Point(568, 129);
+            this.editControl4.Margin = new System.Windows.Forms.Padding(5);
             this.editControl4.Name = "editControl4";
             this.editControl4.Request = false;
-            this.editControl4.Size = new System.Drawing.Size(107, 21);
+            this.editControl4.Size = new System.Drawing.Size(143, 26);
             this.editControl4.TabIndex = 6;
             // 
             // spinControl6
@@ -333,9 +357,10 @@ namespace Base
             this.spinControl6.DataField = "F_Volume";
             this.spinControl6.DataSource = null;
             this.spinControl6.EditLabel = "体积:";
-            this.spinControl6.Location = new System.Drawing.Point(288, 189);
+            this.spinControl6.Location = new System.Drawing.Point(384, 236);
+            this.spinControl6.Margin = new System.Windows.Forms.Padding(5);
             this.spinControl6.Name = "spinControl6";
-            this.spinControl6.Size = new System.Drawing.Size(118, 21);
+            this.spinControl6.Size = new System.Drawing.Size(157, 26);
             this.spinControl6.TabIndex = 21;
             // 
             // spinControl7
@@ -344,18 +369,20 @@ namespace Base
             this.spinControl7.DataField = "F_Weight";
             this.spinControl7.DataSource = null;
             this.spinControl7.EditLabel = "重量:";
-            this.spinControl7.Location = new System.Drawing.Point(416, 189);
+            this.spinControl7.Location = new System.Drawing.Point(555, 236);
+            this.spinControl7.Margin = new System.Windows.Forms.Padding(5);
             this.spinControl7.Name = "spinControl7";
-            this.spinControl7.Size = new System.Drawing.Size(116, 21);
+            this.spinControl7.Size = new System.Drawing.Size(155, 26);
             this.spinControl7.TabIndex = 22;
             // 
             // ckOption
             // 
             this.ckOption.EditValue = true;
-            this.ckOption.Location = new System.Drawing.Point(12, 416);
+            this.ckOption.Location = new System.Drawing.Point(16, 520);
+            this.ckOption.Margin = new System.Windows.Forms.Padding(4);
             this.ckOption.Name = "ckOption";
             this.ckOption.Properties.Caption = "保存后新增";
-            this.ckOption.Size = new System.Drawing.Size(101, 19);
+            this.ckOption.Size = new System.Drawing.Size(135, 23);
             this.ckOption.TabIndex = 5;
             this.ckOption.CheckedChanged += new System.EventHandler(this.ckOption_CheckedChanged);
             // 
@@ -367,10 +394,12 @@ namespace Base
             this.cbColor.DataSource = null;
             this.cbColor.EditLabel = "颜色:";
             this.cbColor.EditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            this.cbColor.Location = new System.Drawing.Point(256, 102);
+            this.cbColor.Location = new System.Drawing.Point(341, 128);
+            this.cbColor.Margin = new System.Windows.Forms.Padding(5);
             this.cbColor.Name = "cbColor";
             this.cbColor.Request = false;
-            this.cbColor.Size = new System.Drawing.Size(150, 21);
+            this.cbColor.SelectedIndex = -1;
+            this.cbColor.Size = new System.Drawing.Size(200, 26);
             this.cbColor.TabIndex = 5;
             // 
             // spinControl12
@@ -379,9 +408,10 @@ namespace Base
             this.spinControl12.DataField = "F_StockPrice1";
             this.spinControl12.DataSource = null;
             this.spinControl12.EditLabel = "进价1:";
-            this.spinControl12.Location = new System.Drawing.Point(416, 130);
+            this.spinControl12.Location = new System.Drawing.Point(555, 162);
+            this.spinControl12.Margin = new System.Windows.Forms.Padding(5);
             this.spinControl12.Name = "spinControl12";
-            this.spinControl12.Size = new System.Drawing.Size(117, 21);
+            this.spinControl12.Size = new System.Drawing.Size(156, 26);
             this.spinControl12.TabIndex = 9;
             // 
             // spinControl13
@@ -390,9 +420,10 @@ namespace Base
             this.spinControl13.DataField = "F_StockPrice2";
             this.spinControl13.DataSource = null;
             this.spinControl13.EditLabel = "进价2:";
-            this.spinControl13.Location = new System.Drawing.Point(9, 162);
+            this.spinControl13.Location = new System.Drawing.Point(12, 202);
+            this.spinControl13.Margin = new System.Windows.Forms.Padding(5);
             this.spinControl13.Name = "spinControl13";
-            this.spinControl13.Size = new System.Drawing.Size(107, 21);
+            this.spinControl13.Size = new System.Drawing.Size(143, 26);
             this.spinControl13.TabIndex = 10;
             // 
             // spinControl14
@@ -401,9 +432,10 @@ namespace Base
             this.spinControl14.DataField = "F_StockPrice3";
             this.spinControl14.DataSource = null;
             this.spinControl14.EditLabel = "进价3:";
-            this.spinControl14.Location = new System.Drawing.Point(132, 162);
+            this.spinControl14.Location = new System.Drawing.Point(176, 202);
+            this.spinControl14.Margin = new System.Windows.Forms.Padding(5);
             this.spinControl14.Name = "spinControl14";
-            this.spinControl14.Size = new System.Drawing.Size(106, 21);
+            this.spinControl14.Size = new System.Drawing.Size(141, 26);
             this.spinControl14.TabIndex = 11;
             // 
             // spinControl15
@@ -412,9 +444,10 @@ namespace Base
             this.spinControl15.DataField = "F_StockPrice4";
             this.spinControl15.DataSource = null;
             this.spinControl15.EditLabel = "进价4:";
-            this.spinControl15.Location = new System.Drawing.Point(253, 162);
+            this.spinControl15.Location = new System.Drawing.Point(337, 202);
+            this.spinControl15.Margin = new System.Windows.Forms.Padding(5);
             this.spinControl15.Name = "spinControl15";
-            this.spinControl15.Size = new System.Drawing.Size(117, 21);
+            this.spinControl15.Size = new System.Drawing.Size(156, 26);
             this.spinControl15.TabIndex = 12;
             // 
             // editControl5
@@ -423,10 +456,11 @@ namespace Base
             this.editControl5.DataField = "F_BarCode";
             this.editControl5.DataSource = null;
             this.editControl5.EditLabel = "条码:";
-            this.editControl5.Location = new System.Drawing.Point(9, 216);
+            this.editControl5.Location = new System.Drawing.Point(12, 270);
+            this.editControl5.Margin = new System.Windows.Forms.Padding(5);
             this.editControl5.Name = "editControl5";
             this.editControl5.Request = false;
-            this.editControl5.Size = new System.Drawing.Size(185, 21);
+            this.editControl5.Size = new System.Drawing.Size(247, 26);
             this.editControl5.TabIndex = 24;
             // 
             // editControl6
@@ -435,10 +469,11 @@ namespace Base
             this.editControl6.DataField = "F_Position";
             this.editControl6.DataSource = null;
             this.editControl6.EditLabel = "存放位置:";
-            this.editControl6.Location = new System.Drawing.Point(208, 243);
+            this.editControl6.Location = new System.Drawing.Point(277, 304);
+            this.editControl6.Margin = new System.Windows.Forms.Padding(5);
             this.editControl6.Name = "editControl6";
             this.editControl6.Request = false;
-            this.editControl6.Size = new System.Drawing.Size(324, 21);
+            this.editControl6.Size = new System.Drawing.Size(432, 26);
             this.editControl6.TabIndex = 25;
             // 
             // ckControl1
@@ -447,9 +482,10 @@ namespace Base
             this.ckControl1.DataField = "F_CalStorage";
             this.ckControl1.DataSource = null;
             this.ckControl1.EditLabel = "计算库存";
-            this.ckControl1.Location = new System.Drawing.Point(455, 299);
+            this.ckControl1.Location = new System.Drawing.Point(607, 374);
+            this.ckControl1.Margin = new System.Windows.Forms.Padding(5);
             this.ckControl1.Name = "ckControl1";
-            this.ckControl1.Size = new System.Drawing.Size(77, 19);
+            this.ckControl1.Size = new System.Drawing.Size(103, 24);
             this.ckControl1.TabIndex = 26;
             // 
             // openFileDialog
@@ -462,9 +498,10 @@ namespace Base
             this.spinControl5.DataField = "F_Long";
             this.spinControl5.DataSource = null;
             this.spinControl5.EditLabel = "长:";
-            this.spinControl5.Location = new System.Drawing.Point(200, 216);
+            this.spinControl5.Location = new System.Drawing.Point(267, 270);
+            this.spinControl5.Margin = new System.Windows.Forms.Padding(5);
             this.spinControl5.Name = "spinControl5";
-            this.spinControl5.Size = new System.Drawing.Size(91, 21);
+            this.spinControl5.Size = new System.Drawing.Size(121, 26);
             this.spinControl5.TabIndex = 27;
             // 
             // spinControl8
@@ -473,9 +510,10 @@ namespace Base
             this.spinControl8.DataField = "F_waight";
             this.spinControl8.DataSource = null;
             this.spinControl8.EditLabel = "宽:";
-            this.spinControl8.Location = new System.Drawing.Point(297, 216);
+            this.spinControl8.Location = new System.Drawing.Point(396, 270);
+            this.spinControl8.Margin = new System.Windows.Forms.Padding(5);
             this.spinControl8.Name = "spinControl8";
-            this.spinControl8.Size = new System.Drawing.Size(109, 21);
+            this.spinControl8.Size = new System.Drawing.Size(145, 26);
             this.spinControl8.TabIndex = 28;
             // 
             // spinControl9
@@ -484,9 +522,10 @@ namespace Base
             this.spinControl9.DataField = "F_Height";
             this.spinControl9.DataSource = null;
             this.spinControl9.EditLabel = "高:";
-            this.spinControl9.Location = new System.Drawing.Point(416, 216);
+            this.spinControl9.Location = new System.Drawing.Point(555, 270);
+            this.spinControl9.Margin = new System.Windows.Forms.Padding(5);
             this.spinControl9.Name = "spinControl9";
-            this.spinControl9.Size = new System.Drawing.Size(116, 21);
+            this.spinControl9.Size = new System.Drawing.Size(155, 26);
             this.spinControl9.TabIndex = 29;
             // 
             // spinControl10
@@ -495,9 +534,10 @@ namespace Base
             this.spinControl10.DataField = "F_houdu";
             this.spinControl10.DataSource = null;
             this.spinControl10.EditLabel = "厚:";
-            this.spinControl10.Location = new System.Drawing.Point(20, 243);
+            this.spinControl10.Location = new System.Drawing.Point(27, 304);
+            this.spinControl10.Margin = new System.Windows.Forms.Padding(5);
             this.spinControl10.Name = "spinControl10";
-            this.spinControl10.Size = new System.Drawing.Size(174, 21);
+            this.spinControl10.Size = new System.Drawing.Size(232, 26);
             this.spinControl10.TabIndex = 30;
             // 
             // Page4
@@ -510,15 +550,17 @@ namespace Base
             this.Page4.Controls.Add(this.editControl10);
             this.Page4.Controls.Add(this.editControl8);
             this.Page4.Controls.Add(this.editControl7);
+            this.Page4.Margin = new System.Windows.Forms.Padding(4);
             this.Page4.Name = "Page4";
-            this.Page4.Size = new System.Drawing.Size(629, 366);
+            this.Page4.Size = new System.Drawing.Size(842, 462);
             this.Page4.Text = "附件";
             // 
             // btn4
             // 
-            this.btn4.Location = new System.Drawing.Point(477, 148);
+            this.btn4.Location = new System.Drawing.Point(636, 185);
+            this.btn4.Margin = new System.Windows.Forms.Padding(4);
             this.btn4.Name = "btn4";
-            this.btn4.Size = new System.Drawing.Size(34, 23);
+            this.btn4.Size = new System.Drawing.Size(45, 29);
             this.btn4.TabIndex = 7;
             this.btn4.Text = "...";
             this.btn4.UseVisualStyleBackColor = true;
@@ -526,9 +568,10 @@ namespace Base
             // 
             // btn3
             // 
-            this.btn3.Location = new System.Drawing.Point(477, 106);
+            this.btn3.Location = new System.Drawing.Point(636, 132);
+            this.btn3.Margin = new System.Windows.Forms.Padding(4);
             this.btn3.Name = "btn3";
-            this.btn3.Size = new System.Drawing.Size(34, 23);
+            this.btn3.Size = new System.Drawing.Size(45, 29);
             this.btn3.TabIndex = 6;
             this.btn3.Text = "...";
             this.btn3.UseVisualStyleBackColor = true;
@@ -536,9 +579,10 @@ namespace Base
             // 
             // btn2
             // 
-            this.btn2.Location = new System.Drawing.Point(477, 65);
+            this.btn2.Location = new System.Drawing.Point(636, 81);
+            this.btn2.Margin = new System.Windows.Forms.Padding(4);
             this.btn2.Name = "btn2";
-            this.btn2.Size = new System.Drawing.Size(34, 23);
+            this.btn2.Size = new System.Drawing.Size(45, 29);
             this.btn2.TabIndex = 5;
             this.btn2.Text = "...";
             this.btn2.UseVisualStyleBackColor = true;
@@ -546,9 +590,10 @@ namespace Base
             // 
             // btn1
             // 
-            this.btn1.Location = new System.Drawing.Point(477, 24);
+            this.btn1.Location = new System.Drawing.Point(636, 30);
+            this.btn1.Margin = new System.Windows.Forms.Padding(4);
             this.btn1.Name = "btn1";
-            this.btn1.Size = new System.Drawing.Size(34, 23);
+            this.btn1.Size = new System.Drawing.Size(45, 29);
             this.btn1.TabIndex = 4;
             this.btn1.Text = "...";
             this.btn1.UseVisualStyleBackColor = true;
@@ -560,10 +605,11 @@ namespace Base
             this.editControl11.DataField = "F_File4";
             this.editControl11.DataSource = null;
             this.editControl11.EditLabel = "附件4:";
-            this.editControl11.Location = new System.Drawing.Point(35, 148);
+            this.editControl11.Location = new System.Drawing.Point(47, 185);
+            this.editControl11.Margin = new System.Windows.Forms.Padding(5);
             this.editControl11.Name = "editControl11";
             this.editControl11.Request = false;
-            this.editControl11.Size = new System.Drawing.Size(436, 21);
+            this.editControl11.Size = new System.Drawing.Size(581, 26);
             this.editControl11.TabIndex = 3;
             // 
             // editControl10
@@ -572,10 +618,11 @@ namespace Base
             this.editControl10.DataField = "F_File3";
             this.editControl10.DataSource = null;
             this.editControl10.EditLabel = "附件3:";
-            this.editControl10.Location = new System.Drawing.Point(35, 106);
+            this.editControl10.Location = new System.Drawing.Point(47, 132);
+            this.editControl10.Margin = new System.Windows.Forms.Padding(5);
             this.editControl10.Name = "editControl10";
             this.editControl10.Request = false;
-            this.editControl10.Size = new System.Drawing.Size(436, 21);
+            this.editControl10.Size = new System.Drawing.Size(581, 26);
             this.editControl10.TabIndex = 2;
             // 
             // editControl8
@@ -584,10 +631,11 @@ namespace Base
             this.editControl8.DataField = "F_File2";
             this.editControl8.DataSource = null;
             this.editControl8.EditLabel = "附件2:";
-            this.editControl8.Location = new System.Drawing.Point(35, 67);
+            this.editControl8.Location = new System.Drawing.Point(47, 84);
+            this.editControl8.Margin = new System.Windows.Forms.Padding(5);
             this.editControl8.Name = "editControl8";
             this.editControl8.Request = false;
-            this.editControl8.Size = new System.Drawing.Size(436, 21);
+            this.editControl8.Size = new System.Drawing.Size(581, 26);
             this.editControl8.TabIndex = 1;
             // 
             // editControl7
@@ -596,10 +644,11 @@ namespace Base
             this.editControl7.DataField = "F_File1";
             this.editControl7.DataSource = null;
             this.editControl7.EditLabel = "附件1:";
-            this.editControl7.Location = new System.Drawing.Point(35, 26);
+            this.editControl7.Location = new System.Drawing.Point(47, 32);
+            this.editControl7.Margin = new System.Windows.Forms.Padding(5);
             this.editControl7.Name = "editControl7";
             this.editControl7.Request = false;
-            this.editControl7.Size = new System.Drawing.Size(436, 21);
+            this.editControl7.Size = new System.Drawing.Size(581, 26);
             this.editControl7.TabIndex = 0;
             // 
             // xtraTabPage1
@@ -607,17 +656,19 @@ namespace Base
             this.xtraTabPage1.Controls.Add(this.sbClear);
             this.xtraTabPage1.Controls.Add(this.sbLoad);
             this.xtraTabPage1.Controls.Add(this.peItem);
+            this.xtraTabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(629, 366);
+            this.xtraTabPage1.Size = new System.Drawing.Size(842, 462);
             this.xtraTabPage1.Text = "图片";
             // 
             // sbClear
             // 
             this.sbClear.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sbClear.Appearance.Options.UseFont = true;
-            this.sbClear.Location = new System.Drawing.Point(477, 37);
+            this.sbClear.Location = new System.Drawing.Point(636, 46);
+            this.sbClear.Margin = new System.Windows.Forms.Padding(4);
             this.sbClear.Name = "sbClear";
-            this.sbClear.Size = new System.Drawing.Size(60, 23);
+            this.sbClear.Size = new System.Drawing.Size(80, 29);
             this.sbClear.TabIndex = 2;
             this.sbClear.Text = "清除";
             this.sbClear.Click += new System.EventHandler(this.sbClear_Click);
@@ -626,19 +677,21 @@ namespace Base
             // 
             this.sbLoad.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sbLoad.Appearance.Options.UseFont = true;
-            this.sbLoad.Location = new System.Drawing.Point(477, 8);
+            this.sbLoad.Location = new System.Drawing.Point(636, 10);
+            this.sbLoad.Margin = new System.Windows.Forms.Padding(4);
             this.sbLoad.Name = "sbLoad";
-            this.sbLoad.Size = new System.Drawing.Size(60, 23);
+            this.sbLoad.Size = new System.Drawing.Size(80, 29);
             this.sbLoad.TabIndex = 1;
             this.sbLoad.Text = "加载";
             this.sbLoad.Click += new System.EventHandler(this.sbLoad_Click);
             // 
             // peItem
             // 
-            this.peItem.Location = new System.Drawing.Point(13, 8);
+            this.peItem.Location = new System.Drawing.Point(17, 10);
+            this.peItem.Margin = new System.Windows.Forms.Padding(4);
             this.peItem.Name = "peItem";
             this.peItem.Properties.NullText = " ";
-            this.peItem.Size = new System.Drawing.Size(449, 271);
+            this.peItem.Size = new System.Drawing.Size(599, 339);
             this.peItem.TabIndex = 0;
             this.peItem.DoubleClick += new System.EventHandler(this.peItem_DoubleClick);
             // 
@@ -646,22 +699,24 @@ namespace Base
             // 
             this.Page2.Controls.Add(this.gcUnit);
             this.Page2.Controls.Add(this.panel1);
+            this.Page2.Margin = new System.Windows.Forms.Padding(4);
             this.Page2.Name = "Page2";
-            this.Page2.Size = new System.Drawing.Size(629, 366);
+            this.Page2.Size = new System.Drawing.Size(842, 462);
             this.Page2.Text = "计量单位";
             // 
             // gcUnit
             // 
             this.gcUnit.DataSource = this.binUnit;
             this.gcUnit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcUnit.EmbeddedNavigator.Name = "";
+            this.gcUnit.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
             this.gcUnit.Location = new System.Drawing.Point(0, 0);
             this.gcUnit.MainView = this.gridView1;
+            this.gcUnit.Margin = new System.Windows.Forms.Padding(4);
             this.gcUnit.Name = "gcUnit";
             this.gcUnit.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCheckEdit1,
             this.cbUnit});
-            this.gcUnit.Size = new System.Drawing.Size(629, 333);
+            this.gcUnit.Size = new System.Drawing.Size(842, 421);
             this.gcUnit.TabIndex = 0;
             this.gcUnit.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -719,18 +774,20 @@ namespace Base
             this.panel1.Controls.Add(this.sbDel);
             this.panel1.Controls.Add(this.sbAdd);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 333);
+            this.panel1.Location = new System.Drawing.Point(0, 421);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(629, 33);
+            this.panel1.Size = new System.Drawing.Size(842, 41);
             this.panel1.TabIndex = 1;
             // 
             // sbDel
             // 
             this.sbDel.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sbDel.Appearance.Options.UseFont = true;
-            this.sbDel.Location = new System.Drawing.Point(72, 6);
+            this.sbDel.Location = new System.Drawing.Point(96, 8);
+            this.sbDel.Margin = new System.Windows.Forms.Padding(4);
             this.sbDel.Name = "sbDel";
-            this.sbDel.Size = new System.Drawing.Size(58, 23);
+            this.sbDel.Size = new System.Drawing.Size(77, 29);
             this.sbDel.TabIndex = 1;
             this.sbDel.Text = "删除(&D)";
             this.sbDel.Click += new System.EventHandler(this.sbDel_Click);
@@ -739,25 +796,28 @@ namespace Base
             // 
             this.sbAdd.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sbAdd.Appearance.Options.UseFont = true;
-            this.sbAdd.Location = new System.Drawing.Point(8, 6);
+            this.sbAdd.Location = new System.Drawing.Point(11, 8);
+            this.sbAdd.Margin = new System.Windows.Forms.Padding(4);
             this.sbAdd.Name = "sbAdd";
-            this.sbAdd.Size = new System.Drawing.Size(58, 23);
+            this.sbAdd.Size = new System.Drawing.Size(77, 29);
             this.sbAdd.TabIndex = 0;
             this.sbAdd.Text = "增加(&A)";
             this.sbAdd.Click += new System.EventHandler(this.sbAdd_Click);
             // 
             // Page1
             // 
+            this.Page1.Margin = new System.Windows.Forms.Padding(4);
             this.Page1.Name = "Page1";
-            this.Page1.Size = new System.Drawing.Size(629, 366);
+            this.Page1.Size = new System.Drawing.Size(842, 463);
             this.Page1.Text = "基本资料";
             // 
             // xtraTabControl1
             // 
-            this.xtraTabControl1.Location = new System.Drawing.Point(19, 12);
+            this.xtraTabControl1.Location = new System.Drawing.Point(25, 15);
+            this.xtraTabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.Page1;
-            this.xtraTabControl1.Size = new System.Drawing.Size(638, 398);
+            this.xtraTabControl1.Size = new System.Drawing.Size(851, 498);
             this.xtraTabControl1.TabIndex = 2;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.Page1,
@@ -768,18 +828,20 @@ namespace Base
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(18, 331);
+            this.label1.Location = new System.Drawing.Point(24, 414);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 12);
+            this.label1.Size = new System.Drawing.Size(69, 15);
             this.label1.TabIndex = 31;
             this.label1.Text = "ABCD管理";
             // 
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(74, 329);
+            this.radioButton1.Location = new System.Drawing.Point(99, 411);
+            this.radioButton1.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(29, 16);
+            this.radioButton1.Size = new System.Drawing.Size(36, 19);
             this.radioButton1.TabIndex = 32;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "a";
@@ -788,9 +850,10 @@ namespace Base
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(112, 329);
+            this.radioButton2.Location = new System.Drawing.Point(149, 411);
+            this.radioButton2.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(29, 16);
+            this.radioButton2.Size = new System.Drawing.Size(36, 19);
             this.radioButton2.TabIndex = 33;
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "b";
@@ -799,9 +862,10 @@ namespace Base
             // radioButton3
             // 
             this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(152, 329);
+            this.radioButton3.Location = new System.Drawing.Point(203, 411);
+            this.radioButton3.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(29, 16);
+            this.radioButton3.Size = new System.Drawing.Size(36, 19);
             this.radioButton3.TabIndex = 34;
             this.radioButton3.TabStop = true;
             this.radioButton3.Text = "c";
@@ -810,9 +874,10 @@ namespace Base
             // radioButton4
             // 
             this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(187, 329);
+            this.radioButton4.Location = new System.Drawing.Point(249, 411);
+            this.radioButton4.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(29, 16);
+            this.radioButton4.Size = new System.Drawing.Size(36, 19);
             this.radioButton4.TabIndex = 35;
             this.radioButton4.TabStop = true;
             this.radioButton4.Text = "d";
@@ -824,10 +889,11 @@ namespace Base
             this.editControl13.DataField = "F_Material";
             this.editControl13.DataSource = null;
             this.editControl13.EditLabel = "材质:";
-            this.editControl13.Location = new System.Drawing.Point(12, 297);
+            this.editControl13.Location = new System.Drawing.Point(16, 371);
+            this.editControl13.Margin = new System.Windows.Forms.Padding(5);
             this.editControl13.Name = "editControl13";
             this.editControl13.Request = false;
-            this.editControl13.Size = new System.Drawing.Size(174, 21);
+            this.editControl13.Size = new System.Drawing.Size(232, 26);
             this.editControl13.TabIndex = 36;
             // 
             // spinControl11
@@ -836,9 +902,10 @@ namespace Base
             this.spinControl11.DataField = "F_StockWk";
             this.spinControl11.DataSource = null;
             this.spinControl11.EditLabel = "采购周期:";
-            this.spinControl11.Location = new System.Drawing.Point(212, 297);
+            this.spinControl11.Location = new System.Drawing.Point(283, 371);
+            this.spinControl11.Margin = new System.Windows.Forms.Padding(5);
             this.spinControl11.Name = "spinControl11";
-            this.spinControl11.Size = new System.Drawing.Size(174, 21);
+            this.spinControl11.Size = new System.Drawing.Size(232, 26);
             this.spinControl11.TabIndex = 37;
             // 
             // lupControl3
@@ -847,15 +914,19 @@ namespace Base
             this.lupControl3.DataField = "F_SupplierID";
             this.lupControl3.DataSource = null;
             this.lupControl3.DisplayCaption = "";
+            this.lupControl3.DropSQL = "";
             this.lupControl3.EditLabel = "默认供应商:";
-            this.lupControl3.Location = new System.Drawing.Point(253, 324);
+            this.lupControl3.InvokeClass = "";
+            this.lupControl3.LinkFields = null;
+            this.lupControl3.Location = new System.Drawing.Point(337, 405);
             this.lupControl3.LookUpDataSource = null;
             this.lupControl3.LookUpDisplayField = null;
             this.lupControl3.LookUpKeyField = null;
+            this.lupControl3.Margin = new System.Windows.Forms.Padding(4);
             this.lupControl3.Name = "lupControl3";
             this.lupControl3.PopWidth = 150;
             this.lupControl3.Request = false;
-            this.lupControl3.Size = new System.Drawing.Size(279, 22);
+            this.lupControl3.Size = new System.Drawing.Size(372, 28);
             this.lupControl3.TabIndex = 38;
             // 
             // editControl12
@@ -864,18 +935,20 @@ namespace Base
             this.editControl12.DataField = "F_Brand";
             this.editControl12.DataSource = null;
             this.editControl12.EditLabel = "品牌:";
-            this.editControl12.Location = new System.Drawing.Point(256, 41);
+            this.editControl12.Location = new System.Drawing.Point(341, 51);
+            this.editControl12.Margin = new System.Windows.Forms.Padding(5);
             this.editControl12.Name = "editControl12";
             this.editControl12.Request = false;
-            this.editControl12.Size = new System.Drawing.Size(194, 22);
+            this.editControl12.Size = new System.Drawing.Size(259, 28);
             this.editControl12.TabIndex = 39;
             // 
             // frmEditItem
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
-            this.ClientSize = new System.Drawing.Size(669, 447);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.ClientSize = new System.Drawing.Size(892, 559);
             this.Controls.Add(this.ckOption);
             this.Controls.Add(this.xtraTabControl1);
+            this.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.Name = "frmEditItem";
             this.Text = "物料资料--编辑";
             this.Load += new System.EventHandler(this.frmEditItem_Load);

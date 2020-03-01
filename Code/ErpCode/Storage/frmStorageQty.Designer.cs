@@ -37,24 +37,30 @@ namespace Storage
             // 
             // rgOption
             // 
+            this.rgOption.Location = new System.Drawing.Point(833, 4);
             this.rgOption.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.rgOption.Properties.Appearance.Options.UseBackColor = true;
             // 
             // lbTitle
             // 
+            this.lbTitle.Location = new System.Drawing.Point(16, 4);
             this.lbTitle.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lbTitle.Size = new System.Drawing.Size(125, 30);
             this.lbTitle.Text = "frmBase";
             // 
+            // ucDate
+            // 
+            this.ucDate.Location = new System.Drawing.Point(296, 4);
+            // 
             // panel1
             // 
             this.panel1.Location = new System.Drawing.Point(0, 30);
-            this.panel1.Size = new System.Drawing.Size(963, 56);
+            this.panel1.Size = new System.Drawing.Size(963, 39);
             // 
             // cbKind
             // 
-            this.cbKind.Location = new System.Drawing.Point(585, 44);
-            this.cbKind.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbKind.Location = new System.Drawing.Point(585, 38);
+            this.cbKind.Margin = new System.Windows.Forms.Padding(4);
             this.cbKind.Name = "cbKind";
             this.cbKind.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});

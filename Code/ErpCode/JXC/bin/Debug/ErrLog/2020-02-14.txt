@@ -1,0 +1,66 @@
+出现应用程序未处理的异常：2020/2/14 21:07:33
+操作人:超级用户
+异常类型：InvalidOperationException
+异常消息：非顶级窗体不能显示为模式对话框。在调用 showDialog 之前应从所有父窗体中移除该窗体。
+异常信息：   在 System.Windows.Forms.Form.ShowDialog(IWin32Window owner)
+   在 System.Windows.Forms.Form.ShowDialog()
+   在 Base.frmSupplier.Edit()
+   在 Common.frmBaseList.gvBase_DoubleClick(Object sender, EventArgs e) 位置 D:\Project\Code\WEBERP\Code\ErpCode\Common\frmBaseList.cs:行号 1160
+   在 DevExpress.XtraGrid.Views.Base.BaseView.RaiseDoubleClick(EventArgs e)
+   在 DevExpress.XtraGrid.Views.Base.Handler.BaseViewHandler.OnDoubleClick(EventArgs e)
+   在 DevExpress.Utils.Controls.BaseHandler.ProcessEvent(EventType etype, Object args)
+   在 DevExpress.XtraGrid.Views.Base.Handler.BaseViewHandler.ProcessEvent(EventType etype, Object args)
+   在 DevExpress.XtraGrid.GridControl.OnDoubleClick(EventArgs ev)
+   在 System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 DevExpress.XtraEditors.Container.EditorContainer.WndProc(Message& m)
+   在 DevExpress.XtraGrid.GridControl.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+
+---------------------------------------------------------
+出现应用程序未处理的异常：2020/2/14 21:13:29
+操作人:超级用户
+异常类型：InvalidOperationException
+异常消息：非顶级窗体不能显示为模式对话框。在调用 showDialog 之前应从所有父窗体中移除该窗体。
+异常信息：   在 System.Windows.Forms.Form.ShowDialog(IWin32Window owner)
+   在 System.Windows.Forms.Form.ShowDialog()
+   在 Base.frmSupplier.Edit()
+   在 Common.frmBaseList.gvBase_DoubleClick(Object sender, EventArgs e)
+   在 DevExpress.XtraGrid.Views.Base.BaseView.RaiseDoubleClick(EventArgs e)
+   在 DevExpress.XtraGrid.Views.Base.Handler.BaseViewHandler.OnDoubleClick(EventArgs e)
+   在 DevExpress.Utils.Controls.BaseHandler.ProcessEvent(EventType etype, Object args)
+   在 DevExpress.XtraGrid.Views.Base.Handler.BaseViewHandler.ProcessEvent(EventType etype, Object args)
+   在 DevExpress.XtraGrid.GridControl.OnDoubleClick(EventArgs ev)
+   在 System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 DevExpress.XtraEditors.Container.EditorContainer.WndProc(Message& m)
+   在 DevExpress.XtraGrid.GridControl.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+
+---------------------------------------------------------
+出现应用程序未处理的异常：2020/2/14 21:17:36
+操作人:超级用户
+异常类型：InvalidOperationException
+异常消息：非顶级窗体不能显示为模式对话框。在调用 showDialog 之前应从所有父窗体中移除该窗体。
+异常信息：   在 System.Windows.Forms.Form.ShowDialog(IWin32Window owner)
+   在 System.Windows.Forms.Form.ShowDialog()
+   在 Base.frmSupplier.Edit()
+   在 Common.frmBaseList.gvBase_DoubleClick(Object sender, EventArgs e)
+   在 DevExpress.XtraGrid.Views.Base.BaseView.RaiseDoubleClick(EventArgs e)
+   在 DevExpress.XtraGrid.Views.Base.Handler.BaseViewHandler.OnDoubleClick(EventArgs e)
+   在 DevExpress.Utils.Controls.BaseHandler.ProcessEvent(EventType etype, Object args)
+   在 DevExpress.XtraGrid.Views.Base.Handler.BaseViewHandler.ProcessEvent(EventType etype, Object args)
+   在 DevExpress.XtraGrid.GridControl.OnDoubleClick(EventArgs ev)
+   在 System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 DevExpress.XtraEditors.Container.EditorContainer.WndProc(Message& m)
+   在 DevExpress.XtraGrid.GridControl.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+
+---------------------------------------------------------

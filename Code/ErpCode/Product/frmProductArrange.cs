@@ -224,8 +224,9 @@ namespace Product
         }
 
         private void frmProductArrange_Load(object sender, EventArgs e)
-        {     
-
+        {
+            this.gvList.HorzScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
+            this.gvList.OptionsView.ColumnAutoWidth = true;
         }
 
         private void SaveData()

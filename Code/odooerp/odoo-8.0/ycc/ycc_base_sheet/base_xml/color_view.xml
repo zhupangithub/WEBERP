@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="ycc_color_view_filter" model="ir.ui.view">
+            <field name="name">ycc.color.Search</field>
+            <field name="model">ycc.color</field>
+            <field name="arch" type="xml">
+                <search string="颜色查询">
+                    <field name="name"
+                           filter_domain="['|',('color_id','ilike',self),('name','ilike',self)]"/>
+                    <separator/>
+                    <group expand="0" string="分组...">
+                        <filter string="颜色编码分组" icon="terp-personal" domain="[]" context="{'group_by' : 'color_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+
+        <!--表单-->
+        <record id="ycc_color_view_form"  model="ir.ui.view">
+            <field name="name">ycc.color.form</field>
+            <field name="model">ycc.color</field>
+            <field name="arch" type="xml">
+                <form version="7.0" groups="base.group_user">
+                    <sheet>
+                        <group string="产品颜色">
+                            <group>
+                                <field name="name"/>
+                                <field name="color_id"/>
+                                <field name="color_username"/>
+                                <field name="color_active"/>
+                                <field name="color_bool"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" help="加入关注"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <!--列表-->
+        <record id="ycc_color_view_tree" model="ir.ui.view">
+            <field name="name">ycc.color.tree</field>
+            <field name="model">ycc.color</field>
+            <field name="priority">1</field>
+            <field name="arch" type="xml">
+                <tree string="产品颜色列表">
+                    <field name="color_id"/>
+                    <field name="name"/>
+                    <field name="color_username"/>
+                    <field name="color_active"/>
+                    <field name="color_bool"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <!--  窗体事件 查询  Search  graph,gantt-->
+        <record id="zp_color_action" model="ir.actions.act_window">
+            <field name="name">产品颜色</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">ycc.color</field>
+            <field name="view_type">form</field>
+            <field name="limit">50</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="ycc_color_view_tree"/>
+            <field name="search_view_id" ref="ycc_color_view_filter"/>
+            <!--<field name="context">{"search_default_user_id":uid}</field>-->
+            <!--<field name="domain">[('row','>',0)]</field>-->
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    录入产品颜色
+                </p>
+            </field>
+        </record>
+
+
+        <menuitem name="基础资料表" id="base.menu_basedata" groups="base.group_sale_salesman,base.group_sale_manager"
+                  parent="base.menu_sales" sequence="30"/>
+        <menuitem name="产品颜色表" id="base.menu_ycc_color" parent="base.menu_basedata" sequence="1"
+                  action="zp_color_action"/>
+    </data>
+</openerp>

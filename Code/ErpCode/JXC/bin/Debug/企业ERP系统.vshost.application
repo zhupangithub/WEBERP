@@ -11,14 +11,14 @@
     <deploymentProvider codebase="file:///E:/tsERP/%E4%BC%81%E4%B8%9AERP%E7%B3%BB%E7%BB%9F.application" />
   </deployment>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="企业ERP系统.exe.manifest" size="40320">
+    <dependentAssembly dependencyType="install" codebase="企业ERP系统.exe.manifest" size="40898">
       <assemblyIdentity name="企业ERP系统.exe" version="1.0.0.7" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="x86" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>gGR96vxoxPtqvYxR96naeTARKIo=</dsig:DigestValue>
+        <dsig:DigestValue>C1oc/mGdCdxhQDvVwBfdrtepNf0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <report id="report_ycc_stock"
+                string="领料单打印"
+                model="stock.move"
+                report_type="qweb-pdf"
+                file="ycc_stock_inherit.report_stock"
+                name="ycc_stock_inherit.report_stock"/>
+    </data>
+</openerp>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="ycc_create_slider_view_filter" model="ir.ui.view">
+            <field name="name">ycc.createslider.Search</field>
+            <field name="model">ycc.create.slider</field>
+            <field name="arch" type="xml">
+                <search string="拉头查询">
+                    <field name="name"
+                           filter_domain="['|',('name','ilike',self)]"/>
+                    <separator/>
+                    <group expand="0" string="分组...">
+                        <filter string="拉头分组" icon="terp-personal" domain="[]" context="{'group_by' : 'name'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <!--表单-->
+        <record id="ycc_create_slider_view_form" model="ir.ui.view">
+            <field name="name">ycc.create.slider.form</field>
+            <field name="model">ycc.create.slider</field>
+            <field name="arch" type="xml">
+                <form string="拉头审核" groups="base.group_user">
+                    <header>
+                        <button name="dt_review" string="提交审核" states="draft" type="object" class="oe_highlight"/>
+                        <button name="dt_done" string="批量生成拉头BOM" states="review" type="object" class="oe_highlight"/>
+                        <button name="dt_cancel" string="取消" states="done" type="object" class="oe_highlight"/>
+                        <button name="dt_draft" string="重置为草稿" states="cancel,review" type="object"
+                                class="oe_highlight"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,review,done,close"/>
+                    </header>
+                    <sheet>
+                        <group string="虚拟拉头物品">
+                            <group>
+                                <field name="name" class="oe_inline"
+                                       on_change="onchange_slider_name(name)"/>
+                                <field name="slider_bentou" class="oe_inline"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" help="加入关注"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <!--列表-->
+        <record id="ycc_create_slider_view_tree" model="ir.ui.view">
+            <field name="name">ycc.create.slider.tree</field>
+            <field name="model">ycc.create.slider</field>
+            <field name="priority">1</field>
+            <field name="arch" type="xml">
+                <tree string="拉头列表">
+                    <field name="name"/>
+                    <field name="slider_bentou"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <!--  窗体事件 查询  Search  graph,gantt-->
+        <record id="zp_create_model_action" model="ir.actions.act_window">
+            <field name="name">拉头物品</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">ycc.create.slider</field>
+            <field name="view_type">form</field>
+            <field name="limit">50</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="ycc_create_slider_view_tree"/>
+            <field name="search_view_id" ref="ycc_create_slider_view_filter"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    通过虚拟拉头,批量生成拉头BOM
+                </p>
+            </field>
+        </record>
+        <menuitem name="批量生成拉头BOM" id="base.slider_create" groups="base.group_sale_salesman,base.group_sale_manager"
+                  parent="base.menu_product" sequence="4" action="zp_create_model_action"/>
+    </data>
+</openerp>

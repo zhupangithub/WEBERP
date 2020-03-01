@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="ycc_order_from">
+            <field name="name">ycc.order.form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='order_line']/tree//field[@name='sequence']"
+                       position="before">
+                    <button name="save_action_ok" states="draft" string="BOM生成" type="object"
+                            groups="base.group_user"/>
+                </xpath>
+                <xpath expr="//field[@name='partner_shipping_id']" position="after">
+                    <field name="partner_id_type"/>
+                    <field name="closed_partner" on_change="onchange_closed_partner(closed_partner)"/>
+                    <field name="currency_type" on_change="onchange_currency_type(currency_type)"/>
+                    <field name="exchange"/>
+                    <field name="user_id_salesman" class="oe_inline"
+                           on_change="onchange_closed_salesman(user_id_salesman)"/>
+                    <field name="sale_department" class="oe_inline"/>
+                    <field name="user_ids" class="oe_inline"/>
+                    <field name="res_brand" class="oe_inline"/>
+                    <field name="level_kh" class="oe_inline"/>
+                    <field name="contact" class="oe_inline"/>
+                    <field name="phone" class="oe_inline"/>
+                    <field name="res_address"/>
+                </xpath>
+                <xpath expr="//field[@name='date_order']" position="before">
+                    <field name="order_type" class="oe_inline"/>
+                    <field name="res_customer_date"/>
+                </xpath>
+                <xpath expr="//field[@name='pricelist_id']" position="after">
+                    <group colspan="2">
+                        <field name="cost_name1"/>
+                        <field name="cost_amount1" class="oe_inline"/>
+                        <field name="cost_name2"/>
+                        <field name="cost_amount2" class="oe_inline"/>
+                        <field name="cost_name3"/>
+                        <field name="cost_amount3" class="oe_inline"/>
+                    </group>
+                </xpath>
+                <xpath expr="//field[@name='order_line']/form//field[@name='address_allotment_id']" position="after">
+                    <field name="product_style"/>
+                </xpath>
+                <xpath expr="//field[@name='order_line']/form//field[@name='product_id']" position="after">
+                    <field name="loss_number" invisible="1"/>
+                </xpath>
+                <xpath expr="//field[@name='order_line']/form//button[@string='Invoice']" position="before">
+                    <button name="save_action_ok" states="draft" string="产品生成"
+                            type="object"
+                            groups="base.group_user" class="oe_highlight"/>
+                </xpath>
+                <xpath expr="//field[@name='order_line']/form//label[@for='name']"
+                       position="before">
+                    <group string="产品信息" colspan="4">
+                        <group>
+                            <field name="length"/>
+                            <field name="pullhead_on_name"/>
+                            <field name="pullhead_under_name"
+                                   attrs="{'invisible':[('kbk_state','in',(u'闭口',u'开口'))],'required': [('kbk_state','=',u'双开')]}"/>
+                        </group>
+                        <group>
+                            <field name="product_color" on_change="onchange_product_color(product_color)"/>
+                            <field name="pullhead_on_color"/>
+                            <field name="pullhead_under_color"
+                                   attrs="{'invisible':[('kbk_state','in',(u'闭口',u'开口'))],'required': [('kbk_state','=',u'双开')]}"/>
+
+                        </group>
+                    </group>
+                    <group string="其他信息" colspan="4">
+                        <group>
+                            <field name="pro_on_color"/>
+                            <field name="square_color"
+                                   attrs="{'invisible':[('kbk_state','in',(u'闭口',u'双开'))],'required': [('kbk_state','=',u'开口')]}"/>
+                            <field name="pro_under_color"
+                                   attrs="{'invisible':[('kbk_state','in',(u'开口',u'双开'))],'required': [('kbk_state','=',u'闭口')]}"/>
+                        </group>
+                        <group>
+                            <field name="pro_slider_color"/>
+                            <field name="me_state" invisible="1"/>
+                            <field name="kbk_state" invisible="1"/>
+                            <field name="cloth_color"
+                                   attrs="{'invisible':[('kbk_state','in',(u'闭口',u'双开'))],'required': [('kbk_state','=',u'开口')]}"/>
+                            <field name="stitches_color"
+                                   attrs="{'invisible':[('me_state','in',('D','M'))],'required': [('me_state','=','N')]}"/>
+                        </group>
+                    </group>
+                </xpath>
+                <xpath expr="//page[@string='Other Information']" position="before">
+                    <page string="唛头要求">
+                        <group string="正唛描述">
+                            <field name="positive_describe"/>
+                        </group>
+                        <group string="侧唛描述">
+                            <field name="side_describe"/>
+                        </group>
+                    </page>
+                    <page string="产品及工艺要求">
+                        <group string="产品要求">
+                            <group>
+                                <group>
+                                    <field name="product_a" class="oe_inline"/>
+                                    <field name="product_b" class="oe_inline"/>
+                                    <field name="product_c" class="oe_inline"/>
+                                </group>
+                                <group>
+                                    <field name="product_d" class="oe_inline"/>
+                                    <field name="product_e" class="oe_inline"/>
+                                    <field name="product_f" class="oe_inline"/>
+                                </group>
+                            </group>
+                            <group>
+                                <group>
+                                    <field name="product_g" class="oe_inline"/>
+                                    <field name="product_h" class="oe_inline"/>
+                                </group>
+                                <group>
+                                    <field name="product_i" class="oe_inline"/>
+                                    <field name="product_j" class="oe_inline"/>
+                                </group>
+                            </group>
+                        </group>
+                        <group>
+                            <group string="检测标准">
+                                <group>
+                                    <field name="detection_a" class="oe_inline"/>
+                                    <field name="detection_b" class="oe_inline"/>
+                                    <field name="detection_c" class="oe_inline"/>
+                                </group>
+                                <group>
+                                    <field name="detection_d" class="oe_inline"/>
+                                    <field name="detection_e" class="oe_inline"/>
+                                    <field name="detection_f" class="oe_inline"/>
+                                </group>
+                            </group>
+                            <group string="灯光要求">
+                                <group>
+                                    <field name="light_a" class="oe_inline"/>
+                                    <field name="light_b" class="oe_inline"/>
+                                    <field name="light_c" class="oe_inline"/>
+                                </group>
+                                <group>
+                                    <field name="light_d" class="oe_inline"/>
+                                    <field name="light_e" class="oe_inline"/>
+                                    <field name="light_f" class="oe_inline"/>
+                                </group>
+                            </group>
+                        </group>
+                        <group string="工艺要求">
+                            <group>
+                                <field name="process_a" class="oe_inline"/>
+                                <field name="process_b" class="oe_inline"/>
+                                <field name="process_c" class="oe_inline"/>
+                                <field name="process_d" class="oe_inline"/>
+                            </group>
+                            <group>
+                                <field name="process_e" class="oe_inline"/>
+                                <field name="process_f" class="oe_inline"/>
+                                <field name="process_g" class="oe_inline"/>
+                            </group>
+                        </group>
+                    </page>
+                    <page string="包装及漂染要求">
+                        <group string="包装">
+                            <field name="packaging_a" class="oe_inline"/>
+                            <field name="packaging_b" class="oe_inline"/>
+                            <field name="packaging_c" class="oe_inline"/>
+                        </group>
+                        <group string="包装要求">
+                            <field name="packaging_text"/>
+                        </group>
+
+                        <group string="漂染要求">
+                            <field name="bleaching"/>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="res_partner_form">
+            <field name="name">res.partner.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form[@string='Partners']/sheet" position="before">
+                    <header>
+                        <button name="dt_review" string="提交审核" states="draft" type="object" class="oe_highlight"/>
+                        <button name="dt_done" string="提交大区经理" states="review" type="object" class="oe_highlight"/>
+                        <button name="dt_done2" string="审核确认" states="review2" type="object" class="oe_highlight"/>
+                        <button name="dt_cancel" string="取消" states="done" type="object" class="oe_highlight"/>
+                        <button name="dt_draft" string="重置为草稿" states="cancel,review,review2" type="object"
+                                class="oe_highlight"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,review,review2,done,close"/>
+                    </header>
+                </xpath>
+                <xpath expr="//field[@name='country_id']" position="replace">
+                </xpath>
+                <xpath expr="//field[@name='category_id']" position="after">
+                    <field name="country_id" placeholder="Country" class="oe_no_button"
+                           options='{"no_open": True, "no_create": True}'
+                           attrs="{'readonly': [('use_parent_address','=',True)]}"/>
+                </xpath>
+                <xpath expr="//field[@name='state_id']" position="replace"/>
+                <xpath expr="//field[@name='country_id']" position="after">
+                    <field name="state_id" class="oe_no_button" placeholder="State" style="width: 37%%"
+                           options='{"no_open": True}' on_change="onchange_state2(state_id)"/>
+                </xpath>
+                <xpath expr="//field[@name='street']" position="replace"/>
+                <xpath expr="//field[@name='street2']" position="replace"/>
+                <xpath expr="//label[@for='street']" position="before">
+                    <field name="shi_state" on_change="onchange_chengshi(shi_state)" placeholder="市" style="width: 40%%" domain="[('sheng','=',country_id)]"/>
+                </xpath>
+                <xpath expr="//field[@name='website']" position="before">
+                    <field name="street" placeholder="Street..."
+                           attrs="{'readonly': [('use_parent_address','=',True)]}"/>
+                    <field name="street2" attrs="{'readonly': [('use_parent_address','=',True)]}"/>
+                </xpath>
+                <xpath expr="//field[@name='city']" position="replace"/>
+                <xpath expr="//field[@name='state_id']" position="after">
+                    <field name="city" placeholder="City" style="width: 40%%"/>
+                </xpath>
+                <xpath expr="//field[@name='zip']" position="replace"/>
+                <xpath expr="//field[@name='city']" position="after">
+                    <field name="zip" placeholder="ZIP" style="width: 20%%"/>
+                </xpath>
+                <xpath expr="//field[@name='website']" position="after">
+                    <field name="res_brand"/>
+                    <field name="res_level"/>
+                    <field name="res_type_id" widget="many2many_tags"/>
+                </xpath>
+                <xpath expr="//field[@name='title']" position="after">
+                    <field name="res_contact"/>
+                    <field name="res_contact_phone"/>
+                    <field name="res_currency_type"/>
+                </xpath>
+                <xpath expr="//page[@string='Contacts']" position="before">
+                    <page string="关联客户">
+                        <field name="res_line">
+                            <form string="关系客户" version="7.0">
+                                <group>
+                                    <group>
+                                        <field name="name" on_change="onchange_partner_id(name)"/>
+                                        <field name="line_address"/>
+                                        <field name="line_relation"/>
+                                    </group>
+                                    <group>
+                                        <field name="line_username"/>
+                                        <field name="line_phone"/>
+                                        <field name="line_active"/>
+                                    </group>
+                                </group>
+                            </form>
+                            <tree string="关系客户列表">
+                                <field name="name"/>
+                                <field name="line_address"/>
+                                <field name="line_username"/>
+                                <field name="line_phone"/>
+                                <field name="line_relation"/>
+                                <field name="line_active"/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="ycc_product_form">
+            <field name="name">ycc.product.form</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_only_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@string='Information']/group/group/field[@name='list_price']" position="after">
+                    <field name="pro_item_active"
+                           attrs="{'invisible':['|',('pro_slider_active','=',True),('sedai_oks','=',True)]}"/>
+                    <field name="virtual_item_key"
+                           attrs="{'invisible':['|',(('pro_item_active'),'=',True),('pro_slider_active','=',True)]}"/>
+                    <field name="tem_type_id" widget="many2many_tags"
+                           attrs="{'invisible':['|',('pro_typeid','!=',u'LP(拉片)')]}"/>
+                    <field name="pro_material" on_change="onchange_pro_material(pro_material)"/>
+                    <field name="pro_size" on_change="onchange_pro_size(pro_size,pro_typeid)"
+                           attrs="{'invisible':['|',('pro_typeid','=',u'LP(拉片)')]}"/>
+                    <field name="pro_kaibikou" on_change="onchange_pro_kaibikou(pro_kaibikou)"
+                           attrs="{'invisible':['|',('pro_typeid','!=',False),('sedai_oks','=',True)]}"/>
+                    <field name="pro_vacancy"
+                           attrs="{'invisible':['|',('sedai_oks','=',True),('pro_typeid','!=',False)]}"/>
+                </xpath>
+                <xpath expr="//page[@string='Information']/group/group/field[@name='ean13']" position="replace">
+                    <field name="ean13" invisible="1"/>
+                </xpath>
+                <xpath expr="//page[@string='Information']/group/group/field[@name='default_code']" position="replace">
+                    <field name="default_code" invisible="1"/>
+                </xpath>
+                <xpath expr="//page[@string='Information']/group/group/field[@name='active']" position="after">
+                    <field name="pro_slider_active"
+                           attrs="{'invisible':['|',('pro_item_active','=',True)]}"/>
+                    <field name="pro_slider"
+                           attrs="{'invisible':['|',('pro_item_active','=',True),('pro_slider_active','=',True)]}"/>
+                </xpath>
+                <xpath expr="//page[@string='Procurements']/group/group/field[@name='uom_po_id']" position="after">
+                    <field name="date_ends"
+                           attrs="{'invisible':['|',('pro_item_active','=',True),('pro_slider_active','=',True)]}"/>
+                    <field name="pro_length" placeholder="以cm为单位"
+                           attrs="{'invisible':['|',('pro_item_active','=',True),('pro_slider_active','=',True)]}"/>
+                    <field name="pro_color_key"
+                           attrs="{'invisible':['|',('pro_item_active','=',True),('pro_slider_active','=',True)]}"/>
+                    <field name="pro_lianya_color"
+                           attrs="{'invisible':['|',('pro_item_active','=',True),('pro_slider_active','=',True)]}"/>
+                </xpath>
+
+                <xpath expr="//field[@name='sale_ok']" position="after">
+                    <div class="oe_left" name="options"
+                         attrs="{'invisible':['|',('pro_item_active','=',True),('pro_slider_active','=',True)]}"
+                         groups="base.group_user">
+                        <div>
+                            <field name="sedai_oks"/>
+                            <label for="sedai_oks"/>
+                        </div>
+                    </div>
+                    <div class="oe_left"
+                         attrs="{'invisible':['|',('pro_item_active','=',True),('pro_slider_active','=',True)]}"
+                         name="options"
+                         groups="base.group_user">
+                        <div>
+                            <field name="length_ok"/>
+                            <label for="length_ok"/>
+                        </div>
+                    </div>
+                    <div class="oe_left" name="options"
+                         groups="base.group_user">
+                        <label for="pro_typeid"/>
+                        <field name="pro_typeid" class="oe_inline"/>
+                    </div>
+                </xpath>
+                <xpath expr="//field[@name='sedai_oks']" position="after">
+                    <div class="oe_left" name="options"
+                         groups="base.group_user" attrs="{'invisible':['|',('sedai_oks','=',False)]}">
+                        <label for="pro_select_color"/>
+                        <field name="pro_select_color" attrs="{'required': [('sedai_oks','=', True)]}"
+                               class="oe_inline"/>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="ycc_product_template_search_view_procurment" model="ir.ui.view">
+            <field name="name">product.template.search.ycc</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_search_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//filter[@name='filter_to_sell']" position="after">
+                    <filter string="开口" icon="terp-accessories-archiver"
+                            domain="[('pro_kaibikou','=','开口')]"/>
+                    <filter string="闭口" icon="terp-accessories-archiver"
+                            domain="[('pro_kaibikou','=','闭口')]"/>
+                    <filter string="双开" icon="terp-accessories-archiver"
+                            domain="[('pro_kaibikou','=','双开')]"/>
+                    <filter string="虚拟产品" icon="terp-accessories-archiver"
+                            domain="[('pro_item_active','=',True)]"/>
+                    <filter string="物料" icon="terp-accessories-archiver"
+                            domain="[('pro_typeid','!=',False) or ('sedai_oks','=',True)]"/>
+                    <filter string="虚拟拉头" icon="terp-accessories-archiver"
+                            domain="[('pro_slider_active','=',True)]"/>
+                    <filter string="真实产品" icon="terp-accessories-archiver"
+                            domain="[('virtual_item_key','!=',False),('pro_slider','=',False),('pro_slider_active','=',False),('pro_item_active','=',False)]"/>
+                    <filter string="拉头物品" icon="terp-accessories-archiver"
+                            domain="[('virtual_item_key','=',False),('pro_slider','!=',False),('pro_slider_active','=',False),('pro_item_active','=',False)]"/>
+                    <br/>
+                    <br/>
+                    <filter string="尼龙" icon="terp-accessories-archiver"
+                            domain="[('pro_material','=','N')]"/>
+                    <filter string="金属" icon="terp-accessories-archiver"
+                            domain="[('pro_material','=','M')]"/>
+                    <filter string="注塑" icon="terp-accessories-archiver"
+                            domain="[('pro_material','=','D')]"/>
+                    <filter string="隐形尼龙" icon="terp-accessories-archiver"
+                            domain="[('pro_material','=','C')]"/>
+
+                    <br/>
+                    <filter string="3号" icon="terp-accessories-archiver"
+                            domain="[('pro_size','=','3号')]"/>
+                    <filter string="4号" icon="terp-accessories-archiver"
+                            domain="[('pro_size','=','4号')]"/>
+                    <filter string="5号" icon="terp-accessories-archiver"
+                            domain="[('pro_size','=','5号')]"/>
+                    <filter string="7号" icon="terp-accessories-archiver"
+                            domain="[('pro_size','=','7号')]"/>
+                    <filter string="8号" icon="terp-accessories-archiver"
+                            domain="[('pro_size','=','8号')]"/>
+                    <filter string="10号" icon="terp-accessories-archiver"
+                            domain="[('pro_size','=','10号')]"/>
+                    <filter string="30号" icon="terp-accessories-archiver"
+                            domain="[('pro_size','=','30号')]"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>

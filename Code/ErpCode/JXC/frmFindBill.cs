@@ -105,6 +105,8 @@ namespace JXC
         {
             FillType(0);
             BindCon();
+            this.gvMain.HorzScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
+            this.gvMain.OptionsView.ColumnAutoWidth = true;
         }
 
         private void BindCon()

@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="report_saleorder_document1">
+            <t t-call="report.external_layout">
+                <div class="page">
+                    <div class="oe_structure"/>
+                    <div class="row">
+                        <div class="col-xs-4 pull-center">
+                            <center>
+                                <table class="text-center" border="1" cellspacing="100" width="900">
+                                    <center t-foreach="o.partner_id" t-as="R">
+                                        <tr height="35">
+                                            <td class="text-center" width="1000" colspan="10">
+                                                <font size="3">
+                                                    <strong>
+                                                        上海东龙服饰有限公司(YCC拉链)
+                                                    </strong>
+                                                </font>
+                                            </td>
+                                        </tr>
+                                        <tr height="35">
+                                            <td class="text-center" width="1000" colspan="10">
+                                                <font size="4">
+                                                    <strong>
+                                                        订单确认函
+                                                    </strong>
+                                                </font>
+                                            </td>
+                                        </tr>
+                                        <tr height="30">
+                                            <td class="text-center" width="250" colspan="2">
+                                                <font size="3">
+                                                    <strong>
+                                                        成品类别
+                                                    </strong>
+                                                </font>
+                                            </td>
+                                            <td class="text-center" width="250" colspan="3">
+                                                <span t-field="R.res_type_id.name"/>
+                                            </td>
+                                            <td class="text-center" width="250" colspan="2">
+                                                <font size="3">
+                                                    <strong>
+                                                        销售部门
+                                                    </strong>
+                                                </font>
+                                            </td>
+                                            <td class="text-center" width="250" colspan="3">
+                                                <span t-field="o.sale_department"/>
+                                            </td>
+                                        </tr>
+                                    </center>
+                                    <tr height="32">
+                                        <td class="text-center" width="100">
+                                            <strong>
+                                                款号
+                                            </strong>
+                                        </td>
+                                        <td class="text-center" width="100">
+                                            <strong>
+                                                长度尺寸
+                                            </strong>
+                                        </td>
+                                        <td class="text-center" width="100">
+                                            <strong>
+                                                产品名称
+                                            </strong>
+                                        </td>
+                                        <td class="text-center" width="100">
+                                            <strong>
+                                                布带色
+                                            </strong>
+                                        </td>
+                                        <td class="text-center" width="100">
+                                            <strong>
+                                                拉头
+                                            </strong>
+                                        </td>
+                                        <td class="text-center" width="100">
+                                            <strong>
+                                                链牙颜色
+                                            </strong>
+                                        </td>
+                                        <td class="text-center" width="100">
+                                            <strong>
+                                                拉头颜色
+                                            </strong>
+                                        </td>
+                                        <td class="text-center" width="100">
+                                            <strong>
+                                                数量
+                                            </strong>
+                                        </td>
+                                        <td class="text-center" width="100">
+                                            <strong>
+                                                单价
+                                            </strong>
+                                        </td>
+                                        <td class="text-center" width="100">
+                                            <strong>
+                                                金额
+                                            </strong>
+                                        </td>
+                                    </tr>
+                                    <center t-foreach="o.order_line" t-as="l">
+                                        <center t-foreach="l.product_id" t-as="p">
+                                            <tr height="30">
+                                                <td class="text-center" width="100">
+                                                    <span t-field="l.product_style"/>
+                                                </td>
+                                                <td class="text-center" width="100">
+                                                    <span t-field="l.length"/>
+                                                </td>
+                                                <td class="text-center" width="100">
+                                                    <span t-field="l.product_id"/>
+                                                </td>
+                                                <td class="text-center" width="100">
+                                                    <span t-field="l.cloth_color"/>
+                                                </td>
+                                                <td class="text-center" width="100">
+                                                    <span t-field="p.pro_slider"/>
+                                                </td>
+                                                <td class="text-center" width="100">
+                                                    <span t-field="l.pro_slider_color"/>
+                                                </td>
+                                                <td class="text-center" width="100">
+                                                    <span t-field="l.pullhead_on_color"/>
+                                                </td>
+                                                <td class="text-center" width="100">
+                                                    <span t-field="l.product_uom_qty"/>
+                                                </td>
+                                                <td class="text-center" width="100">
+                                                    <span t-field="l.price_unit"/>
+                                                </td>
+                                                <td class="text-center" width="100">
+                                                    <span t-field="l.price_subtotal"/>
+                                                </td>
+                                            </tr>
+                                        </center>
+                                    </center>
+                                    <tr height="30" style="background-color:#00ff00">
+                                        <td class="text-center" width="200" colspan="2">
+                                            <strong>
+                                                费用类别
+                                            </strong>
+                                        </td>
+                                        <td class="text-center" width="200" colspan="2">
+                                            <strong>
+                                                附加费用一
+                                            </strong>
+                                        </td>
+                                        <td class="text-center" width="200" colspan="2">
+                                            <strong>
+                                                附加费用二
+                                            </strong>
+                                        </td>
+                                        <td class="text-center" width="200" colspan="2">
+                                            <strong>
+                                                附加费用三
+                                            </strong>
+                                        </td>
+                                        <td class="text-center" width="200" colspan="2">
+                                            <strong>
+                                                总金额
+                                            </strong>
+                                        </td>
+                                    </tr>
+                                    <tr height="30">
+                                        <td class="text-center" width="200" colspan="2">
+                                            <strong>
+                                                费用明细
+                                            </strong>
+                                        </td>
+                                        <td class="text-center" width="200" colspan="2">
+                                            <span t-field="o.cost_name1"/>
+                                        </td>
+                                        <td class="text-center" width="200" colspan="2">
+                                            <span t-field="o.cost_name2"/>
+                                        </td>
+                                        <td class="text-center" width="200" colspan="2">
+                                            <span t-field="o.cost_name3"/>
+                                        </td>
+                                        <td class="text-center" width="200" colspan="2">
+                                            <span t-field="o.amount_total"/>
+                                        </td>
+                                    </tr>
+                                    <tr height="30">
+                                        <td class="text-center" width="200" height="90" colspan="2" rowspan="3">
+                                            <strong>
+                                                开票信息：
+                                            </strong>
+                                        </td>
+                                        <td class="text-center" width="200" colspan="2">
+                                            <strong>
+                                                客户全名
+                                            </strong>
+                                        </td>
+                                        <td class="text-center" width="200" colspan="2">
+                                            <span t-field="o.partner_id.name"/>
+                                        </td>
+                                        <td class="text-center" width="200" colspan="2">
+                                            <strong>
+                                                纳税人识别号：
+                                            </strong>
+                                        </td>
+                                        <td class="text-center" width="200" colspan="2">
+                                        </td>
+                                    </tr>
+                                    <tr height="30">
+                                        <td class="text-center" width="200" colspan="2">
+                                            <strong>
+                                                地 址
+                                            </strong>
+                                        </td>
+                                        <td class="text-center" width="200" colspan="2">
+                                            <span t-field="o.res_address"/>
+                                        </td>
+                                        <td class="text-center" width="200" colspan="2">
+                                            <strong>
+                                                电 话：
+                                            </strong>
+                                        </td>
+                                        <td class="text-center" width="200" colspan="2">
+                                            <span t-field="o.phone"/>
+                                        </td>
+                                    </tr>
+                                    <tr height="30">
+                                        <td class="text-center" width="200" colspan="2">
+                                            <strong>
+                                                开 户 行
+                                            </strong>
+                                        </td>
+                                        <td class="text-center" width="200" colspan="2">
+                                        </td>
+                                        <td class="text-center" width="200" colspan="2">
+                                            <strong>
+                                                账 号：
+                                            </strong>
+                                        </td>
+                                        <td class="text-center" width="200" colspan="2">
+                                        </td>
+                                    </tr>
+                                    <tr height="30">
+                                        <td class="text-center" width="200" colspan="2" rowspan="2">
+                                            <strong>
+                                                收货对象：
+                                            </strong>
+                                        </td>
+                                        <td class="text-center" width="200" colspan="2">
+                                            <strong>
+                                                收货地址：
+                                            </strong>
+                                        </td>
+                                        <td class="text-center" width="600" colspan="6">
+                                            <span t-field="o.res_address"/>
+                                        </td>
+                                    </tr>
+
+                                    <tr height="30">
+                                        <td class="text-center" width="200" colspan="2">
+                                            <strong>
+                                                收货人
+                                            </strong>
+                                        </td>
+                                        <td class="text-center" width="200" colspan="2">
+                                            <span t-field="o.contact"/>
+                                        </td>
+                                        <td class="text-center" width="200" colspan="2">
+                                            <strong>
+                                                联系电话：
+                                            </strong>
+                                        </td>
+                                        <td class="text-center" width="200" colspan="2">
+                                            <span t-field="o.phone"/>
+                                        </td>
+                                    </tr>
+                                    <tr height="60">
+                                        <td class="text-center" width="200" colspan="2">
+                                            <strong>
+                                                备注：
+                                            </strong>
+                                        </td>
+                                        <td class="text-left" width="800" colspan="8">
+
+                                        </td>
+                                    </tr>
+                                    <tr height="60">
+                                        <td class="text-center" width="200" colspan="2">
+                                            <strong>
+                                                制单人
+                                            </strong>
+                                        </td>
+                                        <td class="text-center" width="300" colspan="3">
+                                            <span t-field="o.user_ids"/>
+                                        </td>
+                                        <td class="text-center" width="200" colspan="2">
+                                            <strong>
+                                                客户签章
+                                            </strong>
+                                        </td>
+                                        <td class="text-center" width="300" colspan="3">
+
+                                        </td>
+                                    </tr>
+                                </table>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </template>
+
+        <template id="report_order">
+            <t t-call="report.html_container">
+                <t t-foreach="doc_ids" t-as="doc_id">
+                    <t t-raw="translate_doc(doc_id, doc_model, 'partner_id.lang', 'ycc_order_inherit.report_saleorder_document1')"/>
+                </t>
+            </t>
+        </template>
+    </data>
+</openerp>

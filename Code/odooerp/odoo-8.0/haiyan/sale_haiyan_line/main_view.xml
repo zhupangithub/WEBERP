@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="zp_haiyan_view_filter" model="ir.ui.view">
+            <field name="name">zp.haiyan.Search</field>
+            <field name="model">zp.haiyan</field>
+            <field name="arch" type="xml">
+                <search string="量身单查询">
+                    <field name="name"
+                           filter_domain="['|',('name','ilike',self),('partner_id','ilike',self)]"/>
+                    <filter help="只看自己的" icon="terp-personal+" domain="[('user_id','=',uid)]"/>
+                    <separator/>
+                    <group expand="0" string="分组...">
+                        <filter string="用户分组" icon="terp-personal" domain="[]" context="{'group_by' : 'user_id'}"/>
+                    </group>
+                    <group expand="0" string="分类...">
+                        <filter string="量身单状态" icon="terp-personal" domain="[]" context="{'group_by' : 'state'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+
+        <!--表单-->
+        <record id="zp_haiyan_view_form" model="ir.ui.view">
+            <field name="name">zp.haiyan.form</field>
+            <field name="model">zp.haiyan</field>
+            <field name="arch" type="xml">
+                <form string="量身单审核" version="7.0" groups="base.group_user">
+                    <header>
+                        <button name="haiyan_review" string="提交审核" states="draft" type="object" class="oe_highlight"/>
+                        <button name="haiyan_done" string="审核" states="review" type="object" class="oe_highlight"/>
+                        <button name="haiyan_cancel" string="取消" states="done" type="object" class="oe_highlight"/>
+                        <button name="haiyan_draft" string="重置为草稿" states="cancel,review" type="object"
+                                class="oe_highlight"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,review,done,close"/>
+                    </header>
+                    <sheet>
+                        <group string="客户量身单">
+                            <group>
+                                <field name="partner_id" on_change="onchange_partner_id(partner_id)"/>
+                                <field name="name" placeholder="名称必须唯一"/>
+                            </group>
+                            <group>
+                                <field name="user_id"/>
+                                <field name="team_name"/>
+                                <!-- <field name="date_start"/>-->
+                            </group>
+                        </group>
+
+                        <notebook>
+                            <page string="上衣尺寸信息">
+
+                                <group string="衣服尺寸">
+                                    <label for="coat_shoulder"/>
+                                    <div>
+                                        <field name="coat_shoulder" class="oe_inline"/>
+                                        <field name="coat_shoulder_two" class="oe_inline"/>
+                                        <field name="coat_shoulder_three" class="oe_inline"/>
+                                    </div>
+
+                                    <label for="coat_sleeves"/>
+                                    <div>
+                                        <field name="coat_sleeves" class="oe_inline"/>
+                                        <field name="coat_sleeves_two" class="oe_inline"/>
+                                        <field name="coat_sleeves_three" class="oe_inline"/>
+                                    </div>
+
+                                    <label for="coat_before_long"/>
+                                    <div>
+                                        <field name="coat_before_long" class="oe_inline"/>
+                                        <field name="coat_before_long_two" class="oe_inline"/>
+                                        <field name="coat_before_long_three" class="oe_inline"/>
+                                    </div>
+
+                                    <label for="coat_after_long"/>
+                                    <div>
+                                        <field name="coat_after_long" class="oe_inline"/>
+                                        <field name="coat_after_long_two" class="oe_inline"/>
+                                        <field name="coat_after_long_three" class="oe_inline"/>
+                                    </div>
+
+                                    <label for="coat_chest"/>
+                                    <div>
+                                        <field name="coat_chest" class="oe_inline"/>
+                                        <field name="coat_chest_two" class="oe_inline"/>
+                                        <field name="coat_chest_three" class="oe_inline"/>
+                                    </div>
+
+                                    <label for="coat_waist"/>
+                                    <div>
+                                        <field name="coat_waist" class="oe_inline"/>
+                                        <field name="coat_waist_two" class="oe_inline"/>
+                                        <field name="coat_waist_three" class="oe_inline"/>
+                                    </div>
+
+                                    <label for="coat_hip"/>
+                                    <div>
+                                        <field name="coat_hip" class="oe_inline"/>
+                                        <field name="coat_hip_two" class="oe_inline"/>
+                                        <field name="coat_hip_three" class="oe_inline"/>
+                                    </div>
+
+                                    <label for="coat_chest_width"/>
+                                    <div>
+                                        <field name="coat_chest_width" class="oe_inline"/>
+                                        <field name="coat_chest_width_two" class="oe_inline"/>
+                                        <field name="coat_chest_width_three" class="oe_inline"/>
+                                    </div>
+
+                                    <label for="coat_back_width"/>
+                                    <div>
+                                        <field name="coat_back_width" class="oe_inline"/>
+                                        <field name="coat_back_width_two" class="oe_inline"/>
+                                        <field name="coat_back_width_three" class="oe_inline"/>
+                                    </div>
+                                </group>
+
+
+                                <group string="其他属性">
+                                    <group>
+                                        <field name="coat_number" class="oe_inline"/>
+                                        <field name="coat_neck_size" class="oe_inline"/>
+                                        <field name="coat_neck_shape" class="oe_inline"/>
+                                        <field name="coat_before_yijing" class="oe_inline"/>
+                                        <field name="coat_xiukou" class="oe_inline"/>
+                                        <field name="coat_count" class="oe_inline"/>
+                                    </group>
+
+                                    <group>
+                                        <field name="coat_try" class="oe_inline"/>
+                                        <field name="coat_customized" class="oe_inline"/>
+                                        <group>
+                                            <field name="coat_gaodijian"/>
+                                            <field name="coat_dadu"/>
+                                            <field name="coat_xiajian"/>
+                                        </group>
+                                        <group>
+                                            <field name="coat_pingjian"/>
+                                            <field name="coat_youbei"/>
+                                            <field name="coat_tingxiong"/>
+                                        </group>
+                                    </group>
+                                </group>
+                                <group string="上衣备注">
+                                    <field name="coat_beizhu"/>
+                                </group>
+                            </page>
+                            <page string="裤子尺寸信息">
+
+                                <group string="裤子尺寸">
+                                    <label for="trousers_waist"/>
+                                    <div>
+                                        <field name="trousers_waist" class="oe_inline"/>
+                                        <field name="trousers_waist_two" class="oe_inline"/>
+                                        <field name="trousers_waist_three" class="oe_inline"/>
+                                    </div>
+
+                                    <label for="trousers_hip"/>
+                                    <div>
+                                        <field name="trousers_hip" class="oe_inline"/>
+                                        <field name="trousers_hip_two" class="oe_inline"/>
+                                        <field name="trousers_hip_three" class="oe_inline"/>
+                                    </div>
+
+                                    <label for="trousers_long"/>
+                                    <div>
+                                        <field name="trousers_long" class="oe_inline"/>
+                                        <field name="trousers_long_two" class="oe_inline"/>
+                                        <field name="trousers_long_three" class="oe_inline"/>
+                                    </div>
+
+                                    <label for="trousers_shangdang"/>
+                                    <div>
+                                        <field name="trousers_shangdang" class="oe_inline"/>
+                                        <field name="trousers_shangdang_two" class="oe_inline"/>
+                                        <field name="trousers_shangdang_three" class="oe_inline"/>
+                                    </div>
+
+                                    <label for="trousers_quandang"/>
+                                    <div>
+                                        <field name="trousers_quandang" class="oe_inline"/>
+                                        <field name="trousers_quandang_two" class="oe_inline"/>
+                                        <field name="trousers_quandang_three" class="oe_inline"/>
+                                    </div>
+
+                                    <label for="trousers_yaoxia"/>
+                                    <div>
+                                        <field name="trousers_yaoxia" class="oe_inline"/>
+                                        <field name="trousers_yaoxia_two" class="oe_inline"/>
+                                        <field name="trousers_yaoxia_three" class="oe_inline"/>
+                                    </div>
+
+                                    <label for="trousers_tuiwei"/>
+                                    <div>
+                                        <field name="trousers_tuiwei" class="oe_inline"/>
+                                        <field name="trousers_tuiwei_two" class="oe_inline"/>
+                                        <field name="trousers_tuiwei_three" class="oe_inline"/>
+                                    </div>
+
+                                    <label for="trousers_xiwei"/>
+                                    <div>
+                                        <field name="trousers_xiwei" class="oe_inline"/>
+                                        <field name="trousers_xiwei_two" class="oe_inline"/>
+                                        <field name="trousers_xiwei_three" class="oe_inline"/>
+                                    </div>
+                                </group>
+
+
+                                <group string="其他属性">
+                                    <group>
+                                        <field name="trousers_kukou" class="oe_inline"/>
+                                        <field name="trousers_mashu" class="oe_inline"/>
+                                        <field name="trousers_kuanshi" class="oe_inline"/>
+                                        <field name="trousers_count" class="oe_inline"/>
+                                    </group>
+
+                                    <group>
+                                        <group>
+                                            <field name="trousers_youdu"/>
+                                            <field name="trousers_qiaotui"/>
+                                            <field name="trousers_pingtun"/>
+                                            <field name="trousers_stui"/>
+                                        </group>
+                                        <group>
+                                            <field name="trousers_otui"/>
+                                            <field name="trousers_xtui"/>
+                                            <field name="trousers_dazhe"/>
+                                            <field name="trousers_pingkou"/>
+                                        </group>
+                                    </group>
+                                </group>
+                                <group string="裤子备注">
+                                    <field name="trousers_beizhu"/>
+                                </group>
+                            </page>
+                            <page string="图片浏览">
+                                <group colspan="3" string="第一张照片">
+                                    <field name="haiyan_customer_image1" widget="image"
+                                           class="oe_left oe_avatar oe_inline"
+                                           options='{"size": [400, 300]}'/>
+                                </group>
+                                <group colspan="3" string="第二张照片">
+                                    <field name="haiyan_customer_image2" widget="image"
+                                           class="oe_left oe_avatar oe_inline"
+                                           options='{"size": [400, 300]}'/>
+                                </group>
+                                <group colspan="3" string="第三张照片">
+                                    <field name="haiyan_customer_image3" widget="image"
+                                           class="oe_left oe_avatar oe_inline"
+                                           options='{"size": [400, 300]}'/>
+                                </group>
+                                <group colspan="3" string="第四张照片">
+                                    <field name="haiyan_customer_image4" widget="image"
+                                           class="oe_left oe_avatar oe_inline"
+                                           options='{"size": [400, 300]}'/>
+                                </group>
+                            </page>
+                            <page string="配件">
+                                <group>
+                                    <group string="其他要求">
+                                        <field name="peijian_niukou" class="oe_inline"/>
+                                        <field name="peijian_xiuzi" class="oe_inline"/>
+                                        <field name="peijian_color" class="oe_inline"/>
+                                    </group>
+                                    <group string="赠品">
+                                        <group>
+                                            <field name="peijian_lingdai" class="oe_inline"/>
+                                            <field name="peijian_lingjie" class="oe_inline"/>
+                                            <field name="peijian_xiukou" class="oe_inline"/>
+                                        </group>
+                                        <group>
+                                            <field name="peijian_daijing" class="oe_inline"/>
+                                            <field name="peijian_yaofeng" class="oe_inline"/>
+                                        </group>
+                                    </group>
+                                </group>
+                                <group string="工艺要求">
+                                    <field name="peijian_beizhu"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" help="加入关注"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+
+        <!--列表-->
+        <record id="zp_haiyan_view_tree" model="ir.ui.view">
+            <field name="name">zp.haiyan.tree</field>
+            <field name="model">zp.haiyan</field>
+            <field name="priority">1</field>
+            <field name="arch" type="xml">
+                <tree string="西服套装列表">
+                    <field name="name"/>
+                    <field name="partner_id"/>
+                    <field name="user_id"/>
+                    <field name="team_name"/>
+                    <field name="coat_number"/>
+                    <field name="trousers_mashu"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <!--  窗体事件 查询  Search  graph,gantt-->
+        <record id="zp_haiyan_order_action_main" model="ir.actions.act_window">
+            <field name="name">量身单</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">zp.haiyan</field>
+            <field name="view_type">form</field>
+            <field name="limit">50</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="zp_haiyan_view_tree"/>
+            <field name="search_view_id" ref="zp_haiyan_view_filter"/>
+            <!--<field name="context">{"search_default_user_id":uid}</field>-->
+            <!--<field name="domain">[('row','>',0)]</field>-->
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    录入西服套装的信息
+                </p>
+            </field>
+        </record>
+
+
+        <menuitem name="量身单" id="base.menu_haiyan" groups="base.group_sale_salesman,base.group_sale_manager" parent="base.menu_sales" sequence="7"/>
+        <menuitem name="西服套装" id="base.menu_haiyan_main" parent="base.menu_haiyan" sequence="1"
+                  action="zp_haiyan_order_action_main"/>
+    </data>
+</openerp>

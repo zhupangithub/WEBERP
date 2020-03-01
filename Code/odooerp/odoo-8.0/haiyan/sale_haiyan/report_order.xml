@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="report_saleorder_document1">
+            <t t-call="report.external_layout">
+                <div class="page">
+                    <div class="oe_structure"/>
+                    <div class="row">
+                        <div class="col-xs-4 pull-center">
+                            <center>
+                                <table class="text-center" border="1" cellspacing="100" width="900">
+                                    <center t-foreach="o.partner_id" t-as="R">
+                                        <tr height="40">
+                                            <td class="text-center" width="900" colspan="6">
+                                                <font size="6">
+                                                    <strong>
+                                                        预约单
+                                                    </strong>
+                                                </font>
+                                            </td>
+                                        </tr>
+                                        <tr class="border-black" height="40">
+                                            <td class="text-center" width="120">
+                                                <strong>客户姓名</strong>
+                                            </td>
+                                            <td class="text-center" width="280">
+                                                <span t-field="R.name"/>
+                                            </td>
+                                            <td class="text-center" width="100">
+                                                <strong>订单日</strong>
+                                            </td>
+                                            <td class="text-center" width="150">
+                                                <span t-field="o.date_order"/>
+                                            </td>
+                                            <td class="text-center" width="100">
+                                                <strong>拍照日</strong>
+                                            </td>
+                                            <td class="text-center" width="150">
+                                                <span t-field="o.date_order"/>
+                                            </td>
+                                        </tr>
+                                        <tr height="40">
+                                            <td class="text-center" width="120">
+                                                <strong>电话号码</strong>
+                                            </td>
+                                            <td class="text-center" width="280">
+                                                <span t-field="R.phone"/>
+                                            </td>
+                                            <td class="text-center" width="100">
+                                                <strong>订婚日</strong>
+                                            </td>
+                                            <td class="text-center" width="150">
+                                                <span t-field="R.haiyan_customer_dinhun"/>
+                                            </td>
+                                            <td class="text-center" width="100">
+                                                <strong>结婚日</strong>
+                                            </td>
+                                            <td class="text-center" width="150">
+                                                <span t-field="R.haiyan_customer_jiehunri"/>
+                                            </td>
+                                        </tr>
+                                        <tr class="border-black" height="40">
+                                            <td class="text-center" width="120">
+                                                <strong>手机号</strong>
+                                            </td>
+                                            <td class="text-center" width="280">
+                                                <span t-field="R.mobile"/>
+                                            </td>
+                                            <td class="text-center" width="100">
+                                                <strong>订做试版日</strong>
+                                            </td>
+                                            <td class="text-center" width="150">
+                                                <span t-field="o.date_state"/>
+                                            </td>
+                                            <td class="text-center" width="100">
+                                                <strong>订做取件日</strong>
+                                            </td>
+                                            <td class="text-center" width="150">
+                                                <span t-field="o.date_end"/>
+                                            </td>
+                                        </tr>
+                                        <tr height="40">
+                                            <td class="text-center" width="120">
+                                                <strong>
+                                                    称呼
+                                                </strong>
+                                            </td>
+                                            <td class="text-center" width="280">
+                                                <span t-field="R.title"/>
+                                            </td>
+                                            <td class="text-center" width="100">
+                                                <strong>出租取件日</strong>
+                                            </td>
+                                            <td class="text-center" width="150">
+                                                <span t-field="o.order_chuzu_datestate"/>
+                                            </td>
+                                            <td class="text-center" width="100">
+                                                <strong>出租还件日</strong>
+                                            </td>
+                                            <td class="text-center" width="150">
+                                                <span t-field="o.order_chuzu_dateend"/>
+                                            </td>
+                                        </tr>
+
+                                        <tr height="40">
+                                            <td class="text-center" width="120">
+                                                <strong>
+                                                    摄影公司
+                                                </strong>
+                                            </td>
+                                            <td class="text-center" width="280">
+                                                <span t-field="o.company"/>
+                                            </td>
+                                            <td class="text-center" width="100">
+                                                <strong>客户等级</strong>
+                                            </td>
+                                            <td class="text-center" width="150">
+                                                <span t-field="R.haiyan_customer_vip"/>
+                                            </td>
+                                            <td class="text-center" width="100">
+                                                <strong>客户国籍</strong>
+                                            </td>
+                                            <td class="text-center" width="150">
+                                                <span t-field="R.country_id"/>
+                                            </td>
+                                        </tr>
+
+                                        <tr height="40">
+                                            <td class="text-center" width="120">
+                                                <strong>
+                                                    地址
+                                                </strong>
+                                            </td>
+                                            <td class="text-center" width="380" colspan="3">
+                                                <span t-field="R.street"/>
+                                            </td>
+                                            <td class="text-center" width="100">
+                                                <strong>电子邮箱</strong>
+                                            </td>
+                                            <td class="text-center" width="300">
+                                                <span t-field="R.email"/>
+                                            </td>
+                                        </tr>
+
+                                        <tr height="40">
+                                            <td class="text-center" width="450" colspan="3">
+                                                <strong>
+                                                    礼服赠品
+                                                </strong>
+                                            </td>
+                                            <td class="text-center" width="450" colspan="3">
+                                                <strong>注意事项</strong>
+                                            </td>
+                                        </tr>
+                                    </center>
+                                    <center t-foreach="o.order_line" t-as="l">
+                                        <center t-foreach="l.haiyan_name" t-as="H">
+                                            <tr height="40">
+                                                <td class="text-center" width="20">
+                                                    <strong>
+                                                        1,
+                                                    </strong>
+                                                </td>
+                                                <td class="text-center" width="430" colspan="2">
+                                                    领带
+                                                    <span t-field="H.peijian_lingdai"/>
+                                                </td>
+                                                <td class="text-center" width="20">
+                                                    <strong>1,</strong>
+                                                </td>
+                                                <td class="text-left" width="430" colspan="2">
+                                                    订做西服确认后不可更改款式,布料或其它。
+                                                </td>
+                                            </tr>
+
+                                            <tr height="40">
+                                                <td class="text-center" width="20">
+                                                    <strong>
+                                                        2,
+                                                    </strong>
+                                                </td>
+                                                <td class="text-center" width="430" colspan="2">
+                                                    领结
+                                                    <span t-field="H.peijian_lingjie"/>
+                                                </td>
+                                                <td class="text-center" width="20">
+                                                    <strong>2,</strong>
+                                                </td>
+                                                <td class="text-left" width="430" colspan="2">
+                                                    定做款需要付清全款。
+                                                </td>
+                                            </tr>
+
+                                            <tr height="40">
+                                                <td class="text-center" width="20">
+                                                    <strong>
+                                                        3,
+                                                    </strong>
+                                                </td>
+                                                <td class="text-center" width="430" colspan="2">
+                                                    袖扣
+                                                    <span t-field="H.peijian_xiukou"/>
+                                                </td>
+                                                <td class="text-center" width="20">
+                                                    <strong>3,</strong>
+                                                </td>
+                                                <td class="text-left" width="430" colspan="2" rowspan="2">
+                                                    如有租借礼服,配饰,请妥善保管使用,损坏和遗失照价赔偿,并需交质押金
+                                                    <strong>
+                                                        <span t-field="o.order_yajin"/>
+                                                    </strong>
+                                                    元。
+                                                </td>
+                                            </tr>
+
+
+                                            <tr height="40">
+                                                <td class="text-center" width="20">
+                                                    <strong>
+                                                        4,
+                                                    </strong>
+                                                </td>
+                                                <td class="text-center" width="430" colspan="2">
+                                                    袋巾
+                                                    <span t-field="H.peijian_daijing"/>
+                                                </td>
+                                                <td class="text-center" width="20">
+                                                    <strong></strong>
+                                                </td>
+                                                <td class="text-center" width="430" colspan="2">
+                                                </td>
+                                            </tr>
+
+                                            <tr height="40">
+                                                <td class="text-center" width="20">
+                                                    <strong>
+                                                        5,
+                                                    </strong>
+                                                </td>
+                                                <td class="text-center" width="430" colspan="2">
+                                                    腰丰
+                                                    <span t-field="H.peijian_yaofeng"/>
+                                                </td>
+                                                <td class="text-center" width="20">
+                                                    <strong></strong>
+                                                </td>
+                                                <td class="text-center" width="430" colspan="2">
+                                                </td>
+                                            </tr>
+
+                                            <tr height="40">
+                                                <td class="text-center" width="120">
+                                                    <strong>
+                                                        量身师
+                                                    </strong>
+                                                </td>
+                                                <td class="text-center" width="280">
+                                                    <span t-field="H.user_id"/>
+                                                </td>
+                                                <td class="text-center" width="100">
+                                                    <strong>总金额</strong>
+                                                </td>
+                                                <td class="text-center" width="150">
+                                                    <span t-field="o.amount_untaxed"/>
+                                                </td>
+                                                <td class="text-center" width="100">
+                                                    <strong>交易类型</strong>
+                                                </td>
+                                                <td class="text-center" width="150">
+                                                    <span t-field="o.order_type"/>
+                                                </td>
+                                            </tr>
+
+                                            <tr height="40">
+                                                <td class="text-center" width="120">
+                                                    <strong>
+                                                        量身单号
+                                                    </strong>
+                                                </td>
+                                                <td class="text-center" width="280">
+                                                    <span t-field="H.name"/>
+                                                </td>
+                                                <td class="text-center" width="100">
+                                                    <strong>产品名称</strong>
+                                                </td>
+                                                <td class="text-center" width="150">
+                                                    <span t-field="l.product_id"/>
+                                                </td>
+                                                <td class="text-center" width="100">
+                                                    <strong>优惠券类型</strong>
+                                                </td>
+                                                <td class="text-center" width="150">
+                                                    <span t-field="o.pricelist_id"/>
+                                                </td>
+                                            </tr>
+
+                                            <tr height="40">
+                                                <td class="text-center" width="120">
+                                                    <strong>
+                                                        门市点
+                                                    </strong>
+                                                </td>
+                                                <td class="text-center" width="280">
+                                                    <span t-field="H.team_name"/>
+                                                </td>
+                                                <td class="text-center" width="100">
+                                                    <strong>定金</strong>
+                                                </td>
+                                                <td class="text-center" width="150">
+                                                    <span t-field="o.order_yajin"/>
+                                                </td>
+                                                <td class="text-center" width="100">
+                                                    <strong>余款</strong>
+                                                </td>
+                                                <td class="text-center" width="150">
+                                                    <span t-field="o.order_yukuan"/>
+                                                </td>
+                                            </tr>
+                                        </center>
+                                    </center>
+                                    <tr height="30">
+                                        <td class="text-center" width="120" rowspan="2">
+                                            <strong>
+                                                订单备注
+                                            </strong>
+                                        </td>
+                                        <td class="text-left" colspan="5" rowspan="2">
+                                            <span t-field="o.order_instructions"/>
+                                        </td>
+                                    </tr>
+                                    <tr height="40">
+
+                                    </tr>
+                                </table>
+                            </center>
+                        </div>
+
+                    </div>
+                </div>
+            </t>
+        </template>
+
+        <template id="report_order">
+            <t t-call="report.html_container">
+                <t t-foreach="doc_ids" t-as="doc_id">
+                    <t t-raw="translate_doc(doc_id, doc_model, 'partner_id.lang', 'sale_haiyan.report_saleorder_document1')"/>
+                </t>
+            </t>
+        </template>
+    </data>
+</openerp>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="ycc_pro_view_filter" model="ir.ui.view">
+            <field name="name">ycc.product.type.Search</field>
+            <field name="model">ycc.product.type</field>
+            <field name="arch" type="xml">
+                <search string="区域名称查询">
+                    <field name="name"
+                           filter_domain="['|',('name','ilike',self)]"/>
+                    <separator/>
+                </search>
+            </field>
+        </record>
+
+
+        <!--表单-->
+        <record id="ycc_pro_view_form" model="ir.ui.view">
+            <field name="name">ycc.product.type.form</field>
+            <field name="model">ycc.product.type</field>
+            <field name="arch" type="xml">
+                <form version="7.0" groups="base.group_user">
+                    <sheet>
+                        <group string="区域信息">
+                            <group>
+                                <field name="sheng"/>
+                                <field name="name"/>
+                                <field name="numbers"/>
+                                <field name="pro_type_active"/>
+                                <field name="pro_type_username"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" help="加入关注"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <!--列表-->
+        <record id="ycc_pro_view_tree" model="ir.ui.view">
+            <field name="name">ycc.product.type.tree</field>
+            <field name="model">ycc.product.type</field>
+            <field name="priority">1</field>
+            <field name="arch" type="xml">
+                <tree string="区域信息列表">
+                    <field name="sheng"/>
+                    <field name="name"/>
+                     <field name="numbers"/>
+                    <field name="pro_type_active"/>
+                    <field name="pro_type_username"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <!--  窗体事件 查询  Search  graph,gantt-->
+        <record id="zp_pro_action" model="ir.actions.act_window">
+            <field name="name">区域资料</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">ycc.product.type</field>
+            <field name="view_type">form</field>
+            <field name="limit">50</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="ycc_pro_view_tree"/>
+            <field name="search_view_id" ref="ycc_pro_view_filter"/>
+            <!--<field name="context">{"search_default_user_id":uid}</field>-->
+            <!--<field name="domain">[('row','>',0)]</field>-->
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    录入区域信息
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="区域表" id="base.menu_ycc_Pro" parent="base.ycc_menuproduct" sequence="2"
+                  action="zp_pro_action"/>
+    </data>
+</openerp>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="wh_order_from">
+            <field name="name">wh.order.form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <!--                <xpath expr="//field[@name='partner_shipping_id']" position="after">-->
+                <!--                    <field name="user_id_salesman" class="oe_inline"/>-->
+                <!--                </xpath>-->
+                <xpath expr="//field[@name='date_order']" position="before">
+                    <field name="res_customer_date"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="wh_product_form">
+            <field name="name">wh.product.form</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_only_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@string='Information']/group/group/field[@name='list_price']" position="after">
+                    <field name="product_size"/>
+                </xpath>
+                <xpath expr="//page[@string='Information']/group/group/field[@name='default_code']" position="after">
+                    <field name="product_caizhi"/>
+                </xpath>
+            </field>
+        </record>
+
+
+        <record model="ir.ui.view" id="res_partner_form">
+            <field name="name">res.partner.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='website']" position="after">
+                    <field name="customer_type"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!--        <record model="ir.ui.view" id="wh_product_form">-->
+        <!--            <field name="name">wh.product.form</field>-->
+        <!--            <field name="model">product.template</field>-->
+        <!--            <field name="inherit_id" ref="product.product_template_only_form_view"/>-->
+        <!--            <field name="arch" type="xml">-->
+        <!--                <xpath expr="//page[@string='Information']/group/group/field[@name='list_price']" position="after">-->
+        <!--                    <field name="product_size"/>-->
+        <!--                    <field name="product_caizhi"/>-->
+        <!--                </xpath>-->
+        <!--            </field>-->
+        <!--        </record>-->
+
+
+        <record model="ir.ui.view" id="wh_purchase_from">
+            <field name="name">wh.purchase.form</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='partner_ref']" position="after">
+                    <field name="kaipiao"/>
+                    <field name="jh"/>
+                </xpath>
+                <xpath expr="//field[@name='company_id']" position="after">
+                    <field name="res_jh_date"/>
+                </xpath>
+                <!--                <field name="picking_type_id" attrs="{'invisible':[('version_type','!=',1)]}"/>-->
+            </field>
+        </record>
+
+
+        <record model="ir.ui.view" id="wh_user_workcenter_from">
+            <field name="name">wh.workcenter.form</field>
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="base.view_users_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='sel_groups_43_44']" position="after">
+                    <field name="workcenter_ids" widget="many2many_tags"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="res_workcenter_rule" model="ir.rule">
+            <field name="name">工单权限</field>
+            <field name="model_id" search="[('model','=','mrp.production.workcenter.line')]" model="ir.model"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">
+                ['|',('workcenter_id','=',False),('workcenter_id','in',[g.id for g in user.workcenter_ids])]
+            </field>
+        </record>
+    </data>
+</openerp>

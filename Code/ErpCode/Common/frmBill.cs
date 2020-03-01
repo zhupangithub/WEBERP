@@ -55,6 +55,8 @@ namespace Common
                 if (DataLib.SysVar.GetParmValue("F_N3") == false)
                     editControl1.Enabled = false;
             }
+            this.gvList.HorzScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
+            this.gvList.OptionsView.ColumnAutoWidth = true;
         }
 
         /// <summary>
@@ -735,10 +737,10 @@ namespace Common
             mySelItem.myBill = this;
 
             if (this.Name == "frmAskPrice" || this.Name == "frmSellPrice" || this.Name == "frmProductIn" ||
-                 this.Name == "frmProductPlan" || this.Name == "frmTask")
+                 this.Name == "frmProductPlan" || this.Name == "frmTask" || this.Name=="frmSellOrder")
                 mySelItem.intTag = 1;
 
-            if (this.Name == "frmSellBack" || this.Name == "frmSellPre" || this.Name == "frmSellOrder"
+            if (this.Name == "frmSellBack" || this.Name == "frmSellPre"
                 || this.Name == "frmSellOut" || this.Name == "frmOtherIn" || this.Name == "frmCheck" ||
                 this.Name == "frmExchange" || this.Name == "frmOutBill" || this.Name == "frmOtherOut")
                 mySelItem.intTag = 4;

@@ -1,0 +1,81 @@
+出现应用程序未处理的异常：2020/2/16 16:25:09
+操作人:超级用户
+异常类型：SEHException
+异常消息：外部组件发生异常。
+异常信息：   在 DataLib.SysVar.RMPreview(IntPtr handle, String strCon, String strType, String Parm, String ParmValue)
+   在 Common.frmBill.PrintPreview() 位置 D:\Project\Code\WEBERP\Code\ErpCode\Common\frmBill.cs:行号 200
+   在 Common.frmBill.biPreview_ItemClick(Object sender, ItemClickEventArgs e) 位置 D:\Project\Code\WEBERP\Code\ErpCode\Common\frmBill.cs:行号 1931
+   在 DevExpress.XtraBars.BarItem.OnClick(BarItemLink link)
+   在 DevExpress.XtraBars.BarBaseButtonItem.OnClick(BarItemLink link)
+   在 DevExpress.XtraBars.BarItemLink.OnLinkClick()
+   在 DevExpress.XtraBars.BarItemLink.OnLinkAction(BarLinkAction action, Object actionArgs)
+   在 DevExpress.XtraBars.BarButtonItemLink.OnLinkAction(BarLinkAction action, Object actionArgs)
+   在 DevExpress.XtraBars.BarItemLink.OnLinkActionCore(BarLinkAction action, Object actionArgs)
+   在 DevExpress.XtraBars.ViewInfo.BarSelectionInfo.ClickLink(BarItemLink link)
+   在 DevExpress.XtraBars.ViewInfo.BarSelectionInfo.UnPressLink(BarItemLink link)
+   在 DevExpress.XtraBars.Controls.CustomLinksControl.OnMouseUp(MouseEventArgs e)
+   在 System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+
+---------------------------------------------------------
+出现应用程序未处理的异常：2020/2/16 19:37:34
+操作人:超级用户
+异常类型：SEHException
+异常消息：外部组件发生异常。
+异常信息：   在 DataLib.SysVar.RMPreview(IntPtr handle, String strCon, String strType, String Parm, String ParmValue)
+   在 Common.frmBill.PrintPreview() 位置 D:\Project\Code\WEBERP\Code\ErpCode\Common\frmBill.cs:行号 200
+   在 Common.frmBill.biPreview_ItemClick(Object sender, ItemClickEventArgs e) 位置 D:\Project\Code\WEBERP\Code\ErpCode\Common\frmBill.cs:行号 1931
+   在 DevExpress.XtraBars.BarItem.OnClick(BarItemLink link)
+   在 DevExpress.XtraBars.BarBaseButtonItem.OnClick(BarItemLink link)
+   在 DevExpress.XtraBars.BarItemLink.OnLinkClick()
+   在 DevExpress.XtraBars.BarItemLink.OnLinkAction(BarLinkAction action, Object actionArgs)
+   在 DevExpress.XtraBars.BarButtonItemLink.OnLinkAction(BarLinkAction action, Object actionArgs)
+   在 DevExpress.XtraBars.BarItemLink.OnLinkActionCore(BarLinkAction action, Object actionArgs)
+   在 DevExpress.XtraBars.ViewInfo.BarSelectionInfo.ClickLink(BarItemLink link)
+   在 DevExpress.XtraBars.ViewInfo.BarSelectionInfo.UnPressLink(BarItemLink link)
+   在 DevExpress.XtraBars.Controls.CustomLinksControl.OnMouseUp(MouseEventArgs e)
+   在 System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+
+---------------------------------------------------------
+出现应用程序未处理的异常：2020/2/16 19:38:58
+操作人:超级用户
+异常类型：NullReferenceException
+异常消息：未将对象引用设置到对象的实例。
+异常信息：   在 Product.frmProductStatus.ManBtnClick(Object sender, ButtonPressedEventArgs e) 位置 D:\Project\Code\WEBERP\Code\ErpCode\Product\frmProductStatus.cs:行号 61
+   在 DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit.RaiseButtonClick(ButtonPressedEventArgs e)
+   在 DevExpress.XtraEditors.ButtonEdit.OnClickButton(EditorButtonObjectInfoArgs buttonInfo)
+   在 DevExpress.XtraEditors.ButtonEdit.OnMouseUp(MouseEventArgs e)
+   在 System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 DevExpress.Utils.Controls.ControlBase.WndProc(Message& m)
+   在 DevExpress.XtraEditors.TextEdit.WndProc(Message& msg)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+
+---------------------------------------------------------
+出现应用程序未处理的异常：2020/2/16 23:02:41
+操作人:超级用户
+异常类型：NullReferenceException
+异常消息：未将对象引用设置到对象的实例。
+异常信息：   在 Product.frmProductStatus.ManBtnClick(Object sender, ButtonPressedEventArgs e) 位置 D:\Project\Code\WEBERP\Code\ErpCode\Product\frmProductStatus.cs:行号 61
+   在 DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit.RaiseButtonClick(ButtonPressedEventArgs e)
+   在 DevExpress.XtraEditors.ButtonEdit.OnClickButton(EditorButtonObjectInfoArgs buttonInfo)
+   在 DevExpress.XtraEditors.ButtonEdit.OnMouseUp(MouseEventArgs e)
+   在 System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 DevExpress.Utils.Controls.ControlBase.WndProc(Message& m)
+   在 DevExpress.XtraEditors.BaseEdit.WndProc(Message& m)
+   在 DevExpress.XtraEditors.TextEdit.WndProc(Message& msg)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+
+---------------------------------------------------------

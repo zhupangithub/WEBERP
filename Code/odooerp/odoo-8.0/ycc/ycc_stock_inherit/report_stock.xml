@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="report_stock_document1">
+            <t t-call="report.external_layout">
+                <div class="page">
+                    <div class="oe_structure"/>
+                    <div class="row">
+                        <div class="col-xs-4 pull-center">
+                            <center>
+                                <table class="text-center" border="1" cellspacing="100" width="800">
+                                        <tr height="35">
+                                            <td class="text-center" width="800" colspan="8">
+                                                <font size="6">
+                                                    <strong>
+                                                        领料单
+                                                    </strong>
+                                                </font>
+                                            </td>
+                                        </tr>
+                                        <tr height="30">
+                                            <td class="text-center" width="200" colspan="2">
+                                                <font size="3">
+                                                    <strong>
+                                                        产品名称
+                                                    </strong>
+                                                </font>
+                                            </td>
+                                            <td class="text-center" width="200" colspan="2">
+                                                <span t-field="o.product_id"/>
+                                            </td>
+                                            <td class="text-center" width="200" colspan="2">
+                                                <font size="3">
+                                                    <strong>
+                                                        分拣类型
+                                                    </strong>
+                                                </font>
+                                            </td>
+                                            <td class="text-center" width="200" colspan="2">
+                                                <span t-field="o.picking_type_id"/>
+                                            </td>
+                                        </tr>
+
+                                        <tr height="30">
+                                            <td class="text-center" width="200" colspan="2">
+                                                <font size="3">
+                                                    <strong>
+                                                        数量
+                                                    </strong>
+                                                </font>
+                                            </td>
+                                            <td class="text-center" width="200" colspan="2">
+                                                <span t-field="o.product_uom_qty"/>
+                                            </td>
+                                            <td class="text-center" width="200" colspan="2">
+                                                <font size="3">
+                                                    <strong>
+                                                        日期
+                                                    </strong>
+                                                </font>
+                                            </td>
+                                            <td class="text-center" width="200" colspan="2">
+                                                <span t-field="o.date"/>
+                                            </td>
+                                        </tr>
+
+                                                                            <tr height="30">
+                                            <td class="text-center" width="200" colspan="2">
+                                                <font size="3">
+                                                    <strong>
+                                                        来源
+                                                    </strong>
+                                                </font>
+                                            </td>
+                                            <td class="text-center" width="200" colspan="2">
+                                                <span t-field="o.origin"/>
+                                            </td>
+                                            <td class="text-center" width="200" colspan="2">
+                                                <font size="3">
+                                                    <strong>
+                                                        优先级
+                                                    </strong>
+                                                </font>
+                                            </td>
+                                            <td class="text-center" width="200" colspan="2">
+                                                <span t-field="o.priority"/>
+                                            </td>
+                                        </tr>
+
+
+                                                                                                                <tr height="30">
+                                            <td class="text-center" width="200" colspan="2">
+                                                <font size="3">
+                                                    <strong>
+                                                        源库位
+                                                    </strong>
+                                                </font>
+                                            </td>
+                                            <td class="text-center" width="200" colspan="2">
+                                                <span t-field="o.location_id"/>
+                                            </td>
+                                            <td class="text-center" width="200" colspan="2">
+                                                <font size="3">
+                                                    <strong>
+                                                        目的库位
+                                                    </strong>
+                                                </font>
+                                            </td>
+                                            <td class="text-center" width="200" colspan="2">
+                                                <span t-field="o.location_dest_id"/>
+                                            </td>
+                                        </tr>
+
+                                        <tr height="30">
+                                            <td class="text-right" width="200" colspan="6">
+                                                <font size="3">
+                                                    <strong>
+                                                        仓库签字
+                                                    </strong>
+                                                </font>
+                                            </td>
+                                            <td class="text-center" width="200" colspan="2">
+                                            </td>
+                                        </tr>
+                                </table>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </template>
+
+        <template id="report_stock">
+            <t t-call="report.html_container">
+                <t t-foreach="doc_ids" t-as="doc_id">
+                    <t t-raw="translate_doc(doc_id, doc_model, 'partner_id.lang', 'ycc_stock_inherit.report_stock_document1')"/>
+                </t>
+            </t>
+        </template>
+    </data>
+</openerp>

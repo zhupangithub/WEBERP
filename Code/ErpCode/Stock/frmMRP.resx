@@ -2642,7 +2642,7 @@
   <assembly alias="DevExpress.Utils.v8.2" name="DevExpress.Utils.v8.2, Version=8.2.6.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1" />
   <data name="printableComponentLink1.ImageStream" type="DevExpress.Utils.ImageCollectionStreamer, DevExpress.Utils.v8.2" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAFhEZXZFeHByZXNzLlV0aWxzLnY4LjIsIFZlcnNpb249OC4yLjQu
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFhEZXZFeHByZXNzLlV0aWxzLnY4LjIsIFZlcnNpb249OC4yLjYu
         MCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj05YjE3MWM5ZmQ2NGRhMWQxBQEAAAAoRGV2
         RXhwcmVzcy5VdGlscy5JbWFnZUNvbGxlY3Rpb25TdHJlYW1lcgAAAAACAAAACw==
 </value>

@@ -34,6 +34,13 @@ namespace JXC
             this.ReportList = new DevExpress.XtraEditors.ImageListBoxControl();
             this.imageList = new System.Windows.Forms.ImageList(this.components);
             this.navBar = new DevExpress.XtraNavBar.NavBarControl();
+            this.navCY = new DevExpress.XtraNavBar.NavBarGroup();
+            this.navBarItem17 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem14 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem18 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem13 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem15 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem16 = new DevExpress.XtraNavBar.NavBarItem();
             this.navStock = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarItem1 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem2 = new DevExpress.XtraNavBar.NavBarItem();
@@ -63,13 +70,6 @@ namespace JXC
             this.navBase = new DevExpress.XtraNavBar.NavBarGroup();
             this.navSys = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarGroup2 = new DevExpress.XtraNavBar.NavBarGroup();
-            this.navCY = new DevExpress.XtraNavBar.NavBarGroup();
-            this.navBarItem17 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem14 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem18 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem13 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem15 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem16 = new DevExpress.XtraNavBar.NavBarItem();
             this.navAsset = new DevExpress.XtraNavBar.NavBarGroup();
             this.navCash = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarGroup1 = new DevExpress.XtraNavBar.NavBarGroup();
@@ -440,6 +440,57 @@ namespace JXC
             this.navBar.ActiveGroupChanged += new DevExpress.XtraNavBar.NavBarGroupEventHandler(this.navBar_ActiveGroupChanged);
             this.navBar.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBar_LinkClicked);
             // 
+            // navCY
+            // 
+            this.navCY.Caption = "财务管理";
+            this.navCY.Expanded = true;
+            this.navCY.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem17),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem14),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem18),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem13),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem15),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem16)});
+            this.navCY.LargeImage = ((System.Drawing.Image)(resources.GetObject("navCY.LargeImage")));
+            this.navCY.LargeImageIndex = 4;
+            this.navCY.Name = "navCY";
+            // 
+            // navBarItem17
+            // 
+            this.navBarItem17.Caption = "会计科目";
+            this.navBarItem17.Name = "navBarItem17";
+            this.navBarItem17.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarItem17.SmallImage")));
+            // 
+            // navBarItem14
+            // 
+            this.navBarItem14.Caption = "币别";
+            this.navBarItem14.Name = "navBarItem14";
+            this.navBarItem14.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarItem14.SmallImage")));
+            // 
+            // navBarItem18
+            // 
+            this.navBarItem18.Caption = "常用摘要";
+            this.navBarItem18.Name = "navBarItem18";
+            this.navBarItem18.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarItem18.SmallImage")));
+            // 
+            // navBarItem13
+            // 
+            this.navBarItem13.Caption = "资产类别";
+            this.navBarItem13.Name = "navBarItem13";
+            this.navBarItem13.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarItem13.SmallImage")));
+            // 
+            // navBarItem15
+            // 
+            this.navBarItem15.Caption = "增减方式";
+            this.navBarItem15.Name = "navBarItem15";
+            this.navBarItem15.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarItem15.SmallImage")));
+            // 
+            // navBarItem16
+            // 
+            this.navBarItem16.Caption = "使用情况";
+            this.navBarItem16.Name = "navBarItem16";
+            this.navBarItem16.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarItem16.SmallImage")));
+            // 
             // navStock
             // 
             this.navStock.Caption = "采购管理";
@@ -574,7 +625,6 @@ namespace JXC
             // navOutProduct
             // 
             this.navOutProduct.Caption = "委外加工";
-            this.navOutProduct.Expanded = true;
             this.navOutProduct.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem12)});
             this.navOutProduct.LargeImage = ((System.Drawing.Image)(resources.GetObject("navOutProduct.LargeImage")));
@@ -651,57 +701,6 @@ namespace JXC
             this.navBarGroup2.LargeImage = ((System.Drawing.Image)(resources.GetObject("navBarGroup2.LargeImage")));
             this.navBarGroup2.LargeImageIndex = 2;
             this.navBarGroup2.Name = "navBarGroup2";
-            // 
-            // navCY
-            // 
-            this.navCY.Caption = "财务管理";
-            this.navCY.Expanded = true;
-            this.navCY.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem17),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem14),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem18),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem13),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem15),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem16)});
-            this.navCY.LargeImage = ((System.Drawing.Image)(resources.GetObject("navCY.LargeImage")));
-            this.navCY.LargeImageIndex = 4;
-            this.navCY.Name = "navCY";
-            // 
-            // navBarItem17
-            // 
-            this.navBarItem17.Caption = "会计科目";
-            this.navBarItem17.Name = "navBarItem17";
-            this.navBarItem17.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarItem17.SmallImage")));
-            // 
-            // navBarItem14
-            // 
-            this.navBarItem14.Caption = "币别";
-            this.navBarItem14.Name = "navBarItem14";
-            this.navBarItem14.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarItem14.SmallImage")));
-            // 
-            // navBarItem18
-            // 
-            this.navBarItem18.Caption = "常用摘要";
-            this.navBarItem18.Name = "navBarItem18";
-            this.navBarItem18.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarItem18.SmallImage")));
-            // 
-            // navBarItem13
-            // 
-            this.navBarItem13.Caption = "资产类别";
-            this.navBarItem13.Name = "navBarItem13";
-            this.navBarItem13.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarItem13.SmallImage")));
-            // 
-            // navBarItem15
-            // 
-            this.navBarItem15.Caption = "增减方式";
-            this.navBarItem15.Name = "navBarItem15";
-            this.navBarItem15.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarItem15.SmallImage")));
-            // 
-            // navBarItem16
-            // 
-            this.navBarItem16.Caption = "使用情况";
-            this.navBarItem16.Name = "navBarItem16";
-            this.navBarItem16.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarItem16.SmallImage")));
             // 
             // navAsset
             // 

@@ -142,7 +142,8 @@ class mrp_routing_workcenter(osv.osv):
     _order = 'sequence'
     _columns = {
         'workcenter_id': fields.many2one('mrp.workcenter', 'Work Center', required=True),
-        'name': fields.char('Name', required=True),
+        # 'name': fields.char('Name', required=True),
+        'name': fields.many2one("wh.process", u'生产工序',required=True),
         'sequence': fields.integer('Sequence', help="Gives the sequence order when displaying a list of routing Work Centers."),
         'cycle_nbr': fields.float('Number of Cycles', required=True,
             help="Number of iterations this work center has to do in the specified operation of the routing."),

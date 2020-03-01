@@ -103,15 +103,17 @@ namespace Common
             this.panelControl1.Controls.Add(this.editControl1);
             this.panelControl1.Controls.Add(this.lbTitle);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(0, 26);
+            this.panelControl1.Location = new System.Drawing.Point(0, 30);
+            this.panelControl1.Margin = new System.Windows.Forms.Padding(4);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(823, 111);
+            this.panelControl1.Size = new System.Drawing.Size(1097, 139);
             this.panelControl1.TabIndex = 0;
             // 
             // picInvalid
             // 
             this.picInvalid.Image = ((System.Drawing.Image)(resources.GetObject("picInvalid.Image")));
-            this.picInvalid.Location = new System.Drawing.Point(366, 8);
+            this.picInvalid.Location = new System.Drawing.Point(488, 10);
+            this.picInvalid.Margin = new System.Windows.Forms.Padding(4);
             this.picInvalid.Name = "picInvalid";
             this.picInvalid.Size = new System.Drawing.Size(71, 28);
             this.picInvalid.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -122,7 +124,8 @@ namespace Common
             // picFinish
             // 
             this.picFinish.Image = ((System.Drawing.Image)(resources.GetObject("picFinish.Image")));
-            this.picFinish.Location = new System.Drawing.Point(289, 8);
+            this.picFinish.Location = new System.Drawing.Point(385, 10);
+            this.picFinish.Margin = new System.Windows.Forms.Padding(4);
             this.picFinish.Name = "picFinish";
             this.picFinish.Size = new System.Drawing.Size(71, 28);
             this.picFinish.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -133,7 +136,8 @@ namespace Common
             // picCutOff
             // 
             this.picCutOff.Image = ((System.Drawing.Image)(resources.GetObject("picCutOff.Image")));
-            this.picCutOff.Location = new System.Drawing.Point(204, 8);
+            this.picCutOff.Location = new System.Drawing.Point(272, 10);
+            this.picCutOff.Margin = new System.Windows.Forms.Padding(4);
             this.picCutOff.Name = "picCutOff";
             this.picCutOff.Size = new System.Drawing.Size(71, 28);
             this.picCutOff.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -144,7 +148,8 @@ namespace Common
             // picCheck
             // 
             this.picCheck.Image = ((System.Drawing.Image)(resources.GetObject("picCheck.Image")));
-            this.picCheck.Location = new System.Drawing.Point(120, 8);
+            this.picCheck.Location = new System.Drawing.Point(160, 10);
+            this.picCheck.Margin = new System.Windows.Forms.Padding(4);
             this.picCheck.Name = "picCheck";
             this.picCheck.Size = new System.Drawing.Size(71, 28);
             this.picCheck.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -161,10 +166,11 @@ namespace Common
             this.dateControl1.DisplayFormat = "d";
             this.dateControl1.EditLabel = "日期:";
             this.dateControl1.EditMask = "d";
-            this.dateControl1.Location = new System.Drawing.Point(639, 35);
+            this.dateControl1.Location = new System.Drawing.Point(852, 44);
+            this.dateControl1.Margin = new System.Windows.Forms.Padding(5);
             this.dateControl1.Name = "dateControl1";
             this.dateControl1.Request = true;
-            this.dateControl1.Size = new System.Drawing.Size(177, 21);
+            this.dateControl1.Size = new System.Drawing.Size(236, 26);
             this.dateControl1.TabIndex = 2;
             // 
             // editControl1
@@ -174,10 +180,11 @@ namespace Common
             this.editControl1.DataField = "F_BillID";
             this.editControl1.DataSource = null;
             this.editControl1.EditLabel = "单号:";
-            this.editControl1.Location = new System.Drawing.Point(641, 6);
+            this.editControl1.Location = new System.Drawing.Point(855, 8);
+            this.editControl1.Margin = new System.Windows.Forms.Padding(5);
             this.editControl1.Name = "editControl1";
             this.editControl1.Request = true;
-            this.editControl1.Size = new System.Drawing.Size(175, 23);
+            this.editControl1.Size = new System.Drawing.Size(233, 29);
             this.editControl1.TabIndex = 1;
             // 
             // lbTitle
@@ -185,9 +192,10 @@ namespace Common
             this.lbTitle.AutoSize = true;
             this.lbTitle.BackColor = System.Drawing.Color.Transparent;
             this.lbTitle.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbTitle.Location = new System.Drawing.Point(7, 8);
+            this.lbTitle.Location = new System.Drawing.Point(9, 10);
+            this.lbTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Size = new System.Drawing.Size(82, 21);
+            this.lbTitle.Size = new System.Drawing.Size(102, 27);
             this.lbTitle.TabIndex = 0;
             this.lbTitle.Text = "label1";
             // 
@@ -200,13 +208,14 @@ namespace Common
             // 
             this.gcBill.DataSource = this.binSlaver;
             this.gcBill.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcBill.EmbeddedNavigator.Name = "";
-            this.gcBill.Location = new System.Drawing.Point(0, 137);
+            this.gcBill.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
+            this.gcBill.Location = new System.Drawing.Point(0, 169);
             this.gcBill.MainView = this.gvList;
+            this.gcBill.Margin = new System.Windows.Forms.Padding(4);
             this.gcBill.Name = "gcBill";
             this.gcBill.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemButtonEdit1});
-            this.gcBill.Size = new System.Drawing.Size(823, 350);
+            this.gcBill.Size = new System.Drawing.Size(1097, 438);
             this.gcBill.TabIndex = 1;
             this.gcBill.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvList});
@@ -289,11 +298,11 @@ namespace Common
             new DevExpress.XtraBars.LinkPersistInfo(this.btnSave),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnCopy),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnAddRow, true),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnUnCutOff),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnDelRow),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnCheck, true),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnUnCheck),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnCutOff, true),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnUnCutOff),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnOther),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnPrint, true),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnLoadBill, true),
@@ -506,15 +515,32 @@ namespace Common
             this.barMemo.Name = "barMemo";
             this.barMemo.TextAlignment = System.Drawing.StringAlignment.Near;
             // 
+            // barDockControlTop
+            // 
+            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(4);
+            // 
+            // barDockControlBottom
+            // 
+            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(4);
+            // 
+            // barDockControlLeft
+            // 
+            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(4);
+            // 
+            // barDockControlRight
+            // 
+            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(4);
+            // 
             // panelControl2
             // 
             this.panelControl2.Controls.Add(this.editControl4);
             this.panelControl2.Controls.Add(this.editControl3);
             this.panelControl2.Controls.Add(this.editControl2);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl2.Location = new System.Drawing.Point(0, 487);
+            this.panelControl2.Location = new System.Drawing.Point(0, 607);
+            this.panelControl2.Margin = new System.Windows.Forms.Padding(4);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(823, 34);
+            this.panelControl2.Size = new System.Drawing.Size(1097, 42);
             this.panelControl2.TabIndex = 6;
             // 
             // editControl4
@@ -525,10 +551,11 @@ namespace Common
             this.editControl4.DataSource = null;
             this.editControl4.EditLabel = "审核日期:";
             this.editControl4.Enabled = false;
-            this.editControl4.Location = new System.Drawing.Point(641, 6);
+            this.editControl4.Location = new System.Drawing.Point(855, 8);
+            this.editControl4.Margin = new System.Windows.Forms.Padding(5);
             this.editControl4.Name = "editControl4";
             this.editControl4.Request = false;
-            this.editControl4.Size = new System.Drawing.Size(175, 21);
+            this.editControl4.Size = new System.Drawing.Size(233, 26);
             this.editControl4.TabIndex = 2;
             // 
             // editControl3
@@ -539,10 +566,11 @@ namespace Common
             this.editControl3.DataSource = null;
             this.editControl3.EditLabel = "审核人:";
             this.editControl3.Enabled = false;
-            this.editControl3.Location = new System.Drawing.Point(292, 6);
+            this.editControl3.Location = new System.Drawing.Point(389, 8);
+            this.editControl3.Margin = new System.Windows.Forms.Padding(5);
             this.editControl3.Name = "editControl3";
             this.editControl3.Request = false;
-            this.editControl3.Size = new System.Drawing.Size(175, 21);
+            this.editControl3.Size = new System.Drawing.Size(233, 26);
             this.editControl3.TabIndex = 1;
             // 
             // editControl2
@@ -552,16 +580,17 @@ namespace Common
             this.editControl2.DataSource = null;
             this.editControl2.EditLabel = "开单人:";
             this.editControl2.Enabled = false;
-            this.editControl2.Location = new System.Drawing.Point(0, 6);
+            this.editControl2.Location = new System.Drawing.Point(0, 8);
+            this.editControl2.Margin = new System.Windows.Forms.Padding(5);
             this.editControl2.Name = "editControl2";
             this.editControl2.Request = false;
-            this.editControl2.Size = new System.Drawing.Size(175, 21);
+            this.editControl2.Size = new System.Drawing.Size(233, 26);
             this.editControl2.TabIndex = 0;
             // 
             // frmBill
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
-            this.ClientSize = new System.Drawing.Size(823, 543);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.ClientSize = new System.Drawing.Size(1097, 679);
             this.Controls.Add(this.gcBill);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.panelControl2);
@@ -569,6 +598,7 @@ namespace Common
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "frmBill";
             this.Load += new System.EventHandler(this.frmBill_Load);
             this.Shown += new System.EventHandler(this.frmBill_Shown);

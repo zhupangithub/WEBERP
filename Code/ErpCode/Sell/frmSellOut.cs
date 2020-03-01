@@ -27,16 +27,23 @@ namespace Sell
 
         protected override void LoadBill()
         {
-            if (DataLib.SysVar.GetParmValue("F_N44"))
+            //if (DataLib.SysVar.GetParmValue("F_N44"))
+            //{
+            //    if (lupControl1.GetValue() == DBNull.Value)
+            //    {
+            //        MessageBox.Show("请选择客户!!", "提示");
+            //        lupControl1.Focus();
+            //        return;
+            //    }
+            //    this.strValue = lupControl1.GetValue().ToString();
+            //}
+            if (lupControl1.GetValue() == DBNull.Value)
             {
-                if (lupControl1.GetValue() == DBNull.Value)
-                {
-                    MessageBox.Show("请选择客户!!", "提示");
-                    lupControl1.Focus();
-                    return;
-                }
-                this.strValue = lupControl1.GetValue().ToString();
+                MessageBox.Show("请选择客户!!", "提示");
+                lupControl1.Focus();
+                return;
             }
+            this.strValue = lupControl1.GetValue().ToString();
             base.LoadBill();
         }
 

@@ -130,12 +130,12 @@ namespace Stock
             this.gridColumn48 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn46 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn49 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn50 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.sbPre = new DevExpress.XtraEditors.SimpleButton();
             this.sbNext = new DevExpress.XtraEditors.SimpleButton();
             this.sbClose = new DevExpress.XtraEditors.SimpleButton();
             this.printingSystem = new DevExpress.XtraPrinting.PrintingSystem(this.components);
             this.printableComponentLink1 = new DevExpress.XtraPrinting.PrintableComponentLink(this.components);
-            this.gridColumn50 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.TabControl)).BeginInit();
             this.TabControl.SuspendLayout();
             this.PageWelcom.SuspendLayout();
@@ -171,11 +171,12 @@ namespace Stock
             // 
             // TabControl
             // 
-            this.TabControl.Location = new System.Drawing.Point(13, 12);
+            this.TabControl.Location = new System.Drawing.Point(17, 15);
+            this.TabControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TabControl.Name = "TabControl";
             this.TabControl.SelectedTabPage = this.PageWelcom;
             this.TabControl.ShowTabHeader = DevExpress.Utils.DefaultBoolean.False;
-            this.TabControl.Size = new System.Drawing.Size(728, 453);
+            this.TabControl.Size = new System.Drawing.Size(971, 566);
             this.TabControl.TabIndex = 0;
             this.TabControl.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.PageWelcom,
@@ -190,22 +191,25 @@ namespace Stock
             // 
             this.PageWelcom.Controls.Add(this.label1);
             this.PageWelcom.Controls.Add(this.pcFlag);
+            this.PageWelcom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.PageWelcom.Name = "PageWelcom";
-            this.PageWelcom.Size = new System.Drawing.Size(719, 444);
+            this.PageWelcom.Size = new System.Drawing.Size(962, 557);
             this.PageWelcom.Text = "欢迎";
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(209, 84);
+            this.label1.Location = new System.Drawing.Point(279, 105);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(405, 30);
+            this.label1.Size = new System.Drawing.Size(540, 38);
             this.label1.TabIndex = 0;
             this.label1.Text = "欢迎使用物料MRP运算向导，它将帮助你以向导方式完成物料MRP物料需求运算,单击下一步开始MRP运算向导设置。";
             // 
             // pcFlag
             // 
             this.pcFlag.Image = ((System.Drawing.Image)(resources.GetObject("pcFlag.Image")));
-            this.pcFlag.Location = new System.Drawing.Point(32, 71);
+            this.pcFlag.Location = new System.Drawing.Point(43, 89);
+            this.pcFlag.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pcFlag.Name = "pcFlag";
             this.pcFlag.Size = new System.Drawing.Size(119, 209);
             this.pcFlag.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -216,14 +220,16 @@ namespace Stock
             // 
             this.PageSelect.Controls.Add(this.pictureBox1);
             this.PageSelect.Controls.Add(this.groupBox1);
+            this.PageSelect.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.PageSelect.Name = "PageSelect";
-            this.PageSelect.Size = new System.Drawing.Size(719, 444);
+            this.PageSelect.Size = new System.Drawing.Size(962, 557);
             this.PageSelect.Text = "方式选择";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(32, 71);
+            this.pictureBox1.Location = new System.Drawing.Point(43, 89);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(119, 209);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -235,9 +241,11 @@ namespace Stock
             this.groupBox1.Controls.Add(this.rbNeed);
             this.groupBox1.Controls.Add(this.rbTask);
             this.groupBox1.Controls.Add(this.rbSellOrder);
-            this.groupBox1.Location = new System.Drawing.Point(223, 104);
+            this.groupBox1.Location = new System.Drawing.Point(297, 130);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(344, 120);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(459, 150);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "物料需求远算选项";
@@ -245,9 +253,10 @@ namespace Stock
             // rbNeed
             // 
             this.rbNeed.AutoSize = true;
-            this.rbNeed.Location = new System.Drawing.Point(34, 87);
+            this.rbNeed.Location = new System.Drawing.Point(45, 109);
+            this.rbNeed.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rbNeed.Name = "rbNeed";
-            this.rbNeed.Size = new System.Drawing.Size(95, 16);
+            this.rbNeed.Size = new System.Drawing.Size(118, 19);
             this.rbNeed.TabIndex = 2;
             this.rbNeed.Text = "依据物料需求";
             this.rbNeed.UseVisualStyleBackColor = true;
@@ -255,9 +264,10 @@ namespace Stock
             // rbTask
             // 
             this.rbTask.AutoSize = true;
-            this.rbTask.Location = new System.Drawing.Point(34, 53);
+            this.rbTask.Location = new System.Drawing.Point(45, 66);
+            this.rbTask.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rbTask.Name = "rbTask";
-            this.rbTask.Size = new System.Drawing.Size(107, 16);
+            this.rbTask.Size = new System.Drawing.Size(133, 19);
             this.rbTask.TabIndex = 1;
             this.rbTask.Text = "依据生产任务单";
             this.rbTask.UseVisualStyleBackColor = true;
@@ -266,9 +276,10 @@ namespace Stock
             // 
             this.rbSellOrder.AutoSize = true;
             this.rbSellOrder.Checked = true;
-            this.rbSellOrder.Location = new System.Drawing.Point(34, 21);
+            this.rbSellOrder.Location = new System.Drawing.Point(45, 26);
+            this.rbSellOrder.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rbSellOrder.Name = "rbSellOrder";
-            this.rbSellOrder.Size = new System.Drawing.Size(95, 16);
+            this.rbSellOrder.Size = new System.Drawing.Size(118, 19);
             this.rbSellOrder.TabIndex = 0;
             this.rbSellOrder.TabStop = true;
             this.rbSellOrder.Text = "依据客户订单";
@@ -286,16 +297,18 @@ namespace Stock
             this.PageSellOrder.Controls.Add(this.gcTmp);
             this.PageSellOrder.Controls.Add(this.panelControl1);
             this.PageSellOrder.Controls.Add(this.gcSellOrderMain);
+            this.PageSellOrder.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.PageSellOrder.Name = "PageSellOrder";
-            this.PageSellOrder.Size = new System.Drawing.Size(719, 444);
+            this.PageSellOrder.Size = new System.Drawing.Size(962, 557);
             this.PageSellOrder.Text = "按订单";
             // 
             // cbSelAll2
             // 
             this.cbSelAll2.AutoSize = true;
-            this.cbSelAll2.Location = new System.Drawing.Point(3, 428);
+            this.cbSelAll2.Location = new System.Drawing.Point(4, 535);
+            this.cbSelAll2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbSelAll2.Name = "cbSelAll2";
-            this.cbSelAll2.Size = new System.Drawing.Size(48, 16);
+            this.cbSelAll2.Size = new System.Drawing.Size(59, 19);
             this.cbSelAll2.TabIndex = 9;
             this.cbSelAll2.Text = "全选";
             this.cbSelAll2.UseVisualStyleBackColor = true;
@@ -304,9 +317,10 @@ namespace Stock
             // cbSelAll1
             // 
             this.cbSelAll1.AutoSize = true;
-            this.cbSelAll1.Location = new System.Drawing.Point(7, 200);
+            this.cbSelAll1.Location = new System.Drawing.Point(9, 250);
+            this.cbSelAll1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbSelAll1.Name = "cbSelAll1";
-            this.cbSelAll1.Size = new System.Drawing.Size(48, 16);
+            this.cbSelAll1.Size = new System.Drawing.Size(59, 19);
             this.cbSelAll1.TabIndex = 8;
             this.cbSelAll1.Text = "全选";
             this.cbSelAll1.UseVisualStyleBackColor = true;
@@ -315,9 +329,10 @@ namespace Stock
             // ckNewZero
             // 
             this.ckNewZero.AutoSize = true;
-            this.ckNewZero.Location = new System.Drawing.Point(292, 200);
+            this.ckNewZero.Location = new System.Drawing.Point(389, 250);
+            this.ckNewZero.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ckNewZero.Name = "ckNewZero";
-            this.ckNewZero.Size = new System.Drawing.Size(102, 16);
+            this.ckNewZero.Size = new System.Drawing.Size(127, 19);
             this.ckNewZero.TabIndex = 7;
             this.ckNewZero.Text = "需求量不等于0";
             this.ckNewZero.UseVisualStyleBackColor = true;
@@ -326,9 +341,10 @@ namespace Stock
             // ckSellNoOut
             // 
             this.ckSellNoOut.AutoSize = true;
-            this.ckSellNoOut.Location = new System.Drawing.Point(202, 200);
+            this.ckSellNoOut.Location = new System.Drawing.Point(269, 250);
+            this.ckSellNoOut.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ckSellNoOut.Name = "ckSellNoOut";
-            this.ckSellNoOut.Size = new System.Drawing.Size(84, 16);
+            this.ckSellNoOut.Size = new System.Drawing.Size(104, 19);
             this.ckSellNoOut.TabIndex = 6;
             this.ckSellNoOut.Text = "受订未发量";
             this.ckSellNoOut.UseVisualStyleBackColor = true;
@@ -337,9 +353,10 @@ namespace Stock
             // ckStore
             // 
             this.ckStore.AutoSize = true;
-            this.ckStore.Location = new System.Drawing.Point(136, 200);
+            this.ckStore.Location = new System.Drawing.Point(181, 250);
+            this.ckStore.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ckStore.Name = "ckStore";
-            this.ckStore.Size = new System.Drawing.Size(60, 16);
+            this.ckStore.Size = new System.Drawing.Size(74, 19);
             this.ckStore.TabIndex = 5;
             this.ckStore.Text = "库存量";
             this.ckStore.UseVisualStyleBackColor = true;
@@ -349,9 +366,10 @@ namespace Stock
             // 
             this.sbRemove.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sbRemove.Appearance.Options.UseFont = true;
-            this.sbRemove.Location = new System.Drawing.Point(651, 198);
+            this.sbRemove.Location = new System.Drawing.Point(868, 248);
+            this.sbRemove.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.sbRemove.Name = "sbRemove";
-            this.sbRemove.Size = new System.Drawing.Size(60, 23);
+            this.sbRemove.Size = new System.Drawing.Size(80, 29);
             this.sbRemove.TabIndex = 4;
             this.sbRemove.Text = "移除(&D)";
             this.sbRemove.Click += new System.EventHandler(this.sbRemove_Click);
@@ -360,20 +378,22 @@ namespace Stock
             // 
             this.sbAdd.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sbAdd.Appearance.Options.UseFont = true;
-            this.sbAdd.Location = new System.Drawing.Point(585, 198);
+            this.sbAdd.Location = new System.Drawing.Point(780, 248);
+            this.sbAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.sbAdd.Name = "sbAdd";
-            this.sbAdd.Size = new System.Drawing.Size(60, 23);
+            this.sbAdd.Size = new System.Drawing.Size(80, 29);
             this.sbAdd.TabIndex = 3;
             this.sbAdd.Text = "加入(&A)";
             this.sbAdd.Click += new System.EventHandler(this.sbAdd_Click);
             // 
             // gcTmp
             // 
-            this.gcTmp.EmbeddedNavigator.Name = "";
-            this.gcTmp.Location = new System.Drawing.Point(3, 222);
+            this.gcTmp.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gcTmp.Location = new System.Drawing.Point(4, 278);
             this.gcTmp.MainView = this.gvTmp;
+            this.gcTmp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gcTmp.Name = "gcTmp";
-            this.gcTmp.Size = new System.Drawing.Size(716, 200);
+            this.gcTmp.Size = new System.Drawing.Size(955, 250);
             this.gcTmp.TabIndex = 2;
             this.gcTmp.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvTmp});
@@ -395,7 +415,6 @@ namespace Stock
             this.gvTmp.Name = "gvTmp";
             this.gvTmp.OptionsCustomization.AllowFilter = false;
             this.gvTmp.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gvTmp.OptionsView.ColumnAutoWidth = false;
             this.gvTmp.OptionsView.ShowGroupPanel = false;
             this.gvTmp.OptionsView.ShowIndicator = false;
             // 
@@ -531,26 +550,29 @@ namespace Stock
             this.panelControl1.Controls.Add(this.ucDate);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
+            this.panelControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(719, 29);
+            this.panelControl1.Size = new System.Drawing.Size(962, 36);
             this.panelControl1.TabIndex = 1;
             // 
             // ucDate
             // 
             this.ucDate.DateTag = myControl.DateFlag.当天;
-            this.ucDate.Location = new System.Drawing.Point(7, 0);
+            this.ucDate.Location = new System.Drawing.Point(9, 0);
+            this.ucDate.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.ucDate.Name = "ucDate";
-            this.ucDate.Size = new System.Drawing.Size(397, 26);
+            this.ucDate.Size = new System.Drawing.Size(529, 32);
             this.ucDate.TabIndex = 0;
             this.ucDate.RefreshDateChanged += new myControl.RefreshDateEventHandler(this.ucDate_RefreshDateChanged);
             // 
             // gcSellOrderMain
             // 
-            this.gcSellOrderMain.EmbeddedNavigator.Name = "";
-            this.gcSellOrderMain.Location = new System.Drawing.Point(3, 32);
+            this.gcSellOrderMain.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gcSellOrderMain.Location = new System.Drawing.Point(4, 40);
             this.gcSellOrderMain.MainView = this.gvSellOrderMain;
+            this.gcSellOrderMain.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gcSellOrderMain.Name = "gcSellOrderMain";
-            this.gcSellOrderMain.Size = new System.Drawing.Size(716, 162);
+            this.gcSellOrderMain.Size = new System.Drawing.Size(955, 202);
             this.gcSellOrderMain.TabIndex = 0;
             this.gcSellOrderMain.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvSellOrderMain});
@@ -572,7 +594,6 @@ namespace Stock
             this.gvSellOrderMain.Name = "gvSellOrderMain";
             this.gvSellOrderMain.OptionsCustomization.AllowFilter = false;
             this.gvSellOrderMain.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gvSellOrderMain.OptionsView.ColumnAutoWidth = false;
             this.gvSellOrderMain.OptionsView.ShowGroupPanel = false;
             this.gvSellOrderMain.OptionsView.ShowIndicator = false;
             // 
@@ -706,17 +727,19 @@ namespace Stock
             this.PageTask.Controls.Add(this.gcTaskTmp);
             this.PageTask.Controls.Add(this.gcTaskMain);
             this.PageTask.Controls.Add(this.panelControl2);
+            this.PageTask.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.PageTask.Name = "PageTask";
-            this.PageTask.Size = new System.Drawing.Size(719, 444);
+            this.PageTask.Size = new System.Drawing.Size(962, 557);
             this.PageTask.Text = "按任务单";
             // 
             // sbRemoveTask
             // 
             this.sbRemoveTask.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sbRemoveTask.Appearance.Options.UseFont = true;
-            this.sbRemoveTask.Location = new System.Drawing.Point(659, 185);
+            this.sbRemoveTask.Location = new System.Drawing.Point(879, 231);
+            this.sbRemoveTask.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.sbRemoveTask.Name = "sbRemoveTask";
-            this.sbRemoveTask.Size = new System.Drawing.Size(60, 23);
+            this.sbRemoveTask.Size = new System.Drawing.Size(80, 29);
             this.sbRemoveTask.TabIndex = 12;
             this.sbRemoveTask.Text = "移除(&D)";
             // 
@@ -724,9 +747,10 @@ namespace Stock
             // 
             this.sbAddTask.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sbAddTask.Appearance.Options.UseFont = true;
-            this.sbAddTask.Location = new System.Drawing.Point(593, 185);
+            this.sbAddTask.Location = new System.Drawing.Point(791, 231);
+            this.sbAddTask.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.sbAddTask.Name = "sbAddTask";
-            this.sbAddTask.Size = new System.Drawing.Size(60, 23);
+            this.sbAddTask.Size = new System.Drawing.Size(80, 29);
             this.sbAddTask.TabIndex = 11;
             this.sbAddTask.Text = "加入(&A)";
             this.sbAddTask.Click += new System.EventHandler(this.sbAddTask_Click);
@@ -734,9 +758,10 @@ namespace Stock
             // checkBox5
             // 
             this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(3, 428);
+            this.checkBox5.Location = new System.Drawing.Point(4, 535);
+            this.checkBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(48, 16);
+            this.checkBox5.Size = new System.Drawing.Size(59, 19);
             this.checkBox5.TabIndex = 10;
             this.checkBox5.Text = "全选";
             this.checkBox5.UseVisualStyleBackColor = true;
@@ -744,20 +769,22 @@ namespace Stock
             // checkBox4
             // 
             this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(7, 189);
+            this.checkBox4.Location = new System.Drawing.Point(9, 236);
+            this.checkBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(48, 16);
+            this.checkBox4.Size = new System.Drawing.Size(59, 19);
             this.checkBox4.TabIndex = 9;
             this.checkBox4.Text = "全选";
             this.checkBox4.UseVisualStyleBackColor = true;
             // 
             // gcTaskTmp
             // 
-            this.gcTaskTmp.EmbeddedNavigator.Name = "";
-            this.gcTaskTmp.Location = new System.Drawing.Point(3, 211);
+            this.gcTaskTmp.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gcTaskTmp.Location = new System.Drawing.Point(4, 264);
             this.gcTaskTmp.MainView = this.gvTaskTmp;
+            this.gcTaskTmp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gcTaskTmp.Name = "gcTaskTmp";
-            this.gcTaskTmp.Size = new System.Drawing.Size(716, 211);
+            this.gcTaskTmp.Size = new System.Drawing.Size(955, 264);
             this.gcTaskTmp.TabIndex = 4;
             this.gcTaskTmp.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvTaskTmp});
@@ -885,11 +912,12 @@ namespace Stock
             // 
             // gcTaskMain
             // 
-            this.gcTaskMain.EmbeddedNavigator.Name = "";
-            this.gcTaskMain.Location = new System.Drawing.Point(3, 32);
+            this.gcTaskMain.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gcTaskMain.Location = new System.Drawing.Point(4, 40);
             this.gcTaskMain.MainView = this.gvTaskMain;
+            this.gcTaskMain.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gcTaskMain.Name = "gcTaskMain";
-            this.gcTaskMain.Size = new System.Drawing.Size(716, 151);
+            this.gcTaskMain.Size = new System.Drawing.Size(955, 189);
             this.gcTaskMain.TabIndex = 3;
             this.gcTaskMain.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvTaskMain});
@@ -1004,16 +1032,18 @@ namespace Stock
             this.panelControl2.Controls.Add(this.ucTask);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl2.Location = new System.Drawing.Point(0, 0);
+            this.panelControl2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(719, 29);
+            this.panelControl2.Size = new System.Drawing.Size(962, 36);
             this.panelControl2.TabIndex = 2;
             // 
             // ucTask
             // 
             this.ucTask.DateTag = myControl.DateFlag.当天;
-            this.ucTask.Location = new System.Drawing.Point(7, 0);
+            this.ucTask.Location = new System.Drawing.Point(9, 0);
+            this.ucTask.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.ucTask.Name = "ucTask";
-            this.ucTask.Size = new System.Drawing.Size(397, 26);
+            this.ucTask.Size = new System.Drawing.Size(529, 32);
             this.ucTask.TabIndex = 0;
             this.ucTask.RefreshDateChanged += new myControl.RefreshDateEventHandler(this.ucTask_RefreshDateChanged);
             // 
@@ -1023,19 +1053,21 @@ namespace Stock
             this.PageNeed.Controls.Add(this.simpleButton7);
             this.PageNeed.Controls.Add(this.simpleButton6);
             this.PageNeed.Controls.Add(this.sbAddRow);
+            this.PageNeed.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.PageNeed.Name = "PageNeed";
-            this.PageNeed.Size = new System.Drawing.Size(719, 444);
+            this.PageNeed.Size = new System.Drawing.Size(962, 557);
             this.PageNeed.Text = "按需求";
             // 
             // gcItem
             // 
-            this.gcItem.EmbeddedNavigator.Name = "";
-            this.gcItem.Location = new System.Drawing.Point(3, 3);
+            this.gcItem.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gcItem.Location = new System.Drawing.Point(4, 4);
             this.gcItem.MainView = this.gvItem;
+            this.gcItem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gcItem.Name = "gcItem";
             this.gcItem.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.ItemButtonEdit});
-            this.gcItem.Size = new System.Drawing.Size(716, 412);
+            this.gcItem.Size = new System.Drawing.Size(955, 515);
             this.gcItem.TabIndex = 0;
             this.gcItem.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvItem});
@@ -1158,9 +1190,10 @@ namespace Stock
             // 
             this.simpleButton7.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton7.Appearance.Options.UseFont = true;
-            this.simpleButton7.Location = new System.Drawing.Point(644, 421);
+            this.simpleButton7.Location = new System.Drawing.Point(859, 526);
+            this.simpleButton7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.simpleButton7.Name = "simpleButton7";
-            this.simpleButton7.Size = new System.Drawing.Size(75, 23);
+            this.simpleButton7.Size = new System.Drawing.Size(100, 29);
             this.simpleButton7.TabIndex = 3;
             this.simpleButton7.Text = "全部删除";
             this.simpleButton7.Click += new System.EventHandler(this.simpleButton7_Click);
@@ -1169,9 +1202,10 @@ namespace Stock
             // 
             this.simpleButton6.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton6.Appearance.Options.UseFont = true;
-            this.simpleButton6.Location = new System.Drawing.Point(563, 421);
+            this.simpleButton6.Location = new System.Drawing.Point(751, 526);
+            this.simpleButton6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.simpleButton6.Name = "simpleButton6";
-            this.simpleButton6.Size = new System.Drawing.Size(75, 23);
+            this.simpleButton6.Size = new System.Drawing.Size(100, 29);
             this.simpleButton6.TabIndex = 2;
             this.simpleButton6.Text = "删行(&D)";
             this.simpleButton6.Click += new System.EventHandler(this.simpleButton6_Click);
@@ -1180,9 +1214,10 @@ namespace Stock
             // 
             this.sbAddRow.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sbAddRow.Appearance.Options.UseFont = true;
-            this.sbAddRow.Location = new System.Drawing.Point(482, 421);
+            this.sbAddRow.Location = new System.Drawing.Point(643, 526);
+            this.sbAddRow.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.sbAddRow.Name = "sbAddRow";
-            this.sbAddRow.Size = new System.Drawing.Size(75, 23);
+            this.sbAddRow.Size = new System.Drawing.Size(100, 29);
             this.sbAddRow.TabIndex = 1;
             this.sbAddRow.Text = "增行(&A)";
             this.sbAddRow.Click += new System.EventHandler(this.sbAddRow_Click);
@@ -1196,36 +1231,40 @@ namespace Stock
             this.PageResult.Controls.Add(this.sbPrint);
             this.PageResult.Controls.Add(this.sbGen);
             this.PageResult.Controls.Add(this.gcResult);
+            this.PageResult.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.PageResult.Name = "PageResult";
-            this.PageResult.Size = new System.Drawing.Size(719, 444);
+            this.PageResult.Size = new System.Drawing.Size(962, 557);
             this.PageResult.Text = "运算结果";
             // 
             // sbExport
             // 
             this.sbExport.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sbExport.Appearance.Options.UseFont = true;
-            this.sbExport.Location = new System.Drawing.Point(651, 3);
+            this.sbExport.Location = new System.Drawing.Point(868, 4);
+            this.sbExport.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.sbExport.Name = "sbExport";
-            this.sbExport.Size = new System.Drawing.Size(60, 23);
+            this.sbExport.Size = new System.Drawing.Size(80, 29);
             this.sbExport.TabIndex = 6;
             this.sbExport.Text = "引出(&E)";
             this.sbExport.Click += new System.EventHandler(this.sbExport_Click);
             // 
             // ckTask
             // 
-            this.ckTask.Location = new System.Drawing.Point(168, 7);
+            this.ckTask.Location = new System.Drawing.Point(224, 9);
+            this.ckTask.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ckTask.Name = "ckTask";
             this.ckTask.Properties.Caption = "可安排量";
-            this.ckTask.Size = new System.Drawing.Size(85, 19);
+            this.ckTask.Size = new System.Drawing.Size(113, 23);
             this.ckTask.TabIndex = 5;
             this.ckTask.CheckedChanged += new System.EventHandler(this.ckTask_CheckedChanged);
             // 
             // ckStock
             // 
-            this.ckStock.Location = new System.Drawing.Point(23, 7);
+            this.ckStock.Location = new System.Drawing.Point(31, 9);
+            this.ckStock.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ckStock.Name = "ckStock";
             this.ckStock.Properties.Caption = "采购未入量(在途数)";
-            this.ckStock.Size = new System.Drawing.Size(127, 19);
+            this.ckStock.Size = new System.Drawing.Size(169, 23);
             this.ckStock.TabIndex = 4;
             this.ckStock.CheckedChanged += new System.EventHandler(this.ckStock_CheckedChanged);
             // 
@@ -1233,9 +1272,10 @@ namespace Stock
             // 
             this.sbPreview.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sbPreview.Appearance.Options.UseFont = true;
-            this.sbPreview.Location = new System.Drawing.Point(585, 3);
+            this.sbPreview.Location = new System.Drawing.Point(780, 4);
+            this.sbPreview.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.sbPreview.Name = "sbPreview";
-            this.sbPreview.Size = new System.Drawing.Size(60, 23);
+            this.sbPreview.Size = new System.Drawing.Size(80, 29);
             this.sbPreview.TabIndex = 3;
             this.sbPreview.Text = "预览(&V)";
             this.sbPreview.Click += new System.EventHandler(this.sbPreview_Click);
@@ -1244,9 +1284,10 @@ namespace Stock
             // 
             this.sbPrint.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sbPrint.Appearance.Options.UseFont = true;
-            this.sbPrint.Location = new System.Drawing.Point(519, 3);
+            this.sbPrint.Location = new System.Drawing.Point(692, 4);
+            this.sbPrint.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.sbPrint.Name = "sbPrint";
-            this.sbPrint.Size = new System.Drawing.Size(60, 23);
+            this.sbPrint.Size = new System.Drawing.Size(80, 29);
             this.sbPrint.TabIndex = 2;
             this.sbPrint.Text = "打印(&P)";
             this.sbPrint.Click += new System.EventHandler(this.sbPrint_Click);
@@ -1255,20 +1296,22 @@ namespace Stock
             // 
             this.sbGen.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sbGen.Appearance.Options.UseFont = true;
-            this.sbGen.Location = new System.Drawing.Point(438, 3);
+            this.sbGen.Location = new System.Drawing.Point(584, 4);
+            this.sbGen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.sbGen.Name = "sbGen";
-            this.sbGen.Size = new System.Drawing.Size(75, 23);
+            this.sbGen.Size = new System.Drawing.Size(100, 29);
             this.sbGen.TabIndex = 1;
             this.sbGen.Text = "生成申购单";
             this.sbGen.Click += new System.EventHandler(this.sbGen_Click);
             // 
             // gcResult
             // 
-            this.gcResult.EmbeddedNavigator.Name = "";
-            this.gcResult.Location = new System.Drawing.Point(4, 32);
+            this.gcResult.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gcResult.Location = new System.Drawing.Point(5, 40);
             this.gcResult.MainView = this.gvResult;
+            this.gcResult.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gcResult.Name = "gcResult";
-            this.gcResult.Size = new System.Drawing.Size(715, 412);
+            this.gcResult.Size = new System.Drawing.Size(953, 515);
             this.gcResult.TabIndex = 0;
             this.gcResult.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvResult});
@@ -1388,53 +1431,6 @@ namespace Stock
             this.gridColumn49.VisibleIndex = 8;
             this.gridColumn49.Width = 65;
             // 
-            // sbPre
-            // 
-            this.sbPre.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sbPre.Appearance.Options.UseFont = true;
-            this.sbPre.Enabled = false;
-            this.sbPre.Location = new System.Drawing.Point(487, 471);
-            this.sbPre.Name = "sbPre";
-            this.sbPre.Size = new System.Drawing.Size(75, 23);
-            this.sbPre.TabIndex = 1;
-            this.sbPre.Text = "<上一步";
-            this.sbPre.Click += new System.EventHandler(this.sbPre_Click);
-            // 
-            // sbNext
-            // 
-            this.sbNext.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sbNext.Appearance.Options.UseFont = true;
-            this.sbNext.Location = new System.Drawing.Point(568, 471);
-            this.sbNext.Name = "sbNext";
-            this.sbNext.Size = new System.Drawing.Size(75, 23);
-            this.sbNext.TabIndex = 2;
-            this.sbNext.Text = "下一步>";
-            this.sbNext.Click += new System.EventHandler(this.sbNext_Click);
-            // 
-            // sbClose
-            // 
-            this.sbClose.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sbClose.Appearance.Options.UseFont = true;
-            this.sbClose.Location = new System.Drawing.Point(666, 471);
-            this.sbClose.Name = "sbClose";
-            this.sbClose.Size = new System.Drawing.Size(75, 23);
-            this.sbClose.TabIndex = 3;
-            this.sbClose.Text = "关闭(&C)";
-            this.sbClose.Click += new System.EventHandler(this.sbClose_Click);
-            // 
-            // printingSystem
-            // 
-            this.printingSystem.Links.AddRange(new object[] {
-            this.printableComponentLink1});
-            // 
-            // printableComponentLink1
-            // 
-            this.printableComponentLink1.Component = this.gcResult;
-            //this.printableComponentLink1.CustomPaperSize = new System.Drawing.Size(0, 0);
-            this.printableComponentLink1.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("printableComponentLink1.ImageStream")));
-            this.printableComponentLink1.PrintingSystem = this.printingSystem;
-            //this.printableComponentLink1.VerticalContentSplitting = DevExpress.XtraPrinting.VerticalContentSplitting.Smart;
-            // 
             // gridColumn50
             // 
             this.gridColumn50.AppearanceHeader.Options.UseTextOptions = true;
@@ -1447,15 +1443,66 @@ namespace Stock
             this.gridColumn50.VisibleIndex = 4;
             this.gridColumn50.Width = 60;
             // 
+            // sbPre
+            // 
+            this.sbPre.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sbPre.Appearance.Options.UseFont = true;
+            this.sbPre.Enabled = false;
+            this.sbPre.Location = new System.Drawing.Point(649, 589);
+            this.sbPre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.sbPre.Name = "sbPre";
+            this.sbPre.Size = new System.Drawing.Size(100, 29);
+            this.sbPre.TabIndex = 1;
+            this.sbPre.Text = "<上一步";
+            this.sbPre.Click += new System.EventHandler(this.sbPre_Click);
+            // 
+            // sbNext
+            // 
+            this.sbNext.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sbNext.Appearance.Options.UseFont = true;
+            this.sbNext.Location = new System.Drawing.Point(757, 589);
+            this.sbNext.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.sbNext.Name = "sbNext";
+            this.sbNext.Size = new System.Drawing.Size(100, 29);
+            this.sbNext.TabIndex = 2;
+            this.sbNext.Text = "下一步>";
+            this.sbNext.Click += new System.EventHandler(this.sbNext_Click);
+            // 
+            // sbClose
+            // 
+            this.sbClose.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sbClose.Appearance.Options.UseFont = true;
+            this.sbClose.Location = new System.Drawing.Point(888, 589);
+            this.sbClose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.sbClose.Name = "sbClose";
+            this.sbClose.Size = new System.Drawing.Size(100, 29);
+            this.sbClose.TabIndex = 3;
+            this.sbClose.Text = "关闭(&C)";
+            this.sbClose.Click += new System.EventHandler(this.sbClose_Click);
+            // 
+            // printingSystem
+            // 
+            this.printingSystem.Links.AddRange(new object[] {
+            this.printableComponentLink1});
+            // 
+            // printableComponentLink1
+            // 
+            this.printableComponentLink1.Component = this.gcResult;
+            this.printableComponentLink1.CustomPaperSize = new System.Drawing.Size(0, 0);
+            this.printableComponentLink1.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("printableComponentLink1.ImageStream")));
+            this.printableComponentLink1.PrintingSystem = this.printingSystem;
+            this.printableComponentLink1.VerticalContentSplitting = DevExpress.XtraPrinting.VerticalContentSplitting.Smart;
+            // 
             // frmMRP
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
-            this.ClientSize = new System.Drawing.Size(753, 506);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.ClientSize = new System.Drawing.Size(1004, 632);
             this.Controls.Add(this.sbClose);
             this.Controls.Add(this.sbNext);
             this.Controls.Add(this.sbPre);
             this.Controls.Add(this.TabControl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmMRP";

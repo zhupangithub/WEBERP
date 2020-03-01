@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <report
+                id="report_ycc_orders"
+                string="订单确认函打印"
+                model="sale.order"
+                report_type="qweb-pdf"
+                file="ycc_order_inherit.report_order"
+                name="ycc_order_inherit.report_order"
+                />
+    </data>
+</openerp>

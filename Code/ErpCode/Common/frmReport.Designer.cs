@@ -198,24 +198,42 @@ namespace Common
             this.barStaticItem2.Name = "barStaticItem2";
             this.barStaticItem2.TextAlignment = System.Drawing.StringAlignment.Near;
             // 
+            // barDockControlTop
+            // 
+            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(4);
+            // 
+            // barDockControlBottom
+            // 
+            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(4);
+            // 
+            // barDockControlLeft
+            // 
+            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(4);
+            // 
+            // barDockControlRight
+            // 
+            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(4);
+            // 
             // ucDate
             // 
             this.ucDate.BackColor = System.Drawing.Color.Transparent;
             this.ucDate.DateTag = myControl.DateFlag.当天;
-            this.ucDate.Location = new System.Drawing.Point(222, 10);
+            this.ucDate.Location = new System.Drawing.Point(296, 12);
+            this.ucDate.Margin = new System.Windows.Forms.Padding(5);
             this.ucDate.Name = "ucDate";
-            this.ucDate.Size = new System.Drawing.Size(397, 28);
+            this.ucDate.Size = new System.Drawing.Size(529, 35);
             this.ucDate.TabIndex = 9;
             this.ucDate.RefreshDateChanged += new myControl.RefreshDateEventHandler(this.ucDate_RefreshDateChanged);
             // 
             // gcReport
             // 
             this.gcReport.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcReport.EmbeddedNavigator.Name = "";
-            this.gcReport.Location = new System.Drawing.Point(0, 71);
+            this.gcReport.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
+            this.gcReport.Location = new System.Drawing.Point(0, 90);
             this.gcReport.MainView = this.gvReport;
+            this.gcReport.Margin = new System.Windows.Forms.Padding(4);
             this.gcReport.Name = "gcReport";
-            this.gcReport.Size = new System.Drawing.Size(748, 408);
+            this.gcReport.Size = new System.Drawing.Size(997, 506);
             this.gcReport.TabIndex = 10;
             this.gcReport.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvReport});
@@ -242,32 +260,35 @@ namespace Common
             // 
             // printingSystem
             // 
-            this.printingSystem.ContinuousPageNumbering = true;
             this.printingSystem.Links.AddRange(new object[] {
             this.printableComponentLink1});
             // 
             // printableComponentLink1
             // 
             this.printableComponentLink1.Component = this.gcReport;
+            this.printableComponentLink1.CustomPaperSize = new System.Drawing.Size(0, 0);
             this.printableComponentLink1.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("printableComponentLink1.ImageStream")));
             this.printableComponentLink1.PageHeaderFooter = new DevExpress.XtraPrinting.PageHeaderFooter(new DevExpress.XtraPrinting.PageHeaderArea(new string[0], new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134))), DevExpress.XtraPrinting.BrickAlignment.Near), null);
             this.printableComponentLink1.PrintingSystem = this.printingSystem;
+            this.printableComponentLink1.VerticalContentSplitting = DevExpress.XtraPrinting.VerticalContentSplitting.Smart;
             // 
             // lbTitle
             // 
             this.lbTitle.AutoSize = true;
             this.lbTitle.BackColor = System.Drawing.Color.Transparent;
             this.lbTitle.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbTitle.Location = new System.Drawing.Point(12, 10);
+            this.lbTitle.Location = new System.Drawing.Point(16, 12);
+            this.lbTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Size = new System.Drawing.Size(88, 24);
+            this.lbTitle.Size = new System.Drawing.Size(109, 30);
             this.lbTitle.TabIndex = 11;
             this.lbTitle.Text = "label1";
             // 
             // rgOption
             // 
             this.rgOption.EditValue = true;
-            this.rgOption.Location = new System.Drawing.Point(625, 10);
+            this.rgOption.Location = new System.Drawing.Point(833, 12);
+            this.rgOption.Margin = new System.Windows.Forms.Padding(4);
             this.rgOption.Name = "rgOption";
             this.rgOption.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.rgOption.Properties.Appearance.Options.UseBackColor = true;
@@ -275,7 +296,7 @@ namespace Common
             this.rgOption.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
             new DevExpress.XtraEditors.Controls.RadioGroupItem(true, "汇总"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem(false, "明细")});
-            this.rgOption.Size = new System.Drawing.Size(111, 29);
+            this.rgOption.Size = new System.Drawing.Size(148, 36);
             this.rgOption.TabIndex = 12;
             this.rgOption.SelectedIndexChanged += new System.EventHandler(this.rgOption_SelectedIndexChanged);
             // 
@@ -286,21 +307,23 @@ namespace Common
             this.panel1.Controls.Add(this.lbTitle);
             this.panel1.Controls.Add(this.rgOption);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 26);
+            this.panel1.Location = new System.Drawing.Point(0, 30);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(748, 45);
+            this.panel1.Size = new System.Drawing.Size(997, 60);
             this.panel1.TabIndex = 13;
             // 
             // frmReport
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
-            this.ClientSize = new System.Drawing.Size(748, 501);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.ClientSize = new System.Drawing.Size(997, 626);
             this.Controls.Add(this.gcReport);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "frmReport";
             this.Load += new System.EventHandler(this.frmReport_Load);
             this.Shown += new System.EventHandler(this.frmReport_Shown);

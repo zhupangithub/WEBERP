@@ -190,10 +190,6 @@ namespace JXC
             this.barSubItem6 = new DevExpress.XtraBars.BarSubItem();
             this.barButtonItem97 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem98 = new DevExpress.XtraBars.BarButtonItem();
-            this.barSubItem5 = new DevExpress.XtraBars.BarSubItem();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
-            this.binAbout = new DevExpress.XtraBars.BarButtonItem();
             this.bmBack = new DevExpress.XtraBars.BarButtonItem();
             this.StatusBar = new DevExpress.XtraBars.Bar();
             this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
@@ -205,11 +201,16 @@ namespace JXC
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.barSubItem5 = new DevExpress.XtraBars.BarSubItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.binAbout = new DevExpress.XtraBars.BarButtonItem();
             this.bCompanyInfo = new DevExpress.XtraBars.BarButtonItem();
             this.bmQuote = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem15 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem42 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem96 = new DevExpress.XtraBars.BarButtonItem();
+            this.frmStoreReCal = new DevExpress.XtraBars.BarButtonItem();
             this.defaultLookAndFeel = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.skinEngine1 = new Sunisoft.IrisSkin.SkinEngine(((System.ComponentModel.Component)(this)));
             this.notIcon = new System.Windows.Forms.NotifyIcon(this.components);
@@ -218,7 +219,6 @@ namespace JXC
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.退出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
-            this.frmStoreReCal = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.barManager)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -429,7 +429,6 @@ namespace JXC
             new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem4),
             new DevExpress.XtraBars.LinkPersistInfo(this.bsReport),
             new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem6),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem5),
             new DevExpress.XtraBars.LinkPersistInfo(this.bmBack)});
             this.MenuBar.OptionsBar.AllowQuickCustomization = false;
             this.MenuBar.OptionsBar.MultiLine = true;
@@ -1553,36 +1552,6 @@ namespace JXC
             this.barButtonItem98.Name = "barButtonItem98";
             this.barButtonItem98.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem98_ItemClick);
             // 
-            // barSubItem5
-            // 
-            this.barSubItem5.Caption = "帮助(&H)";
-            this.barSubItem5.Id = 4;
-            this.barSubItem5.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem1),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem2),
-            new DevExpress.XtraBars.LinkPersistInfo(this.binAbout, true)});
-            this.barSubItem5.Name = "barSubItem5";
-            // 
-            // barButtonItem1
-            // 
-            this.barButtonItem1.Caption = "帮助主题(&H)";
-            this.barButtonItem1.Id = 5;
-            this.barButtonItem1.ItemShortcut = new DevExpress.XtraBars.BarShortcut(System.Windows.Forms.Keys.F1);
-            this.barButtonItem1.Name = "barButtonItem1";
-            // 
-            // barButtonItem2
-            // 
-            this.barButtonItem2.Caption = "公司网站";
-            this.barButtonItem2.Id = 6;
-            this.barButtonItem2.Name = "barButtonItem2";
-            // 
-            // binAbout
-            // 
-            this.binAbout.Caption = "关于(&A)";
-            this.binAbout.Id = 7;
-            this.binAbout.Name = "binAbout";
-            this.binAbout.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.binAbout_ItemClick);
-            // 
             // bmBack
             // 
             this.bmBack.Caption = "导航图";
@@ -1655,6 +1624,36 @@ namespace JXC
             // 
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(4);
             // 
+            // barSubItem5
+            // 
+            this.barSubItem5.Caption = "帮助(&H)";
+            this.barSubItem5.Id = 4;
+            this.barSubItem5.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem1),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem2),
+            new DevExpress.XtraBars.LinkPersistInfo(this.binAbout, true)});
+            this.barSubItem5.Name = "barSubItem5";
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "帮助主题(&H)";
+            this.barButtonItem1.Id = 5;
+            this.barButtonItem1.ItemShortcut = new DevExpress.XtraBars.BarShortcut(System.Windows.Forms.Keys.F1);
+            this.barButtonItem1.Name = "barButtonItem1";
+            // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "公司网站";
+            this.barButtonItem2.Id = 6;
+            this.barButtonItem2.Name = "barButtonItem2";
+            // 
+            // binAbout
+            // 
+            this.binAbout.Caption = "关于(&A)";
+            this.binAbout.Id = 7;
+            this.binAbout.Name = "binAbout";
+            this.binAbout.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.binAbout_ItemClick);
+            // 
             // bCompanyInfo
             // 
             this.bCompanyInfo.Caption = "公司信息";
@@ -1684,6 +1683,12 @@ namespace JXC
             this.barButtonItem96.Caption = "界面设置";
             this.barButtonItem96.Id = 186;
             this.barButtonItem96.Name = "barButtonItem96";
+            // 
+            // frmStoreReCal
+            // 
+            this.frmStoreReCal.Caption = "库存重算";
+            this.frmStoreReCal.Id = 191;
+            this.frmStoreReCal.Name = "frmStoreReCal";
             // 
             // defaultLookAndFeel
             // 
@@ -1736,12 +1741,6 @@ namespace JXC
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
             this.toolStripMenuItem2.Size = new System.Drawing.Size(135, 6);
-            // 
-            // frmStoreReCal
-            // 
-            this.frmStoreReCal.Caption = "库存重算";
-            this.frmStoreReCal.Id = 191;
-            this.frmStoreReCal.Name = "frmStoreReCal";
             // 
             // frmMain
             // 

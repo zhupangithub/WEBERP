@@ -9,7 +9,7 @@ using System.Windows.Forms;
 using DevExpress.XtraGrid;
 using DevExpress.Data;
 using DevExpress.XtraGrid.Columns;
-using DevExpress.XtraPrinting.Localization; 
+using DevExpress.XtraPrinting.Localization;
 
 namespace Common
 {
@@ -19,14 +19,14 @@ namespace Common
         protected string strQuerySQL = "";
         public frmBillList()
         {
-            InitializeComponent();          
+            InitializeComponent();
         }
 
         /// <summary>
         /// 测试权限
         /// </summary>
         /// <returns></returns>
-        protected bool TestRight(string strName,string sTag)
+        protected bool TestRight(string strName, string sTag)
         {
             if (DataLib.SysVar.strUGroup == "超级用户") return true;
             string strSQL = "select * from t_RightDetail where F_Group = '" + DataLib.SysVar.strUGroup + "' and F_Class = '" + sTag + "' and F_Name = '" + strName + "' and F_Enable = 1";
@@ -69,7 +69,7 @@ namespace Common
         {
             DataLib.DataHelper myHelper = new DataLib.DataHelper();
             DataSet ds = myHelper.GetDs("select * from t_ReportField where F_Class = '" + BillTag + "' and F_Tag = '" + cbType.SelectedIndex.ToString() + "' order by F_Order");
-            if (ds.Tables[0].Rows.Count == 0) return;   
+            if (ds.Tables[0].Rows.Count == 0) return;
             gvList.GroupSummary.Clear();
             gvList.Columns.Clear();
             foreach (DataRow dr in ds.Tables[0].Rows)
@@ -153,12 +153,124 @@ namespace Common
                     Gi.FieldName = dr["F_Field"].ToString();
                     Gi.ShowInGroupColumnFooterName = dr["F_Field"].ToString();
                     Gi.DisplayFormat = dr["F_GroupFormat"].ToString();
-                    //Gi.ShowInGroupColumnFooter = gc;
+                    Gi.ShowInGroupColumnFooter = gc;
 
                     gvList.GroupSummary.Add(Gi);
                 }
             }
         }
+
+        ///// <summary>
+        ///// 保存字段格式
+        ///// </summary>
+        //private void SaveFieldFormat()
+        //{
+        //    string strSumType = "";
+        //    DataRow drColumn;
+        //    bool blnFlag = false, blnTag = false;
+        //    DataLib.DataHelper myHelper = new DataLib.DataHelper();
+        //    DataSet ds = myHelper.GetDs("select * from t_ReportField where F_Class = '" + BillTag + "' and F_Tag = '" + cbType.SelectedIndex.ToString() + "' order by F_Order");
+
+        //    if (ds.Tables[0].Rows.Count == 0)
+        //        blnTag = false;
+        //    else
+        //        blnTag = true;
+
+        //    foreach (GridColumn gc in gvList.Columns)
+        //    {
+        //        string strField = gc.FieldName;
+        //        string strCapiton = gc.Caption;
+        //        int intWith = gc.Width;
+        //        bool blnVisible = gc.Visible;
+        //        if (blnTag == false)
+        //        {
+        //            drColumn = ds.Tables[0].NewRow();
+        //            blnFlag = true;
+        //        }
+        //        else
+        //        {
+        //            DataRow[] dr = ds.Tables[0].Select("F_Field = '" + strField + "'");
+        //            if (dr.Length > 0)
+        //            {
+        //                drColumn = dr[0];
+        //            }
+        //            else
+        //            {
+        //                drColumn = ds.Tables[0].NewRow();
+        //            }
+        //        }
+        //        drColumn["F_Class"] = BillTag;
+        //        drColumn["F_Tag"] = cbType.SelectedIndex;
+        //        drColumn["F_Field"] = gc.FieldName;
+        //        drColumn["F_Caption"] = strCapiton;
+        //        drColumn["F_Width"] = intWith;
+        //        drColumn["F_Visible"] = blnVisible;
+        //        drColumn["F_Edit"] = 0;
+        //        drColumn["F_Format"] = gc.DisplayFormat.FormatString;
+        //        drColumn["F_FootFormat"] = gc.SummaryItem.DisplayFormat;
+        //        drColumn["F_FieldType"] = gc.ColumnType.ToString();
+        //        drColumn["F_Order"] = gc.VisibleIndex;
+        //        if (gc.OptionsColumn.AllowMerge == DevExpress.Utils.DefaultBoolean.True)
+        //            drColumn["F_Merge"] = true;
+        //        else
+        //            drColumn["F_Merge"] = false;
+        //        strSumType = "";
+        //        switch (gc.SummaryItem.SummaryType)
+        //        {
+        //            case DevExpress.Data.SummaryItemType.Sum:
+        //                strSumType = "sum";
+        //                break;
+        //            case DevExpress.Data.SummaryItemType.Average:
+        //                strSumType = "avg";
+        //                break;
+        //            case DevExpress.Data.SummaryItemType.Count:
+        //                strSumType = "count";
+        //                break;
+        //            case DevExpress.Data.SummaryItemType.Max:
+        //                strSumType = "max";
+        //                break;
+        //            case DevExpress.Data.SummaryItemType.Min:
+        //                strSumType = "min";
+        //                break;
+        //        }
+        //        drColumn["F_SumType"] = strSumType;
+
+        //        GridGroupSummaryItem Gi = GetGroupType(strField);
+        //        if (Gi != null)
+        //        {
+        //            strSumType = "";
+        //            switch (Gi.SummaryType)
+        //            {
+        //                case DevExpress.Data.SummaryItemType.Sum:
+        //                    strSumType = "sum";
+        //                    break;
+        //                case DevExpress.Data.SummaryItemType.Average:
+        //                    strSumType = "avg";
+        //                    break;
+        //                case DevExpress.Data.SummaryItemType.Count:
+        //                    strSumType = "count";
+        //                    break;
+        //                case DevExpress.Data.SummaryItemType.Max:
+        //                    strSumType = "max";
+        //                    break;
+        //                case DevExpress.Data.SummaryItemType.Min:
+        //                    strSumType = "min";
+        //                    break;
+        //            }
+        //            drColumn["F_GroupType"] = strSumType;
+        //            drColumn["F_GroupFormat"] = Gi.DisplayFormat;
+        //        }
+
+        //        if (blnFlag == false)
+        //            drColumn.EndEdit();
+        //        else
+        //            ds.Tables[0].Rows.Add(drColumn);
+        //    }
+
+        //    myHelper.SaveData(ds, "select * from t_ReportField where F_Class = '" + BillTag + "' and F_Tag = '" + cbType.SelectedIndex.ToString() + "'");
+        //}
+
+
 
         /// <summary>
         /// 保存字段格式
@@ -167,9 +279,9 @@ namespace Common
         {
             string strSumType = "";
             DataRow drColumn;
-            bool blnFlag = false,blnTag = false;
+            bool blnFlag = false, blnTag = false;
             DataLib.DataHelper myHelper = new DataLib.DataHelper();
-            DataSet ds = myHelper.GetDs("select * from t_ReportField where F_Class = '" + BillTag + "' and F_Tag = '" + cbType.SelectedIndex.ToString() + "' order by F_Order");
+            DataSet ds = myHelper.GetDs("select * from t_ReportField where F_Class = '" + this.Name + "' and F_Tag = '0' order by F_Order");
 
             if (ds.Tables[0].Rows.Count == 0)
                 blnTag = false;
@@ -190,18 +302,24 @@ namespace Common
                 else
                 {
                     DataRow[] dr = ds.Tables[0].Select("F_Field = '" + strField + "'");
-                    drColumn = dr[0];
+                    if (dr.Length != 0)
+                    {
+                        drColumn = dr[0];
+                    }
+                    else
+                    {
+                        drColumn = ds.Tables[0].NewRow();
+                    }
                 }
-                drColumn["F_Class"] = BillTag;
-                drColumn["F_Tag"] = cbType.SelectedIndex;
+                drColumn["F_Class"] = this.Name;
+                drColumn["F_Tag"] = "0";
                 drColumn["F_Field"] = gc.FieldName;
                 drColumn["F_Caption"] = strCapiton;
                 drColumn["F_Width"] = intWith;
                 drColumn["F_Visible"] = blnVisible;
                 drColumn["F_Edit"] = 0;
-                drColumn["F_Format"] = gc.DisplayFormat.FormatString;
-                drColumn["F_FootFormat"] = gc.SummaryItem.DisplayFormat;
-                drColumn["F_FieldType"] = gc.ColumnType.ToString();
+                drColumn["F_Format"] = "";
+                drColumn["F_FootFormat"] = "";
                 drColumn["F_Order"] = gc.VisibleIndex;
                 if (gc.OptionsColumn.AllowMerge == DevExpress.Utils.DefaultBoolean.True)
                     drColumn["F_Merge"] = true;
@@ -253,15 +371,45 @@ namespace Common
                     drColumn["F_GroupType"] = strSumType;
                     drColumn["F_GroupFormat"] = Gi.DisplayFormat;
                 }
-
                 if (blnFlag == false)
                     drColumn.EndEdit();
                 else
                     ds.Tables[0].Rows.Add(drColumn);
             }
 
-            myHelper.SaveData(ds, "select * from t_ReportField where F_Class = '" + BillTag + "' and F_Tag = '" + cbType.SelectedIndex.ToString() + "'");
+            myHelper.SaveData(ds, "select * from t_ReportField where F_Class = '" + this.Name + "' and F_Tag = '0'");
+
+            DataSet dsGrid = myHelper.GetDs("select * from t_GridFormat where F_Class = '" + this.Name + "' and F_Tag = '0'");
+            DataRow drGrid = null;
+            if (dsGrid.Tables[0].Rows.Count == 0)
+            {
+                blnFlag = true;
+                drGrid = dsGrid.Tables[0].NewRow();
+            }
+            else
+            {
+                blnFlag = false;
+                drGrid = dsGrid.Tables[0].Rows[0];
+                drGrid.BeginEdit();
+            }
+
+            drGrid["F_Class"] = this.Name;
+            drGrid["F_Tag"] = "0";
+            drGrid["F_AllowMerge"] = gvList.OptionsView.AllowCellMerge;
+            drGrid["F_AllowFilter"] = gvList.OptionsCustomization.AllowFilter;
+            drGrid["F_AllowPanel"] = gvList.OptionsView.ShowGroupPanel;
+            drGrid["F_AllowSum"] = gvList.OptionsView.ShowFooter;
+            drGrid["F_AutoWidth"] = gvList.OptionsView.ColumnAutoWidth;
+
+            if (blnFlag == true)
+                dsGrid.Tables[0].Rows.Add(drGrid);
+            else
+                drGrid.EndEdit();
+            //dsGrid.Tables[0].Rows[0]["F_AutoWidth"] = gvList.OptionsView.ColumnAutoWidth;
+            myHelper.SaveData(dsGrid, "select * from t_GridFormat where F_Class = '" + this.Name + "' and F_Tag = '0'");
         }
+
+
 
 
         /// <summary>
@@ -289,7 +437,7 @@ namespace Common
         private void frmBillList_Shown(object sender, EventArgs e)
         {
             if (this.DesignMode == false)
-               SetSQL();
+                SetSQL();
         }
 
         protected virtual Hashtable GetParm3()
@@ -318,7 +466,7 @@ namespace Common
             parm[2].SqlDbType = DataLib.JxcService.SqlDbType.Int;
             parm[2].Size = 30;
             parm[2].Value = cbCheck.SelectedIndex;
-             */ 
+             */
             return parm;
         }
 
@@ -390,13 +538,13 @@ namespace Common
                     if (ds == null) return -1;
 
                     int intRow = gvList.FocusedRowHandle;
+                    //AssignField();
                     gcList.DataSource = ds.Tables[0].DefaultView;
                     if (intRow <= gvList.RowCount)
-                       gvList.FocusedRowHandle = intRow;
-                    //AssignField();
+                        gvList.FocusedRowHandle = intRow;
                     DataLib.sysClass.LoadFormatFromDB(gvList, BillTag, cbType.SelectedIndex);
 
-                    DataLib.SysVar.TestColumnRight(gvList,this.Name);
+                    DataLib.SysVar.TestColumnRight(gvList, this.Name);
                     return 0;
                 }
                 catch (Exception E)
@@ -413,7 +561,10 @@ namespace Common
 
         private void frmBillList_Load(object sender, EventArgs e)
         {
-           // SetSQL();
+            //gvList.BestFitColumns();
+            this.gvList.HorzScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
+            this.gvList.OptionsView.ColumnAutoWidth = true;
+            // SetSQL();
         }
 
         protected virtual bool TestNew()
@@ -569,6 +720,9 @@ namespace Common
             if (e.KeyCode == Keys.F5 && DataLib.SysVar.strUGroup == "超级用户")
             {
                 DataLib.sysClass.SaveGridToDB(gvList, BillTag, cbType.SelectedIndex);
+                SaveFieldFormat();
+
+                //DataLib.sysClass.SaveGridToDB(gvList, this.Name, 0);
                 //SaveFieldFormat();
             }
 
@@ -596,7 +750,7 @@ namespace Common
                             ds.Tables[0].Rows[0]["F_SQL"] = strQuerySQL;
                         myHelper.SaveData(ds, strSQL);
                     }
-                    
+
                 }
                 mySQL.Dispose();
             }
